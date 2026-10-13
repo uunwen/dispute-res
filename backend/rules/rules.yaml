@@ -40,6 +40,6 @@ rules:
 
   - id: fare_discrepancy_5pct
     category: fare_dispute
-    conditions: "abs(arithmetic_discrepancy) > 0.05 *   "
+    conditions: "abs(arithmetic_discrepancy) > 0.05 * recomputed_expected_fare"
     outcome: partial_refund
     amount: "abs(arithmetic_discrepancy)"
