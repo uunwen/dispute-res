@@ -1,16 +1,19 @@
 from datetime import datetime
 from typing import Any
 
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, Field, field_validator
 
 from app.db.enums import DisputeCategory
 
 
 class DisputeCreate(BaseModel):
-    trip_id: int
-    category: DisputeCategory
-    claim_text: str
-    filed_by: int
+    trip_id: int = Field(..., description="ID of the trip being disputed.")
+    category: DisputeCategory = Field(
+        ...,
+        description="Dispute category. Aliases `cancellation_fee`, `surge_pricing` and `fare` are accepted.",
+    )
+    claim_text: str = Field(..., description="The claimant's natural-language claim.")
+    filed_by: int = Field(..., description="Account ID of the party filing the dispute.")
 
     @field_validator("category", mode="before")
     @classmethod
@@ -49,16 +52,16 @@ class MessageResponse(BaseModel):
 class RulingResponse(BaseModel):
     id: int
     dispute_id: int
-    outcome: str
-    refund_amount: float
-    confidence: float
-    reasoning: str
-    rule_outcome: dict[str, Any]
-    evidence_ids: list[str]
-    escalated: bool
-    human_review_summary: dict[str, Any] | None = None
-    llm_degraded: bool = False
-    model_info: dict[str, Any] | None = None
+    outcome: str = Field(..., description="Final outcome: `full_refund`, `partial_refund` or `no_refund`.")
+    refund_amount: float = Field(..., description="Refund amount in currency units (0 for no refund).")
+    confidence: float = Field(..., description="Judge confidence score in [0, 1].")
+    reasoning: str = Field(..., description="Natural-language reasoning summary.")
+    rule_outcome: dict[str, Any] = Field(..., description="Deterministic rule result, LLM ruling and reconciliation details.")
+    evidence_ids: list[str] = Field(..., description="Evidence ids the ruling is based on.")
+    escalated: bool = Field(..., description="Whether the ruling was escalated to human review.")
+    human_review_summary: dict[str, Any] | None = Field(None, description="Case summary for the human reviewer (if escalated).")
+    llm_degraded: bool = Field(False, description="Whether the LLM was unavailable and rule fallback was used.")
+    model_info: dict[str, Any] | None = Field(None, description="Models used per agent role.")
     created_at: datetime
 
 

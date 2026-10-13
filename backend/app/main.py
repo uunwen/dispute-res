@@ -6,10 +6,34 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.api.routes import router
+from app.formulas import formulas_markdown
 from app.llm.client import log_llm_config
 from app.llm.embeddings import embeddings
 
 logger = logging.getLogger(__name__)
+
+_DESCRIPTION = """
+Multi-agent autonomous dispute resolution system for ride-hailing.
+
+Three core agents resolve disputes end-to-end without human intervention:
+
+* **Rider Advocate** — gathers rider-side evidence and argues for rider-favorable outcomes.
+* **Driver Advocate** — gathers driver-side evidence and argues for driver-favorable outcomes.
+* **Judge** — weighs both briefs, applies policy, issues a ruling (refund / partial refund /
+  no action) with a confidence score and natural-language reasoning.
+
+The rules engine is the deterministic source of truth for every monetary amount; the LLM
+never performs arithmetic. See `GET /meta/formulas` for the full list of calculations.
+
+Interactive API documentation: `/docs` (Swagger UI) and `/redoc` (ReDoc).
+"""
+
+_TAGS_METADATA = [
+    {"name": "Disputes", "description": "File, resolve and inspect disputes and their rulings."},
+    {"name": "Trips", "description": "Inspect trips, GPS, chat and computed evidence."},
+    {"name": "Queue", "description": "Priority queue and SLA routing."},
+    {"name": "Meta", "description": "System metadata, supported categories and formulas."},
+]
 
 
 @asynccontextmanager
@@ -18,7 +42,16 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="Dispute Resolver", version="0.1.0", lifespan=lifespan)
+app = FastAPI(
+    title="Dispute Resolver",
+    version="0.1.0",
+    description=_DESCRIPTION + "\n\n" + formulas_markdown(),
+    openapi_tags=_TAGS_METADATA,
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
+    lifespan=lifespan,
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,7 +64,7 @@ app.add_middleware(
 app.include_router(router)
 
 
-@app.get("/health")
+@app.get("/health", tags=["Meta"], summary="Health check")
 async def health():
     return {
         "status": "ok",

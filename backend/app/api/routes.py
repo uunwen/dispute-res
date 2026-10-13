@@ -9,6 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.config import settings
 from app.db import models
 from app.db.session import get_session
+from app.formulas import FORMULAS
 from app.messaging import dispute_channel
 from app.orchestrator.pipeline import _gather_trip_evidence, resolve_dispute
 from app.queue.queue import enqueue_dispute, list_queue, remove_dispute
@@ -106,7 +107,14 @@ def _ruling_dict(r: models.Ruling) -> dict:
     }
 
 
-@router.post("/disputes", response_model=DisputeResponse, status_code=201)
+@router.post(
+    "/disputes",
+    response_model=DisputeResponse,
+    status_code=201,
+    tags=["Disputes"],
+    summary="File a new dispute",
+    description="Create a dispute against a trip and enqueue it for autonomous resolution.",
+)
 async def create_dispute(payload: DisputeCreate, session: AsyncSession = Depends(get_session)):
     dispute = models.Dispute(
         trip_id=payload.trip_id,
@@ -123,7 +131,16 @@ async def create_dispute(payload: DisputeCreate, session: AsyncSession = Depends
     return _dispute_dict(dispute)
 
 
-@router.post("/disputes/{dispute_id}/resolve")
+@router.post(
+    "/disputes/{dispute_id}/resolve",
+    tags=["Disputes"],
+    summary="Resolve a dispute",
+    description=(
+        "Run the multi-agent resolution pipeline (Rider Advocate, Driver Advocate, "
+        "Judge) for a dispute. When `force` is true, any prior messages/rulings are "
+        "deleted first. Resolution runs as a background task."
+    ),
+)
 async def resolve_dispute_endpoint(
     dispute_id: int,
     background_tasks: BackgroundTasks,
@@ -143,7 +160,12 @@ async def resolve_dispute_endpoint(
     return {"dispute_id": dispute_id, "status": "started"}
 
 
-@router.get("/disputes/{dispute_id}", response_model=DisputeResponse)
+@router.get(
+    "/disputes/{dispute_id}",
+    response_model=DisputeResponse,
+    tags=["Disputes"],
+    summary="Get a dispute",
+)
 async def get_dispute(dispute_id: int, session: AsyncSession = Depends(get_session)):
     dispute = await session.get(models.Dispute, dispute_id)
     if dispute is None:
@@ -151,7 +173,13 @@ async def get_dispute(dispute_id: int, session: AsyncSession = Depends(get_sessi
     return _dispute_dict(dispute)
 
 
-@router.get("/disputes/{dispute_id}/messages", response_model=list[MessageResponse])
+@router.get(
+    "/disputes/{dispute_id}/messages",
+    response_model=list[MessageResponse],
+    tags=["Disputes"],
+    summary="List inter-agent messages",
+    description="Return the observable communication log between agents for a dispute.",
+)
 async def get_messages(dispute_id: int, session: AsyncSession = Depends(get_session)):
     rows = (
         await session.execute(
@@ -163,7 +191,13 @@ async def get_messages(dispute_id: int, session: AsyncSession = Depends(get_sess
     return [_message_dict(m) for m in rows]
 
 
-@router.get("/disputes/{dispute_id}/ruling", response_model=RulingResponse)
+@router.get(
+    "/disputes/{dispute_id}/ruling",
+    response_model=RulingResponse,
+    tags=["Disputes"],
+    summary="Get the latest ruling",
+    description="Return the most recent ruling (outcome, refund, confidence, reasoning) for a dispute.",
+)
 async def get_ruling(dispute_id: int, session: AsyncSession = Depends(get_session)):
     ruling = (
         await session.execute(
@@ -177,7 +211,12 @@ async def get_ruling(dispute_id: int, session: AsyncSession = Depends(get_sessio
     return _ruling_dict(ruling)
 
 
-@router.get("/disputes/{dispute_id}/stream")
+@router.get(
+    "/disputes/{dispute_id}/stream",
+    tags=["Disputes"],
+    summary="Stream dispute events (SSE)",
+    description="Server-Sent Events stream of agent messages and resolution events for a dispute.",
+)
 async def stream_dispute(dispute_id: int):
     async def gen():
         client = aioredis.from_url(settings.redis_url, decode_responses=True)
@@ -195,12 +234,24 @@ async def stream_dispute(dispute_id: int):
     return StreamingResponse(gen(), media_type="text/event-stream")
 
 
-@router.get("/trips/{trip_id}/evidence", response_model=list[EvidenceItem])
+@router.get(
+    "/trips/{trip_id}/evidence",
+    response_model=list[EvidenceItem],
+    tags=["Trips"],
+    summary="Compute evidence for a trip",
+    description="Run all deterministic evidence analyzers (route, fare, no-show, chat) for a trip.",
+)
 async def get_trip_evidence(trip_id: int):
     return await _gather_trip_evidence(trip_id)
 
 
-@router.get("/disputes", response_model=list[DisputeListItem])
+@router.get(
+    "/disputes",
+    response_model=list[DisputeListItem],
+    tags=["Disputes"],
+    summary="List disputes",
+    description="Return all disputes with their latest ruling outcome and refund amount.",
+)
 async def list_disputes(session: AsyncSession = Depends(get_session)):
     disputes = (
         await session.execute(select(models.Dispute).order_by(models.Dispute.created_at.desc()))
@@ -240,7 +291,12 @@ async def list_disputes(session: AsyncSession = Depends(get_session)):
     return result
 
 
-@router.get("/trips", response_model=list[TripListItem])
+@router.get(
+    "/trips",
+    response_model=list[TripListItem],
+    tags=["Trips"],
+    summary="List trips",
+)
 async def list_trips(limit: int = 50, session: AsyncSession = Depends(get_session)):
     trips = (
         await session.execute(
@@ -276,7 +332,12 @@ async def list_trips(limit: int = 50, session: AsyncSession = Depends(get_sessio
     ]
 
 
-@router.get("/trips/{trip_id}/chat", response_model=list[ChatMessageItem])
+@router.get(
+    "/trips/{trip_id}/chat",
+    response_model=list[ChatMessageItem],
+    tags=["Trips"],
+    summary="Get a trip's chat log",
+)
 async def get_trip_chat(trip_id: int, session: AsyncSession = Depends(get_session)):
     rows = (
         await session.execute(
@@ -307,7 +368,13 @@ async def get_trip_chat(trip_id: int, session: AsyncSession = Depends(get_sessio
     ]
 
 
-@router.get("/trips/{trip_id}/gps", response_model=TripGpsResponse)
+@router.get(
+    "/trips/{trip_id}/gps",
+    response_model=TripGpsResponse,
+    tags=["Trips"],
+    summary="Get a trip's GPS trace",
+    description="Return the optimal route polyline and the ordered GPS points for a trip.",
+)
 async def get_trip_gps(trip_id: int, session: AsyncSession = Depends(get_session)):
     trip = await session.get(models.Trip, trip_id)
     if trip is None:
@@ -329,11 +396,38 @@ async def get_trip_gps(trip_id: int, session: AsyncSession = Depends(get_session
     }
 
 
-@router.get("/queue", response_model=list[QueueItem])
+@router.get(
+    "/queue",
+    response_model=list[QueueItem],
+    tags=["Queue"],
+    summary="Inspect the priority queue",
+    description="Return queued disputes ordered by priority, with wait time and SLA-breach status.",
+)
 async def get_queue(session: AsyncSession = Depends(get_session)):
     return await list_queue(session=session)
 
 
-@router.get("/meta/categories", response_model=list[CategoryMeta])
+@router.get(
+    "/meta/categories",
+    response_model=list[CategoryMeta],
+    tags=["Meta"],
+    summary="List dispute categories",
+    description="Return the dispute categories the system supports, with example claims.",
+)
 async def get_categories():
     return _CATEGORY_META
+
+
+@router.get(
+    "/meta/formulas",
+    response_model=list[dict],
+    tags=["Meta"],
+    summary="List deterministic formulas",
+    description=(
+        "Return every deterministic calculation the system uses (confidence, refund "
+        "reconciliation, abuse risk, fare, route deviation, no-show, fraud, queue "
+        "priority, sentiment) with its source location."
+    ),
+)
+async def get_formulas():
+    return [f.model_dump() for f in FORMULAS]
