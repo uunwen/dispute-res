@@ -1,0 +1,33 @@
+# -----------------------------
+# Python Backend
+# -----------------------------
+.venv/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# -----------------------------
+# Node.js / Vite Frontend
+# -----------------------------
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# -----------------------------
+# Environment Secrets
+# -----------------------------
+.env
+.env.*
+!.env.example
+# Explicitly ignoring the backend env file
+backend/.env 
+
+# -----------------------------
+# OS & Editor Files
+# -----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

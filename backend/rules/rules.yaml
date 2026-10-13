@@ -1,0 +1,45 @@
+# Deterministic dispute-resolution rules.
+#
+# EXTENSION POINT: add new rules by appending entries to this list. Each rule
+# needs:
+#   id         - unique string identifier
+#   category   - the dispute category this rule applies to (e.g. route_deviation,
+#                no_show, fare_dispute)
+#   conditions - a safe boolean expression over the evidence context (evaluated
+#                without eval(); only arithmetic, comparison, boolean operators
+#                and the functions min/max/abs/round are allowed)
+#   outcome    - no_action | partial_refund | full_refund
+#   amount     - a numeric expression for the refund, evaluated with the same
+#                safe evaluator
+#
+# Rules are evaluated in order and the first matching rule wins.
+rules:
+  - id: route_deviation_major
+    category: route_deviation
+    conditions: "extra_distance_km > 2 and not traffic_signal"
+    outcome: partial_refund
+    amount: "fare * min(1, extra_distance_km / total_km)"
+
+  - id: route_deviation_minor
+    category: route_deviation
+    conditions: "extra_distance_km <= 0.5"
+    outcome: no_action
+    amount: "0"
+
+  - id: no_show_driver_never_arrived
+    category: no_show
+    conditions: "not driver_arrived"
+    outcome: full_refund
+    amount: "fee"
+
+  - id: no_show_rider_waited
+    category: no_show
+    conditions: "driver_arrived and wait_duration_min >= 5"
+    outcome: no_action
+    amount: "0"
+
+  - id: fare_discrepancy_5pct
+    category: fare_dispute
+    conditions: "abs(arithmetic_discrepancy) > 0.05 *   "
+    outcome: partial_refund
+    amount: "abs(arithmetic_discrepancy)"
