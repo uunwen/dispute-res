@@ -1,6 +1,7 @@
 import asyncio
 import json
 import logging
+import time
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, TypeVar, Union, get_args, get_origin
@@ -9,6 +10,7 @@ import httpx
 from pydantic import BaseModel, ValidationError
 
 from app.config import settings
+from app.profiling import current_stage, profiler
 
 logger = logging.getLogger(__name__)
 
@@ -195,8 +197,10 @@ class LLMClient:
             payload["tools"] = tools
             payload["tool_choice"] = tool_choice
 
+        start = time.perf_counter()
         data = await self._request(payload)
         self._log_usage(data.get("usage"))
+        self._record(current_stage.get() or f"llm_{role}", time.perf_counter() - start, data.get("usage"))
         return self._parse_chat_result(data)
 
     async def _complete_content(
@@ -205,8 +209,10 @@ class LLMClient:
         payload = self._base_payload(messages, model_for_role(role))
         if json_mode:
             payload["response_format"] = {"type": "json_object"}
+        start = time.perf_counter()
         data = await self._request(payload)
         self._log_usage(data.get("usage"))
+        self._record(current_stage.get() or f"llm_{role}", time.perf_counter() - start, data.get("usage"))
         return data["choices"][0]["message"]["content"]
 
     async def _request(self, payload: dict) -> dict:
@@ -225,6 +231,9 @@ class LLMClient:
                                 "LLM HTTP 404 — model or endpoint not found; check LLM_MODEL / LLM_BASE_URL"
                             ) from exc
                         raise LLMError(f"LLM HTTP error {exc.response.status_code}") from exc
+                    logger.warning(
+                        "LLM HTTP %s; retrying (attempt %d)", exc.response.status_code, attempt + 1
+                    )
                     await self._backoff(attempt)
                 except httpx.TimeoutException as exc:
                     if attempt >= self.max_retries:
@@ -271,6 +280,15 @@ class LLMClient:
                 usage.get("completion_tokens"),
                 usage.get("total_tokens"),
             )
+
+    def _record(self, stage: str, seconds: float, usage: dict | None) -> None:
+        u = usage or {}
+        profiler.record(
+            stage,
+            seconds,
+            prompt_tokens=u.get("prompt_tokens", 0),
+            completion_tokens=u.get("completion_tokens", 0),
+        )
 
     @staticmethod
     def _with_schema(system: str, schema: type[BaseModel]) -> str:

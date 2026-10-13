@@ -1,22 +1,23 @@
 import json
 import logging
+import time
 from dataclasses import dataclass
 
 from sqlalchemy import select
 
 from app.agents.prompts import load_prompt
+from app.config import settings
 from app.db import models
 from app.db.session import async_session_factory
 from app.evidence import registry
 from app.llm.client import client as llm_client
 from app.messaging import dispute_channel, publish_message
+from app.profiling import estimate_tokens, profiler, stage_scope
 from app.rag.retrieve import retrieve_policy
 from app.schemas.case_brief import CaseBrief
 from app.schemas.evidence import EvidenceItem
 
 logger = logging.getLogger(__name__)
-
-MAX_TOOL_CALLS = 5
 
 
 @dataclass
@@ -28,6 +29,8 @@ class AgentContext:
     recipient: str = "Judge"
     opponent_brief: CaseBrief | None = None
     round: str = "opening"
+    policy: list[dict] | None = None
+    precomputed_evidence: list[EvidenceItem] | None = None
 
 
 def validate_case_brief(brief: CaseBrief, valid_evidence_ids: set[str]) -> CaseBrief:
@@ -66,21 +69,33 @@ class Agent:
     prompt_file: str = ""
 
     async def run(self, context: AgentContext) -> models.AgentMessage:
-        async with async_session_factory() as session:
-            trip = (
-                await session.execute(select(models.Trip).where(models.Trip.id == context.trip_id))
-            ).scalar_one_or_none()
-        rider_id = trip.rider_id if trip else None
-        driver_id = trip.driver_id if trip else None
+        if context.precomputed_evidence is not None:
+            policy = context.policy or []
+            evidence = context.precomputed_evidence
+            tool_calls = 0
+        else:
+            async with async_session_factory() as session:
+                trip = (
+                    await session.execute(select(models.Trip).where(models.Trip.id == context.trip_id))
+                ).scalar_one_or_none()
+            rider_id = trip.rider_id if trip else None
+            driver_id = trip.driver_id if trip else None
 
-        policy = await retrieve_policy(context.claim_text, category=context.category, k=4)
-
-        evidence, tool_calls = await self._gather_evidence(context, policy, rider_id, driver_id)
+            policy = (
+                context.policy
+                if context.policy is not None
+                else await retrieve_policy(context.claim_text, category=context.category, k=4)
+            )
+            evidence, tool_calls = await self._gather_evidence(context, policy, rider_id, driver_id)
 
         brief = await self._build_brief(context, policy, evidence)
         brief = validate_case_brief(brief, {e.id for e in evidence})
 
         return await self._persist(context, brief, evidence, tool_calls)
+
+    def _stage(self, role: str, context: AgentContext) -> str:
+        suffix = "_rebuttal" if context.round == "rebuttal" else ""
+        return f"llm_{role}{suffix}"
 
     async def _gather_evidence(
         self, context: AgentContext, policy: list[dict], rider_id, driver_id
@@ -94,11 +109,13 @@ class Agent:
 
         evidence: list[EvidenceItem] = []
         tool_calls = 0
-        for _ in range(MAX_TOOL_CALLS):
+        stage = self._stage("tools", context)
+        for _ in range(settings.advocate_max_tool_calls):
             try:
-                result = await llm_client.chat(
-                    messages, tools=registry.tool_specs(), tool_choice="auto", role="tools"
-                )
+                async with stage_scope(stage):
+                    result = await llm_client.chat(
+                        messages, tools=registry.tool_specs(), tool_choice="auto", role="tools"
+                    )
             except Exception as exc:  # noqa: BLE001
                 logger.warning("LLM chat failed during evidence gathering: %s", exc)
                 break
@@ -108,18 +125,21 @@ class Agent:
 
             messages.append(self._assistant_message(result))
             for tc in result.tool_calls:
-                if tool_calls >= MAX_TOOL_CALLS:
+                if tool_calls >= settings.advocate_max_tool_calls:
                     break
                 tool = registry.get_tool(tc.name)
                 if tool is None:
                     messages.append(self._tool_error(tc.id, f"unknown tool {tc.name}"))
                     continue
+                start = time.perf_counter()
                 try:
                     output = await tool.func(**tc.arguments)
                 except Exception as exc:  # noqa: BLE001
+                    profiler.record("evidence_tools", time.perf_counter() - start)
                     messages.append(self._tool_error(tc.id, str(exc)))
                     continue
 
+                profiler.record("evidence_tools", time.perf_counter() - start)
                 tool_calls += 1
                 if isinstance(output, EvidenceItem):
                     evidence.append(output)
@@ -134,7 +154,8 @@ class Agent:
         system = load_prompt(self.prompt_file)
         user = self._brief_message(context, policy, evidence)
         try:
-            brief = await llm_client.structured(system, user, CaseBrief, role="advocate")
+            async with stage_scope(self._stage("advocate", context)):
+                brief = await llm_client.structured(system, user, CaseBrief, role="advocate")
         except Exception as exc:  # noqa: BLE001
             logger.warning("LLM structured output failed for %s: %s", self.name, exc)
             brief = None
@@ -202,13 +223,15 @@ class Agent:
         )
 
     def _brief_message(self, context: AgentContext, policy: list[dict], evidence: list[EvidenceItem]) -> str:
+        policy_text = _format_policy(policy)
+        profiler.record_policy_tokens(self.name, estimate_tokens(policy_text))
         parts = [
             f"Dispute id: {context.dispute_id}",
             f"Category: {context.category}",
             f"Claim: {context.claim_text}",
             "",
             "Policy sections:",
-            _format_policy(policy),
+            policy_text,
             "",
             "Gathered evidence:",
             _format_evidence(evidence),

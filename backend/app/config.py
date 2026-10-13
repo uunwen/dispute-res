@@ -16,6 +16,11 @@ class Settings(BaseSettings):
     llm_backoff_base: float = 0.5
     llm_temperature: float = 0.0
     llm_max_tokens: int | None = None
+    # Cap the number of LLM tool-calling rounds an advocate may perform after the
+    # deterministic evidence has been precomputed and handed to them.
+    advocate_max_tool_calls: int = 2
+    # Whether the advocates run a second rebuttal round at all.
+    rebuttal_enabled: bool = True
     embedding_model: str = "gemini-embedding-001"
     # EMBEDDING_DIM is the single source of truth for the embedding space. The
     # API provider is asked to return this many dimensions, the fastembed model
@@ -25,6 +30,9 @@ class Settings(BaseSettings):
     embedding_base_url: str = ""
     embedding_api_key: str = ""
     fastembed_model: str = "BAAI/bge-small-en-v1.5"
+    # Minimum cosine similarity (1 - cosine_distance) a policy chunk must reach to
+    # be returned; lower-similarity chunks are dropped from retrieval results.
+    embedding_similarity_cutoff: float = 0.25
 
     route_buffer_m: float = 100.0
     route_min_extra_km: float = 2.0
@@ -45,6 +53,8 @@ class Settings(BaseSettings):
     fraud_penalty_weight: float = 0.2
     sla_safety_seconds: int = 3600
     sla_default_seconds: int = 86400
+    # Max concurrent dispute resolutions when running the evaluation harness.
+    eval_concurrency: int = 3
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 

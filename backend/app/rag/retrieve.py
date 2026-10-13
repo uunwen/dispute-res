@@ -1,8 +1,12 @@
+import time
+
 from sqlalchemy import func, select
 
+from app.config import settings
 from app.db import models
 from app.db.session import async_session_factory
 from app.llm.embeddings import embeddings
+from app.profiling import profiler
 
 # Maps a dispute category to the policy file that backs it (the file names keep
 # their own naming, e.g. no_show_fee.md, fare_surge_promo.md).
@@ -13,6 +17,13 @@ _CATEGORY_TO_SOURCE = {
     "safety_incident": "safety_incident",
 }
 
+_MAX_K = 4
+
+# Policy retrieval is deterministic (static chunks, same query + category) so its
+# results can be shared. Both advocates issue the same query for a dispute; this
+# cache avoids redundant embedding + vector-search round-trips.
+_retrieval_cache: dict[tuple, list[dict]] = {}
+
 
 class EmbeddingSpaceMismatchError(Exception):
     """The query embedding and stored policy chunks live in different spaces."""
@@ -22,17 +33,43 @@ def _query_signature(qvec: list[float]) -> tuple[str, str, int]:
     return (embeddings.active_provider, embeddings.active_model, len(qvec))
 
 
+def _normalize_query(query: str) -> str:
+    return " ".join(query.lower().split())
+
+
+def clear_retrieval_cache() -> None:
+    _retrieval_cache.clear()
+
+
 async def retrieve_policy(query: str, category: str | None = None, k: int = 4, session=None) -> list[dict]:
     """Return the ``k`` most similar policy chunks to ``query``.
 
     Uses pgvector cosine distance. When ``category`` is provided the search is
     restricted to the corresponding policy source. Each result includes
     ``source``, ``section``, ``text`` and ``similarity`` so agents can cite it.
+    Results below the configured minimum similarity cutoff are dropped.
 
     Refuses to run if the query embedding's provider/model/dimension differs from
     what the stored chunks were ingested with, to never silently compare vectors
     from different models.
     """
+    start = time.perf_counter()
+    try:
+        k = max(1, min(k, _MAX_K))
+        key = (category, _normalize_query(query), k, embeddings.active_provider, embeddings.active_model)
+        cached = _retrieval_cache.get(key)
+        if cached is not None:
+            return cached
+
+        results = await _retrieve(query, category=category, k=k, session=session)
+        results = [r for r in results if r["similarity"] >= settings.embedding_similarity_cutoff]
+        _retrieval_cache[key] = results
+        return results
+    finally:
+        profiler.record("policy_retrieval", time.perf_counter() - start)
+
+
+async def _retrieve(query: str, category: str | None, k: int, session) -> list[dict]:
     vecs = await embeddings.embed_texts([query])
     if not vecs:
         return []

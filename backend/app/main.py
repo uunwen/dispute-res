@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
@@ -39,6 +40,8 @@ _TAGS_METADATA = [
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     log_llm_config()
+    if embeddings.provider == "fastembed":
+        await asyncio.to_thread(embeddings.warmup)
     yield
 
 

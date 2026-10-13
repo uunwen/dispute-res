@@ -10,6 +10,7 @@ from app.db.enums import RulingOutcome
 from app.db.session import async_session_factory
 from app.llm.client import client as llm_client, model_for_role
 from app.messaging import dispute_channel, publish_message
+from app.profiling import estimate_tokens, profiler, stage_scope
 from app.rules.engine import evaluate
 from app.rules.models import RuleResult
 from app.schemas.case_brief import CaseBrief
@@ -181,7 +182,8 @@ class Judge:
         system = load_prompt("judge")
         user = self._ruling_user_message(context, rule_result)
         try:
-            ruling = await llm_client.structured(system, user, LLMRuling, role="judge")
+            async with stage_scope("llm_judge"):
+                ruling = await llm_client.structured(system, user, LLMRuling, role="judge")
         except Exception as exc:  # noqa: BLE001
             logger.warning("LLM ruling failed: %s", exc)
             ruling = None
@@ -324,7 +326,38 @@ class Judge:
         lines = [line.strip() for line in summary.strip().splitlines() if line.strip()]
         return " ".join(lines[:2]) or brief.position
 
+    def _judge_policy(self, context: JudgeContext) -> list[dict]:
+        """Policy sections cited by the advocates plus the top-2 retrieved chunks.
+
+        Only these sections are passed to the Judge, rather than the whole
+        retrieval set, to keep the ruling prompt small and focused.
+        """
+        cited_ids: set[str] = set()
+        for brief in (context.rider_brief, context.driver_brief):
+            for claim in brief.claims:
+                cited_ids.update(claim.policy_section_ids)
+
+        by_key = {f"{p['source']}#{p['section']}": p for p in context.policy}
+        selected: list[dict] = []
+        seen: set[str] = set()
+
+        for cid in cited_ids:
+            chunk = by_key.get(cid)
+            if chunk is not None and cid not in seen:
+                selected.append(chunk)
+                seen.add(cid)
+
+        for chunk in context.policy[:2]:
+            key = f"{chunk['source']}#{chunk['section']}"
+            if key not in seen:
+                selected.append(chunk)
+                seen.add(key)
+
+        return selected
+
     def _ruling_user_message(self, context: JudgeContext, rule_result: RuleResult) -> str:
+        policy_text = _format_policy(self._judge_policy(context))
+        profiler.record_policy_tokens("Judge", estimate_tokens(policy_text))
         return "\n".join(
             [
                 f"Dispute id: {context.dispute_id}",
@@ -344,7 +377,7 @@ class Judge:
                 _format_evidence(context.evidence),
                 "",
                 "Policy:",
-                _format_policy(context.policy),
+                policy_text,
                 "",
                 "History:",
                 f"  rider={json.dumps(context.rider_history or {})}",

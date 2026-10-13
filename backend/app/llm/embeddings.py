@@ -83,6 +83,15 @@ class Embeddings:
         """Why the API was abandoned for local fastembed, if it was."""
         return self._fallback_reason
 
+    def warmup(self) -> None:
+        """Preload the embedding model so the first retrieval is not slowed down.
+
+        For the local fastembed provider this loads the model into memory; for the
+        API provider there is nothing to preload (requests are stateless).
+        """
+        if self.provider == "fastembed":
+            self._load_fastembed()
+
     def _mark_fallback(self, reason: str) -> None:
         if self._fallback_reason is None:
             logger.warning(
@@ -166,12 +175,16 @@ class Embeddings:
                 f"embeddings API malformed body (HTTP {status}): {body[:300]}; {exc}"
             ) from exc
 
-    def _embed_fastembed(self, texts: list[str]) -> list[list[float]]:
+    def _load_fastembed(self):
         if self._fastembed is None:
             from fastembed import TextEmbedding
 
             self._fastembed = TextEmbedding(model_name=settings.fastembed_model)
-        return [v.tolist() for v in self._fastembed.embed(list(texts))]
+        return self._fastembed
+
+    def _embed_fastembed(self, texts: list[str]) -> list[list[float]]:
+        model = self._load_fastembed()
+        return [v.tolist() for v in model.embed(list(texts))]
 
 
 embeddings = Embeddings()

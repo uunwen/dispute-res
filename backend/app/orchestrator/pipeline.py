@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import time
 from dataclasses import replace
 
 from sqlalchemy import select
@@ -9,6 +10,7 @@ from app.agents.driver_advocate import DriverAdvocate
 from app.agents.fraud import analyze_fraud, publish_fraud_signal
 from app.agents.judge import Judge, JudgeContext
 from app.agents.rider_advocate import RiderAdvocate
+from app.config import settings
 from app.db import models
 from app.db.session import async_session_factory
 from app.evidence import chat as chat_evidence
@@ -18,6 +20,7 @@ from app.evidence import route as route_evidence
 from app.evidence.history import compute_history_profile_db
 from app.llm.client import client as llm_client
 from app.messaging import publish_dispute_event
+from app.profiling import profiler
 from app.rag.retrieve import retrieve_policy
 from app.rules.engine import evaluate
 from app.schemas.case_brief import CaseBrief
@@ -36,7 +39,9 @@ async def _gather_trip_evidence(trip_id: int) -> list:
     return [r for r in results if not isinstance(r, BaseException)]
 
 
-async def resolve_dispute(dispute_id: int, *, rebuttal: bool = True, tone: str = "neutral") -> models.Ruling:
+async def resolve_dispute(dispute_id: int, *, rebuttal: bool | None = None, tone: str = "neutral") -> models.Ruling:
+    if rebuttal is None:
+        rebuttal = settings.rebuttal_enabled
     llm_client.degraded = False
     llm_client.error_info = None
 
@@ -58,18 +63,25 @@ async def resolve_dispute(dispute_id: int, *, rebuttal: bool = True, tone: str =
 
     await publish_dispute_event(dispute_id, "resolving", {"status": dispute.status})
 
-    rider_history = (await compute_history_profile_db(rider_id)).data
-    driver_history = (await compute_history_profile_db(driver_id)).data
-
+    evidence_start = time.perf_counter()
+    rider_history_item = await compute_history_profile_db(rider_id)
+    driver_history_item = await compute_history_profile_db(driver_id)
+    rider_history = rider_history_item.data
+    driver_history = driver_history_item.data
     evidence = await _gather_trip_evidence(dispute.trip_id)
-    policy = await retrieve_policy(dispute.claim_text, category=None, k=4)
+    profiler.record("evidence_tools", time.perf_counter() - evidence_start, calls=6)
+
+    policy = await retrieve_policy(dispute.claim_text, category=dispute.category.value, k=4)
     rule_result = evaluate(dispute.category.value, evidence)
 
+    all_evidence = [*evidence, rider_history_item, driver_history_item]
     ctx = AgentContext(
         dispute_id=dispute_id,
         trip_id=dispute.trip_id,
         category=dispute.category.value,
         claim_text=dispute.claim_text,
+        policy=policy,
+        precomputed_evidence=all_evidence,
     )
 
     rider_msg, driver_msg, fraud_signal = await asyncio.gather(
