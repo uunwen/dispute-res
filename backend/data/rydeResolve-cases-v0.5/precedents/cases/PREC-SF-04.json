@@ -1,0 +1,346 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-SF-04",
+      "trip_id": "TRIP-PREC-SF-04",
+      "filed_by": "rider",
+      "dispute_type": "safety_incident",
+      "description": "When I was getting out the driver grabbed my arm and shouted at me. I was shaking.",
+      "filed_at": "2026-08-27T19:52:12+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-5154",
+      "name": "Carol Wee",
+      "account_age_days": 420,
+      "total_trips": 33,
+      "avg_rating": 4.9,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 60,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": "large_text",
+        "channel": "sms"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-14131",
+      "name": "Saravanan Muthu",
+      "account_age_days": 900,
+      "total_trips": 3500,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Honda Freed (SGZ 7013 B)",
+      "age_years": 50,
+      "communication_preferences": {
+        "preferred_language": "Tamil",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-SF-04",
+      "rider_id": "R-5154",
+      "driver_id": "D-14131",
+      "pickup_location": {
+        "name": "Westgate, Jurong East",
+        "lat": 1.3343,
+        "lng": 103.7427,
+        "multi_entrance_venue": true
+      },
+      "dropoff_location": {
+        "name": "Anchorpoint, Queenstown",
+        "lat": 1.2889,
+        "lng": 103.8086,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-27T17:45:00+08:00",
+      "matched_at": "2026-08-27T17:45:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-08-27T17:50:00+08:00",
+      "driver_wait_start": "2026-08-27T17:50:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-08-27T17:51:00+08:00",
+      "trip_end": "2026-08-27T18:05:12+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 11.39,
+        "duration_min": 18.0,
+        "waypoints": [
+          {
+            "lat": 1.3343,
+            "lng": 103.7427
+          },
+          {
+            "lat": 1.33792,
+            "lng": 103.79379
+          },
+          {
+            "lat": 1.2889,
+            "lng": 103.8086
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 11.39,
+        "distance_charge": 7.4,
+        "duration_min": 18.0,
+        "time_charge": 3.96,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 14.96
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 11.39,
+      "distance_charge": 7.4,
+      "duration_min": 14.2,
+      "time_charge": 3.12,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 14.12,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-27T17:51:00+08:00",
+        "lat": 1.334285,
+        "lng": 103.742701,
+        "speed_kmh": 34,
+        "accuracy_m": 8.4,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-27T17:52:00+08:00",
+        "lat": 1.334669,
+        "lng": 103.747744,
+        "speed_kmh": 35,
+        "accuracy_m": 8.3,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-27T17:53:00+08:00",
+        "lat": 1.334992,
+        "lng": 103.75301,
+        "speed_kmh": 31,
+        "accuracy_m": 8.7,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-27T17:54:00+08:00",
+        "lat": 1.335359,
+        "lng": 103.757698,
+        "speed_kmh": 31,
+        "accuracy_m": 9.4,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-27T17:55:00+08:00",
+        "lat": 1.335689,
+        "lng": 103.762298,
+        "speed_kmh": 63,
+        "accuracy_m": 9.9,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-27T17:56:00+08:00",
+        "lat": 1.336357,
+        "lng": 103.771663,
+        "speed_kmh": 64,
+        "accuracy_m": 8.8,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-27T17:57:00+08:00",
+        "lat": 1.337028,
+        "lng": 103.781278,
+        "speed_kmh": 69,
+        "accuracy_m": 4.9,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-27T17:58:00+08:00",
+        "lat": 1.337796,
+        "lng": 103.791596,
+        "speed_kmh": 65,
+        "accuracy_m": 4.3,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-27T17:59:00+08:00",
+        "lat": 1.330692,
+        "lng": 103.795964,
+        "speed_kmh": 67,
+        "accuracy_m": 8.9,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-27T18:00:00+08:00",
+        "lat": 1.321099,
+        "lng": 103.798873,
+        "speed_kmh": 67,
+        "accuracy_m": 4.1,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-27T18:01:00+08:00",
+        "lat": 1.311464,
+        "lng": 103.80181,
+        "speed_kmh": 63,
+        "accuracy_m": 4.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-27T18:02:00+08:00",
+        "lat": 1.302427,
+        "lng": 103.804508,
+        "speed_kmh": 28,
+        "accuracy_m": 6.1,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-27T18:03:00+08:00",
+        "lat": 1.298409,
+        "lng": 103.805724,
+        "speed_kmh": 29,
+        "accuracy_m": 6.6,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-27T18:04:00+08:00",
+        "lat": 1.294268,
+        "lng": 103.806956,
+        "speed_kmh": 33,
+        "accuracy_m": 9.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-27T18:05:00+08:00",
+        "lat": 1.289511,
+        "lng": 103.808447,
+        "speed_kmh": 31,
+        "accuracy_m": 5.3,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-27T18:05:12+08:00",
+        "lat": 1.2889,
+        "lng": 103.8086,
+        "speed_kmh": 0,
+        "accuracy_m": 5.8,
+        "status": "completed",
+        "speed_limit_kmh": 50
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-08-27T17:45:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-5154 booked trip TRIP-PREC-SF-04 from Westgate, Jurong East to Anchorpoint, Queenstown. Upfront estimate $14.96 for planned route 11.4 km / 18 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-08-27T17:45:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-14131 (Saravanan Muthu, Honda Freed (SGZ 7013 B)) assigned."
+      },
+      {
+        "timestamp": "2026-08-27T17:50:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 9 m of pickup point."
+      },
+      {
+        "timestamp": "2026-08-27T17:51:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-08-27T18:05:12+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Anchorpoint, Queenstown. Meter distance 11.39 km, duration 14.2 min."
+      },
+      {
+        "timestamp": "2026-08-27T18:05:32+08:00",
+        "event_type": "payment_captured",
+        "details": "$14.12 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-SF-04",
+    "outcome": "escalate_to_human",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": true,
+    "provisional_outcome": "full_refund",
+    "safety_referral": true,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.9,
+    "rules_cited": [
+      "SF-1",
+      "G-4"
+    ],
+    "precedents_used": [],
+    "reasoning": "The rider reports that the driver grabbed her arm. Physical contact always goes to a human (SF-1, G-4) with a safety referral. Provisional recommendation: refund the fare to the rider, who reported it.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

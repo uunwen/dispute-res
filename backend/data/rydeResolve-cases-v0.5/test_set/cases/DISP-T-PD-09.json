@@ -1,0 +1,338 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-09",
+    "trip_id": "TRIP-DISP-T-PD-09",
+    "filed_by": "driver",
+    "dispute_type": "property_damage",
+    "description": "Rider's child spilled acrylic paint from an art kit on my seat. Professionally cleaned, receipt is $95.",
+    "filed_at": "2026-10-06T13:12:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9156",
+    "name": "Pooja Raman",
+    "account_age_days": 420,
+    "total_trips": 81,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 34,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13238",
+    "name": "Prakash Rao",
+    "account_age_days": 900,
+    "total_trips": 4100,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Camry Hybrid (SKJ 3449 L)",
+    "age_years": 52,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-09",
+    "rider_id": "R-9156",
+    "driver_id": "D-13238",
+    "pickup_location": {
+      "name": "NUS University Town (Stephen Riady Centre)",
+      "lat": 1.3048,
+      "lng": 103.7735,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Hillview Grove Condominium (lobby)",
+      "lat": 1.3621,
+      "lng": 103.7642,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-05T16:45:00+08:00",
+    "matched_at": "2026-10-05T16:45:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-05T16:50:00+08:00",
+    "driver_wait_start": "2026-10-05T16:50:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-05T16:51:00+08:00",
+    "trip_end": "2026-10-05T17:01:00+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 8.26,
+      "duration_min": 13.0,
+      "waypoints": [
+        {
+          "lat": 1.3048,
+          "lng": 103.7735
+        },
+        {
+          "lat": 1.33716,
+          "lng": 103.79175
+        },
+        {
+          "lat": 1.3621,
+          "lng": 103.7642
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 8.26,
+      "distance_charge": 5.37,
+      "duration_min": 13.0,
+      "time_charge": 2.86,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 11.83
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-09",
+      "submitted_at": "2026-10-06T13:01:00+08:00",
+      "mess_type_claimed": "stains",
+      "amount_claimed": 95.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-09-1",
+        "ATT-CLM-PD-09-2"
+      ],
+      "status": "under_review",
+      "amount_charged": 0.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 8.26,
+    "distance_charge": 5.37,
+    "duration_min": 10.0,
+    "time_charge": 2.2,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 11.17,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-05T16:51:00+08:00",
+      "lat": 1.304801,
+      "lng": 103.773499,
+      "speed_kmh": 35,
+      "accuracy_m": 9.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:52:00+08:00",
+      "lat": 1.309351,
+      "lng": 103.776052,
+      "speed_kmh": 34,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:53:00+08:00",
+      "lat": 1.313835,
+      "lng": 103.778539,
+      "speed_kmh": 34,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:54:00+08:00",
+      "lat": 1.318249,
+      "lng": 103.781072,
+      "speed_kmh": 63,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:55:00+08:00",
+      "lat": 1.326477,
+      "lng": 103.785718,
+      "speed_kmh": 65,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:56:00+08:00",
+      "lat": 1.334955,
+      "lng": 103.790528,
+      "speed_kmh": 63,
+      "accuracy_m": 5.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:57:00+08:00",
+      "lat": 1.341798,
+      "lng": 103.786622,
+      "speed_kmh": 67,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:58:00+08:00",
+      "lat": 1.348552,
+      "lng": 103.77917,
+      "speed_kmh": 69,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:59:00+08:00",
+      "lat": 1.355473,
+      "lng": 103.771533,
+      "speed_kmh": 33,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T17:00:00+08:00",
+      "lat": 1.3588,
+      "lng": 103.767859,
+      "speed_kmh": 33,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T17:01:00+08:00",
+      "lat": 1.3621,
+      "lng": 103.7642,
+      "speed_kmh": 0,
+      "accuracy_m": 5.0,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-05T16:45:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9156 booked trip TRIP-DISP-T-PD-09 from NUS University Town (Stephen Riady Centre) to Hillview Grove Condominium (lobby). Upfront estimate $11.83 for planned route 8.3 km / 13 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-05T16:45:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13238 (Prakash Rao, Toyota Camry Hybrid (SKJ 3449 L)) assigned."
+    },
+    {
+      "timestamp": "2026-10-05T16:50:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-05T16:51:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-05T17:01:00+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Hillview Grove Condominium (lobby). Meter distance 8.26 km, duration 10.0 min."
+    },
+    {
+      "timestamp": "2026-10-05T17:01:20+08:00",
+      "event_type": "payment_captured",
+      "details": "$11.17 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-06T13:01:00+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-13238 submitted cleaning claim CLM-PD-09 for stains: $95.00 with 2 attachment(s)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-09-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-06T13:01:00+08:00",
+      "captured_at": "2026-10-05T17:03:00+08:00",
+      "location": {
+        "lat": 1.36205,
+        "lng": 103.76418
+      },
+      "file_hash": "sha256:bebaa98e0452ad1ad155ff889818d42d50f5a4ec",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Blue and red acrylic paint on the rear seat fabric; plate readable through the open door.",
+        "mess_type": "stains",
+        "severity": "moderate",
+        "plate_read": "SKJ 3449 L",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.05,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-09-2",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-06T13:01:00+08:00",
+      "captured_at": "2026-10-06T12:36:00+08:00",
+      "location": null,
+      "file_hash": "sha256:8966ebf930f08d756563d8ea23eb3e4b022fa34a",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Fabric seat paint stain removal and shampoo",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-10-06",
+        "car_plate": "SKJ 3449 L",
+        "amount": 95.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

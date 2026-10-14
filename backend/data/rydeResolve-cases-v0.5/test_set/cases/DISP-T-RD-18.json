@@ -1,0 +1,389 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-RD-18",
+    "trip_id": "TRIP-DISP-T-RD-18",
+    "filed_by": "rider",
+    "dispute_type": "route_deviation",
+    "description": "There is an extra $3.00 on my receipt that I don't understand.",
+    "filed_at": "2026-10-08T02:43:41+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9115",
+    "name": "Ethan Goh",
+    "account_age_days": 420,
+    "total_trips": 64,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 36,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-28211",
+    "name": "Goh Wen Hao",
+    "account_age_days": 900,
+    "total_trips": 2600,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Skoda Octavia (SGT 1767 F)",
+    "age_years": 41,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-RD-18",
+    "rider_id": "R-9115",
+    "driver_id": "D-28211",
+    "pickup_location": {
+      "name": "Junction 8, Bishan",
+      "lat": 1.3504,
+      "lng": 103.8485,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Raffles Place (Chulia St taxi stand)",
+      "lat": 1.284,
+      "lng": 103.8515,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-07T12:10:00+08:00",
+    "matched_at": "2026-10-07T12:10:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-07T12:16:00+08:00",
+    "driver_wait_start": "2026-10-07T12:16:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-07T12:17:00+08:00",
+    "trip_end": "2026-10-07T12:36:41+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 9.46,
+      "duration_min": 18.9,
+      "waypoints": [
+        {
+          "lat": 1.3504,
+          "lng": 103.8485
+        },
+        {
+          "lat": 1.316,
+          "lng": 103.82347
+        },
+        {
+          "lat": 1.284,
+          "lng": 103.8515
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 9.46,
+      "distance_charge": 6.15,
+      "duration_min": 18.9,
+      "time_charge": 4.16,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 13.91
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 9.84,
+    "distance_charge": 6.4,
+    "duration_min": 19.7,
+    "time_charge": 4.33,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 17.33,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 3.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-07T12:17:00+08:00",
+      "lat": 1.350403,
+      "lng": 103.848507,
+      "speed_kmh": 23,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:18:00+08:00",
+      "lat": 1.346878,
+      "lng": 103.845671,
+      "speed_kmh": 35,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:19:00+08:00",
+      "lat": 1.343333,
+      "lng": 103.842883,
+      "speed_kmh": 25,
+      "accuracy_m": 8.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:20:00+08:00",
+      "lat": 1.339876,
+      "lng": 103.840078,
+      "speed_kmh": 29,
+      "accuracy_m": 7.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:21:00+08:00",
+      "lat": 1.336416,
+      "lng": 103.837212,
+      "speed_kmh": 26,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:22:00+08:00",
+      "lat": 1.332848,
+      "lng": 103.834449,
+      "speed_kmh": 30,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:23:00+08:00",
+      "lat": 1.329347,
+      "lng": 103.831616,
+      "speed_kmh": 34,
+      "accuracy_m": 4.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:24:00+08:00",
+      "lat": 1.32581,
+      "lng": 103.828799,
+      "speed_kmh": 29,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:25:00+08:00",
+      "lat": 1.322329,
+      "lng": 103.825947,
+      "speed_kmh": 33,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:26:00+08:00",
+      "lat": 1.31882,
+      "lng": 103.823158,
+      "speed_kmh": 26,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:27:00+08:00",
+      "lat": 1.31536,
+      "lng": 103.821323,
+      "speed_kmh": 28,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:28:00+08:00",
+      "lat": 1.312144,
+      "lng": 103.824414,
+      "speed_kmh": 34,
+      "accuracy_m": 7.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:29:00+08:00",
+      "lat": 1.308936,
+      "lng": 103.827601,
+      "speed_kmh": 27,
+      "accuracy_m": 4.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:30:00+08:00",
+      "lat": 1.305574,
+      "lng": 103.830697,
+      "speed_kmh": 26,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:31:00+08:00",
+      "lat": 1.302384,
+      "lng": 103.833839,
+      "speed_kmh": 29,
+      "accuracy_m": 8.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:32:00+08:00",
+      "lat": 1.299132,
+      "lng": 103.836899,
+      "speed_kmh": 31,
+      "accuracy_m": 9.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:33:00+08:00",
+      "lat": 1.295906,
+      "lng": 103.840036,
+      "speed_kmh": 30,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:34:00+08:00",
+      "lat": 1.292676,
+      "lng": 103.843128,
+      "speed_kmh": 32,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:35:00+08:00",
+      "lat": 1.289424,
+      "lng": 103.846268,
+      "speed_kmh": 30,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:36:00+08:00",
+      "lat": 1.286198,
+      "lng": 103.849376,
+      "speed_kmh": 29,
+      "accuracy_m": 6.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T12:36:41+08:00",
+      "lat": 1.284,
+      "lng": 103.8515,
+      "speed_kmh": 0,
+      "accuracy_m": 9.1,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-07T12:18:30+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Can you drop me at Raffles Place instead of Novena? Sorry, change of plan."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-07T12:10:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9115 booked trip TRIP-DISP-T-RD-18 from Junction 8, Bishan to Velocity@Novena Square. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-07T12:10:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-28211 (Goh Wen Hao, Skoda Octavia (SGT 1767 F)) assigned."
+    },
+    {
+      "timestamp": "2026-10-07T12:16:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 8 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-07T12:17:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-07T12:19:00+08:00",
+      "event_type": "destination_edit_requested",
+      "details": "Rider requested to change the destination from Velocity@Novena Square to Raffles Place (Chulia St taxi stand)."
+    },
+    {
+      "timestamp": "2026-10-07T12:19:30+08:00",
+      "event_type": "destination_edit_accepted",
+      "details": "Driver accepted the destination change. Route and upfront estimate re-quoted for the new destination: $13.91 for 9.5 km / 19 min. A $3.00 add/edit destination fee will apply."
+    },
+    {
+      "timestamp": "2026-10-07T12:36:41+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Raffles Place (Chulia St taxi stand). Meter distance 9.84 km, duration 19.7 min."
+    },
+    {
+      "timestamp": "2026-10-07T12:37:01+08:00",
+      "event_type": "payment_captured",
+      "details": "$17.33 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": {
+    "source": "LTA traffic incident feed (mock)",
+    "query_window": [
+      "2026-10-07T12:17:00+08:00",
+      "2026-10-07T12:36:41+08:00"
+    ],
+    "incidents": []
+  },
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

@@ -1,0 +1,276 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-29",
+    "trip_id": "TRIP-DISP-T-NS-29",
+    "filed_by": "driver",
+    "dispute_type": "no_show_charge",
+    "description": "Rider no show. I waited almost 5 minutes at the pin and called. The fee did not go through and I have not been paid anything.",
+    "filed_at": "2026-10-06T22:50:48+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4140",
+    "name": "Alvin Koh",
+    "account_age_days": 2,
+    "total_trips": 0,
+    "avg_rating": 5.0,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 1,
+    "fraud_flag_details": "new_account_shares_device_with_3_cancelled_bookings",
+    "payment_method": "e-wallet",
+    "age_years": 24,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23202",
+    "name": "Mohd Zulkifli",
+    "account_age_days": 900,
+    "total_trips": 4100,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Prius (SGX 3923 T)",
+    "age_years": 51,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-29",
+    "rider_id": "R-4140",
+    "driver_id": "D-23202",
+    "pickup_location": {
+      "name": "Tampines Mall (Tampines Central 5 drop-off)",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Fusionopolis, one-north",
+      "lat": 1.299,
+      "lng": 103.7876,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-06T22:10:00+08:00",
+    "matched_at": "2026-10-06T22:10:15+08:00",
+    "scheduled_time": "2026-10-06T22:17:00+08:00",
+    "eta_at_assignment_min": 7,
+    "driver_arrival_time": "2026-10-06T22:17:00+08:00",
+    "driver_wait_start": "2026-10-06T22:17:00+08:00",
+    "cancellation_time": "2026-10-06T22:21:48+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "declined",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-06T22:11:00+08:00",
+      "lat": 1.365084,
+      "lng": 103.945303,
+      "speed_kmh": 17,
+      "accuracy_m": 10.4,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T22:14:00+08:00",
+      "lat": 1.3579,
+      "lng": 103.944901,
+      "speed_kmh": 14,
+      "accuracy_m": 7.0,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T22:16:00+08:00",
+      "lat": 1.35386,
+      "lng": 103.944675,
+      "speed_kmh": 9,
+      "accuracy_m": 6.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T22:17:00+08:00",
+      "lat": 1.352514,
+      "lng": 103.9446,
+      "speed_kmh": 0,
+      "accuracy_m": 6.2,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T22:18:00+08:00",
+      "lat": 1.352549,
+      "lng": 103.9446,
+      "speed_kmh": 0,
+      "accuracy_m": 5.3,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T22:19:00+08:00",
+      "lat": 1.352514,
+      "lng": 103.9446,
+      "speed_kmh": 0,
+      "accuracy_m": 8.9,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T22:20:00+08:00",
+      "lat": 1.352543,
+      "lng": 103.944593,
+      "speed_kmh": 0,
+      "accuracy_m": 6.3,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T22:21:00+08:00",
+      "lat": 1.352509,
+      "lng": 103.944599,
+      "speed_kmh": 0,
+      "accuracy_m": 6.3,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T22:21:48+08:00",
+      "lat": 1.352512,
+      "lng": 103.944602,
+      "speed_kmh": 0,
+      "accuracy_m": 9.0,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-06T22:17:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at Tampines Mall, Tampines Central 5."
+    },
+    {
+      "timestamp": "2026-10-06T22:18:00+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-06T22:19:24+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I'm at the pickup point. Please reply."
+    },
+    {
+      "timestamp": "2026-10-06T22:21:24+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling."
+    },
+    {
+      "timestamp": "2026-10-06T22:21:48+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee could not be collected."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-06T22:10:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4140 booked trip TRIP-DISP-T-NS-29 from Tampines Mall (Tampines Central 5 drop-off) to Fusionopolis, one-north. On-demand booking. Estimated pickup 22:17. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-06T22:10:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23202 (Mohd Zulkifli, Toyota Prius (SGX 3923 T)) matched. ETA 7 min."
+    },
+    {
+      "timestamp": "2026-10-06T22:10:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-06T22:17:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 7 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-10-06T22:17:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 22:20:00."
+    },
+    {
+      "timestamp": "2026-10-06T22:17:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-10-06T22:18:00+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-06T22:20:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-10-06T22:21:48+08:00",
+      "event_type": "payment_declined",
+      "details": "Driver cancelled with reason rider_no_show. Cancellation fee $6.61 could not be collected: rider payment method (e-wallet) declined."
+    },
+    {
+      "timestamp": "2026-10-06T22:21:53+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-23202 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

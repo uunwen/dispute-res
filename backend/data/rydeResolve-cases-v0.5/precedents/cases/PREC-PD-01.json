@@ -1,0 +1,442 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-PD-01",
+      "trip_id": "TRIP-PREC-PD-01",
+      "filed_by": "rider",
+      "dispute_type": "property_damage",
+      "description": "I was charged $35 for cleaning. The container only leaked a little.",
+      "filed_at": "2026-08-22T20:11:18+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10150",
+      "name": "Lydia Goh",
+      "account_age_days": 420,
+      "total_trips": 88,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 35,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "email"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-9130",
+      "name": "Terence Loh",
+      "account_age_days": 900,
+      "total_trips": 2300,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Toyota Corolla Cross (SGY 2741 A)",
+      "age_years": 41,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-PD-01",
+      "rider_id": "R-10150",
+      "driver_id": "D-9130",
+      "pickup_location": {
+        "name": "Bedok Mall (Bedok Central drop-off)",
+        "lat": 1.3243,
+        "lng": 103.93,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Tanjong Pagar Centre",
+        "lat": 1.2762,
+        "lng": 103.8466,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-20T12:30:00+08:00",
+      "matched_at": "2026-08-20T12:30:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-08-20T12:35:00+08:00",
+      "driver_wait_start": "2026-08-20T12:35:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-08-20T12:36:00+08:00",
+      "trip_end": "2026-08-20T12:53:18+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 13.7,
+        "duration_min": 21.6,
+        "waypoints": [
+          {
+            "lat": 1.3243,
+            "lng": 103.93
+          },
+          {
+            "lat": 1.33356,
+            "lng": 103.86908
+          },
+          {
+            "lat": 1.2762,
+            "lng": 103.8466
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 13.7,
+        "distance_charge": 8.91,
+        "duration_min": 21.6,
+        "time_charge": 4.75,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 17.26
+      },
+      "damage_claim": {
+        "claim_id": "CLM-PPD-01",
+        "submitted_at": "2026-08-20T16:53:18+08:00",
+        "mess_type_claimed": "food_drink",
+        "amount_claimed": 35.0,
+        "attachment_ids": [
+          "ATT-CLM-PPD-01-1",
+          "ATT-CLM-PPD-01-2"
+        ],
+        "status": "charged",
+        "amount_charged": 35.0
+      }
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 13.7,
+      "distance_charge": 8.91,
+      "duration_min": 17.3,
+      "time_charge": 3.81,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 16.32,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-20T12:36:00+08:00",
+        "lat": 1.324295,
+        "lng": 103.930047,
+        "speed_kmh": 31,
+        "accuracy_m": 8.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:37:00+08:00",
+        "lat": 1.324993,
+        "lng": 103.925433,
+        "speed_kmh": 31,
+        "accuracy_m": 4.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:38:00+08:00",
+        "lat": 1.325652,
+        "lng": 103.920819,
+        "speed_kmh": 34,
+        "accuracy_m": 7.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:39:00+08:00",
+        "lat": 1.326462,
+        "lng": 103.9158,
+        "speed_kmh": 29,
+        "accuracy_m": 7.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:40:00+08:00",
+        "lat": 1.327109,
+        "lng": 103.911509,
+        "speed_kmh": 32,
+        "accuracy_m": 7.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:41:00+08:00",
+        "lat": 1.327837,
+        "lng": 103.906726,
+        "speed_kmh": 65,
+        "accuracy_m": 6.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:42:00+08:00",
+        "lat": 1.329314,
+        "lng": 103.897096,
+        "speed_kmh": 69,
+        "accuracy_m": 5.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:43:00+08:00",
+        "lat": 1.330829,
+        "lng": 103.886891,
+        "speed_kmh": 65,
+        "accuracy_m": 7.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:44:00+08:00",
+        "lat": 1.332341,
+        "lng": 103.877208,
+        "speed_kmh": 66,
+        "accuracy_m": 9.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:45:00+08:00",
+        "lat": 1.332012,
+        "lng": 103.868481,
+        "speed_kmh": 67,
+        "accuracy_m": 9.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:46:00+08:00",
+        "lat": 1.322663,
+        "lng": 103.864796,
+        "speed_kmh": 68,
+        "accuracy_m": 8.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:47:00+08:00",
+        "lat": 1.313172,
+        "lng": 103.861116,
+        "speed_kmh": 69,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:48:00+08:00",
+        "lat": 1.303572,
+        "lng": 103.857272,
+        "speed_kmh": 65,
+        "accuracy_m": 9.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:49:00+08:00",
+        "lat": 1.294472,
+        "lng": 103.85376,
+        "speed_kmh": 27,
+        "accuracy_m": 4.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:50:00+08:00",
+        "lat": 1.290718,
+        "lng": 103.852319,
+        "speed_kmh": 31,
+        "accuracy_m": 4.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:51:00+08:00",
+        "lat": 1.286396,
+        "lng": 103.850593,
+        "speed_kmh": 33,
+        "accuracy_m": 4.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:52:00+08:00",
+        "lat": 1.281775,
+        "lng": 103.848789,
+        "speed_kmh": 31,
+        "accuracy_m": 5.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:53:00+08:00",
+        "lat": 1.277427,
+        "lng": 103.847093,
+        "speed_kmh": 33,
+        "accuracy_m": 9.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-20T12:53:18+08:00",
+        "lat": 1.2762,
+        "lng": 103.8466,
+        "speed_kmh": 0,
+        "accuracy_m": 9.2,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-08-20T12:30:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10150 booked trip TRIP-PREC-PD-01 from Bedok Mall (Bedok Central drop-off) to Tanjong Pagar Centre. Upfront estimate $17.26 for planned route 13.7 km / 22 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-08-20T12:30:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-9130 (Terence Loh, Toyota Corolla Cross (SGY 2741 A)) assigned."
+      },
+      {
+        "timestamp": "2026-08-20T12:35:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 9 m of pickup point."
+      },
+      {
+        "timestamp": "2026-08-20T12:36:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-08-20T12:53:18+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Tanjong Pagar Centre. Meter distance 13.70 km, duration 17.3 min."
+      },
+      {
+        "timestamp": "2026-08-20T12:53:38+08:00",
+        "event_type": "payment_captured",
+        "details": "$16.32 charged to rider payment method (e-wallet)."
+      },
+      {
+        "timestamp": "2026-08-20T16:53:18+08:00",
+        "event_type": "cleaning_claim_submitted",
+        "details": "Driver D-9130 submitted cleaning claim CLM-PPD-01 for food_drink: $35.00 with 2 attachment(s)."
+      },
+      {
+        "timestamp": "2026-08-21T18:53:18+08:00",
+        "event_type": "cleaning_fee_charged",
+        "details": "Cleaning fee $35.00 for claim CLM-PPD-01 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [
+      {
+        "attachment_id": "ATT-CLM-PPD-01-1",
+        "attachment_type": "photo",
+        "uploaded_by": "driver",
+        "uploaded_at": "2026-08-20T16:53:18+08:00",
+        "captured_at": "2026-08-20T12:58:18+08:00",
+        "location": {
+          "lat": 1.27617,
+          "lng": 103.84665
+        },
+        "file_hash": "sha256:bda3a40508bfc5ae72355603501bde81a403f16d",
+        "simulated_vision_analysis": {
+          "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+          "description": "Curry sauce and rice on the rear seat and floor; plate readable.",
+          "mess_type": "food_drink",
+          "severity": "moderate",
+          "plate_read": "SGY 2741 A",
+          "interior_matches_vehicle_model": true,
+          "ai_generated_likelihood": 0.03,
+          "duplicate_of": null
+        },
+        "receipt_details": null
+      },
+      {
+        "attachment_id": "ATT-CLM-PPD-01-2",
+        "attachment_type": "receipt",
+        "uploaded_by": "driver",
+        "uploaded_at": "2026-08-20T16:53:18+08:00",
+        "captured_at": "2026-08-20T16:28:18+08:00",
+        "location": null,
+        "file_hash": "sha256:f8fe06bcb0a7d9ba0af1b406d0b8426f9644eca4",
+        "simulated_vision_analysis": null,
+        "receipt_details": {
+          "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+          "uen": "201912345K",
+          "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+          "contact_number": "+65 6745 1122",
+          "service_description": "Rear seat shampoo (food spill)",
+          "professional_cleaning": true,
+          "cleaning_date": "2026-08-20",
+          "car_plate": "SGY 2741 A",
+          "amount": 35.0,
+          "signed": true,
+          "company_stamp": true
+        }
+      }
+    ],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-PD-01",
+    "outcome": "charge_upheld",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.9,
+    "rules_cited": [
+      "PD-1",
+      "PD-3",
+      "PD-4"
+    ],
+    "precedents_used": [],
+    "reasoning": "Valid photos show spilled curry and rice and the car's plate; complete receipt from a registered cleaner for S$35, under the S$40 food and drink cap. The S$35 fee stands (PD-3, PD-4).",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

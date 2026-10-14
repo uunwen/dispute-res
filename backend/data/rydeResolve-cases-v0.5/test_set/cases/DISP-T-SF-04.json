@@ -1,0 +1,456 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-SF-04",
+    "trip_id": "TRIP-DISP-T-SF-04",
+    "filed_by": "rider",
+    "dispute_type": "safety_incident",
+    "description": "The driver made a remark about my religion in the chat before pickup. I felt humiliated.",
+    "filed_at": "2026-09-28T01:51:42+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4154",
+    "name": "Harun Ismail",
+    "account_age_days": 420,
+    "total_trips": 64,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 39,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "sms"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8239",
+    "name": "Wilson Koh",
+    "account_age_days": 900,
+    "total_trips": 2250,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Odyssey (SKK 4470 M)",
+    "age_years": 40,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-SF-04",
+    "rider_id": "R-4154",
+    "driver_id": "D-8239",
+    "pickup_location": {
+      "name": "Paya Lebar Quarter (Mall drop-off)",
+      "lat": 1.317,
+      "lng": 103.893,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Causeway Point, Woodlands",
+      "lat": 1.436,
+      "lng": 103.786,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-27T13:05:00+08:00",
+    "matched_at": "2026-09-27T13:05:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-27T13:06:00+08:00",
+    "driver_wait_start": "2026-09-27T13:06:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-27T13:11:00+08:00",
+    "trip_end": "2026-09-27T13:38:42+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 22.77,
+      "duration_min": 36.0,
+      "waypoints": [
+        {
+          "lat": 1.317,
+          "lng": 103.893
+        },
+        {
+          "lat": 1.41923,
+          "lng": 103.88706
+        },
+        {
+          "lat": 1.436,
+          "lng": 103.786
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 22.77,
+      "distance_charge": 14.8,
+      "duration_min": 36.0,
+      "time_charge": 7.92,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 26.32
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 22.77,
+    "distance_charge": 14.8,
+    "duration_min": 27.7,
+    "time_charge": 6.09,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 24.49,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-27T13:11:00+08:00",
+      "lat": 1.316986,
+      "lng": 103.893015,
+      "speed_kmh": 33,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:12:00+08:00",
+      "lat": 1.321914,
+      "lng": 103.892739,
+      "speed_kmh": 31,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:13:00+08:00",
+      "lat": 1.326569,
+      "lng": 103.892452,
+      "speed_kmh": 30,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:14:00+08:00",
+      "lat": 1.331053,
+      "lng": 103.892158,
+      "speed_kmh": 35,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:15:00+08:00",
+      "lat": 1.336316,
+      "lng": 103.891869,
+      "speed_kmh": 31,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:16:00+08:00",
+      "lat": 1.340905,
+      "lng": 103.891588,
+      "speed_kmh": 30,
+      "accuracy_m": 9.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:17:00+08:00",
+      "lat": 1.345458,
+      "lng": 103.891321,
+      "speed_kmh": 33,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:18:00+08:00",
+      "lat": 1.350362,
+      "lng": 103.891113,
+      "speed_kmh": 33,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:19:00+08:00",
+      "lat": 1.355295,
+      "lng": 103.890726,
+      "speed_kmh": 64,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:20:00+08:00",
+      "lat": 1.364881,
+      "lng": 103.890212,
+      "speed_kmh": 69,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:21:00+08:00",
+      "lat": 1.375179,
+      "lng": 103.889651,
+      "speed_kmh": 68,
+      "accuracy_m": 7.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:22:00+08:00",
+      "lat": 1.385391,
+      "lng": 103.889057,
+      "speed_kmh": 68,
+      "accuracy_m": 5.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:23:00+08:00",
+      "lat": 1.395559,
+      "lng": 103.888428,
+      "speed_kmh": 66,
+      "accuracy_m": 9.6,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:24:00+08:00",
+      "lat": 1.405425,
+      "lng": 103.887851,
+      "speed_kmh": 69,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:25:00+08:00",
+      "lat": 1.415722,
+      "lng": 103.887292,
+      "speed_kmh": 66,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:26:00+08:00",
+      "lat": 1.420318,
+      "lng": 103.880737,
+      "speed_kmh": 67,
+      "accuracy_m": 7.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:27:00+08:00",
+      "lat": 1.42192,
+      "lng": 103.870826,
+      "speed_kmh": 66,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:28:00+08:00",
+      "lat": 1.423549,
+      "lng": 103.861007,
+      "speed_kmh": 69,
+      "accuracy_m": 7.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:29:00+08:00",
+      "lat": 1.425227,
+      "lng": 103.850845,
+      "speed_kmh": 65,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:30:00+08:00",
+      "lat": 1.426797,
+      "lng": 103.841209,
+      "speed_kmh": 69,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:31:00+08:00",
+      "lat": 1.428562,
+      "lng": 103.831035,
+      "speed_kmh": 67,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:32:00+08:00",
+      "lat": 1.430207,
+      "lng": 103.821149,
+      "speed_kmh": 64,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-27T13:33:00+08:00",
+      "lat": 1.431739,
+      "lng": 103.81167,
+      "speed_kmh": 30,
+      "accuracy_m": 8.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:34:00+08:00",
+      "lat": 1.432494,
+      "lng": 103.807199,
+      "speed_kmh": 33,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:35:00+08:00",
+      "lat": 1.433309,
+      "lng": 103.802341,
+      "speed_kmh": 29,
+      "accuracy_m": 8.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:36:00+08:00",
+      "lat": 1.434023,
+      "lng": 103.798074,
+      "speed_kmh": 33,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:37:00+08:00",
+      "lat": 1.434813,
+      "lng": 103.793166,
+      "speed_kmh": 27,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:38:00+08:00",
+      "lat": 1.435493,
+      "lng": 103.789149,
+      "speed_kmh": 29,
+      "accuracy_m": 9.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-27T13:38:42+08:00",
+      "lat": 1.436,
+      "lng": 103.786,
+      "speed_kmh": 0,
+      "accuracy_m": 8.4,
+      "status": "completed",
+      "speed_limit_kmh": 50
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-27T13:07:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Sorry, I will be 2 min, just finishing my prayers."
+    },
+    {
+      "timestamp": "2026-09-27T13:08:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Your people and your prayers always make everyone wait. Hurry up."
+    },
+    {
+      "timestamp": "2026-09-27T13:09:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "That is not okay to say."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-27T13:05:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4154 booked trip TRIP-DISP-T-SF-04 from Paya Lebar Quarter (Mall drop-off) to Causeway Point, Woodlands. Upfront estimate $26.32 for planned route 22.8 km / 36 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-27T13:05:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8239 (Wilson Koh, Honda Odyssey (SKK 4470 M)) assigned."
+    },
+    {
+      "timestamp": "2026-09-27T13:06:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-27T13:11:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-27T13:38:42+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Causeway Point, Woodlands. Meter distance 22.77 km, duration 27.7 min."
+    },
+    {
+      "timestamp": "2026-09-27T13:39:02+08:00",
+      "event_type": "payment_captured",
+      "details": "$24.49 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

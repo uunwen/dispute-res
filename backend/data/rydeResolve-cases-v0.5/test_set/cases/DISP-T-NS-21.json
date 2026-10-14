@@ -1,0 +1,194 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-21",
+    "trip_id": "TRIP-DISP-T-NS-21",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "Driver wanted me to cancel and pay him cash. I cancelled and now I get a $6.61 fee.",
+    "filed_at": "2026-09-20T04:41:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4144",
+    "name": "Nadia Rahim",
+    "account_age_days": 420,
+    "total_trips": 66,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 28,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13221",
+    "name": "Hock Seng Tan",
+    "account_age_days": 900,
+    "total_trips": 2100,
+    "avg_rating": 4.0,
+    "dispute_history": {
+      "total_disputes": 7,
+      "upheld_against": 3,
+      "rejected": 4
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 2,
+    "vehicle": "Toyota Wish (SGP 2455 N)",
+    "age_years": 52,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-21",
+    "rider_id": "R-4144",
+    "driver_id": "D-13221",
+    "pickup_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Tampines Mall (Tampines Central 5 drop-off)",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-19T20:40:00+08:00",
+    "matched_at": "2026-09-19T20:40:15+08:00",
+    "scheduled_time": "2026-09-19T20:46:00+08:00",
+    "eta_at_assignment_min": 6,
+    "driver_arrival_time": null,
+    "driver_wait_start": null,
+    "cancellation_time": "2026-09-19T20:45:12+08:00",
+    "cancelled_by": "rider",
+    "cancellation_reason": "rider_cancelled",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-19T20:40:30+08:00",
+      "lat": 1.321956,
+      "lng": 103.84386,
+      "speed_kmh": 36,
+      "accuracy_m": 10.4,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-19T20:42:00+08:00",
+      "lat": 1.318227,
+      "lng": 103.841347,
+      "speed_kmh": 34,
+      "accuracy_m": 4.0,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-19T20:43:30+08:00",
+      "lat": 1.313751,
+      "lng": 103.838332,
+      "speed_kmh": 30,
+      "accuracy_m": 6.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-19T20:44:48+08:00",
+      "lat": 1.309275,
+      "lng": 103.835317,
+      "speed_kmh": 22,
+      "accuracy_m": 4.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-19T20:41:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancel in the app lah, I take you cash direct, $15 PayNow to me, cheaper."
+    },
+    {
+      "timestamp": "2026-09-19T20:43:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "ok ok"
+    },
+    {
+      "timestamp": "2026-09-19T20:45:12+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by rider. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-19T20:40:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4144 booked trip TRIP-DISP-T-NS-21 from ION Orchard (Orchard Turn pickup point) to Tampines Mall (Tampines Central 5 drop-off). On-demand booking. Estimated pickup 20:46. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-19T20:40:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13221 (Hock Seng Tan, Toyota Wish (SGP 2455 N)) matched. ETA 6 min."
+    },
+    {
+      "timestamp": "2026-09-19T20:40:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-19T20:45:12+08:00",
+      "event_type": "trip_cancelled_by_rider",
+      "details": "Rider cancelled the trip in-app 5.0 min after matching. $6.61 cancellation fee charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-09-19T20:45:17+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-13221 released from trip. Trip status: cancelled (rider_cancelled)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

@@ -1,0 +1,328 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-NS-12",
+      "trip_id": "TRIP-PREC-NS-12",
+      "filed_by": "rider",
+      "dispute_type": "no_show_charge",
+      "description": "Was charged extra for waiting. The pickup point is hard to find from my block.",
+      "filed_at": "2026-09-06T00:39:48+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-5112",
+      "name": "Ganesh Pillai",
+      "account_age_days": 420,
+      "total_trips": 45,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 51,
+      "communication_preferences": {
+        "preferred_language": "Tamil",
+        "accessibility_needs": null,
+        "channel": "sms"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-29108",
+      "name": "Wesley Chan",
+      "account_age_days": 900,
+      "total_trips": 3100,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Subaru XV (SGU 8703 H)",
+      "age_years": 43,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-NS-12",
+      "rider_id": "R-5112",
+      "driver_id": "D-29108",
+      "pickup_location": {
+        "name": "Anchorpoint, Queenstown",
+        "lat": 1.2889,
+        "lng": 103.8086,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "ION Orchard (Orchard Turn pickup point)",
+        "lat": 1.304,
+        "lng": 103.8318,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-09-05T18:10:00+08:00",
+      "matched_at": "2026-09-05T18:10:15+08:00",
+      "scheduled_time": "2026-09-05T18:16:00+08:00",
+      "eta_at_assignment_min": 6,
+      "driver_arrival_time": "2026-09-05T18:16:00+08:00",
+      "driver_wait_start": "2026-09-05T18:16:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": 0.0,
+      "waiting_fee": 5.0,
+      "payment_status": "captured",
+      "trip_start": "2026-09-05T18:20:48+08:00",
+      "trip_end": "2026-09-05T18:28:48+08:00",
+      "trip_completed": true,
+      "planned_route": null,
+      "upfront_estimate": null,
+      "damage_claim": null
+    },
+    "cancellation_policy": {
+      "free_wait_time_min": 3,
+      "cancellation_fee_after_wait": 6.61,
+      "no_show_threshold_min": 3,
+      "fee_goes_to": "driver_compensation",
+      "driver_compensation": 4.5,
+      "waiting_fee": 5.0,
+      "driver_waiting_fee": 4.5,
+      "advance_free_before_min": 15
+    },
+    "fare_breakdown": null,
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-09-05T18:13:00+08:00",
+        "lat": 1.292509,
+        "lng": 103.80454,
+        "speed_kmh": 14,
+        "accuracy_m": 5.1,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:15:00+08:00",
+        "lat": 1.289843,
+        "lng": 103.807585,
+        "speed_kmh": 9,
+        "accuracy_m": 6.3,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:16:00+08:00",
+        "lat": 1.288921,
+        "lng": 103.808591,
+        "speed_kmh": 0,
+        "accuracy_m": 7.0,
+        "status": "arrived",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:17:00+08:00",
+        "lat": 1.288954,
+        "lng": 103.808598,
+        "speed_kmh": 0,
+        "accuracy_m": 5.8,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:18:00+08:00",
+        "lat": 1.288952,
+        "lng": 103.808574,
+        "speed_kmh": 0,
+        "accuracy_m": 8.1,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:19:00+08:00",
+        "lat": 1.288942,
+        "lng": 103.808621,
+        "speed_kmh": 0,
+        "accuracy_m": 4.7,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:20:00+08:00",
+        "lat": 1.288946,
+        "lng": 103.808587,
+        "speed_kmh": 0,
+        "accuracy_m": 6.6,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:20:48+08:00",
+        "lat": 1.288954,
+        "lng": 103.8086,
+        "speed_kmh": 0,
+        "accuracy_m": 8.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:22:48+08:00",
+        "lat": 1.292715,
+        "lng": 103.8144,
+        "speed_kmh": 34,
+        "accuracy_m": 6.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:24:48+08:00",
+        "lat": 1.296477,
+        "lng": 103.8202,
+        "speed_kmh": 30,
+        "accuracy_m": 6.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:26:48+08:00",
+        "lat": 1.300238,
+        "lng": 103.826,
+        "speed_kmh": 36,
+        "accuracy_m": 8.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T18:28:48+08:00",
+        "lat": 1.304,
+        "lng": 103.8318,
+        "speed_kmh": 0,
+        "accuracy_m": 7.5,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": {
+      "available": false,
+      "note": "Rider app location not shared during this trip.",
+      "pings": []
+    },
+    "chat_logs": [
+      {
+        "timestamp": "2026-09-05T18:16:06+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Arrived at Anchorpoint, silver Subaru."
+      },
+      {
+        "timestamp": "2026-09-05T18:17:30+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "I'm at the pickup point."
+      },
+      {
+        "timestamp": "2026-09-05T18:19:00+08:00",
+        "sender": "driver",
+        "type": "call",
+        "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+      }
+    ],
+    "app_events": [
+      {
+        "timestamp": "2026-09-05T18:10:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-5112 booked trip TRIP-PREC-NS-12 from Anchorpoint, Queenstown to ION Orchard (Orchard Turn pickup point). On-demand booking. Estimated pickup 18:16. Pickup pin set by rider."
+      },
+      {
+        "timestamp": "2026-09-05T18:10:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-29108 (Wesley Chan, Subaru XV (SGU 8703 H)) matched. ETA 6 min."
+      },
+      {
+        "timestamp": "2026-09-05T18:10:20+08:00",
+        "event_type": "driver_en_route",
+        "details": "Driver started navigating to pickup location. Live tracking enabled."
+      },
+      {
+        "timestamp": "2026-09-05T18:16:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver tapped 'I'm Here'. Driver GPS 3 m from pickup point at time of tap."
+      },
+      {
+        "timestamp": "2026-09-05T18:16:00+08:00",
+        "event_type": "wait_timer_started",
+        "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 18:19:00."
+      },
+      {
+        "timestamp": "2026-09-05T18:16:05+08:00",
+        "event_type": "rider_notified",
+        "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+      },
+      {
+        "timestamp": "2026-09-05T18:19:00+08:00",
+        "event_type": "wait_timer_threshold_reached",
+        "details": "Wait timer reached 3 min. Rider had not boarded."
+      },
+      {
+        "timestamp": "2026-09-05T18:19:00+08:00",
+        "event_type": "driver_called_rider",
+        "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+      },
+      {
+        "timestamp": "2026-09-05T18:20:48+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-09-05T18:28:48+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at ION Orchard (Orchard Turn pickup point)."
+      },
+      {
+        "timestamp": "2026-09-05T18:28:58+08:00",
+        "event_type": "waiting_fee_applied",
+        "details": "Waiting time fee $5.00 added to fare. Driver tapped 'I'm Here' 4.8 min before the rider boarded."
+      },
+      {
+        "timestamp": "2026-09-05T18:29:08+08:00",
+        "event_type": "payment_captured",
+        "details": "Fare and fees charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-NS-12",
+    "outcome": "charge_upheld",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.91,
+    "rules_cited": [
+      "NS-1",
+      "NS-5",
+      "G-1"
+    ],
+    "precedents_used": [],
+    "reasoning": "Driver at the pin and tapped I'm Here; the rider boarded 4.8 min later. The valid wait was more than 3 min and the rider sent no message, so the S$5.00 waiting fee is valid (NS-5).",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

@@ -1,0 +1,497 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-RD-08",
+      "trip_id": "TRIP-PREC-RD-08",
+      "filed_by": "rider",
+      "dispute_type": "route_deviation",
+      "description": "I entered RIDE5 and was charged without the discount.",
+      "filed_at": "2026-08-28T20:17:26+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10102",
+      "name": "Wong Mei Ling",
+      "account_age_days": 420,
+      "total_trips": 130,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 48,
+      "communication_preferences": {
+        "preferred_language": "Mandarin",
+        "accessibility_needs": null,
+        "channel": "email"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-14101",
+      "name": "Chua Kok Leong",
+      "account_age_days": 900,
+      "total_trips": 3600,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Honda Vezel (SGM 6385 A)",
+      "age_years": 49,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-RD-08",
+      "rider_id": "R-10102",
+      "driver_id": "D-14101",
+      "pickup_location": {
+        "name": "Compass One, Sengkang",
+        "lat": 1.392,
+        "lng": 103.895,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Suntec City (Tower 3 taxi stand)",
+        "lat": 1.295,
+        "lng": 103.858,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-27T17:40:00+08:00",
+      "matched_at": "2026-08-27T17:40:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-08-27T17:46:00+08:00",
+      "driver_wait_start": "2026-08-27T17:46:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-08-27T17:47:00+08:00",
+      "trip_end": "2026-08-27T18:17:26+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 14.78,
+        "duration_min": 29.6,
+        "waypoints": [
+          {
+            "lat": 1.392,
+            "lng": 103.895
+          },
+          {
+            "lat": 1.35828,
+            "lng": 103.83774
+          },
+          {
+            "lat": 1.295,
+            "lng": 103.858
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 14.78,
+        "distance_charge": 9.61,
+        "duration_min": 29.6,
+        "time_charge": 6.51,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 5.0,
+        "total": 14.72
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 15.22,
+      "distance_charge": 9.89,
+      "duration_min": 30.4,
+      "time_charge": 6.69,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 20.18,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-27T17:47:00+08:00",
+        "lat": 1.391953,
+        "lng": 103.895002,
+        "speed_kmh": 35,
+        "accuracy_m": 5.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:48:00+08:00",
+        "lat": 1.389884,
+        "lng": 103.891106,
+        "speed_kmh": 29,
+        "accuracy_m": 8.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:49:00+08:00",
+        "lat": 1.387712,
+        "lng": 103.887046,
+        "speed_kmh": 23,
+        "accuracy_m": 6.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:50:00+08:00",
+        "lat": 1.385573,
+        "lng": 103.883116,
+        "speed_kmh": 33,
+        "accuracy_m": 5.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:51:00+08:00",
+        "lat": 1.383417,
+        "lng": 103.879228,
+        "speed_kmh": 33,
+        "accuracy_m": 8.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:52:00+08:00",
+        "lat": 1.381265,
+        "lng": 103.875281,
+        "speed_kmh": 25,
+        "accuracy_m": 7.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:53:00+08:00",
+        "lat": 1.379085,
+        "lng": 103.871292,
+        "speed_kmh": 23,
+        "accuracy_m": 4.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:54:00+08:00",
+        "lat": 1.377002,
+        "lng": 103.867321,
+        "speed_kmh": 28,
+        "accuracy_m": 4.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:55:00+08:00",
+        "lat": 1.374857,
+        "lng": 103.86337,
+        "speed_kmh": 32,
+        "accuracy_m": 5.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:56:00+08:00",
+        "lat": 1.372737,
+        "lng": 103.859379,
+        "speed_kmh": 29,
+        "accuracy_m": 7.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:57:00+08:00",
+        "lat": 1.370525,
+        "lng": 103.855495,
+        "speed_kmh": 34,
+        "accuracy_m": 8.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:58:00+08:00",
+        "lat": 1.368392,
+        "lng": 103.851496,
+        "speed_kmh": 34,
+        "accuracy_m": 8.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T17:59:00+08:00",
+        "lat": 1.366312,
+        "lng": 103.847568,
+        "speed_kmh": 34,
+        "accuracy_m": 8.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:00:00+08:00",
+        "lat": 1.364144,
+        "lng": 103.843572,
+        "speed_kmh": 32,
+        "accuracy_m": 8.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:01:00+08:00",
+        "lat": 1.361992,
+        "lng": 103.839662,
+        "speed_kmh": 30,
+        "accuracy_m": 4.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:02:00+08:00",
+        "lat": 1.359791,
+        "lng": 103.835694,
+        "speed_kmh": 33,
+        "accuracy_m": 7.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:03:00+08:00",
+        "lat": 1.356096,
+        "lng": 103.835995,
+        "speed_kmh": 28,
+        "accuracy_m": 7.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:04:00+08:00",
+        "lat": 1.351861,
+        "lng": 103.837542,
+        "speed_kmh": 26,
+        "accuracy_m": 6.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:05:00+08:00",
+        "lat": 1.347662,
+        "lng": 103.839115,
+        "speed_kmh": 26,
+        "accuracy_m": 6.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:06:00+08:00",
+        "lat": 1.343406,
+        "lng": 103.840624,
+        "speed_kmh": 23,
+        "accuracy_m": 8.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:07:00+08:00",
+        "lat": 1.339155,
+        "lng": 103.842152,
+        "speed_kmh": 26,
+        "accuracy_m": 9.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:08:00+08:00",
+        "lat": 1.334896,
+        "lng": 103.843661,
+        "speed_kmh": 27,
+        "accuracy_m": 5.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:09:00+08:00",
+        "lat": 1.330733,
+        "lng": 103.845095,
+        "speed_kmh": 28,
+        "accuracy_m": 4.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:10:00+08:00",
+        "lat": 1.326452,
+        "lng": 103.846629,
+        "speed_kmh": 30,
+        "accuracy_m": 9.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:11:00+08:00",
+        "lat": 1.322261,
+        "lng": 103.848221,
+        "speed_kmh": 27,
+        "accuracy_m": 4.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:12:00+08:00",
+        "lat": 1.318009,
+        "lng": 103.849777,
+        "speed_kmh": 24,
+        "accuracy_m": 5.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:13:00+08:00",
+        "lat": 1.313828,
+        "lng": 103.851271,
+        "speed_kmh": 23,
+        "accuracy_m": 9.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:14:00+08:00",
+        "lat": 1.30955,
+        "lng": 103.852765,
+        "speed_kmh": 29,
+        "accuracy_m": 6.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:15:00+08:00",
+        "lat": 1.305326,
+        "lng": 103.8543,
+        "speed_kmh": 29,
+        "accuracy_m": 9.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:16:00+08:00",
+        "lat": 1.30112,
+        "lng": 103.855861,
+        "speed_kmh": 25,
+        "accuracy_m": 8.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:17:00+08:00",
+        "lat": 1.296833,
+        "lng": 103.857295,
+        "speed_kmh": 35,
+        "accuracy_m": 8.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-27T18:17:26+08:00",
+        "lat": 1.295,
+        "lng": 103.858,
+        "speed_kmh": 0,
+        "accuracy_m": 7.3,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-08-27T17:40:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10102 booked trip TRIP-PREC-RD-08 from Compass One, Sengkang to Suntec City (Tower 3 taxi stand). Upfront estimate $14.72 for planned route 14.8 km / 30 min. Surge x1.0. Promo code RIDE5 validated (-$5.00)."
+      },
+      {
+        "timestamp": "2026-08-27T17:40:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-14101 (Chua Kok Leong, Honda Vezel (SGM 6385 A)) assigned."
+      },
+      {
+        "timestamp": "2026-08-27T17:46:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 8 m of pickup point."
+      },
+      {
+        "timestamp": "2026-08-27T17:47:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-08-27T18:17:26+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Suntec City (Tower 3 taxi stand). Meter distance 15.22 km, duration 30.4 min."
+      },
+      {
+        "timestamp": "2026-08-27T18:17:46+08:00",
+        "event_type": "payment_captured",
+        "details": "$20.18 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": {
+      "source": "LTA traffic incident feed (mock)",
+      "query_window": [
+        "2026-08-27T17:47:00+08:00",
+        "2026-08-27T18:17:26+08:00"
+      ],
+      "incidents": []
+    },
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-RD-08",
+    "outcome": "partial_refund",
+    "refund_amount": 5.0,
+    "payer": "ryde",
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.94,
+    "rules_cited": [
+      "RD-7",
+      "G-6"
+    ],
+    "precedents_used": [],
+    "reasoning": "Promo RIDE5 (-$5.00) was validated at booking and not applied at charge. Refund the promo, Ryde pays (RD-7). No driver fault.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

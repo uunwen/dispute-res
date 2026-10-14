@@ -1,0 +1,265 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-NS-09",
+      "trip_id": "TRIP-PREC-NS-09",
+      "filed_by": "driver",
+      "dispute_type": "no_show_charge",
+      "description": "The rider didn't show up. I waited and cancelled but picked the wrong reason, so I didn't get the no-show fee. Please add it.",
+      "filed_at": "2026-08-30T12:16:00+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10109",
+      "name": "Amir Hakim",
+      "account_age_days": 420,
+      "total_trips": 66,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 31,
+      "communication_preferences": {
+        "preferred_language": "Malay",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-14102",
+      "name": "Ismail Yusof",
+      "account_age_days": 900,
+      "total_trips": 4300,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Toyota Sienta (SGN 7548 B)",
+      "age_years": 53,
+      "communication_preferences": {
+        "preferred_language": "Malay",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-NS-09",
+      "rider_id": "R-10109",
+      "driver_id": "D-14102",
+      "pickup_location": {
+        "name": "Jurong Point",
+        "lat": 1.3397,
+        "lng": 103.7067,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Northpoint City, Yishun",
+        "lat": 1.4295,
+        "lng": 103.836,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-30T09:05:00+08:00",
+      "matched_at": "2026-08-30T09:05:15+08:00",
+      "scheduled_time": "2026-08-30T09:12:00+08:00",
+      "eta_at_assignment_min": 7,
+      "driver_arrival_time": "2026-08-30T09:12:00+08:00",
+      "driver_wait_start": "2026-08-30T09:12:00+08:00",
+      "cancellation_time": "2026-08-30T09:14:00+08:00",
+      "cancelled_by": "driver",
+      "cancellation_reason": "other",
+      "cancellation_fee": 0.0,
+      "waiting_fee": 0.0,
+      "payment_status": "n/a",
+      "trip_start": null,
+      "trip_end": null,
+      "trip_completed": false,
+      "planned_route": null,
+      "upfront_estimate": null,
+      "damage_claim": null
+    },
+    "cancellation_policy": {
+      "free_wait_time_min": 3,
+      "cancellation_fee_after_wait": 6.61,
+      "no_show_threshold_min": 3,
+      "fee_goes_to": "driver_compensation",
+      "driver_compensation": 4.5,
+      "waiting_fee": 5.0,
+      "driver_waiting_fee": 4.5,
+      "advance_free_before_min": 15
+    },
+    "fare_breakdown": null,
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-30T09:06:00+08:00",
+        "lat": 1.337326,
+        "lng": 103.69435,
+        "speed_kmh": 17,
+        "accuracy_m": 6.9,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-30T09:09:00+08:00",
+        "lat": 1.338734,
+        "lng": 103.701407,
+        "speed_kmh": 14,
+        "accuracy_m": 10.3,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-30T09:11:00+08:00",
+        "lat": 1.339526,
+        "lng": 103.705377,
+        "speed_kmh": 9,
+        "accuracy_m": 5.2,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-30T09:12:00+08:00",
+        "lat": 1.339789,
+        "lng": 103.706697,
+        "speed_kmh": 0,
+        "accuracy_m": 5.3,
+        "status": "arrived",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-30T09:13:00+08:00",
+        "lat": 1.339785,
+        "lng": 103.706709,
+        "speed_kmh": 0,
+        "accuracy_m": 4.2,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-30T09:14:00+08:00",
+        "lat": 1.33982,
+        "lng": 103.706703,
+        "speed_kmh": 0,
+        "accuracy_m": 7.0,
+        "status": "cancelled",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": {
+      "available": false,
+      "note": "Rider app location not shared during this trip.",
+      "pings": []
+    },
+    "chat_logs": [
+      {
+        "timestamp": "2026-08-30T09:12:12+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Arrived at Jurong Point."
+      },
+      {
+        "timestamp": "2026-08-30T09:13:00+08:00",
+        "sender": "driver",
+        "type": "call",
+        "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+      },
+      {
+        "timestamp": "2026-08-30T09:13:48+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Cancelling."
+      },
+      {
+        "timestamp": "2026-08-30T09:14:00+08:00",
+        "sender": "system",
+        "type": "system",
+        "content": "Trip cancelled by driver. Reason: other. No cancellation fee applied."
+      }
+    ],
+    "app_events": [
+      {
+        "timestamp": "2026-08-30T09:05:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10109 booked trip TRIP-PREC-NS-09 from Jurong Point to Northpoint City, Yishun. On-demand booking. Estimated pickup 09:12. Pickup pin set by rider."
+      },
+      {
+        "timestamp": "2026-08-30T09:05:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-14102 (Ismail Yusof, Toyota Sienta (SGN 7548 B)) matched. ETA 7 min."
+      },
+      {
+        "timestamp": "2026-08-30T09:05:20+08:00",
+        "event_type": "driver_en_route",
+        "details": "Driver started navigating to pickup location. Live tracking enabled."
+      },
+      {
+        "timestamp": "2026-08-30T09:12:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver tapped 'I'm Here'. Driver GPS 10 m from pickup point at time of tap."
+      },
+      {
+        "timestamp": "2026-08-30T09:12:00+08:00",
+        "event_type": "wait_timer_started",
+        "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 09:15:00."
+      },
+      {
+        "timestamp": "2026-08-30T09:12:05+08:00",
+        "event_type": "rider_notified",
+        "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+      },
+      {
+        "timestamp": "2026-08-30T09:13:00+08:00",
+        "event_type": "driver_called_rider",
+        "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+      },
+      {
+        "timestamp": "2026-08-30T09:14:00+08:00",
+        "event_type": "trip_cancelled_by_driver",
+        "details": "Driver cancelled with reason other. No cancellation fee applied."
+      },
+      {
+        "timestamp": "2026-08-30T09:14:05+08:00",
+        "event_type": "driver_released",
+        "details": "Driver D-14102 released from trip. Trip status: cancelled (other)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-NS-09",
+    "outcome": "no_action",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.93,
+    "rules_cited": [
+      "NS-3",
+      "NS-10",
+      "NS-12"
+    ],
+    "precedents_used": [],
+    "reasoning": "Driver cancelled at 2.0 min and is asking for the no-show fee. The fee needs a valid wait of more than 3 min (NS-3), and a driver who cancels early is not entitled to it (NS-10, NS-12).",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

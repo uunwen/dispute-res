@@ -1,0 +1,336 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-RD-16",
+    "trip_id": "TRIP-DISP-T-RD-16",
+    "filed_by": "rider",
+    "dispute_type": "route_deviation",
+    "description": "At booking the app showed a surge of 1.4 but I was charged at 1.8. The route was the normal one.",
+    "filed_at": "2026-10-07T04:15:15+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-14104",
+    "name": "Lim Siew Hong",
+    "account_age_days": 420,
+    "total_trips": 22,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 74,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": "large_text",
+      "channel": "sms"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23206",
+    "name": "Farhan Ismail",
+    "account_age_days": 900,
+    "total_trips": 1900,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Vezel (SGN 6869 C)",
+    "age_years": 36,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-RD-16",
+    "rider_id": "R-14104",
+    "driver_id": "D-23206",
+    "pickup_location": {
+      "name": "Blk 79 Toa Payoh Lor 1 (void deck)",
+      "lat": 1.3343,
+      "lng": 103.8499,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Marina Bay Sands (Hotel Tower 1 lobby)",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-06T08:50:00+08:00",
+    "matched_at": "2026-10-06T08:50:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-06T08:56:00+08:00",
+    "driver_wait_start": "2026-10-06T08:56:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-06T08:57:00+08:00",
+    "trip_end": "2026-10-06T09:12:15+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 7.41,
+      "duration_min": 14.8,
+      "waypoints": [
+        {
+          "lat": 1.3343,
+          "lng": 103.8499
+        },
+        {
+          "lat": 1.30454,
+          "lng": 103.83496
+        },
+        {
+          "lat": 1.2834,
+          "lng": 103.8607
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 7.41,
+      "distance_charge": 4.82,
+      "duration_min": 14.8,
+      "time_charge": 3.26,
+      "surge_multiplier": 1.4,
+      "surge_amount": 4.43,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 16.11
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 7.63,
+    "distance_charge": 4.96,
+    "duration_min": 15.3,
+    "time_charge": 3.37,
+    "surge_multiplier": 1.8,
+    "surge_amount": 9.06,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 20.99,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-06T08:57:00+08:00",
+      "lat": 1.334307,
+      "lng": 103.849894,
+      "speed_kmh": 27,
+      "accuracy_m": 5.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T08:58:00+08:00",
+      "lat": 1.330372,
+      "lng": 103.847765,
+      "speed_kmh": 34,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T08:59:00+08:00",
+      "lat": 1.326377,
+      "lng": 103.845575,
+      "speed_kmh": 23,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:00:00+08:00",
+      "lat": 1.322425,
+      "lng": 103.843384,
+      "speed_kmh": 29,
+      "accuracy_m": 6.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:01:00+08:00",
+      "lat": 1.318555,
+      "lng": 103.841211,
+      "speed_kmh": 35,
+      "accuracy_m": 9.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:02:00+08:00",
+      "lat": 1.314515,
+      "lng": 103.839083,
+      "speed_kmh": 27,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:03:00+08:00",
+      "lat": 1.310573,
+      "lng": 103.836972,
+      "speed_kmh": 23,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:04:00+08:00",
+      "lat": 1.306666,
+      "lng": 103.834815,
+      "speed_kmh": 25,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:05:00+08:00",
+      "lat": 1.303233,
+      "lng": 103.834747,
+      "speed_kmh": 23,
+      "accuracy_m": 4.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:06:00+08:00",
+      "lat": 1.300439,
+      "lng": 103.838359,
+      "speed_kmh": 30,
+      "accuracy_m": 4.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:07:00+08:00",
+      "lat": 1.297697,
+      "lng": 103.841967,
+      "speed_kmh": 30,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:08:00+08:00",
+      "lat": 1.294973,
+      "lng": 103.845475,
+      "speed_kmh": 29,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:09:00+08:00",
+      "lat": 1.292293,
+      "lng": 103.849126,
+      "speed_kmh": 36,
+      "accuracy_m": 4.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:10:00+08:00",
+      "lat": 1.289569,
+      "lng": 103.852638,
+      "speed_kmh": 29,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:11:00+08:00",
+      "lat": 1.286853,
+      "lng": 103.856228,
+      "speed_kmh": 32,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:12:00+08:00",
+      "lat": 1.284053,
+      "lng": 103.859834,
+      "speed_kmh": 34,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T09:12:15+08:00",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "speed_kmh": 0,
+      "accuracy_m": 9.2,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-06T08:50:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-14104 booked trip TRIP-DISP-T-RD-16 from Blk 79 Toa Payoh Lor 1 (void deck) to Marina Bay Sands (Hotel Tower 1 lobby). Upfront estimate $16.11 for planned route 7.4 km / 15 min. Surge x1.4."
+    },
+    {
+      "timestamp": "2026-10-06T08:50:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23206 (Farhan Ismail, Honda Vezel (SGN 6869 C)) assigned."
+    },
+    {
+      "timestamp": "2026-10-06T08:56:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 8 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-06T08:57:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-06T09:12:15+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Marina Bay Sands (Hotel Tower 1 lobby). Meter distance 7.63 km, duration 15.3 min."
+    },
+    {
+      "timestamp": "2026-10-06T09:12:35+08:00",
+      "event_type": "payment_captured",
+      "details": "$20.99 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": {
+    "source": "LTA traffic incident feed (mock)",
+    "query_window": [
+      "2026-10-06T08:57:00+08:00",
+      "2026-10-06T09:12:15+08:00"
+    ],
+    "incidents": []
+  },
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

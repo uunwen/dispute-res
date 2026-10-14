@@ -1,0 +1,497 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-RD-10",
+      "trip_id": "TRIP-PREC-RD-10",
+      "filed_by": "rider",
+      "dispute_type": "route_deviation",
+      "description": "I think I was overcharged.",
+      "filed_at": "2026-09-04T08:25:06+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10103",
+      "name": "Kavitha Raman",
+      "account_age_days": 420,
+      "total_trips": 58,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 32,
+      "communication_preferences": {
+        "preferred_language": "Tamil",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-24108",
+      "name": "Wesley Chan",
+      "account_age_days": 900,
+      "total_trips": 3100,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Subaru XV (SGU 7332 H)",
+      "age_years": 43,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-RD-10",
+      "rider_id": "R-10103",
+      "driver_id": "D-24108",
+      "pickup_location": {
+        "name": "White Sands, Pasir Ris",
+        "lat": 1.3727,
+        "lng": 103.9493,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Suntec City (Tower 3 taxi stand)",
+        "lat": 1.295,
+        "lng": 103.858,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-09-03T21:35:00+08:00",
+      "matched_at": "2026-09-03T21:35:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-09-03T21:41:00+08:00",
+      "driver_wait_start": "2026-09-03T21:41:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-09-03T21:42:00+08:00",
+      "trip_end": "2026-09-03T22:12:06+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 17.06,
+        "duration_min": 30.1,
+        "waypoints": [
+          {
+            "lat": 1.3727,
+            "lng": 103.9493
+          },
+          {
+            "lat": 1.37032,
+            "lng": 103.8726
+          },
+          {
+            "lat": 1.295,
+            "lng": 103.858
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 17.06,
+        "distance_charge": 11.09,
+        "duration_min": 30.1,
+        "time_charge": 6.62,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 21.31
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 17.06,
+      "distance_charge": 11.09,
+      "duration_min": 30.1,
+      "time_charge": 6.62,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 21.31,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-09-03T21:42:00+08:00",
+        "lat": 1.372725,
+        "lng": 103.949237,
+        "speed_kmh": 31,
+        "accuracy_m": 6.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:43:00+08:00",
+        "lat": 1.372586,
+        "lng": 103.944198,
+        "speed_kmh": 30,
+        "accuracy_m": 4.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:44:00+08:00",
+        "lat": 1.372434,
+        "lng": 103.939152,
+        "speed_kmh": 41,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:45:00+08:00",
+        "lat": 1.372214,
+        "lng": 103.934029,
+        "speed_kmh": 26,
+        "accuracy_m": 9.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:46:00+08:00",
+        "lat": 1.372128,
+        "lng": 103.928889,
+        "speed_kmh": 38,
+        "accuracy_m": 9.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:47:00+08:00",
+        "lat": 1.371896,
+        "lng": 103.923854,
+        "speed_kmh": 31,
+        "accuracy_m": 9.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:48:00+08:00",
+        "lat": 1.37175,
+        "lng": 103.918729,
+        "speed_kmh": 29,
+        "accuracy_m": 6.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:49:00+08:00",
+        "lat": 1.371663,
+        "lng": 103.913633,
+        "speed_kmh": 34,
+        "accuracy_m": 7.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:50:00+08:00",
+        "lat": 1.371478,
+        "lng": 103.908547,
+        "speed_kmh": 30,
+        "accuracy_m": 6.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:51:00+08:00",
+        "lat": 1.371307,
+        "lng": 103.90347,
+        "speed_kmh": 40,
+        "accuracy_m": 4.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:52:00+08:00",
+        "lat": 1.37112,
+        "lng": 103.898351,
+        "speed_kmh": 26,
+        "accuracy_m": 4.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:53:00+08:00",
+        "lat": 1.370936,
+        "lng": 103.893251,
+        "speed_kmh": 28,
+        "accuracy_m": 6.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:54:00+08:00",
+        "lat": 1.370815,
+        "lng": 103.888192,
+        "speed_kmh": 28,
+        "accuracy_m": 4.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:55:00+08:00",
+        "lat": 1.370643,
+        "lng": 103.883046,
+        "speed_kmh": 34,
+        "accuracy_m": 7.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:56:00+08:00",
+        "lat": 1.370525,
+        "lng": 103.877915,
+        "speed_kmh": 37,
+        "accuracy_m": 4.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:57:00+08:00",
+        "lat": 1.37034,
+        "lng": 103.872907,
+        "speed_kmh": 39,
+        "accuracy_m": 9.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:58:00+08:00",
+        "lat": 1.365557,
+        "lng": 103.871747,
+        "speed_kmh": 32,
+        "accuracy_m": 7.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T21:59:00+08:00",
+        "lat": 1.360552,
+        "lng": 103.870695,
+        "speed_kmh": 41,
+        "accuracy_m": 8.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:00:00+08:00",
+        "lat": 1.355567,
+        "lng": 103.869721,
+        "speed_kmh": 40,
+        "accuracy_m": 7.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:01:00+08:00",
+        "lat": 1.350553,
+        "lng": 103.868785,
+        "speed_kmh": 37,
+        "accuracy_m": 8.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:02:00+08:00",
+        "lat": 1.345606,
+        "lng": 103.867847,
+        "speed_kmh": 36,
+        "accuracy_m": 4.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:03:00+08:00",
+        "lat": 1.340562,
+        "lng": 103.866806,
+        "speed_kmh": 39,
+        "accuracy_m": 4.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:04:00+08:00",
+        "lat": 1.335531,
+        "lng": 103.865815,
+        "speed_kmh": 26,
+        "accuracy_m": 8.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:05:00+08:00",
+        "lat": 1.33055,
+        "lng": 103.864898,
+        "speed_kmh": 32,
+        "accuracy_m": 9.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:06:00+08:00",
+        "lat": 1.325553,
+        "lng": 103.863867,
+        "speed_kmh": 28,
+        "accuracy_m": 6.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:07:00+08:00",
+        "lat": 1.320517,
+        "lng": 103.86298,
+        "speed_kmh": 30,
+        "accuracy_m": 7.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:08:00+08:00",
+        "lat": 1.31561,
+        "lng": 103.861988,
+        "speed_kmh": 37,
+        "accuracy_m": 8.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:09:00+08:00",
+        "lat": 1.310513,
+        "lng": 103.861025,
+        "speed_kmh": 37,
+        "accuracy_m": 4.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:10:00+08:00",
+        "lat": 1.305549,
+        "lng": 103.86,
+        "speed_kmh": 33,
+        "accuracy_m": 8.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:11:00+08:00",
+        "lat": 1.300537,
+        "lng": 103.859067,
+        "speed_kmh": 34,
+        "accuracy_m": 4.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:12:00+08:00",
+        "lat": 1.295503,
+        "lng": 103.858071,
+        "speed_kmh": 34,
+        "accuracy_m": 4.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-03T22:12:06+08:00",
+        "lat": 1.295,
+        "lng": 103.858,
+        "speed_kmh": 0,
+        "accuracy_m": 7.4,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-09-03T21:35:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10103 booked trip TRIP-PREC-RD-10 from White Sands, Pasir Ris to Suntec City (Tower 3 taxi stand). Upfront estimate $21.31 for planned route 17.1 km / 30 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-09-03T21:35:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-24108 (Wesley Chan, Subaru XV (SGU 7332 H)) assigned."
+      },
+      {
+        "timestamp": "2026-09-03T21:41:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 8 m of pickup point."
+      },
+      {
+        "timestamp": "2026-09-03T21:42:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-09-03T22:12:06+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Suntec City (Tower 3 taxi stand). Meter distance 17.06 km, duration 30.1 min."
+      },
+      {
+        "timestamp": "2026-09-03T22:12:26+08:00",
+        "event_type": "payment_captured",
+        "details": "$21.31 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": {
+      "source": "LTA traffic incident feed (mock)",
+      "query_window": [
+        "2026-09-03T21:42:00+08:00",
+        "2026-09-03T22:12:06+08:00"
+      ],
+      "incidents": []
+    },
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-RD-10",
+    "outcome": "no_action",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.95,
+    "rules_cited": [
+      "RD-2",
+      "G-1"
+    ],
+    "precedents_used": [],
+    "reasoning": "The route matches the plan exactly and the charge equals the estimate. Nothing in the records supports the complaint.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

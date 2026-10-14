@@ -1,0 +1,313 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-07",
+    "trip_id": "TRIP-DISP-T-NS-07",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "I was at JEM at the time. The driver said he was there too but we couldn't find each other and now I'm charged.",
+    "filed_at": "2026-09-27T18:31:30+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4114",
+    "name": "Chen Jia Hui",
+    "account_age_days": 420,
+    "total_trips": 52,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 26,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13211",
+    "name": "Goh Wen Hao",
+    "account_age_days": 900,
+    "total_trips": 2600,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Skoda Octavia (SGT 6654 F)",
+    "age_years": 41,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-07",
+    "rider_id": "R-4114",
+    "driver_id": "D-13211",
+    "pickup_location": {
+      "name": "JEM, Jurong East",
+      "lat": 1.3333,
+      "lng": 103.743,
+      "multi_entrance_venue": true
+    },
+    "dropoff_location": {
+      "name": "Clementi Mall",
+      "lat": 1.315,
+      "lng": 103.765,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-27T14:05:00+08:00",
+    "matched_at": "2026-09-27T14:05:15+08:00",
+    "scheduled_time": "2026-09-27T14:11:00+08:00",
+    "eta_at_assignment_min": 6,
+    "driver_arrival_time": "2026-09-27T14:11:00+08:00",
+    "driver_wait_start": "2026-09-27T14:11:00+08:00",
+    "cancellation_time": "2026-09-27T14:16:30+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-27T14:08:00+08:00",
+      "lat": 1.33068,
+      "lng": 103.747667,
+      "speed_kmh": 14,
+      "accuracy_m": 8.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T14:10:00+08:00",
+      "lat": 1.332712,
+      "lng": 103.744167,
+      "speed_kmh": 9,
+      "accuracy_m": 8.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T14:11:00+08:00",
+      "lat": 1.333372,
+      "lng": 103.742984,
+      "speed_kmh": 0,
+      "accuracy_m": 7.2,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T14:12:00+08:00",
+      "lat": 1.333391,
+      "lng": 103.743,
+      "speed_kmh": 0,
+      "accuracy_m": 6.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T14:13:00+08:00",
+      "lat": 1.333375,
+      "lng": 103.743002,
+      "speed_kmh": 0,
+      "accuracy_m": 5.9,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T14:14:00+08:00",
+      "lat": 1.333409,
+      "lng": 103.743005,
+      "speed_kmh": 0,
+      "accuracy_m": 8.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T14:15:00+08:00",
+      "lat": 1.333388,
+      "lng": 103.742979,
+      "speed_kmh": 0,
+      "accuracy_m": 6.5,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T14:16:00+08:00",
+      "lat": 1.333389,
+      "lng": 103.742998,
+      "speed_kmh": 0,
+      "accuracy_m": 6.5,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T14:16:30+08:00",
+      "lat": 1.333392,
+      "lng": 103.742971,
+      "speed_kmh": 0,
+      "accuracy_m": 4.4,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-09-27T14:11:00+08:00",
+        "lat": 1.331792,
+        "lng": 103.743017,
+        "accuracy_m": 10.3
+      },
+      {
+        "timestamp": "2026-09-27T14:13:00+08:00",
+        "lat": 1.331775,
+        "lng": 103.742974,
+        "accuracy_m": 11.5
+      },
+      {
+        "timestamp": "2026-09-27T14:15:00+08:00",
+        "lat": 1.331779,
+        "lng": 103.742981,
+        "accuracy_m": 13.3
+      },
+      {
+        "timestamp": "2026-09-27T14:16:30+08:00",
+        "lat": 1.331762,
+        "lng": 103.743011,
+        "accuracy_m": 13.2
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-27T14:11:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at JEM pickup point."
+    },
+    {
+      "timestamp": "2026-09-27T14:12:30+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: rang 20s, answered then dropped."
+    },
+    {
+      "timestamp": "2026-09-27T14:13:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "I'm at JEM, where are you?"
+    },
+    {
+      "timestamp": "2026-09-27T14:13:24+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I'm at the pickup point. Please come."
+    },
+    {
+      "timestamp": "2026-09-27T14:15:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Still here, can't find you."
+    },
+    {
+      "timestamp": "2026-09-27T14:16:18+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I have to cancel."
+    },
+    {
+      "timestamp": "2026-09-27T14:16:30+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-27T14:05:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4114 booked trip TRIP-DISP-T-NS-07 from JEM, Jurong East to Clementi Mall. On-demand booking. Estimated pickup 14:11. Pickup pin set by rider. Pickup pin is at a venue flagged as having multiple entrances."
+    },
+    {
+      "timestamp": "2026-09-27T14:05:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13211 (Goh Wen Hao, Skoda Octavia (SGT 6654 F)) matched. ETA 6 min."
+    },
+    {
+      "timestamp": "2026-09-27T14:05:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-27T14:11:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 8 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-09-27T14:11:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 14:14:00."
+    },
+    {
+      "timestamp": "2026-09-27T14:11:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-09-27T14:12:30+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: rang 20s, answered then dropped."
+    },
+    {
+      "timestamp": "2026-09-27T14:14:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-09-27T14:16:30+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 5.5 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-09-27T14:16:35+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-13211 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

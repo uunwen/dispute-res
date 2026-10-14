@@ -1,0 +1,270 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-43",
+    "trip_id": "TRIP-DISP-T-NS-43",
+    "filed_by": "driver",
+    "dispute_type": "no_show_charge",
+    "description": "Rider never came down. I waited more than 5 minutes, messaged and called. I picked the wrong cancel reason so the app gave me nothing.",
+    "filed_at": "2026-10-05T21:59:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9130",
+    "name": "Terry Lau",
+    "account_age_days": 420,
+    "total_trips": 61,
+    "avg_rating": 3.8,
+    "dispute_history": {
+      "total_disputes": 9,
+      "upheld": 1,
+      "rejected": 8
+    },
+    "fraud_flags": 2,
+    "fraud_flag_details": "repeat_disputes_and_late_cancellations",
+    "payment_method": "e-wallet",
+    "age_years": 35,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23212",
+    "name": "Devendran Raj",
+    "account_age_days": 900,
+    "total_trips": 3900,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Alphard (SGK 4548 G)",
+    "age_years": 50,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-43",
+    "rider_id": "R-9130",
+    "driver_id": "D-23212",
+    "pickup_location": {
+      "name": "Clementi Mall",
+      "lat": 1.315,
+      "lng": 103.765,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-05T19:40:00+08:00",
+    "matched_at": "2026-10-05T19:40:15+08:00",
+    "scheduled_time": "2026-10-05T19:46:00+08:00",
+    "eta_at_assignment_min": 6,
+    "driver_arrival_time": "2026-10-05T19:46:00+08:00",
+    "driver_wait_start": "2026-10-05T19:46:00+08:00",
+    "cancellation_time": "2026-10-05T19:51:12+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "other",
+    "cancellation_fee": 0.0,
+    "waiting_fee": 0.0,
+    "payment_status": "n/a",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-05T19:43:00+08:00",
+      "lat": 1.317044,
+      "lng": 103.759973,
+      "speed_kmh": 14,
+      "accuracy_m": 7.6,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T19:45:00+08:00",
+      "lat": 1.315572,
+      "lng": 103.763743,
+      "speed_kmh": 9,
+      "accuracy_m": 9.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T19:46:00+08:00",
+      "lat": 1.315109,
+      "lng": 103.765016,
+      "speed_kmh": 0,
+      "accuracy_m": 8.9,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T19:47:00+08:00",
+      "lat": 1.31509,
+      "lng": 103.765006,
+      "speed_kmh": 0,
+      "accuracy_m": 8.5,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T19:48:00+08:00",
+      "lat": 1.315091,
+      "lng": 103.765002,
+      "speed_kmh": 0,
+      "accuracy_m": 5.6,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T19:49:00+08:00",
+      "lat": 1.315073,
+      "lng": 103.76499,
+      "speed_kmh": 0,
+      "accuracy_m": 7.6,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T19:50:00+08:00",
+      "lat": 1.315092,
+      "lng": 103.764994,
+      "speed_kmh": 0,
+      "accuracy_m": 8.3,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T19:51:00+08:00",
+      "lat": 1.315077,
+      "lng": 103.764977,
+      "speed_kmh": 0,
+      "accuracy_m": 4.3,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T19:51:12+08:00",
+      "lat": 1.315093,
+      "lng": 103.765005,
+      "speed_kmh": 0,
+      "accuracy_m": 4.7,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-05T19:46:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Hi, I'm at the Clementi Mall pickup point."
+    },
+    {
+      "timestamp": "2026-10-05T19:47:36+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-05T19:49:24+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Still waiting at the pickup point."
+    },
+    {
+      "timestamp": "2026-10-05T19:51:12+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: other. No cancellation fee applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-05T19:40:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9130 booked trip TRIP-DISP-T-NS-43 from Clementi Mall to ION Orchard (Orchard Turn pickup point). On-demand booking. Estimated pickup 19:46. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-05T19:40:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23212 (Devendran Raj, Toyota Alphard (SGK 4548 G)) matched. ETA 6 min."
+    },
+    {
+      "timestamp": "2026-10-05T19:40:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-05T19:46:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 12 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-10-05T19:46:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 19:49:00."
+    },
+    {
+      "timestamp": "2026-10-05T19:46:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-10-05T19:47:36+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-05T19:49:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-10-05T19:51:12+08:00",
+      "event_type": "trip_cancelled_by_driver",
+      "details": "Driver cancelled with reason other. No cancellation fee applied."
+    },
+    {
+      "timestamp": "2026-10-05T19:51:17+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-23212 released from trip. Trip status: cancelled (other)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

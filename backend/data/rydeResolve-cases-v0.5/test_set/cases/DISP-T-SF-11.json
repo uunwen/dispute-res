@@ -1,0 +1,300 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-SF-11",
+    "trip_id": "TRIP-DISP-T-SF-11",
+    "filed_by": "rider",
+    "dispute_type": "safety_incident",
+    "description": "司机在聊天里骂我笨蛋，还叫我闭嘴，只因为我迟到了两分钟。",
+    "filed_at": "2026-10-04T21:42:42+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9159",
+    "name": "Zhou Yan",
+    "account_age_days": 420,
+    "total_trips": 37,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 25,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-18233",
+    "name": "Tan Jun Hao",
+    "account_age_days": 900,
+    "total_trips": 1400,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Corolla (SKD 1772 E)",
+    "age_years": 33,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-SF-11",
+    "rider_id": "R-9159",
+    "driver_id": "D-18233",
+    "pickup_location": {
+      "name": "Bugis Junction (Victoria St taxi stand)",
+      "lat": 1.29935,
+      "lng": 103.8548,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Holland Village (Lorong Liput)",
+      "lat": 1.311,
+      "lng": 103.796,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-04T18:20:00+08:00",
+    "matched_at": "2026-10-04T18:20:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-04T18:22:00+08:00",
+    "driver_wait_start": "2026-10-04T18:22:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-04T18:26:00+08:00",
+    "trip_end": "2026-10-04T18:35:42+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 8.53,
+      "duration_min": 13.5,
+      "waypoints": [
+        {
+          "lat": 1.29935,
+          "lng": 103.8548
+        },
+        {
+          "lat": 1.32866,
+          "lng": 103.83006
+        },
+        {
+          "lat": 1.311,
+          "lng": 103.796
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 8.53,
+      "distance_charge": 5.54,
+      "duration_min": 13.5,
+      "time_charge": 2.97,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 12.11
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 8.53,
+    "distance_charge": 5.54,
+    "duration_min": 9.7,
+    "time_charge": 2.13,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 11.27,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-04T18:26:00+08:00",
+      "lat": 1.299353,
+      "lng": 103.854795,
+      "speed_kmh": 31,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-04T18:27:00+08:00",
+      "lat": 1.302887,
+      "lng": 103.851827,
+      "speed_kmh": 35,
+      "accuracy_m": 7.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-04T18:28:00+08:00",
+      "lat": 1.306912,
+      "lng": 103.848433,
+      "speed_kmh": 29,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-04T18:29:00+08:00",
+      "lat": 1.310226,
+      "lng": 103.845624,
+      "speed_kmh": 67,
+      "accuracy_m": 6.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-04T18:30:00+08:00",
+      "lat": 1.317943,
+      "lng": 103.839116,
+      "speed_kmh": 65,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-04T18:31:00+08:00",
+      "lat": 1.325352,
+      "lng": 103.832849,
+      "speed_kmh": 63,
+      "accuracy_m": 10.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-04T18:32:00+08:00",
+      "lat": 1.326294,
+      "lng": 103.82551,
+      "speed_kmh": 64,
+      "accuracy_m": 10.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-04T18:33:00+08:00",
+      "lat": 1.321875,
+      "lng": 103.816988,
+      "speed_kmh": 69,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-04T18:34:00+08:00",
+      "lat": 1.317176,
+      "lng": 103.807821,
+      "speed_kmh": 67,
+      "accuracy_m": 8.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-04T18:35:00+08:00",
+      "lat": 1.312472,
+      "lng": 103.79891,
+      "speed_kmh": 33,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-04T18:35:42+08:00",
+      "lat": 1.311,
+      "lng": 103.796,
+      "speed_kmh": 0,
+      "accuracy_m": 5.4,
+      "status": "completed",
+      "speed_limit_kmh": 50
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-04T18:23:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "你好，我马上下来，两分钟！"
+    },
+    {
+      "timestamp": "2026-10-04T18:24:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "快点啦，笨蛋。我没有整天等你。"
+    },
+    {
+      "timestamp": "2026-10-04T18:24:30+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "请不要这样跟我说话。"
+    },
+    {
+      "timestamp": "2026-10-04T18:25:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "闭嘴，快点下来。"
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-04T18:20:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9159 booked trip TRIP-DISP-T-SF-11 from Bugis Junction (Victoria St taxi stand) to Holland Village (Lorong Liput). Upfront estimate $12.11 for planned route 8.5 km / 13 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-04T18:20:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-18233 (Tan Jun Hao, Toyota Corolla (SKD 1772 E)) assigned."
+    },
+    {
+      "timestamp": "2026-10-04T18:22:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-04T18:26:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-04T18:35:42+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Holland Village (Lorong Liput). Meter distance 8.53 km, duration 9.7 min."
+    },
+    {
+      "timestamp": "2026-10-04T18:36:02+08:00",
+      "event_type": "payment_captured",
+      "details": "$11.27 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

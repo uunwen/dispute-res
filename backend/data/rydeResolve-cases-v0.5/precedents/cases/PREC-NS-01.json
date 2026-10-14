@@ -1,0 +1,304 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-NS-01",
+      "trip_id": "TRIP-PREC-NS-01",
+      "filed_by": "rider",
+      "dispute_type": "no_show_charge",
+      "description": "I came down on time and the car wasn't there. I want the charge removed.",
+      "filed_at": "2026-08-12T17:58:48+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10110",
+      "name": "Devi Chandran",
+      "account_age_days": 420,
+      "total_trips": 70,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 55,
+      "communication_preferences": {
+        "preferred_language": "Tamil",
+        "accessibility_needs": null,
+        "channel": "sms"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-9101",
+      "name": "Chua Kok Leong",
+      "account_age_days": 900,
+      "total_trips": 3600,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Honda Vezel (SGM 7002 A)",
+      "age_years": 49,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-NS-01",
+      "rider_id": "R-10110",
+      "driver_id": "D-9101",
+      "pickup_location": {
+        "name": "Bedok Mall (Bedok Central drop-off)",
+        "lat": 1.3243,
+        "lng": 103.93,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Marina Bay Sands (Hotel Tower 1 lobby)",
+        "lat": 1.2834,
+        "lng": 103.8607,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-12T08:10:00+08:00",
+      "matched_at": "2026-08-12T08:10:15+08:00",
+      "scheduled_time": "2026-08-12T08:18:00+08:00",
+      "eta_at_assignment_min": 8,
+      "driver_arrival_time": "2026-08-12T08:18:00+08:00",
+      "driver_wait_start": "2026-08-12T08:18:00+08:00",
+      "cancellation_time": "2026-08-12T08:22:48+08:00",
+      "cancelled_by": "driver",
+      "cancellation_reason": "rider_no_show",
+      "cancellation_fee": 6.61,
+      "waiting_fee": 0.0,
+      "payment_status": "captured",
+      "trip_start": null,
+      "trip_end": null,
+      "trip_completed": false,
+      "planned_route": null,
+      "upfront_estimate": null,
+      "damage_claim": null
+    },
+    "cancellation_policy": {
+      "free_wait_time_min": 3,
+      "cancellation_fee_after_wait": 6.61,
+      "no_show_threshold_min": 3,
+      "fee_goes_to": "driver_compensation",
+      "driver_compensation": 4.5,
+      "waiting_fee": 5.0,
+      "driver_waiting_fee": 4.5,
+      "advance_free_before_min": 15
+    },
+    "fare_breakdown": null,
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-12T08:12:00+08:00",
+        "lat": 1.32117,
+        "lng": 103.942184,
+        "speed_kmh": 17,
+        "accuracy_m": 8.2,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-12T08:15:00+08:00",
+        "lat": 1.322989,
+        "lng": 103.935222,
+        "speed_kmh": 14,
+        "accuracy_m": 10.1,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-12T08:17:00+08:00",
+        "lat": 1.324013,
+        "lng": 103.931305,
+        "speed_kmh": 9,
+        "accuracy_m": 6.8,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-12T08:18:00+08:00",
+        "lat": 1.324355,
+        "lng": 103.929993,
+        "speed_kmh": 0,
+        "accuracy_m": 7.7,
+        "status": "arrived",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-12T08:19:00+08:00",
+        "lat": 1.324369,
+        "lng": 103.929986,
+        "speed_kmh": 0,
+        "accuracy_m": 8.6,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-12T08:20:00+08:00",
+        "lat": 1.324369,
+        "lng": 103.929973,
+        "speed_kmh": 0,
+        "accuracy_m": 5.3,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-12T08:21:00+08:00",
+        "lat": 1.32437,
+        "lng": 103.929992,
+        "speed_kmh": 0,
+        "accuracy_m": 7.1,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-12T08:22:00+08:00",
+        "lat": 1.324357,
+        "lng": 103.930026,
+        "speed_kmh": 0,
+        "accuracy_m": 6.2,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-12T08:22:48+08:00",
+        "lat": 1.324368,
+        "lng": 103.930015,
+        "speed_kmh": 0,
+        "accuracy_m": 8.5,
+        "status": "cancelled",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": {
+      "available": false,
+      "note": "Rider app location not shared during this trip.",
+      "pings": []
+    },
+    "chat_logs": [
+      {
+        "timestamp": "2026-08-12T08:18:06+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Arrived at Bedok Mall drop-off, grey Vezel."
+      },
+      {
+        "timestamp": "2026-08-12T08:19:30+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "I'm at the Bedok Central drop-off bay."
+      },
+      {
+        "timestamp": "2026-08-12T08:20:30+08:00",
+        "sender": "driver",
+        "type": "call",
+        "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+      },
+      {
+        "timestamp": "2026-08-12T08:22:00+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Waiting. Please come down."
+      },
+      {
+        "timestamp": "2026-08-12T08:22:48+08:00",
+        "sender": "system",
+        "type": "system",
+        "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+      }
+    ],
+    "app_events": [
+      {
+        "timestamp": "2026-08-12T08:10:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10110 booked trip TRIP-PREC-NS-01 from Bedok Mall (Bedok Central drop-off) to Marina Bay Sands (Hotel Tower 1 lobby). On-demand booking. Estimated pickup 08:18. Pickup pin set by rider."
+      },
+      {
+        "timestamp": "2026-08-12T08:10:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-9101 (Chua Kok Leong, Honda Vezel (SGM 7002 A)) matched. ETA 8 min."
+      },
+      {
+        "timestamp": "2026-08-12T08:10:20+08:00",
+        "event_type": "driver_en_route",
+        "details": "Driver started navigating to pickup location. Live tracking enabled."
+      },
+      {
+        "timestamp": "2026-08-12T08:18:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver tapped 'I'm Here'. Driver GPS 6 m from pickup point at time of tap."
+      },
+      {
+        "timestamp": "2026-08-12T08:18:00+08:00",
+        "event_type": "wait_timer_started",
+        "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 08:21:00."
+      },
+      {
+        "timestamp": "2026-08-12T08:18:05+08:00",
+        "event_type": "rider_notified",
+        "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+      },
+      {
+        "timestamp": "2026-08-12T08:20:30+08:00",
+        "event_type": "driver_called_rider",
+        "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+      },
+      {
+        "timestamp": "2026-08-12T08:21:00+08:00",
+        "event_type": "wait_timer_threshold_reached",
+        "details": "Wait timer reached 3 min. Rider had not boarded."
+      },
+      {
+        "timestamp": "2026-08-12T08:22:48+08:00",
+        "event_type": "cancellation_fee_applied",
+        "details": "Driver cancelled with reason rider_no_show at 4.8 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+      },
+      {
+        "timestamp": "2026-08-12T08:22:53+08:00",
+        "event_type": "driver_released",
+        "details": "Driver D-9101 released from trip. Trip status: cancelled (rider_no_show)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-NS-01",
+    "outcome": "charge_upheld",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.92,
+    "rules_cited": [
+      "NS-1",
+      "NS-3",
+      "NS-4",
+      "G-1"
+    ],
+    "precedents_used": [],
+    "reasoning": "Driver was at the pin for 4.8 min (more than 3, NS-3) and made a call and two messages (NS-4). The rider sent nothing. All conditions met, the S$6.61 fee stands.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

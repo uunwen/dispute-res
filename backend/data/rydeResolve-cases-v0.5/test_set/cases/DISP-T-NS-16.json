@@ -1,0 +1,253 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-16",
+    "trip_id": "TRIP-DISP-T-NS-16",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "The driver cancelled right when 3 minutes came up and I was charged $6.61. That doesn't seem fair.",
+    "filed_at": "2026-10-06T17:05:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-14143",
+    "name": "Benedict Lau",
+    "account_age_days": 420,
+    "total_trips": 58,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 32,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23214",
+    "name": "Lee Chee Keong",
+    "account_age_days": 1300,
+    "total_trips": 4800,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Camry (SGM 4953 Q)",
+    "age_years": 57,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-16",
+    "rider_id": "R-14143",
+    "driver_id": "D-23214",
+    "pickup_location": {
+      "name": "Bugis Junction (Victoria St taxi stand)",
+      "lat": 1.29935,
+      "lng": 103.8548,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-06T15:10:00+08:00",
+    "matched_at": "2026-10-06T15:10:15+08:00",
+    "scheduled_time": "2026-10-06T15:18:00+08:00",
+    "eta_at_assignment_min": 8,
+    "driver_arrival_time": "2026-10-06T15:18:00+08:00",
+    "driver_wait_start": "2026-10-06T15:18:00+08:00",
+    "cancellation_time": "2026-10-06T15:21:00+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-06T15:12:00+08:00",
+      "lat": 1.299271,
+      "lng": 103.867393,
+      "speed_kmh": 17,
+      "accuracy_m": 4.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T15:15:00+08:00",
+      "lat": 1.299342,
+      "lng": 103.860197,
+      "speed_kmh": 14,
+      "accuracy_m": 9.4,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T15:17:00+08:00",
+      "lat": 1.299382,
+      "lng": 103.856149,
+      "speed_kmh": 9,
+      "accuracy_m": 11.0,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T15:18:00+08:00",
+      "lat": 1.299409,
+      "lng": 103.854804,
+      "speed_kmh": 0,
+      "accuracy_m": 8.1,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T15:19:00+08:00",
+      "lat": 1.299378,
+      "lng": 103.854783,
+      "speed_kmh": 0,
+      "accuracy_m": 4.2,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T15:20:00+08:00",
+      "lat": 1.299365,
+      "lng": 103.854809,
+      "speed_kmh": 0,
+      "accuracy_m": 4.8,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T15:21:00+08:00",
+      "lat": 1.299376,
+      "lng": 103.854817,
+      "speed_kmh": 0,
+      "accuracy_m": 4.9,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-06T15:18:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at Victoria St taxi stand, Toyota Camry SGM 4953 Q."
+    },
+    {
+      "timestamp": "2026-10-06T15:19:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Where are you?"
+    },
+    {
+      "timestamp": "2026-10-06T15:19:48+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-06T15:20:48+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling."
+    },
+    {
+      "timestamp": "2026-10-06T15:21:00+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-06T15:10:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-14143 booked trip TRIP-DISP-T-NS-16 from Bugis Junction (Victoria St taxi stand) to ION Orchard (Orchard Turn pickup point). On-demand booking. Estimated pickup 15:18. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-06T15:10:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23214 (Lee Chee Keong, Toyota Camry (SGM 4953 Q)) matched. ETA 8 min."
+    },
+    {
+      "timestamp": "2026-10-06T15:10:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-06T15:18:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 7 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-10-06T15:18:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 15:21:00."
+    },
+    {
+      "timestamp": "2026-10-06T15:18:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-10-06T15:19:48+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-06T15:21:00+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 3.0 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-10-06T15:21:05+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-23214 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

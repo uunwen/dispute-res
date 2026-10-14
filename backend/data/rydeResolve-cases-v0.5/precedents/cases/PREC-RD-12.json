@@ -1,0 +1,434 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-RD-12",
+      "trip_id": "TRIP-PREC-RD-12",
+      "filed_by": "rider",
+      "dispute_type": "route_deviation",
+      "description": "The app said 1.2 times surge at booking but I was charged more than that.",
+      "filed_at": "2026-09-10T14:21:13+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10105",
+      "name": "Tay Boon Keng",
+      "account_age_days": 420,
+      "total_trips": 25,
+      "avg_rating": 4.9,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 66,
+      "communication_preferences": {
+        "preferred_language": "Mandarin",
+        "accessibility_needs": "large_text",
+        "channel": "sms"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-34108",
+      "name": "Wesley Chan",
+      "account_age_days": 900,
+      "total_trips": 3100,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Subaru XV (SGU 1074 H)",
+      "age_years": 43,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-RD-12",
+      "rider_id": "R-10105",
+      "driver_id": "D-34108",
+      "pickup_location": {
+        "name": "Sun Plaza, Sembawang",
+        "lat": 1.4487,
+        "lng": 103.8197,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay)",
+        "lat": 1.3693,
+        "lng": 103.8486,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-09-09T18:30:00+08:00",
+      "matched_at": "2026-09-09T18:30:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-09-09T18:36:00+08:00",
+      "driver_wait_start": "2026-09-09T18:36:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-09-09T18:37:00+08:00",
+      "trip_end": "2026-09-09T19:00:13+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 12.03,
+        "duration_min": 22.5,
+        "waypoints": [
+          {
+            "lat": 1.4487,
+            "lng": 103.8197
+          },
+          {
+            "lat": 1.39746,
+            "lng": 103.80242
+          },
+          {
+            "lat": 1.3693,
+            "lng": 103.8486
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 12.03,
+        "distance_charge": 7.82,
+        "duration_min": 22.5,
+        "time_charge": 4.95,
+        "surge_multiplier": 1.2,
+        "surge_amount": 3.15,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 19.52
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 12.39,
+      "distance_charge": 8.05,
+      "duration_min": 23.2,
+      "time_charge": 5.1,
+      "surge_multiplier": 1.5,
+      "surge_amount": 8.08,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 24.83,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-09-09T18:37:00+08:00",
+        "lat": 1.448657,
+        "lng": 103.81969,
+        "speed_kmh": 28,
+        "accuracy_m": 9.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:38:00+08:00",
+        "lat": 1.444262,
+        "lng": 103.817982,
+        "speed_kmh": 25,
+        "accuracy_m": 5.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:39:00+08:00",
+        "lat": 1.439688,
+        "lng": 103.816316,
+        "speed_kmh": 38,
+        "accuracy_m": 7.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:40:00+08:00",
+        "lat": 1.43522,
+        "lng": 103.814596,
+        "speed_kmh": 34,
+        "accuracy_m": 7.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:41:00+08:00",
+        "lat": 1.430728,
+        "lng": 103.812902,
+        "speed_kmh": 37,
+        "accuracy_m": 4.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:42:00+08:00",
+        "lat": 1.426295,
+        "lng": 103.811192,
+        "speed_kmh": 29,
+        "accuracy_m": 7.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:43:00+08:00",
+        "lat": 1.421796,
+        "lng": 103.809565,
+        "speed_kmh": 31,
+        "accuracy_m": 9.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:44:00+08:00",
+        "lat": 1.417278,
+        "lng": 103.8078,
+        "speed_kmh": 30,
+        "accuracy_m": 9.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:45:00+08:00",
+        "lat": 1.412776,
+        "lng": 103.806152,
+        "speed_kmh": 32,
+        "accuracy_m": 5.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:46:00+08:00",
+        "lat": 1.408268,
+        "lng": 103.804475,
+        "speed_kmh": 27,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:47:00+08:00",
+        "lat": 1.40379,
+        "lng": 103.802778,
+        "speed_kmh": 29,
+        "accuracy_m": 8.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:48:00+08:00",
+        "lat": 1.39936,
+        "lng": 103.801054,
+        "speed_kmh": 25,
+        "accuracy_m": 8.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:49:00+08:00",
+        "lat": 1.395733,
+        "lng": 103.801658,
+        "speed_kmh": 29,
+        "accuracy_m": 8.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:50:00+08:00",
+        "lat": 1.393375,
+        "lng": 103.805814,
+        "speed_kmh": 34,
+        "accuracy_m": 6.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:51:00+08:00",
+        "lat": 1.391043,
+        "lng": 103.810001,
+        "speed_kmh": 36,
+        "accuracy_m": 9.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:52:00+08:00",
+        "lat": 1.388617,
+        "lng": 103.814235,
+        "speed_kmh": 28,
+        "accuracy_m": 8.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:53:00+08:00",
+        "lat": 1.386251,
+        "lng": 103.818346,
+        "speed_kmh": 36,
+        "accuracy_m": 4.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:54:00+08:00",
+        "lat": 1.383888,
+        "lng": 103.822579,
+        "speed_kmh": 28,
+        "accuracy_m": 8.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:55:00+08:00",
+        "lat": 1.381562,
+        "lng": 103.826693,
+        "speed_kmh": 31,
+        "accuracy_m": 6.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:56:00+08:00",
+        "lat": 1.379171,
+        "lng": 103.830949,
+        "speed_kmh": 33,
+        "accuracy_m": 9.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:57:00+08:00",
+        "lat": 1.376877,
+        "lng": 103.835107,
+        "speed_kmh": 25,
+        "accuracy_m": 9.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:58:00+08:00",
+        "lat": 1.374565,
+        "lng": 103.839317,
+        "speed_kmh": 37,
+        "accuracy_m": 5.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T18:59:00+08:00",
+        "lat": 1.372173,
+        "lng": 103.843432,
+        "speed_kmh": 28,
+        "accuracy_m": 6.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T19:00:00+08:00",
+        "lat": 1.36982,
+        "lng": 103.847597,
+        "speed_kmh": 25,
+        "accuracy_m": 8.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-09T19:00:13+08:00",
+        "lat": 1.3693,
+        "lng": 103.8486,
+        "speed_kmh": 0,
+        "accuracy_m": 7.2,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-09-09T18:30:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10105 booked trip TRIP-PREC-RD-12 from Sun Plaza, Sembawang to Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay). Upfront estimate $19.52 for planned route 12.0 km / 23 min. Surge x1.2."
+      },
+      {
+        "timestamp": "2026-09-09T18:30:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-34108 (Wesley Chan, Subaru XV (SGU 1074 H)) assigned."
+      },
+      {
+        "timestamp": "2026-09-09T18:36:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 8 m of pickup point."
+      },
+      {
+        "timestamp": "2026-09-09T18:37:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-09-09T19:00:13+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay). Meter distance 12.39 km, duration 23.2 min."
+      },
+      {
+        "timestamp": "2026-09-09T19:00:33+08:00",
+        "event_type": "payment_captured",
+        "details": "$24.83 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": {
+      "source": "LTA traffic incident feed (mock)",
+      "query_window": [
+        "2026-09-09T18:37:00+08:00",
+        "2026-09-09T19:00:13+08:00"
+      ],
+      "incidents": []
+    },
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-RD-12",
+    "outcome": "partial_refund",
+    "refund_amount": 4.85,
+    "payer": "ryde",
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.9,
+    "rules_cited": [
+      "RD-13",
+      "G-6"
+    ],
+    "precedents_used": [],
+    "reasoning": "The booking quoted surge x1.2 but the charge used x1.5. The quoted multiplier binds (RD-13): refund the surge difference, Ryde pays.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

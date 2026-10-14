@@ -1,0 +1,327 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-11",
+    "trip_id": "TRIP-DISP-T-PD-11",
+    "filed_by": "rider",
+    "dispute_type": "property_damage",
+    "description": "I was charged $150 for vomit. Nobody vomited when I was in the car.",
+    "filed_at": "2026-10-09T15:35:54+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9154",
+    "name": "Harun Ismail",
+    "account_age_days": 420,
+    "total_trips": 64,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 39,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "sms"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-18231",
+    "name": "Abdul Razak",
+    "account_age_days": 900,
+    "total_trips": 4400,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Shuttle (SKB 7661 C)",
+    "age_years": 55,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-11",
+    "rider_id": "R-9154",
+    "driver_id": "D-18231",
+    "pickup_location": {
+      "name": "JEM, Jurong East",
+      "lat": 1.3333,
+      "lng": 103.743,
+      "multi_entrance_venue": true
+    },
+    "dropoff_location": {
+      "name": "Clementi Mall",
+      "lat": 1.315,
+      "lng": 103.765,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-06T20:00:00+08:00",
+    "matched_at": "2026-10-06T20:00:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-06T20:05:00+08:00",
+    "driver_wait_start": "2026-10-06T20:05:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-06T20:06:00+08:00",
+    "trip_end": "2026-10-06T20:13:54+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 4.07,
+      "duration_min": 6.4,
+      "waypoints": [
+        {
+          "lat": 1.3333,
+          "lng": 103.743
+        },
+        {
+          "lat": 1.31536,
+          "lng": 103.74669
+        },
+        {
+          "lat": 1.315,
+          "lng": 103.765
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 4.07,
+      "distance_charge": 2.65,
+      "duration_min": 6.4,
+      "time_charge": 1.41,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 7.66
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-11",
+      "submitted_at": "2026-10-07T12:13:54+08:00",
+      "mess_type_claimed": "vomit",
+      "amount_claimed": 150.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-11-1",
+        "ATT-CLM-PD-11-2"
+      ],
+      "status": "charged",
+      "amount_charged": 150.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 4.07,
+    "distance_charge": 2.65,
+    "duration_min": 7.9,
+    "time_charge": 1.74,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 7.99,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-06T20:06:00+08:00",
+      "lat": 1.333264,
+      "lng": 103.743012,
+      "speed_kmh": 31,
+      "accuracy_m": 6.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T20:07:00+08:00",
+      "lat": 1.328757,
+      "lng": 103.743911,
+      "speed_kmh": 28,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T20:08:00+08:00",
+      "lat": 1.324622,
+      "lng": 103.744779,
+      "speed_kmh": 34,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T20:09:00+08:00",
+      "lat": 1.319624,
+      "lng": 103.745817,
+      "speed_kmh": 33,
+      "accuracy_m": 5.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T20:10:00+08:00",
+      "lat": 1.315391,
+      "lng": 103.747281,
+      "speed_kmh": 32,
+      "accuracy_m": 4.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T20:11:00+08:00",
+      "lat": 1.315282,
+      "lng": 103.752066,
+      "speed_kmh": 29,
+      "accuracy_m": 6.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T20:12:00+08:00",
+      "lat": 1.315178,
+      "lng": 103.756367,
+      "speed_kmh": 28,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T20:13:00+08:00",
+      "lat": 1.315122,
+      "lng": 103.760597,
+      "speed_kmh": 34,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T20:13:54+08:00",
+      "lat": 1.315,
+      "lng": 103.765,
+      "speed_kmh": 0,
+      "accuracy_m": 5.1,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-06T20:00:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9154 booked trip TRIP-DISP-T-PD-11 from JEM, Jurong East to Clementi Mall. Upfront estimate $7.66 for planned route 4.1 km / 6 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-06T20:00:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-18231 (Abdul Razak, Honda Shuttle (SKB 7661 C)) assigned."
+    },
+    {
+      "timestamp": "2026-10-06T20:05:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-06T20:06:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-06T20:13:54+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Clementi Mall. Meter distance 4.07 km, duration 7.9 min."
+    },
+    {
+      "timestamp": "2026-10-06T20:14:14+08:00",
+      "event_type": "payment_captured",
+      "details": "$7.99 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-06T20:28:54+08:00",
+      "event_type": "driver_next_trip_started",
+      "details": "Driver D-18231 started the next trip (TRIP-DISP-T-PD-11-NEXT) with another rider."
+    },
+    {
+      "timestamp": "2026-10-07T12:13:54+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-18231 submitted cleaning claim CLM-PD-11 for vomit: $150.00 with 2 attachment(s)."
+    },
+    {
+      "timestamp": "2026-10-08T14:13:54+08:00",
+      "event_type": "cleaning_fee_charged",
+      "details": "Cleaning fee $150.00 for claim CLM-PD-11 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-11-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-07T12:13:54+08:00",
+      "captured_at": "2026-10-06T21:03:54+08:00",
+      "location": null,
+      "file_hash": "sha256:09bed5037d0ce7197a536587684a1d642376f38c",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Vomit on the rear passenger-side floor; plate readable.",
+        "mess_type": "vomit",
+        "severity": "moderate",
+        "plate_read": "SKB 7661 C",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.05,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-11-2",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-07T12:13:54+08:00",
+      "captured_at": "2026-10-07T11:48:54+08:00",
+      "location": null,
+      "file_hash": "sha256:9e31f81a7e34cc351a648f4f6159e6d976c3fc7d",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Professional interior deep cleaning and sanitisation (vomit, rear seat and floor)",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-10-07",
+        "car_plate": "SKB 7661 C",
+        "amount": 150.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

@@ -35,4 +35,5 @@ Thumbs.db
 # -----------------------------
 # Data dump files
 # -----------------------------
-data/
+data/*
+!data/official/

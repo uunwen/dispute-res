@@ -1,0 +1,440 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-SF-03",
+      "trip_id": "TRIP-PREC-SF-03",
+      "filed_by": "driver",
+      "dispute_type": "safety_incident",
+      "description": "After I dropped the passenger he kept sending me abusive messages because he did not like my route.",
+      "filed_at": "2026-08-25T14:02:42+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-5155",
+      "name": "Ahmad Fauzi",
+      "account_age_days": 420,
+      "total_trips": 39,
+      "avg_rating": 4.5,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 26,
+      "communication_preferences": {
+        "preferred_language": "Malay",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-14130",
+      "name": "Terence Loh",
+      "account_age_days": 900,
+      "total_trips": 2300,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Toyota Corolla Cross (SGY 3558 A)",
+      "age_years": 41,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-SF-03",
+      "rider_id": "R-5155",
+      "driver_id": "D-14130",
+      "pickup_location": {
+        "name": "Compass One, Sengkang",
+        "lat": 1.392,
+        "lng": 103.895,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Hillion Mall, Bukit Panjang",
+        "lat": 1.3778,
+        "lng": 103.7623,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-24T20:10:00+08:00",
+      "matched_at": "2026-08-24T20:10:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-08-24T20:15:00+08:00",
+      "driver_wait_start": "2026-08-24T20:15:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-08-24T20:16:00+08:00",
+      "trip_end": "2026-08-24T20:39:42+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 18.99,
+        "duration_min": 30.0,
+        "waypoints": [
+          {
+            "lat": 1.392,
+            "lng": 103.895
+          },
+          {
+            "lat": 1.4379,
+            "lng": 103.82298
+          },
+          {
+            "lat": 1.3778,
+            "lng": 103.7623
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 18.99,
+        "distance_charge": 12.34,
+        "duration_min": 30.0,
+        "time_charge": 6.6,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 22.54
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 18.99,
+      "distance_charge": 12.34,
+      "duration_min": 23.7,
+      "time_charge": 5.21,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 21.15,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-24T20:16:00+08:00",
+        "lat": 1.391981,
+        "lng": 103.895007,
+        "speed_kmh": 33,
+        "accuracy_m": 4.8,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:17:00+08:00",
+        "lat": 1.394644,
+        "lng": 103.890862,
+        "speed_kmh": 30,
+        "accuracy_m": 4.2,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:18:00+08:00",
+        "lat": 1.397058,
+        "lng": 103.887046,
+        "speed_kmh": 32,
+        "accuracy_m": 6.6,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:19:00+08:00",
+        "lat": 1.399628,
+        "lng": 103.882975,
+        "speed_kmh": 34,
+        "accuracy_m": 7.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:20:00+08:00",
+        "lat": 1.402434,
+        "lng": 103.878668,
+        "speed_kmh": 32,
+        "accuracy_m": 9.2,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:21:00+08:00",
+        "lat": 1.405015,
+        "lng": 103.874677,
+        "speed_kmh": 30,
+        "accuracy_m": 7.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:22:00+08:00",
+        "lat": 1.407413,
+        "lng": 103.87088,
+        "speed_kmh": 35,
+        "accuracy_m": 8.2,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:23:00+08:00",
+        "lat": 1.410238,
+        "lng": 103.866456,
+        "speed_kmh": 66,
+        "accuracy_m": 7.8,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:24:00+08:00",
+        "lat": 1.415529,
+        "lng": 103.858103,
+        "speed_kmh": 67,
+        "accuracy_m": 5.1,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:25:00+08:00",
+        "lat": 1.420927,
+        "lng": 103.84957,
+        "speed_kmh": 68,
+        "accuracy_m": 4.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:26:00+08:00",
+        "lat": 1.426404,
+        "lng": 103.841012,
+        "speed_kmh": 65,
+        "accuracy_m": 5.1,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:27:00+08:00",
+        "lat": 1.431666,
+        "lng": 103.832797,
+        "speed_kmh": 69,
+        "accuracy_m": 4.1,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:28:00+08:00",
+        "lat": 1.437201,
+        "lng": 103.824086,
+        "speed_kmh": 69,
+        "accuracy_m": 4.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:29:00+08:00",
+        "lat": 1.431542,
+        "lng": 103.816531,
+        "speed_kmh": 68,
+        "accuracy_m": 6.0,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:30:00+08:00",
+        "lat": 1.424358,
+        "lng": 103.809345,
+        "speed_kmh": 67,
+        "accuracy_m": 5.4,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:31:00+08:00",
+        "lat": 1.41727,
+        "lng": 103.802178,
+        "speed_kmh": 68,
+        "accuracy_m": 8.7,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:32:00+08:00",
+        "lat": 1.410134,
+        "lng": 103.794951,
+        "speed_kmh": 64,
+        "accuracy_m": 5.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:33:00+08:00",
+        "lat": 1.403361,
+        "lng": 103.788139,
+        "speed_kmh": 64,
+        "accuracy_m": 5.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 90
+      },
+      {
+        "timestamp": "2026-08-24T20:34:00+08:00",
+        "lat": 1.396631,
+        "lng": 103.781291,
+        "speed_kmh": 28,
+        "accuracy_m": 8.4,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:35:00+08:00",
+        "lat": 1.393698,
+        "lng": 103.778338,
+        "speed_kmh": 33,
+        "accuracy_m": 7.8,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:36:00+08:00",
+        "lat": 1.390167,
+        "lng": 103.774806,
+        "speed_kmh": 33,
+        "accuracy_m": 9.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:37:00+08:00",
+        "lat": 1.386716,
+        "lng": 103.771334,
+        "speed_kmh": 29,
+        "accuracy_m": 4.2,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:38:00+08:00",
+        "lat": 1.383664,
+        "lng": 103.768239,
+        "speed_kmh": 33,
+        "accuracy_m": 6.5,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:39:00+08:00",
+        "lat": 1.380149,
+        "lng": 103.764704,
+        "speed_kmh": 30,
+        "accuracy_m": 9.1,
+        "status": "on_trip",
+        "speed_limit_kmh": 50
+      },
+      {
+        "timestamp": "2026-08-24T20:39:42+08:00",
+        "lat": 1.3778,
+        "lng": 103.7623,
+        "speed_kmh": 0,
+        "accuracy_m": 4.5,
+        "status": "completed",
+        "speed_limit_kmh": 50
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [
+      {
+        "timestamp": "2026-08-24T20:47:00+08:00",
+        "sender": "rider",
+        "type": "message",
+        "content": "Stupid driver, you took the long way on purpose."
+      },
+      {
+        "timestamp": "2026-08-24T20:48:00+08:00",
+        "sender": "rider",
+        "type": "message",
+        "content": "Go to hell."
+      }
+    ],
+    "app_events": [
+      {
+        "timestamp": "2026-08-24T20:10:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-5155 booked trip TRIP-PREC-SF-03 from Compass One, Sengkang to Hillion Mall, Bukit Panjang. Upfront estimate $22.54 for planned route 19.0 km / 30 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-08-24T20:10:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-14130 (Terence Loh, Toyota Corolla Cross (SGY 3558 A)) assigned."
+      },
+      {
+        "timestamp": "2026-08-24T20:15:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 9 m of pickup point."
+      },
+      {
+        "timestamp": "2026-08-24T20:16:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-08-24T20:39:42+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Hillion Mall, Bukit Panjang. Meter distance 18.99 km, duration 23.7 min."
+      },
+      {
+        "timestamp": "2026-08-24T20:40:02+08:00",
+        "event_type": "payment_captured",
+        "details": "$21.15 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-SF-03",
+    "outcome": "charge_upheld",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": true,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": true,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.88,
+    "rules_cited": [
+      "SF-3",
+      "G-7"
+    ],
+    "precedents_used": [],
+    "reasoning": "Filed by the driver. After the trip the rider sent abusive messages ('stupid driver', 'go to hell'). The chat establishes it (SF-3): rider warning and safety referral. The fare charged stands.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

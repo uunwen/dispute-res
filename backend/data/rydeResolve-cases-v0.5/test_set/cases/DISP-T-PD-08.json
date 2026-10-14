@@ -1,0 +1,341 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-08",
+    "trip_id": "TRIP-DISP-T-PD-08",
+    "filed_by": "driver",
+    "dispute_type": "property_damage",
+    "description": "Rider left food crumbs and sauce all over the back. I spent an hour cleaning it myself, want the $40.",
+    "filed_at": "2026-10-04T17:30:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9158",
+    "name": "Farid Osman",
+    "account_age_days": 420,
+    "total_trips": 93,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 47,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13236",
+    "name": "Lim Boon Chye",
+    "account_age_days": 1600,
+    "total_trips": 6100,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Sienta (SKG 1055 J)",
+    "age_years": 61,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-08",
+    "rider_id": "R-9158",
+    "driver_id": "D-13236",
+    "pickup_location": {
+      "name": "Kallang Wave Mall",
+      "lat": 1.302,
+      "lng": 103.875,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay)",
+      "lat": 1.3693,
+      "lng": 103.8486,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-04T13:00:00+08:00",
+    "matched_at": "2026-10-04T13:00:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-04T13:05:00+08:00",
+    "driver_wait_start": "2026-10-04T13:05:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-04T13:06:00+08:00",
+    "trip_end": "2026-10-04T13:18:12+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 10.29,
+      "duration_min": 16.2,
+      "waypoints": [
+        {
+          "lat": 1.302,
+          "lng": 103.875
+        },
+        {
+          "lat": 1.34619,
+          "lng": 103.88869
+        },
+        {
+          "lat": 1.3693,
+          "lng": 103.8486
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 10.29,
+      "distance_charge": 6.69,
+      "duration_min": 16.2,
+      "time_charge": 3.56,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 13.85
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-08",
+      "submitted_at": "2026-10-04T16:18:12+08:00",
+      "mess_type_claimed": "food_drink",
+      "amount_claimed": 40.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-08-1"
+      ],
+      "status": "under_review",
+      "amount_charged": 0.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 10.29,
+    "distance_charge": 6.69,
+    "duration_min": 12.2,
+    "time_charge": 2.68,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 12.97,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-04T13:06:00+08:00",
+      "lat": 1.30197,
+      "lng": 103.874963,
+      "speed_kmh": 31,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:07:00+08:00",
+      "lat": 1.30647,
+      "lng": 103.876376,
+      "speed_kmh": 30,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:08:00+08:00",
+      "lat": 1.310716,
+      "lng": 103.877701,
+      "speed_kmh": 30,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:09:00+08:00",
+      "lat": 1.315036,
+      "lng": 103.879034,
+      "speed_kmh": 32,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:10:00+08:00",
+      "lat": 1.319581,
+      "lng": 103.880442,
+      "speed_kmh": 64,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:11:00+08:00",
+      "lat": 1.328774,
+      "lng": 103.883296,
+      "speed_kmh": 67,
+      "accuracy_m": 8.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:12:00+08:00",
+      "lat": 1.338359,
+      "lng": 103.886248,
+      "speed_kmh": 65,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:13:00+08:00",
+      "lat": 1.346975,
+      "lng": 103.887367,
+      "speed_kmh": 64,
+      "accuracy_m": 7.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:14:00+08:00",
+      "lat": 1.351751,
+      "lng": 103.878998,
+      "speed_kmh": 67,
+      "accuracy_m": 7.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:15:00+08:00",
+      "lat": 1.356725,
+      "lng": 103.870353,
+      "speed_kmh": 63,
+      "accuracy_m": 8.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:16:00+08:00",
+      "lat": 1.361495,
+      "lng": 103.862145,
+      "speed_kmh": 67,
+      "accuracy_m": 8.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:17:00+08:00",
+      "lat": 1.366544,
+      "lng": 103.853429,
+      "speed_kmh": 31,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:18:00+08:00",
+      "lat": 1.368814,
+      "lng": 103.849432,
+      "speed_kmh": 33,
+      "accuracy_m": 9.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T13:18:12+08:00",
+      "lat": 1.3693,
+      "lng": 103.8486,
+      "speed_kmh": 0,
+      "accuracy_m": 5.6,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-04T13:00:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9158 booked trip TRIP-DISP-T-PD-08 from Kallang Wave Mall to Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay). Upfront estimate $13.85 for planned route 10.3 km / 16 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-04T13:00:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13236 (Lim Boon Chye, Toyota Sienta (SKG 1055 J)) assigned."
+    },
+    {
+      "timestamp": "2026-10-04T13:05:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-04T13:06:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-04T13:18:12+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay). Meter distance 10.29 km, duration 12.2 min."
+    },
+    {
+      "timestamp": "2026-10-04T13:18:32+08:00",
+      "event_type": "payment_captured",
+      "details": "$12.97 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-04T16:18:12+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-13236 submitted cleaning claim CLM-PD-08 for food_drink: $40.00 with 1 attachment(s)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-08-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-04T16:18:12+08:00",
+      "captured_at": "2026-10-04T13:21:12+08:00",
+      "location": {
+        "lat": 1.36914,
+        "lng": 103.84886
+      },
+      "file_hash": "sha256:cc72d511f6b6845c6904f7f3a6a18b85c52ed85b",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Food crumbs and a small sauce smear on the rear seat; plate readable.",
+        "mess_type": "food_drink",
+        "severity": "light",
+        "plate_read": "SKG 1055 J",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.03,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

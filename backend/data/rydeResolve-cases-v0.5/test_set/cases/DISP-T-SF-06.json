@@ -1,0 +1,347 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-SF-06",
+    "trip_id": "TRIP-DISP-T-SF-06",
+    "filed_by": "driver",
+    "dispute_type": "safety_incident",
+    "description": "Passenger was drunk and said he would beat me up if I did not drive faster. I stopped at a petrol station and ended the trip for my safety.",
+    "filed_at": "2026-09-30T12:07:18+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4157",
+    "name": "Felix Ng",
+    "account_age_days": 420,
+    "total_trips": 45,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 29,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8238",
+    "name": "Prakash Rao",
+    "account_age_days": 900,
+    "total_trips": 4100,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Camry Hybrid (SKJ 9154 L)",
+    "age_years": 52,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-SF-06",
+    "rider_id": "R-4157",
+    "driver_id": "D-8238",
+    "pickup_location": {
+      "name": "Clementi Mall",
+      "lat": 1.315,
+      "lng": 103.765,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Changi Airport Terminal 3 (Departures)",
+      "lat": 1.3555,
+      "lng": 103.9864,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-29T23:50:00+08:00",
+    "matched_at": "2026-09-29T23:50:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-29T23:55:00+08:00",
+    "driver_wait_start": "2026-09-29T23:55:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-29T23:56:00+08:00",
+    "trip_end": "2026-09-30T00:13:18+08:00",
+    "trip_completed": false,
+    "planned_route": {
+      "distance_km": 32.03,
+      "duration_min": 50.6,
+      "waypoints": [
+        {
+          "lat": 1.315,
+          "lng": 103.765
+        },
+        {
+          "lat": 1.42368,
+          "lng": 103.85951
+        },
+        {
+          "lat": 1.3555,
+          "lng": 103.9864
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 32.03,
+      "distance_charge": 20.82,
+      "duration_min": 50.6,
+      "time_charge": 11.13,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 35.55
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 12.81,
+    "distance_charge": 8.33,
+    "duration_min": 17.3,
+    "time_charge": 3.81,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 15.74,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-29T23:56:00+08:00",
+      "lat": 1.314991,
+      "lng": 103.764964,
+      "speed_kmh": 30,
+      "accuracy_m": 5.9,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-29T23:57:00+08:00",
+      "lat": 1.318377,
+      "lng": 103.767943,
+      "speed_kmh": 32,
+      "accuracy_m": 5.9,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-29T23:58:00+08:00",
+      "lat": 1.322034,
+      "lng": 103.771081,
+      "speed_kmh": 34,
+      "accuracy_m": 4.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-29T23:59:00+08:00",
+      "lat": 1.325892,
+      "lng": 103.774458,
+      "speed_kmh": 35,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-30T00:00:00+08:00",
+      "lat": 1.329818,
+      "lng": 103.777886,
+      "speed_kmh": 34,
+      "accuracy_m": 8.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-30T00:01:00+08:00",
+      "lat": 1.333612,
+      "lng": 103.781229,
+      "speed_kmh": 31,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-30T00:02:00+08:00",
+      "lat": 1.33721,
+      "lng": 103.784296,
+      "speed_kmh": 31,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-30T00:03:00+08:00",
+      "lat": 1.340647,
+      "lng": 103.787331,
+      "speed_kmh": 30,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-30T00:04:00+08:00",
+      "lat": 1.344057,
+      "lng": 103.790299,
+      "speed_kmh": 29,
+      "accuracy_m": 4.6,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-30T00:05:00+08:00",
+      "lat": 1.347358,
+      "lng": 103.793096,
+      "speed_kmh": 35,
+      "accuracy_m": 4.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-30T00:06:00+08:00",
+      "lat": 1.351313,
+      "lng": 103.796567,
+      "speed_kmh": 33,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-30T00:07:00+08:00",
+      "lat": 1.355073,
+      "lng": 103.79983,
+      "speed_kmh": 67,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-30T00:08:00+08:00",
+      "lat": 1.362623,
+      "lng": 103.806422,
+      "speed_kmh": 65,
+      "accuracy_m": 7.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-30T00:09:00+08:00",
+      "lat": 1.369973,
+      "lng": 103.812809,
+      "speed_kmh": 69,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-30T00:10:00+08:00",
+      "lat": 1.377768,
+      "lng": 103.819589,
+      "speed_kmh": 67,
+      "accuracy_m": 4.9,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-30T00:11:00+08:00",
+      "lat": 1.385348,
+      "lng": 103.826196,
+      "speed_kmh": 63,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-30T00:12:00+08:00",
+      "lat": 1.39249,
+      "lng": 103.832332,
+      "speed_kmh": 64,
+      "accuracy_m": 6.9,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-30T00:13:00+08:00",
+      "lat": 1.399743,
+      "lng": 103.838714,
+      "speed_kmh": 68,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-30T00:13:18+08:00",
+      "lat": 1.401943,
+      "lng": 103.84061,
+      "speed_kmh": 0,
+      "accuracy_m": 5.4,
+      "status": "ended_early",
+      "speed_limit_kmh": 90
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-09-29T23:50:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4157 booked trip TRIP-DISP-T-SF-06 from Clementi Mall to Changi Airport Terminal 3 (Departures). Upfront estimate $35.55 for planned route 32.0 km / 51 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-29T23:50:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8238 (Prakash Rao, Toyota Camry Hybrid (SKJ 9154 L)) assigned."
+    },
+    {
+      "timestamp": "2026-09-29T23:55:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-29T23:56:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-30T00:13:18+08:00",
+      "event_type": "trip_ended_early",
+      "details": "Driver ended the trip before the destination. Reason selected: safety_concern. Meter distance 12.81 km, duration 17.3 min. Rider charged for the distance travelled."
+    },
+    {
+      "timestamp": "2026-09-30T00:13:38+08:00",
+      "event_type": "payment_captured",
+      "details": "$15.74 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

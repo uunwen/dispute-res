@@ -1,0 +1,390 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-PD-03",
+      "trip_id": "TRIP-PREC-PD-03",
+      "filed_by": "driver",
+      "dispute_type": "property_damage",
+      "description": "Rider spilled red wine on the seat. Cleaning was $100.",
+      "filed_at": "2026-08-26T18:13:12+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-5152",
+      "name": "Xu Qing",
+      "account_age_days": 420,
+      "total_trips": 49,
+      "avg_rating": 4.6,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 28,
+      "communication_preferences": {
+        "preferred_language": "Mandarin",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-14132",
+      "name": "Kenneth Ho",
+      "account_age_days": 900,
+      "total_trips": 1600,
+      "avg_rating": 4.6,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Hyundai Avante (SHA 6909 C)",
+      "age_years": 36,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-PD-03",
+      "rider_id": "R-5152",
+      "driver_id": "D-14132",
+      "pickup_location": {
+        "name": "Plaza Singapura",
+        "lat": 1.3002,
+        "lng": 103.8452,
+        "multi_entrance_venue": true
+      },
+      "dropoff_location": {
+        "name": "VivoCity",
+        "lat": 1.2648,
+        "lng": 103.8223,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-25T18:40:00+08:00",
+      "matched_at": "2026-08-25T18:40:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-08-25T18:45:00+08:00",
+      "driver_wait_start": "2026-08-25T18:45:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-08-25T18:46:00+08:00",
+      "trip_end": "2026-08-25T18:58:12+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 6.0,
+        "duration_min": 9.5,
+        "waypoints": [
+          {
+            "lat": 1.3002,
+            "lng": 103.8452
+          },
+          {
+            "lat": 1.29165,
+            "lng": 103.8196
+          },
+          {
+            "lat": 1.2648,
+            "lng": 103.8223
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 6.0,
+        "distance_charge": 3.9,
+        "duration_min": 9.5,
+        "time_charge": 2.09,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 9.59
+      },
+      "damage_claim": {
+        "claim_id": "CLM-PPD-03",
+        "submitted_at": "2026-08-26T16:58:12+08:00",
+        "mess_type_claimed": "stains",
+        "amount_claimed": 100.0,
+        "attachment_ids": [
+          "ATT-CLM-PPD-03-1",
+          "ATT-CLM-PPD-03-2"
+        ],
+        "status": "under_review",
+        "amount_charged": 0.0
+      }
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 6.0,
+      "distance_charge": 3.9,
+      "duration_min": 12.2,
+      "time_charge": 2.68,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 10.18,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-25T18:46:00+08:00",
+        "lat": 1.300187,
+        "lng": 103.845192,
+        "speed_kmh": 31,
+        "accuracy_m": 6.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:47:00+08:00",
+        "lat": 1.29872,
+        "lng": 103.84079,
+        "speed_kmh": 31,
+        "accuracy_m": 4.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:48:00+08:00",
+        "lat": 1.297232,
+        "lng": 103.836351,
+        "speed_kmh": 32,
+        "accuracy_m": 6.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:49:00+08:00",
+        "lat": 1.295762,
+        "lng": 103.831789,
+        "speed_kmh": 32,
+        "accuracy_m": 8.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:50:00+08:00",
+        "lat": 1.294256,
+        "lng": 103.827293,
+        "speed_kmh": 31,
+        "accuracy_m": 7.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:51:00+08:00",
+        "lat": 1.292774,
+        "lng": 103.822879,
+        "speed_kmh": 31,
+        "accuracy_m": 9.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:52:00+08:00",
+        "lat": 1.290427,
+        "lng": 103.819716,
+        "speed_kmh": 28,
+        "accuracy_m": 7.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:53:00+08:00",
+        "lat": 1.286234,
+        "lng": 103.820145,
+        "speed_kmh": 28,
+        "accuracy_m": 6.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:54:00+08:00",
+        "lat": 1.282095,
+        "lng": 103.820553,
+        "speed_kmh": 28,
+        "accuracy_m": 5.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:55:00+08:00",
+        "lat": 1.277912,
+        "lng": 103.821016,
+        "speed_kmh": 28,
+        "accuracy_m": 4.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:56:00+08:00",
+        "lat": 1.273777,
+        "lng": 103.821442,
+        "speed_kmh": 29,
+        "accuracy_m": 6.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:57:00+08:00",
+        "lat": 1.269425,
+        "lng": 103.821836,
+        "speed_kmh": 31,
+        "accuracy_m": 4.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:58:00+08:00",
+        "lat": 1.264805,
+        "lng": 103.822297,
+        "speed_kmh": 33,
+        "accuracy_m": 5.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T18:58:12+08:00",
+        "lat": 1.2648,
+        "lng": 103.8223,
+        "speed_kmh": 0,
+        "accuracy_m": 7.4,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-08-25T18:40:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-5152 booked trip TRIP-PREC-PD-03 from Plaza Singapura to VivoCity. Upfront estimate $9.59 for planned route 6.0 km / 9 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-08-25T18:40:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-14132 (Kenneth Ho, Hyundai Avante (SHA 6909 C)) assigned."
+      },
+      {
+        "timestamp": "2026-08-25T18:45:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 9 m of pickup point."
+      },
+      {
+        "timestamp": "2026-08-25T18:46:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-08-25T18:58:12+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at VivoCity. Meter distance 6.00 km, duration 12.2 min."
+      },
+      {
+        "timestamp": "2026-08-25T18:58:32+08:00",
+        "event_type": "payment_captured",
+        "details": "$10.18 charged to rider payment method (e-wallet)."
+      },
+      {
+        "timestamp": "2026-08-26T16:58:12+08:00",
+        "event_type": "cleaning_claim_submitted",
+        "details": "Driver D-14132 submitted cleaning claim CLM-PPD-03 for stains: $100.00 with 2 attachment(s)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [
+      {
+        "attachment_id": "ATT-CLM-PPD-03-1",
+        "attachment_type": "photo",
+        "uploaded_by": "driver",
+        "uploaded_at": "2026-08-26T16:58:12+08:00",
+        "captured_at": "2026-08-25T19:04:12+08:00",
+        "location": {
+          "lat": 1.26445,
+          "lng": 103.82235
+        },
+        "file_hash": "sha256:c0710310dc4aa3b34270e8e249daf3953f87c502",
+        "simulated_vision_analysis": {
+          "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+          "description": "Red wine stain on the light grey seat fabric; plate readable.",
+          "mess_type": "stains",
+          "severity": "moderate",
+          "plate_read": "SHA 6909 C",
+          "interior_matches_vehicle_model": true,
+          "ai_generated_likelihood": 0.02,
+          "duplicate_of": null
+        },
+        "receipt_details": null
+      },
+      {
+        "attachment_id": "ATT-CLM-PPD-03-2",
+        "attachment_type": "receipt",
+        "uploaded_by": "driver",
+        "uploaded_at": "2026-08-26T16:58:12+08:00",
+        "captured_at": "2026-08-26T16:33:12+08:00",
+        "location": null,
+        "file_hash": "sha256:87d33ba4f0484e3a27e1b7c5d2c6501fab070677",
+        "simulated_vision_analysis": null,
+        "receipt_details": {
+          "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+          "uen": "201912345K",
+          "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+          "contact_number": "+65 6745 1122",
+          "service_description": "Seat stain removal",
+          "professional_cleaning": true,
+          "cleaning_date": "2026-08-26",
+          "car_plate": null,
+          "amount": 100.0,
+          "signed": false,
+          "company_stamp": false
+        }
+      }
+    ],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-PD-03",
+    "outcome": "no_action",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.9,
+    "rules_cited": [
+      "PD-3"
+    ],
+    "precedents_used": [],
+    "reasoning": "The receipt has no car plate, no signature and no company stamp (PD-3c), so the claim fails even though the photos are valid. No warning: an incomplete receipt is not misconduct.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

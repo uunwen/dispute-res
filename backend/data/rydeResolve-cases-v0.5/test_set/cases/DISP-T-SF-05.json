@@ -1,0 +1,348 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-SF-05",
+    "trip_id": "TRIP-DISP-T-SF-05",
+    "filed_by": "rider",
+    "dispute_type": "safety_incident",
+    "description": "After the trip the driver kept messaging me about my rating and threatened me. I am scared to go home.",
+    "filed_at": "2026-09-28T21:42:18+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4153",
+    "name": "Ann Tan",
+    "account_age_days": 420,
+    "total_trips": 137,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 44,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8233",
+    "name": "Tan Jun Hao",
+    "account_age_days": 900,
+    "total_trips": 1400,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Corolla (SKD 2290 E)",
+    "age_years": 33,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-SF-05",
+    "rider_id": "R-4153",
+    "driver_id": "D-8233",
+    "pickup_location": {
+      "name": "Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay)",
+      "lat": 1.3693,
+      "lng": 103.8486,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Marina Bay Sands (Hotel Tower 1 lobby)",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-28T20:30:00+08:00",
+    "matched_at": "2026-09-28T20:30:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-28T20:35:00+08:00",
+    "driver_wait_start": "2026-09-28T20:35:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-28T20:36:00+08:00",
+    "trip_end": "2026-09-28T20:51:18+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 12.35,
+      "duration_min": 19.5,
+      "waypoints": [
+        {
+          "lat": 1.3693,
+          "lng": 103.8486
+        },
+        {
+          "lat": 1.32152,
+          "lng": 103.82032
+        },
+        {
+          "lat": 1.2834,
+          "lng": 103.8607
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 12.35,
+      "distance_charge": 8.03,
+      "duration_min": 19.5,
+      "time_charge": 4.29,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 15.92
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 12.35,
+    "distance_charge": 8.03,
+    "duration_min": 15.3,
+    "time_charge": 3.37,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 15.0,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-28T20:36:00+08:00",
+      "lat": 1.369288,
+      "lng": 103.848562,
+      "speed_kmh": 30,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-28T20:37:00+08:00",
+      "lat": 1.365466,
+      "lng": 103.846299,
+      "speed_kmh": 35,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-28T20:38:00+08:00",
+      "lat": 1.360955,
+      "lng": 103.84367,
+      "speed_kmh": 30,
+      "accuracy_m": 4.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-28T20:39:00+08:00",
+      "lat": 1.357022,
+      "lng": 103.841361,
+      "speed_kmh": 30,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-28T20:40:00+08:00",
+      "lat": 1.35321,
+      "lng": 103.839045,
+      "speed_kmh": 33,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-28T20:41:00+08:00",
+      "lat": 1.348915,
+      "lng": 103.836538,
+      "speed_kmh": 64,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-28T20:42:00+08:00",
+      "lat": 1.340664,
+      "lng": 103.831601,
+      "speed_kmh": 68,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-28T20:43:00+08:00",
+      "lat": 1.331921,
+      "lng": 103.826467,
+      "speed_kmh": 64,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-28T20:44:00+08:00",
+      "lat": 1.323583,
+      "lng": 103.821582,
+      "speed_kmh": 65,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-28T20:45:00+08:00",
+      "lat": 1.316497,
+      "lng": 103.825595,
+      "speed_kmh": 67,
+      "accuracy_m": 5.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-28T20:46:00+08:00",
+      "lat": 1.309628,
+      "lng": 103.832936,
+      "speed_kmh": 63,
+      "accuracy_m": 8.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-28T20:47:00+08:00",
+      "lat": 1.303161,
+      "lng": 103.839801,
+      "speed_kmh": 63,
+      "accuracy_m": 4.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-28T20:48:00+08:00",
+      "lat": 1.296687,
+      "lng": 103.846673,
+      "speed_kmh": 64,
+      "accuracy_m": 4.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-09-28T20:49:00+08:00",
+      "lat": 1.290054,
+      "lng": 103.853601,
+      "speed_kmh": 29,
+      "accuracy_m": 4.6,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-28T20:50:00+08:00",
+      "lat": 1.287074,
+      "lng": 103.856806,
+      "speed_kmh": 27,
+      "accuracy_m": 6.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-28T20:51:00+08:00",
+      "lat": 1.284292,
+      "lng": 103.859745,
+      "speed_kmh": 27,
+      "accuracy_m": 9.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-09-28T20:51:18+08:00",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "speed_kmh": 0,
+      "accuracy_m": 7.9,
+      "status": "completed",
+      "speed_limit_kmh": 50
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-28T21:18:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Why you give me 1 star?"
+    },
+    {
+      "timestamp": "2026-09-28T21:19:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I know where you live. Better change it or you will regret."
+    },
+    {
+      "timestamp": "2026-09-28T21:20:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Please stop messaging me."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-28T20:30:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4153 booked trip TRIP-DISP-T-SF-05 from Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay) to Marina Bay Sands (Hotel Tower 1 lobby). Upfront estimate $15.92 for planned route 12.3 km / 19 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-28T20:30:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8233 (Tan Jun Hao, Toyota Corolla (SKD 2290 E)) assigned."
+    },
+    {
+      "timestamp": "2026-09-28T20:35:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-28T20:36:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-28T20:51:18+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Marina Bay Sands (Hotel Tower 1 lobby). Meter distance 12.35 km, duration 15.3 min."
+    },
+    {
+      "timestamp": "2026-09-28T20:51:38+08:00",
+      "event_type": "payment_captured",
+      "details": "$15.00 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

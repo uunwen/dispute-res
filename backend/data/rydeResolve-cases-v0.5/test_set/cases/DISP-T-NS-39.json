@@ -1,0 +1,230 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-39",
+    "trip_id": "TRIP-DISP-T-NS-39",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "The driver never moved. I waited and then cancelled and now there is a charge.",
+    "filed_at": "2026-09-13T02:12:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4143",
+    "name": "Benedict Lau",
+    "account_age_days": 420,
+    "total_trips": 58,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 32,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8214",
+    "name": "Lee Chee Keong",
+    "account_age_days": 1300,
+    "total_trips": 4800,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Camry (SGM 5120 Q)",
+    "age_years": 57,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-39",
+    "rider_id": "R-4143",
+    "driver_id": "D-8214",
+    "pickup_location": {
+      "name": "Junction 8, Bishan",
+      "lat": 1.3504,
+      "lng": 103.8485,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Fusionopolis, one-north",
+      "lat": 1.299,
+      "lng": 103.7876,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-12T18:20:00+08:00",
+    "matched_at": "2026-09-12T18:20:15+08:00",
+    "scheduled_time": "2026-09-12T18:26:00+08:00",
+    "eta_at_assignment_min": 6,
+    "driver_arrival_time": null,
+    "driver_wait_start": null,
+    "cancellation_time": "2026-09-12T18:27:00+08:00",
+    "cancelled_by": "rider",
+    "cancellation_reason": "rider_cancelled",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-12T18:20:30+08:00",
+      "lat": 1.33876,
+      "lng": 103.828246,
+      "speed_kmh": 35,
+      "accuracy_m": 4.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-12T18:21:30+08:00",
+      "lat": 1.341009,
+      "lng": 103.832141,
+      "speed_kmh": 30,
+      "accuracy_m": 8.8,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-12T18:22:12+08:00",
+      "lat": 1.341899,
+      "lng": 103.833686,
+      "speed_kmh": 2,
+      "accuracy_m": 4.2,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-12T18:23:12+08:00",
+      "lat": 1.341899,
+      "lng": 103.833712,
+      "speed_kmh": 0,
+      "accuracy_m": 6.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-12T18:24:12+08:00",
+      "lat": 1.341887,
+      "lng": 103.833694,
+      "speed_kmh": 0,
+      "accuracy_m": 6.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-12T18:25:12+08:00",
+      "lat": 1.341927,
+      "lng": 103.833698,
+      "speed_kmh": 0,
+      "accuracy_m": 7.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-12T18:26:12+08:00",
+      "lat": 1.34191,
+      "lng": 103.833695,
+      "speed_kmh": 0,
+      "accuracy_m": 10.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-12T18:26:48+08:00",
+      "lat": 1.341916,
+      "lng": 103.833694,
+      "speed_kmh": 0,
+      "accuracy_m": 5.7,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-12T18:25:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Driver not moving. I am cancelling."
+    },
+    {
+      "timestamp": "2026-09-12T18:25:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Sorry stuck, car problem."
+    },
+    {
+      "timestamp": "2026-09-12T18:27:00+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by rider. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-12T18:20:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4143 booked trip TRIP-DISP-T-NS-39 from Junction 8, Bishan to Fusionopolis, one-north. On-demand booking. Estimated pickup 18:26. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-12T18:20:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8214 (Lee Chee Keong, Toyota Camry (SGM 5120 Q)) matched. ETA 6 min."
+    },
+    {
+      "timestamp": "2026-09-12T18:20:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-12T18:27:00+08:00",
+      "event_type": "trip_cancelled_by_rider",
+      "details": "Rider cancelled the trip in-app 6.8 min after matching. $6.61 cancellation fee charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-09-12T18:27:05+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-8214 released from trip. Trip status: cancelled (rider_cancelled)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

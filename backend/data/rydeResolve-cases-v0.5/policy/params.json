@@ -1,0 +1,89 @@
+{
+  "version": "ryde-policy-v0.4 (published rules read 2026-10-08 and 2026-10-12, rest assumed)",
+  "note": "Single source of truth for every number in the rules. The generator, the validator and the policy-document check read this file. Each value is tagged in policy/ryde_dispute_policy.md as Sourced (with a page tag from policy/ryde_sources.md) or Assumed. Changing a value here does NOT re-time the scenarios: cases are written around these numbers, so validate.py reports every case that no longer matches.",
+  "profiles": {
+    "ryde_published": {
+      "free_wait_time_min": 3,
+      "cancellation_fee_after_wait": 6.61,
+      "no_show_threshold_min": 3,
+      "fee_goes_to": "driver_compensation",
+      "driver_compensation": 4.5,
+      "waiting_fee": 5.0,
+      "driver_waiting_fee": 4.5,
+      "advance_free_before_min": 15
+    },
+    "disp002_sample": {
+      "free_wait_time_min": 5,
+      "cancellation_fee_after_wait": 5.0,
+      "no_show_threshold_min": 8,
+      "fee_goes_to": "driver_compensation"
+    }
+  },
+  "fare": {
+    "base": 3.0,
+    "per_km": 0.65,
+    "per_min": 0.22,
+    "platform_fee": 0.6
+  },
+  "no_show": {
+    "arrival_radius_m": 50,
+    "stationary_max_kmh": 5,
+    "late_driver_min": 10,
+    "rider_on_way_extra_min": 3,
+    "rider_far_m": 100,
+    "arrival_contradiction_m": 200,
+    "entrance_mismatch_min_m": 100,
+    "entrance_mismatch_max_m": 300,
+    "goodwill": 4.5,
+    "waiver_window_days": 30,
+    "stalled_min": 4,
+    "stalled_dist_m": 500,
+    "invalid_tap_far_m": 300,
+    "fraud_driver_warnings": 2,
+    "fraud_rider_rejected": 3,
+    "new_account_days": 7,
+    "tap_good_faith_m": 100
+  },
+  "route": {
+    "tol_pct": 0.15,
+    "tol_km": 1.0,
+    "app_reroute_cap": 0.2,
+    "stop_free_min": 3,
+    "meter_mismatch": 0.2,
+    "dest_change_fee": 3.0,
+    "fraud_driver_warnings": 2
+  },
+  "general": {
+    "escalate_below_confidence": 0.7,
+    "gps_gap_min": 4.0,
+    "gps_impossible_kmh": 150
+  },
+  "amount_tolerance": {
+    "default": 0.05,
+    "meter_error_rd8": 0.25
+  },
+  "damage": {
+    "claim_deadline_h": 48,
+    "cleaning_within_days": 1,
+    "caps": {
+      "food_drink": 40.0,
+      "bodily_fluids": 120.0,
+      "stains": 120.0,
+      "vomit": 200.0
+    },
+    "not_claimable": [
+      "pet_fur_saliva"
+    ],
+    "gap_types": [
+      "repair_damage"
+    ],
+    "photo_window_after_trip_h": 2,
+    "ai_generated_threshold": 0.8
+  },
+  "safety": {
+    "over_limit_consecutive_kmh": 20,
+    "consecutive_pings": 2,
+    "over_limit_single_kmh": 40,
+    "reporter_fraud_rejected": 3
+  }
+}

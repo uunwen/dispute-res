@@ -1,0 +1,268 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-14",
+    "trip_id": "TRIP-DISP-T-NS-14",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "The driver left and came back later. I saw him drive away from the entrance for several minutes. I should not pay for that.",
+    "filed_at": "2026-10-04T19:27:30+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4112",
+    "name": "Grace Lee",
+    "account_age_days": 420,
+    "total_trips": 31,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 67,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": "large_text",
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23209",
+    "name": "Alan Yeo",
+    "account_age_days": 900,
+    "total_trips": 5100,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Wish (SGW 5335 D)",
+    "age_years": 55,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-14",
+    "rider_id": "R-4112",
+    "driver_id": "D-23209",
+    "pickup_location": {
+      "name": "Clementi Mall",
+      "lat": 1.315,
+      "lng": 103.765,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "NUS University Town (Stephen Riady Centre)",
+      "lat": 1.3048,
+      "lng": 103.7735,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-04T11:00:00+08:00",
+    "matched_at": "2026-10-04T11:00:15+08:00",
+    "scheduled_time": "2026-10-04T11:08:00+08:00",
+    "eta_at_assignment_min": 8,
+    "driver_arrival_time": "2026-10-04T11:08:00+08:00",
+    "driver_wait_start": "2026-10-04T11:08:00+08:00",
+    "cancellation_time": "2026-10-04T11:13:30+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-04T11:02:00+08:00",
+      "lat": 1.320652,
+      "lng": 103.776298,
+      "speed_kmh": 17,
+      "accuracy_m": 4.8,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T11:05:00+08:00",
+      "lat": 1.317474,
+      "lng": 103.769842,
+      "speed_kmh": 14,
+      "accuracy_m": 7.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T11:07:00+08:00",
+      "lat": 1.315686,
+      "lng": 103.766211,
+      "speed_kmh": 9,
+      "accuracy_m": 8.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T11:08:00+08:00",
+      "lat": 1.315116,
+      "lng": 103.764977,
+      "speed_kmh": 0,
+      "accuracy_m": 4.7,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T11:09:00+08:00",
+      "lat": 1.315067,
+      "lng": 103.765008,
+      "speed_kmh": 0,
+      "accuracy_m": 7.2,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T11:13:30+08:00",
+      "lat": 1.315091,
+      "lng": 103.765,
+      "speed_kmh": 0,
+      "accuracy_m": 7.2,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-10-04T11:08:00+08:00",
+        "lat": 1.314997,
+        "lng": 103.765672,
+        "accuracy_m": 11.4
+      },
+      {
+        "timestamp": "2026-10-04T11:11:00+08:00",
+        "lat": 1.314979,
+        "lng": 103.765617,
+        "accuracy_m": 13.4
+      },
+      {
+        "timestamp": "2026-10-04T11:13:30+08:00",
+        "lat": 1.315027,
+        "lng": 103.765597,
+        "accuracy_m": 9.3
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-04T11:08:12+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at Clementi Mall."
+    },
+    {
+      "timestamp": "2026-10-04T11:09:00+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-04T11:10:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Waiting here still."
+    },
+    {
+      "timestamp": "2026-10-04T11:13:12+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling."
+    },
+    {
+      "timestamp": "2026-10-04T11:13:30+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-04T11:00:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4112 booked trip TRIP-DISP-T-NS-14 from Clementi Mall to NUS University Town (Stephen Riady Centre). On-demand booking. Estimated pickup 11:08. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-04T11:00:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23209 (Alan Yeo, Toyota Wish (SGW 5335 D)) matched. ETA 8 min."
+    },
+    {
+      "timestamp": "2026-10-04T11:00:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-04T11:08:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 13 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-10-04T11:08:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 11:11:00."
+    },
+    {
+      "timestamp": "2026-10-04T11:08:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-10-04T11:09:00+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-04T11:11:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-10-04T11:13:30+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 5.5 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-10-04T11:13:35+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-23209 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

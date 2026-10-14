@@ -1,0 +1,473 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-03",
+    "trip_id": "TRIP-DISP-T-PD-03",
+    "filed_by": "driver",
+    "dispute_type": "property_damage",
+    "description": "Passenger's bag buckle tore the leather on my rear seat. Workshop quote is $350, please charge the rider.",
+    "filed_at": "2026-09-29T16:56:24+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4150",
+    "name": "Joel Fernandez",
+    "account_age_days": 420,
+    "total_trips": 73,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 27,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8232",
+    "name": "Vinod Krishnan",
+    "account_age_days": 900,
+    "total_trips": 1900,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Hyundai Kona Electric (SKC 7702 D)",
+    "age_years": 38,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-03",
+    "rider_id": "R-4150",
+    "driver_id": "D-8232",
+    "pickup_location": {
+      "name": "Junction 8, Bishan",
+      "lat": 1.3504,
+      "lng": 103.8485,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Changi Airport Terminal 3 (Departures)",
+      "lat": 1.3555,
+      "lng": 103.9864,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-29T06:10:00+08:00",
+    "matched_at": "2026-09-29T06:10:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-29T06:15:00+08:00",
+    "driver_wait_start": "2026-09-29T06:15:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-29T06:16:00+08:00",
+    "trip_end": "2026-09-29T06:40:24+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 19.64,
+      "duration_min": 31.0,
+      "waypoints": [
+        {
+          "lat": 1.3504,
+          "lng": 103.8485
+        },
+        {
+          "lat": 1.40803,
+          "lng": 103.91541
+        },
+        {
+          "lat": 1.3555,
+          "lng": 103.9864
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 19.64,
+      "distance_charge": 12.77,
+      "duration_min": 31.0,
+      "time_charge": 6.82,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 23.19
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-03",
+      "submitted_at": "2026-09-29T15:40:24+08:00",
+      "mess_type_claimed": "repair_damage",
+      "amount_claimed": 350.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-03-1",
+        "ATT-CLM-PD-03-2"
+      ],
+      "status": "under_review",
+      "amount_charged": 0.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 19.64,
+    "distance_charge": 12.77,
+    "duration_min": 24.4,
+    "time_charge": 5.37,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 21.74,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-29T06:16:00+08:00",
+      "lat": 1.3504,
+      "lng": 103.848494,
+      "speed_kmh": 35,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:17:00+08:00",
+      "lat": 1.353818,
+      "lng": 103.852465,
+      "speed_kmh": 30,
+      "accuracy_m": 6.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:18:00+08:00",
+      "lat": 1.356764,
+      "lng": 103.855882,
+      "speed_kmh": 35,
+      "accuracy_m": 8.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:19:00+08:00",
+      "lat": 1.360212,
+      "lng": 103.85984,
+      "speed_kmh": 32,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:20:00+08:00",
+      "lat": 1.363311,
+      "lng": 103.863515,
+      "speed_kmh": 32,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:21:00+08:00",
+      "lat": 1.366452,
+      "lng": 103.86718,
+      "speed_kmh": 35,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:22:00+08:00",
+      "lat": 1.369868,
+      "lng": 103.871105,
+      "speed_kmh": 31,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:23:00+08:00",
+      "lat": 1.372896,
+      "lng": 103.874621,
+      "speed_kmh": 66,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:24:00+08:00",
+      "lat": 1.37935,
+      "lng": 103.882126,
+      "speed_kmh": 67,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:25:00+08:00",
+      "lat": 1.38592,
+      "lng": 103.889747,
+      "speed_kmh": 64,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:26:00+08:00",
+      "lat": 1.392186,
+      "lng": 103.896953,
+      "speed_kmh": 66,
+      "accuracy_m": 6.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:27:00+08:00",
+      "lat": 1.398632,
+      "lng": 103.904508,
+      "speed_kmh": 64,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:28:00+08:00",
+      "lat": 1.404885,
+      "lng": 103.911767,
+      "speed_kmh": 64,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:29:00+08:00",
+      "lat": 1.405182,
+      "lng": 103.919231,
+      "speed_kmh": 68,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:30:00+08:00",
+      "lat": 1.399125,
+      "lng": 103.927477,
+      "speed_kmh": 65,
+      "accuracy_m": 4.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:31:00+08:00",
+      "lat": 1.393317,
+      "lng": 103.93529,
+      "speed_kmh": 65,
+      "accuracy_m": 8.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:32:00+08:00",
+      "lat": 1.387521,
+      "lng": 103.943089,
+      "speed_kmh": 67,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:33:00+08:00",
+      "lat": 1.381555,
+      "lng": 103.951207,
+      "speed_kmh": 66,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:34:00+08:00",
+      "lat": 1.375673,
+      "lng": 103.959164,
+      "speed_kmh": 64,
+      "accuracy_m": 4.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:35:00+08:00",
+      "lat": 1.36995,
+      "lng": 103.966891,
+      "speed_kmh": 31,
+      "accuracy_m": 8.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:36:00+08:00",
+      "lat": 1.367192,
+      "lng": 103.970604,
+      "speed_kmh": 31,
+      "accuracy_m": 10.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:37:00+08:00",
+      "lat": 1.364431,
+      "lng": 103.974312,
+      "speed_kmh": 31,
+      "accuracy_m": 6.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:38:00+08:00",
+      "lat": 1.361645,
+      "lng": 103.978054,
+      "speed_kmh": 32,
+      "accuracy_m": 4.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:39:00+08:00",
+      "lat": 1.358808,
+      "lng": 103.981942,
+      "speed_kmh": 27,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:40:00+08:00",
+      "lat": 1.356381,
+      "lng": 103.985195,
+      "speed_kmh": 27,
+      "accuracy_m": 4.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-29T06:40:24+08:00",
+      "lat": 1.3555,
+      "lng": 103.9864,
+      "speed_kmh": 0,
+      "accuracy_m": 4.8,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-09-29T06:10:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4150 booked trip TRIP-DISP-T-PD-03 from Junction 8, Bishan to Changi Airport Terminal 3 (Departures). Upfront estimate $23.19 for planned route 19.6 km / 31 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-29T06:10:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8232 (Vinod Krishnan, Hyundai Kona Electric (SKC 7702 D)) assigned."
+    },
+    {
+      "timestamp": "2026-09-29T06:15:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-29T06:16:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-29T06:40:24+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Changi Airport Terminal 3 (Departures). Meter distance 19.64 km, duration 24.4 min."
+    },
+    {
+      "timestamp": "2026-09-29T06:40:44+08:00",
+      "event_type": "payment_captured",
+      "details": "$21.74 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-09-29T15:40:24+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-8232 submitted cleaning claim CLM-PD-03 for repair_damage: $350.00 with 2 attachment(s)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-03-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-09-29T15:40:24+08:00",
+      "captured_at": "2026-09-29T06:44:24+08:00",
+      "location": {
+        "lat": 1.35574,
+        "lng": 103.98638
+      },
+      "file_hash": "sha256:d65131f132ed2e4ac2d2f5fa179acd434efe6784",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "A 15 cm tear in the rear seat leather; the car plate is readable on the open boot lid in the background.",
+        "mess_type": "repair_damage",
+        "severity": "heavy",
+        "plate_read": "SKC 7702 D",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.04,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-03-2",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-09-29T15:40:24+08:00",
+      "captured_at": "2026-09-29T15:15:24+08:00",
+      "location": null,
+      "file_hash": "sha256:610d7c115d4440d9e318d468747ca0e111f62e9d",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "Kallang Auto Upholstery Pte Ltd",
+        "uen": "200811223M",
+        "address": "1 Kaki Bukit Road 1, #02-15, Singapore 415934",
+        "contact_number": "+65 6844 3301",
+        "service_description": "Upholstery repair quotation: replace rear seat leather panel",
+        "professional_cleaning": false,
+        "cleaning_date": "2026-09-29",
+        "car_plate": "SKC 7702 D",
+        "amount": 350.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

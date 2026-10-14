@@ -1,0 +1,295 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-15",
+    "trip_id": "TRIP-DISP-T-NS-15",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "I was at the Tower 3 taxi stand the whole time. No car came.",
+    "filed_at": "2026-10-05T23:11:30+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-19113",
+    "name": "Ravindran Pillai",
+    "account_age_days": 420,
+    "total_trips": 120,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 49,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-38207",
+    "name": "Kevin Wong",
+    "account_age_days": 900,
+    "total_trips": 2200,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Tesla Model 3 (SGL 6673 Z)",
+    "age_years": 38,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-15",
+    "rider_id": "R-19113",
+    "driver_id": "D-38207",
+    "pickup_location": {
+      "name": "Suntec City (Tower 3 taxi stand)",
+      "lat": 1.295,
+      "lng": 103.858,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Holland Village (Lorong Liput)",
+      "lat": 1.311,
+      "lng": 103.796,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-05T16:30:00+08:00",
+    "matched_at": "2026-10-05T16:30:15+08:00",
+    "scheduled_time": "2026-10-05T16:37:00+08:00",
+    "eta_at_assignment_min": 7,
+    "driver_arrival_time": "2026-10-05T16:37:00+08:00",
+    "driver_wait_start": "2026-10-05T16:37:00+08:00",
+    "cancellation_time": "2026-10-05T16:41:30+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-05T16:31:00+08:00",
+      "lat": 1.3111,
+      "lng": 103.85822,
+      "speed_kmh": 17,
+      "accuracy_m": 5.8,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:34:00+08:00",
+      "lat": 1.304262,
+      "lng": 103.860457,
+      "speed_kmh": 14,
+      "accuracy_m": 5.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:36:00+08:00",
+      "lat": 1.300416,
+      "lng": 103.861715,
+      "speed_kmh": 9,
+      "accuracy_m": 7.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:37:00+08:00",
+      "lat": 1.299128,
+      "lng": 103.862147,
+      "speed_kmh": 0,
+      "accuracy_m": 4.6,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:38:00+08:00",
+      "lat": 1.29914,
+      "lng": 103.862124,
+      "speed_kmh": 0,
+      "accuracy_m": 4.4,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:39:00+08:00",
+      "lat": 1.299131,
+      "lng": 103.862117,
+      "speed_kmh": 0,
+      "accuracy_m": 6.8,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:40:00+08:00",
+      "lat": 1.299136,
+      "lng": 103.86214,
+      "speed_kmh": 0,
+      "accuracy_m": 7.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:41:00+08:00",
+      "lat": 1.299126,
+      "lng": 103.86212,
+      "speed_kmh": 0,
+      "accuracy_m": 8.4,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T16:41:30+08:00",
+      "lat": 1.299133,
+      "lng": 103.862158,
+      "speed_kmh": 0,
+      "accuracy_m": 7.4,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-10-05T16:37:00+08:00",
+        "lat": 1.295169,
+        "lng": 103.858008,
+        "accuracy_m": 6.3
+      },
+      {
+        "timestamp": "2026-10-05T16:39:00+08:00",
+        "lat": 1.295162,
+        "lng": 103.858032,
+        "accuracy_m": 4.5
+      },
+      {
+        "timestamp": "2026-10-05T16:41:00+08:00",
+        "lat": 1.295115,
+        "lng": 103.858022,
+        "accuracy_m": 7.4
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-05T16:37:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at Suntec Tower 3 taxi stand."
+    },
+    {
+      "timestamp": "2026-10-05T16:38:00+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-05T16:39:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Where are you?"
+    },
+    {
+      "timestamp": "2026-10-05T16:41:12+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I'm cancelling."
+    },
+    {
+      "timestamp": "2026-10-05T16:41:30+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-05T16:30:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-19113 booked trip TRIP-DISP-T-NS-15 from Suntec City (Tower 3 taxi stand) to Holland Village (Lorong Liput). On-demand booking. Estimated pickup 16:37. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-05T16:30:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-38207 (Kevin Wong, Tesla Model 3 (SGL 6673 Z)) matched. ETA 7 min."
+    },
+    {
+      "timestamp": "2026-10-05T16:30:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-05T16:37:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point. Speed 0 km/h. Arrival auto-confirmed."
+    },
+    {
+      "timestamp": "2026-10-05T16:37:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 16:40:00."
+    },
+    {
+      "timestamp": "2026-10-05T16:37:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-10-05T16:38:00+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-05T16:40:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-10-05T16:41:30+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 4.5 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-10-05T16:41:35+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-38207 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

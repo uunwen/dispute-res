@@ -1,0 +1,254 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-44",
+    "trip_id": "TRIP-DISP-T-NS-44",
+    "filed_by": "driver",
+    "dispute_type": "no_show_charge",
+    "description": "Traffic was bad on the way to Junction 8 and the rider cancelled before I got there. I spent 20 minutes on this job and should get the cancellation fee.",
+    "filed_at": "2026-10-06T20:35:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4132",
+    "name": "Jason Pang",
+    "account_age_days": 420,
+    "total_trips": 29,
+    "avg_rating": 3.9,
+    "dispute_history": {
+      "total_disputes": 5,
+      "upheld": 1,
+      "rejected": 4
+    },
+    "fraud_flags": 1,
+    "fraud_flag_details": "frequent_late_cancellations",
+    "payment_method": "e-wallet",
+    "age_years": 28,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-33210",
+    "name": "Jamal Hussain",
+    "account_age_days": 600,
+    "total_trips": 1500,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Jazz (SGU 1579 E)",
+    "age_years": 33,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-44",
+    "rider_id": "R-4132",
+    "driver_id": "D-33210",
+    "pickup_location": {
+      "name": "Junction 8, Bishan",
+      "lat": 1.3504,
+      "lng": 103.8485,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Tampines Mall (Tampines Central 5 drop-off)",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-06T17:50:00+08:00",
+    "matched_at": "2026-10-06T17:50:15+08:00",
+    "scheduled_time": "2026-10-06T17:56:00+08:00",
+    "eta_at_assignment_min": 6,
+    "driver_arrival_time": null,
+    "driver_wait_start": null,
+    "cancellation_time": "2026-10-06T18:12:00+08:00",
+    "cancelled_by": "rider",
+    "cancellation_reason": "rider_cancelled",
+    "cancellation_fee": 0.0,
+    "waiting_fee": 0.0,
+    "payment_status": "n/a",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-06T17:50:30+08:00",
+      "lat": 1.330436,
+      "lng": 103.883682,
+      "speed_kmh": 14,
+      "accuracy_m": 6.2,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T17:52:30+08:00",
+      "lat": 1.331548,
+      "lng": 103.881727,
+      "speed_kmh": 9,
+      "accuracy_m": 7.6,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T17:55:00+08:00",
+      "lat": 1.332661,
+      "lng": 103.879773,
+      "speed_kmh": 8,
+      "accuracy_m": 6.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T17:57:30+08:00",
+      "lat": 1.334885,
+      "lng": 103.875864,
+      "speed_kmh": 12,
+      "accuracy_m": 5.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T18:00:00+08:00",
+      "lat": 1.337109,
+      "lng": 103.871954,
+      "speed_kmh": 12,
+      "accuracy_m": 7.7,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T18:02:30+08:00",
+      "lat": 1.338888,
+      "lng": 103.868827,
+      "speed_kmh": 10,
+      "accuracy_m": 8.2,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T18:05:00+08:00",
+      "lat": 1.340668,
+      "lng": 103.8657,
+      "speed_kmh": 10,
+      "accuracy_m": 9.7,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T18:07:30+08:00",
+      "lat": 1.342225,
+      "lng": 103.862964,
+      "speed_kmh": 8,
+      "accuracy_m": 8.6,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T18:10:00+08:00",
+      "lat": 1.343781,
+      "lng": 103.860227,
+      "speed_kmh": 8,
+      "accuracy_m": 5.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-06T18:11:30+08:00",
+      "lat": 1.344671,
+      "lng": 103.858664,
+      "speed_kmh": 8,
+      "accuracy_m": 8.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-06T18:02:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Where are you? The app said 6 minutes."
+    },
+    {
+      "timestamp": "2026-10-06T18:03:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Jam on Braddell Road, coming."
+    },
+    {
+      "timestamp": "2026-10-06T18:10:30+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Sorry, I can't wait any longer."
+    },
+    {
+      "timestamp": "2026-10-06T18:12:00+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by rider. No cancellation fee applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-06T17:50:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4132 booked trip TRIP-DISP-T-NS-44 from Junction 8, Bishan to Tampines Mall (Tampines Central 5 drop-off). On-demand booking. Estimated pickup 17:56. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-06T17:50:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-33210 (Jamal Hussain, Honda Jazz (SGU 1579 E)) matched. ETA 6 min."
+    },
+    {
+      "timestamp": "2026-10-06T17:50:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-06T18:12:00+08:00",
+      "event_type": "trip_cancelled_by_rider",
+      "details": "Rider cancelled the trip in-app 21.8 min after matching. No cancellation fee applied. The app does not charge a rider cancellation fee while the driver is still en route and past the ETA."
+    },
+    {
+      "timestamp": "2026-10-06T18:12:05+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-33210 released from trip. Trip status: cancelled (rider_cancelled)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

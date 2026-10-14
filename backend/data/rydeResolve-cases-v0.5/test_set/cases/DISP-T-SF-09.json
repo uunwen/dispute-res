@@ -1,0 +1,321 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-SF-09",
+    "trip_id": "TRIP-DISP-T-SF-09",
+    "filed_by": "rider",
+    "dispute_type": "safety_incident",
+    "description": "The driver kicked me out halfway to the airport and still charged me. I want a full refund.",
+    "filed_at": "2026-10-03T01:01:30+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4156",
+    "name": "Pooja Raman",
+    "account_age_days": 420,
+    "total_trips": 81,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 34,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8236",
+    "name": "Lim Boon Chye",
+    "account_age_days": 1600,
+    "total_trips": 6100,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Sienta (SKG 8812 J)",
+    "age_years": 61,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-SF-09",
+    "rider_id": "R-4156",
+    "driver_id": "D-8236",
+    "pickup_location": {
+      "name": "Kallang Wave Mall",
+      "lat": 1.302,
+      "lng": 103.875,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Changi Airport Terminal 3 (Departures)",
+      "lat": 1.3555,
+      "lng": 103.9864,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-02T08:05:00+08:00",
+    "matched_at": "2026-10-02T08:05:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-02T08:10:00+08:00",
+    "driver_wait_start": "2026-10-02T08:10:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-02T08:11:00+08:00",
+    "trip_end": "2026-10-02T08:23:30+08:00",
+    "trip_completed": false,
+    "planned_route": {
+      "distance_km": 17.59,
+      "duration_min": 27.8,
+      "waypoints": [
+        {
+          "lat": 1.302,
+          "lng": 103.875
+        },
+        {
+          "lat": 1.37324,
+          "lng": 103.90932
+        },
+        {
+          "lat": 1.3555,
+          "lng": 103.9864
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 17.59,
+      "distance_charge": 11.43,
+      "duration_min": 27.8,
+      "time_charge": 6.12,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 21.15
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 9.67,
+    "distance_charge": 6.29,
+    "duration_min": 12.5,
+    "time_charge": 2.75,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 12.64,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-02T08:11:00+08:00",
+      "lat": 1.302011,
+      "lng": 103.874957,
+      "speed_kmh": 29,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-02T08:12:00+08:00",
+      "lat": 1.30593,
+      "lng": 103.876858,
+      "speed_kmh": 31,
+      "accuracy_m": 9.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-02T08:13:00+08:00",
+      "lat": 1.310127,
+      "lng": 103.878878,
+      "speed_kmh": 32,
+      "accuracy_m": 7.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-02T08:14:00+08:00",
+      "lat": 1.314405,
+      "lng": 103.880995,
+      "speed_kmh": 32,
+      "accuracy_m": 7.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-02T08:15:00+08:00",
+      "lat": 1.318728,
+      "lng": 103.883077,
+      "speed_kmh": 30,
+      "accuracy_m": 9.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-02T08:16:00+08:00",
+      "lat": 1.322795,
+      "lng": 103.885017,
+      "speed_kmh": 35,
+      "accuracy_m": 9.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-02T08:17:00+08:00",
+      "lat": 1.327524,
+      "lng": 103.887291,
+      "speed_kmh": 30,
+      "accuracy_m": 4.6,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-02T08:18:00+08:00",
+      "lat": 1.331551,
+      "lng": 103.889209,
+      "speed_kmh": 67,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-02T08:19:00+08:00",
+      "lat": 1.340618,
+      "lng": 103.893615,
+      "speed_kmh": 68,
+      "accuracy_m": 5.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-02T08:20:00+08:00",
+      "lat": 1.349811,
+      "lng": 103.898027,
+      "speed_kmh": 66,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-02T08:21:00+08:00",
+      "lat": 1.358728,
+      "lng": 103.902337,
+      "speed_kmh": 66,
+      "accuracy_m": 7.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-02T08:22:00+08:00",
+      "lat": 1.367677,
+      "lng": 103.906596,
+      "speed_kmh": 63,
+      "accuracy_m": 8.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-02T08:23:00+08:00",
+      "lat": 1.372533,
+      "lng": 103.912458,
+      "speed_kmh": 65,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-02T08:23:30+08:00",
+      "lat": 1.371468,
+      "lng": 103.917028,
+      "speed_kmh": 0,
+      "accuracy_m": 9.1,
+      "status": "ended_early",
+      "speed_limit_kmh": 90
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-02T08:16:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Drive faster you idiot, useless driver."
+    },
+    {
+      "timestamp": "2026-10-02T08:16:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Please be respectful or I will have to end the trip."
+    },
+    {
+      "timestamp": "2026-10-02T08:17:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Shut up and drive, bodoh."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-02T08:05:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4156 booked trip TRIP-DISP-T-SF-09 from Kallang Wave Mall to Changi Airport Terminal 3 (Departures). Upfront estimate $21.15 for planned route 17.6 km / 28 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-02T08:05:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8236 (Lim Boon Chye, Toyota Sienta (SKG 8812 J)) assigned."
+    },
+    {
+      "timestamp": "2026-10-02T08:10:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-02T08:11:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-02T08:23:30+08:00",
+      "event_type": "trip_ended_early",
+      "details": "Driver ended the trip before the destination. Reason selected: rider_abuse. Meter distance 9.67 km, duration 12.5 min. Rider charged for the distance travelled."
+    },
+    {
+      "timestamp": "2026-10-02T08:23:50+08:00",
+      "event_type": "payment_captured",
+      "details": "$12.64 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

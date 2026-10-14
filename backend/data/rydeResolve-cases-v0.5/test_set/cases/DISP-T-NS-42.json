@@ -1,0 +1,164 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-42",
+    "trip_id": "TRIP-DISP-T-NS-42",
+    "filed_by": "driver",
+    "dispute_type": "no_show_charge",
+    "description": "I accepted the job and was already driving to NEX when the rider cancelled. I should get the cancellation fee for my time.",
+    "filed_at": "2026-10-03T15:50:03+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9120",
+    "name": "Sharon Koh",
+    "account_age_days": 420,
+    "total_trips": 155,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 43,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23213",
+    "name": "Manimaran Subbu",
+    "account_age_days": 900,
+    "total_trips": 3300,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Hyundai Elantra (SGN 5300 P)",
+    "age_years": 49,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-42",
+    "rider_id": "R-9120",
+    "driver_id": "D-23213",
+    "pickup_location": {
+      "name": "NEX, Serangoon Central",
+      "lat": 1.3507,
+      "lng": 103.8723,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Raffles Place (Chulia St taxi stand)",
+      "lat": 1.284,
+      "lng": 103.8515,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-03T08:15:00+08:00",
+    "matched_at": "2026-10-03T08:15:15+08:00",
+    "scheduled_time": "2026-10-03T08:22:00+08:00",
+    "eta_at_assignment_min": 7,
+    "driver_arrival_time": null,
+    "driver_wait_start": null,
+    "cancellation_time": "2026-10-03T08:17:03+08:00",
+    "cancelled_by": "rider",
+    "cancellation_reason": "rider_cancelled",
+    "cancellation_fee": 0.0,
+    "waiting_fee": 0.0,
+    "payment_status": "n/a",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-03T08:15:30+08:00",
+      "lat": 1.327566,
+      "lng": 103.87531,
+      "speed_kmh": 24,
+      "accuracy_m": 8.2,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:16:30+08:00",
+      "lat": 1.331133,
+      "lng": 103.874847,
+      "speed_kmh": 22,
+      "accuracy_m": 10.7,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-03T08:17:03+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by rider. No cancellation fee applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-03T08:15:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9120 booked trip TRIP-DISP-T-NS-42 from NEX, Serangoon Central to Raffles Place (Chulia St taxi stand). On-demand booking. Estimated pickup 08:22. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-03T08:15:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23213 (Manimaran Subbu, Hyundai Elantra (SGN 5300 P)) matched. ETA 7 min."
+    },
+    {
+      "timestamp": "2026-10-03T08:15:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-03T08:17:03+08:00",
+      "event_type": "trip_cancelled_by_rider",
+      "details": "Rider cancelled the trip in-app 1.8 min after matching. No cancellation fee applied."
+    },
+    {
+      "timestamp": "2026-10-03T08:17:08+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-23213 released from trip. Trip status: cancelled (rider_cancelled)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

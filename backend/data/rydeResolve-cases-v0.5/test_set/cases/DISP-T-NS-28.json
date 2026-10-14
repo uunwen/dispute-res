@@ -1,0 +1,214 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-28",
+    "trip_id": "TRIP-DISP-T-NS-28",
+    "filed_by": "driver",
+    "dispute_type": "no_show_charge",
+    "description": "Rider cancelled in the app while I was already at the pickup point. I did not get the cancellation fee.",
+    "filed_at": "2026-10-01T08:03:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-14102",
+    "name": "Tan Wei Jie",
+    "account_age_days": 420,
+    "total_trips": 60,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 34,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-18206",
+    "name": "Farhan Ismail",
+    "account_age_days": 900,
+    "total_trips": 1900,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Vezel (SGN 5498 C)",
+    "age_years": 36,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-28",
+    "rider_id": "R-14102",
+    "driver_id": "D-18206",
+    "pickup_location": {
+      "name": "Waterway Point, Punggol",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Junction 8, Bishan",
+      "lat": 1.3504,
+      "lng": 103.8485,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-01T07:30:00+08:00",
+    "matched_at": "2026-10-01T07:30:15+08:00",
+    "scheduled_time": "2026-10-01T07:34:00+08:00",
+    "eta_at_assignment_min": 4,
+    "driver_arrival_time": "2026-10-01T07:34:00+08:00",
+    "driver_wait_start": "2026-10-01T07:34:00+08:00",
+    "cancellation_time": "2026-10-01T07:35:00+08:00",
+    "cancelled_by": "rider",
+    "cancellation_reason": "rider_cancelled",
+    "cancellation_fee": 0.0,
+    "waiting_fee": 0.0,
+    "payment_status": "n/a",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-01T07:31:00+08:00",
+      "lat": 1.403863,
+      "lng": 103.906868,
+      "speed_kmh": 14,
+      "accuracy_m": 5.8,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T07:33:00+08:00",
+      "lat": 1.405895,
+      "lng": 103.903367,
+      "speed_kmh": 9,
+      "accuracy_m": 9.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T07:34:00+08:00",
+      "lat": 1.406581,
+      "lng": 103.902213,
+      "speed_kmh": 0,
+      "accuracy_m": 4.8,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T07:35:00+08:00",
+      "lat": 1.406541,
+      "lng": 103.902204,
+      "speed_kmh": 0,
+      "accuracy_m": 5.1,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-01T07:34:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at Waterway Point."
+    },
+    {
+      "timestamp": "2026-10-01T07:34:30+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: answered, rider said 'give me a few minutes'."
+    },
+    {
+      "timestamp": "2026-10-01T07:35:00+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by rider. No cancellation fee applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-01T07:30:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-14102 booked trip TRIP-DISP-T-NS-28 from Waterway Point, Punggol to Junction 8, Bishan. On-demand booking. Estimated pickup 07:34. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-01T07:30:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-18206 (Farhan Ismail, Honda Vezel (SGN 5498 C)) matched. ETA 4 min."
+    },
+    {
+      "timestamp": "2026-10-01T07:30:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-01T07:34:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 9 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-10-01T07:34:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 07:37:00."
+    },
+    {
+      "timestamp": "2026-10-01T07:34:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-10-01T07:34:30+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: answered, rider said 'give me a few minutes'."
+    },
+    {
+      "timestamp": "2026-10-01T07:35:00+08:00",
+      "event_type": "trip_cancelled_by_rider",
+      "details": "Rider cancelled the trip in-app 4.8 min after matching. No cancellation fee applied. Fee not applied: payment service outage between 07:30 and 07:50 (Ryde incident INC-2210)."
+    },
+    {
+      "timestamp": "2026-10-01T07:35:05+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-18206 released from trip. Trip status: cancelled (rider_cancelled)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

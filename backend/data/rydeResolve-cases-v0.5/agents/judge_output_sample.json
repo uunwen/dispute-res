@@ -1,0 +1,26 @@
+{
+  "id": "DISP-T-PD-01",
+  "outcome": "charge_upheld",
+  "refund_amount": 0.0,
+  "payer": null,
+  "rider_charge_amount": 0.0,
+  "driver_warning": false,
+  "rider_warning": false,
+  "driver_goodwill_paid_by_ryde": 0.0,
+  "escalate": false,
+  "provisional_outcome": null,
+  "safety_referral": false,
+  "security_flag": false,
+  "fraud_flag": false,
+  "confidence": 0.9,
+  "rules_cited": [
+    "PD-3",
+    "PD-4"
+  ],
+  "precedents_used": [
+    "PREC-PD-01"
+  ],
+  "reasoning": "One or two sentences.",
+  "rider_explanation": "Two or three sentences.",
+  "driver_explanation": "Two or three sentences."
+}

@@ -1,0 +1,173 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-23",
+    "trip_id": "TRIP-DISP-T-NS-23",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "The booking was only accepted at 5:48pm for a 6pm trip and I cancelled two minutes later. Charged $6.61.",
+    "filed_at": "2026-10-04T22:32:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9112",
+    "name": "Grace Lee",
+    "account_age_days": 420,
+    "total_trips": 31,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 67,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": "large_text",
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-28213",
+    "name": "Manimaran Subbu",
+    "account_age_days": 900,
+    "total_trips": 3300,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Hyundai Elantra (SGN 6671 P)",
+    "age_years": 49,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-23",
+    "rider_id": "R-9112",
+    "driver_id": "D-28213",
+    "pickup_location": {
+      "name": "Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay)",
+      "lat": 1.3693,
+      "lng": 103.8486,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Holland Village (Lorong Liput)",
+      "lat": 1.311,
+      "lng": 103.796,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "advance",
+    "booked_at": "2026-10-04T14:48:00+08:00",
+    "matched_at": "2026-10-04T17:48:15+08:00",
+    "scheduled_time": "2026-10-04T18:00:00+08:00",
+    "eta_at_assignment_min": 12,
+    "driver_arrival_time": null,
+    "driver_wait_start": null,
+    "cancellation_time": "2026-10-04T17:50:00+08:00",
+    "cancelled_by": "rider",
+    "cancellation_reason": "rider_cancelled",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-04T17:48:30+08:00",
+      "lat": 1.400229,
+      "lng": 103.838855,
+      "speed_kmh": 38,
+      "accuracy_m": 9.7,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T17:49:12+08:00",
+      "lat": 1.397656,
+      "lng": 103.839667,
+      "speed_kmh": 36,
+      "accuracy_m": 4.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T17:49:48+08:00",
+      "lat": 1.395083,
+      "lng": 103.840479,
+      "speed_kmh": 34,
+      "accuracy_m": 4.7,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-04T17:50:00+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by rider. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-04T14:48:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9112 booked trip TRIP-DISP-T-NS-23 from Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay) to Holland Village (Lorong Liput). Advance booking for pickup at 18:00. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-04T17:48:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-28213 (Manimaran Subbu, Hyundai Elantra (SGN 6671 P)) accepted the advance booking. Scheduled pickup 18:00."
+    },
+    {
+      "timestamp": "2026-10-04T17:48:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-04T17:50:00+08:00",
+      "event_type": "trip_cancelled_by_rider",
+      "details": "Rider cancelled the trip in-app 1.8 min after matching. $6.61 cancellation fee charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-04T17:50:05+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-28213 released from trip. Trip status: cancelled (rider_cancelled)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

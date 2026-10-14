@@ -1,0 +1,413 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-RD-05",
+    "trip_id": "TRIP-DISP-T-RD-05",
+    "filed_by": "rider",
+    "dispute_type": "route_deviation",
+    "description": "路线跟我订车的时候看到的不一样，车费也比估价贵。",
+    "filed_at": "2026-09-26T14:12:16+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9102",
+    "name": "Tan Wei Jie",
+    "account_age_days": 420,
+    "total_trips": 60,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 34,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8211",
+    "name": "Goh Wen Hao",
+    "account_age_days": 900,
+    "total_trips": 2600,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Skoda Octavia (SGT 4469 F)",
+    "age_years": 41,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-RD-05",
+    "rider_id": "R-9102",
+    "driver_id": "D-8211",
+    "pickup_location": {
+      "name": "Junction 8, Bishan",
+      "lat": 1.3504,
+      "lng": 103.8485,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Marina Bay Sands (Hotel Tower 1 lobby)",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-25T18:00:00+08:00",
+    "matched_at": "2026-09-25T18:00:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-25T18:06:00+08:00",
+    "driver_wait_start": "2026-09-25T18:06:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-25T18:07:00+08:00",
+    "trip_end": "2026-09-25T18:30:16+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 9.69,
+      "duration_min": 18.2,
+      "waypoints": [
+        {
+          "lat": 1.3504,
+          "lng": 103.8485
+        },
+        {
+          "lat": 1.31203,
+          "lng": 103.82783
+        },
+        {
+          "lat": 1.2834,
+          "lng": 103.8607
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 9.69,
+      "distance_charge": 6.3,
+      "duration_min": 18.2,
+      "time_charge": 4.0,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 13.9
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 11.63,
+    "distance_charge": 7.56,
+    "duration_min": 23.3,
+    "time_charge": 5.13,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 16.29,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-25T18:07:00+08:00",
+      "lat": 1.350404,
+      "lng": 103.848431,
+      "speed_kmh": 25,
+      "accuracy_m": 4.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:08:00+08:00",
+      "lat": 1.346932,
+      "lng": 103.845704,
+      "speed_kmh": 33,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:09:00+08:00",
+      "lat": 1.343408,
+      "lng": 103.842817,
+      "speed_kmh": 23,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:10:00+08:00",
+      "lat": 1.339925,
+      "lng": 103.840001,
+      "speed_kmh": 31,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:11:00+08:00",
+      "lat": 1.336447,
+      "lng": 103.83718,
+      "speed_kmh": 25,
+      "accuracy_m": 5.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:12:00+08:00",
+      "lat": 1.332973,
+      "lng": 103.83434,
+      "speed_kmh": 25,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:13:00+08:00",
+      "lat": 1.329448,
+      "lng": 103.831502,
+      "speed_kmh": 29,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:14:00+08:00",
+      "lat": 1.325979,
+      "lng": 103.828663,
+      "speed_kmh": 29,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:15:00+08:00",
+      "lat": 1.322415,
+      "lng": 103.825828,
+      "speed_kmh": 33,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:16:00+08:00",
+      "lat": 1.318983,
+      "lng": 103.823009,
+      "speed_kmh": 34,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:17:00+08:00",
+      "lat": 1.315534,
+      "lng": 103.820199,
+      "speed_kmh": 34,
+      "accuracy_m": 7.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:18:00+08:00",
+      "lat": 1.311991,
+      "lng": 103.817325,
+      "speed_kmh": 31,
+      "accuracy_m": 6.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:19:00+08:00",
+      "lat": 1.308918,
+      "lng": 103.816968,
+      "speed_kmh": 24,
+      "accuracy_m": 6.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:20:00+08:00",
+      "lat": 1.306679,
+      "lng": 103.820826,
+      "speed_kmh": 36,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:21:00+08:00",
+      "lat": 1.304445,
+      "lng": 103.824716,
+      "speed_kmh": 30,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:22:00+08:00",
+      "lat": 1.302139,
+      "lng": 103.828629,
+      "speed_kmh": 26,
+      "accuracy_m": 6.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:23:00+08:00",
+      "lat": 1.299915,
+      "lng": 103.832444,
+      "speed_kmh": 35,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:24:00+08:00",
+      "lat": 1.297578,
+      "lng": 103.836385,
+      "speed_kmh": 27,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:25:00+08:00",
+      "lat": 1.295307,
+      "lng": 103.840262,
+      "speed_kmh": 30,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:26:00+08:00",
+      "lat": 1.293048,
+      "lng": 103.844157,
+      "speed_kmh": 34,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:27:00+08:00",
+      "lat": 1.290799,
+      "lng": 103.847986,
+      "speed_kmh": 25,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:28:00+08:00",
+      "lat": 1.288473,
+      "lng": 103.851924,
+      "speed_kmh": 36,
+      "accuracy_m": 7.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:29:00+08:00",
+      "lat": 1.286251,
+      "lng": 103.855785,
+      "speed_kmh": 31,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:30:00+08:00",
+      "lat": 1.283989,
+      "lng": 103.859669,
+      "speed_kmh": 25,
+      "accuracy_m": 8.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T18:30:16+08:00",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "speed_kmh": 0,
+      "accuracy_m": 7.3,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-09-25T18:00:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9102 booked trip TRIP-DISP-T-RD-05 from Junction 8, Bishan to Marina Bay Sands (Hotel Tower 1 lobby). Upfront estimate $13.90 for planned route 9.7 km / 18 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-25T18:00:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8211 (Goh Wen Hao, Skoda Octavia (SGT 4469 F)) assigned."
+    },
+    {
+      "timestamp": "2026-09-25T18:06:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 8 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-25T18:07:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-25T18:11:00+08:00",
+      "event_type": "navigation_reroute",
+      "details": "App navigation rerouted the driver: heavy congestion ahead on the CTE southbound (+9 min). Driver accepted the suggested alternate route."
+    },
+    {
+      "timestamp": "2026-09-25T18:30:16+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Marina Bay Sands (Hotel Tower 1 lobby). Meter distance 11.63 km, duration 23.3 min."
+    },
+    {
+      "timestamp": "2026-09-25T18:30:36+08:00",
+      "event_type": "payment_captured",
+      "details": "$16.29 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": {
+    "source": "LTA traffic incident feed (mock)",
+    "query_window": [
+      "2026-09-25T18:07:00+08:00",
+      "2026-09-25T18:30:16+08:00"
+    ],
+    "incidents": []
+  },
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

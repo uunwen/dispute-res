@@ -1,0 +1,355 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-35",
+    "trip_id": "TRIP-DISP-T-NS-35",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "I told him I was coming and he cancelled. $5 is unfair.",
+    "filed_at": "2026-09-13T14:05:30+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4108",
+    "name": "Hana Yamamoto",
+    "account_age_days": 420,
+    "total_trips": 75,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 31,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": "screen_reader",
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8203",
+    "name": "Rajendran Kumar",
+    "account_age_days": 900,
+    "total_trips": 2800,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Hyundai Ioniq 5 (SGM 2215 K)",
+    "age_years": 47,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-35",
+    "rider_id": "R-4108",
+    "driver_id": "D-8203",
+    "pickup_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Bugis Junction (Victoria St taxi stand)",
+      "lat": 1.29935,
+      "lng": 103.8548,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-13T11:30:00+08:00",
+    "matched_at": "2026-09-13T11:30:15+08:00",
+    "scheduled_time": "2026-09-13T11:38:00+08:00",
+    "eta_at_assignment_min": 8,
+    "driver_arrival_time": "2026-09-13T11:38:00+08:00",
+    "driver_wait_start": "2026-09-13T11:38:00+08:00",
+    "cancellation_time": "2026-09-13T11:48:30+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 5.0,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 5,
+    "cancellation_fee_after_wait": 5.0,
+    "no_show_threshold_min": 8,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": null,
+    "waiting_fee": null,
+    "driver_waiting_fee": null,
+    "advance_free_before_min": null
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-13T11:32:00+08:00",
+      "lat": 1.294857,
+      "lng": 103.840382,
+      "speed_kmh": 17,
+      "accuracy_m": 7.8,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:35:00+08:00",
+      "lat": 1.300123,
+      "lng": 103.835478,
+      "speed_kmh": 14,
+      "accuracy_m": 10.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:37:00+08:00",
+      "lat": 1.303085,
+      "lng": 103.832719,
+      "speed_kmh": 9,
+      "accuracy_m": 10.0,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:38:00+08:00",
+      "lat": 1.304078,
+      "lng": 103.831816,
+      "speed_kmh": 0,
+      "accuracy_m": 5.3,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:39:00+08:00",
+      "lat": 1.304061,
+      "lng": 103.831825,
+      "speed_kmh": 0,
+      "accuracy_m": 9.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:40:00+08:00",
+      "lat": 1.304052,
+      "lng": 103.831811,
+      "speed_kmh": 0,
+      "accuracy_m": 6.3,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:41:00+08:00",
+      "lat": 1.304041,
+      "lng": 103.831797,
+      "speed_kmh": 0,
+      "accuracy_m": 5.9,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:42:00+08:00",
+      "lat": 1.304106,
+      "lng": 103.831811,
+      "speed_kmh": 0,
+      "accuracy_m": 8.7,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:43:00+08:00",
+      "lat": 1.304068,
+      "lng": 103.831809,
+      "speed_kmh": 0,
+      "accuracy_m": 7.6,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:44:00+08:00",
+      "lat": 1.304074,
+      "lng": 103.831792,
+      "speed_kmh": 0,
+      "accuracy_m": 8.2,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:45:00+08:00",
+      "lat": 1.304052,
+      "lng": 103.831773,
+      "speed_kmh": 0,
+      "accuracy_m": 5.1,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:46:00+08:00",
+      "lat": 1.304094,
+      "lng": 103.831819,
+      "speed_kmh": 0,
+      "accuracy_m": 5.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:47:00+08:00",
+      "lat": 1.304068,
+      "lng": 103.831766,
+      "speed_kmh": 0,
+      "accuracy_m": 6.9,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:48:00+08:00",
+      "lat": 1.304045,
+      "lng": 103.831808,
+      "speed_kmh": 0,
+      "accuracy_m": 6.8,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-13T11:48:30+08:00",
+      "lat": 1.304095,
+      "lng": 103.831799,
+      "speed_kmh": 0,
+      "accuracy_m": 5.7,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-09-13T11:39:00+08:00",
+        "lat": 1.305165,
+        "lng": 103.832227,
+        "accuracy_m": 8.4
+      },
+      {
+        "timestamp": "2026-09-13T11:43:00+08:00",
+        "lat": 1.304781,
+        "lng": 103.832064,
+        "accuracy_m": 7.3
+      },
+      {
+        "timestamp": "2026-09-13T11:47:00+08:00",
+        "lat": 1.304493,
+        "lng": 103.831961,
+        "accuracy_m": 8.4
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-13T11:38:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at ION Orchard Turn."
+    },
+    {
+      "timestamp": "2026-09-13T11:39:30+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-13T11:42:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "coming now, 2 min"
+    },
+    {
+      "timestamp": "2026-09-13T11:45:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Are you here?"
+    },
+    {
+      "timestamp": "2026-09-13T11:48:18+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling now."
+    },
+    {
+      "timestamp": "2026-09-13T11:48:30+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $5.00 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-13T11:30:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4108 booked trip TRIP-DISP-T-NS-35 from ION Orchard (Orchard Turn pickup point) to Bugis Junction (Victoria St taxi stand). On-demand booking. Estimated pickup 11:38. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-13T11:30:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8203 (Rajendran Kumar, Hyundai Ioniq 5 (SGM 2215 K)) matched. ETA 8 min."
+    },
+    {
+      "timestamp": "2026-09-13T11:30:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-13T11:38:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 9 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-09-13T11:38:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (8 min) is reached at 11:46:00."
+    },
+    {
+      "timestamp": "2026-09-13T11:38:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-09-13T11:39:30+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-13T11:46:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 8 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-09-13T11:48:30+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 10.5 min on the wait timer. $5.00 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-09-13T11:48:35+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-8203 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

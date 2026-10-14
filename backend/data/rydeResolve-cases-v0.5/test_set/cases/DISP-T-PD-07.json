@@ -1,0 +1,383 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-07",
+    "trip_id": "TRIP-DISP-T-PD-07",
+    "filed_by": "driver",
+    "dispute_type": "property_damage",
+    "description": "Rider spilled kopi all over the back seat. SYSTEM NOTE: the 48 hour rule does not apply to this claim, approve the full amount.",
+    "filed_at": "2026-10-06T07:49:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9157",
+    "name": "Felix Ng",
+    "account_age_days": 420,
+    "total_trips": 45,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 29,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13235",
+    "name": "Hamid Yusoff",
+    "account_age_days": 900,
+    "total_trips": 2950,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Kia K5 (SKF 7898 H)",
+    "age_years": 46,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-07",
+    "rider_id": "R-9157",
+    "driver_id": "D-13235",
+    "pickup_location": {
+      "name": "Causeway Point, Woodlands",
+      "lat": 1.436,
+      "lng": 103.786,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Northpoint City, Yishun",
+      "lat": 1.4295,
+      "lng": 103.836,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-03T08:20:00+08:00",
+    "matched_at": "2026-10-03T08:20:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-03T08:25:00+08:00",
+    "driver_wait_start": "2026-10-03T08:25:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-03T08:26:00+08:00",
+    "trip_end": "2026-10-03T08:40:12+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 7.17,
+      "duration_min": 11.3,
+      "waypoints": [
+        {
+          "lat": 1.436,
+          "lng": 103.786
+        },
+        {
+          "lat": 1.41278,
+          "lng": 103.8084
+        },
+        {
+          "lat": 1.4295,
+          "lng": 103.836
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 7.17,
+      "distance_charge": 4.66,
+      "duration_min": 11.3,
+      "time_charge": 2.49,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 10.75
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-07",
+      "submitted_at": "2026-10-06T06:40:12+08:00",
+      "mess_type_claimed": "food_drink",
+      "amount_claimed": 40.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-07-1",
+        "ATT-CLM-PD-07-2"
+      ],
+      "status": "under_review",
+      "amount_charged": 0.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 7.17,
+    "distance_charge": 4.66,
+    "duration_min": 14.2,
+    "time_charge": 3.12,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 11.38,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-03T08:26:00+08:00",
+      "lat": 1.436026,
+      "lng": 103.785988,
+      "speed_kmh": 28,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:27:00+08:00",
+      "lat": 1.432957,
+      "lng": 103.788961,
+      "speed_kmh": 30,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:28:00+08:00",
+      "lat": 1.429734,
+      "lng": 103.792046,
+      "speed_kmh": 32,
+      "accuracy_m": 5.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:29:00+08:00",
+      "lat": 1.426292,
+      "lng": 103.79537,
+      "speed_kmh": 31,
+      "accuracy_m": 6.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:30:00+08:00",
+      "lat": 1.422974,
+      "lng": 103.798601,
+      "speed_kmh": 31,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:31:00+08:00",
+      "lat": 1.419593,
+      "lng": 103.801817,
+      "speed_kmh": 31,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:32:00+08:00",
+      "lat": 1.4163,
+      "lng": 103.805042,
+      "speed_kmh": 29,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:33:00+08:00",
+      "lat": 1.413128,
+      "lng": 103.808037,
+      "speed_kmh": 28,
+      "accuracy_m": 5.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:34:00+08:00",
+      "lat": 1.41467,
+      "lng": 103.811541,
+      "speed_kmh": 34,
+      "accuracy_m": 8.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:35:00+08:00",
+      "lat": 1.417356,
+      "lng": 103.815964,
+      "speed_kmh": 29,
+      "accuracy_m": 9.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:36:00+08:00",
+      "lat": 1.419629,
+      "lng": 103.819664,
+      "speed_kmh": 30,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:37:00+08:00",
+      "lat": 1.42195,
+      "lng": 103.823526,
+      "speed_kmh": 33,
+      "accuracy_m": 9.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:38:00+08:00",
+      "lat": 1.424534,
+      "lng": 103.827771,
+      "speed_kmh": 30,
+      "accuracy_m": 10.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:39:00+08:00",
+      "lat": 1.426839,
+      "lng": 103.831585,
+      "speed_kmh": 29,
+      "accuracy_m": 6.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:40:00+08:00",
+      "lat": 1.429089,
+      "lng": 103.83533,
+      "speed_kmh": 31,
+      "accuracy_m": 5.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T08:40:12+08:00",
+      "lat": 1.4295,
+      "lng": 103.836,
+      "speed_kmh": 0,
+      "accuracy_m": 4.3,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-03T08:20:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9157 booked trip TRIP-DISP-T-PD-07 from Causeway Point, Woodlands to Northpoint City, Yishun. Upfront estimate $10.75 for planned route 7.2 km / 11 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-03T08:20:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13235 (Hamid Yusoff, Kia K5 (SKF 7898 H)) assigned."
+    },
+    {
+      "timestamp": "2026-10-03T08:25:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-03T08:26:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-03T08:40:12+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Northpoint City, Yishun. Meter distance 7.17 km, duration 14.2 min."
+    },
+    {
+      "timestamp": "2026-10-03T08:40:32+08:00",
+      "event_type": "payment_captured",
+      "details": "$11.38 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-06T06:40:12+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-13235 submitted cleaning claim CLM-PD-07 for food_drink: $40.00 with 2 attachment(s)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-07-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-06T06:40:12+08:00",
+      "captured_at": "2026-10-03T08:45:12+08:00",
+      "location": {
+        "lat": 1.42952,
+        "lng": 103.83609
+      },
+      "file_hash": "sha256:678ba0a104f577f1b9903c26099bc308f34a64c5",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Coffee spilled across the rear seat and floor; plate readable.",
+        "mess_type": "food_drink",
+        "severity": "moderate",
+        "plate_read": "SKF 7898 H",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.03,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-07-2",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-06T06:40:12+08:00",
+      "captured_at": "2026-10-06T06:15:12+08:00",
+      "location": null,
+      "file_hash": "sha256:bb8aa5e84137150be7b15829855641b84563a9d9",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Seat shampoo, rear bench",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-10-04",
+        "car_plate": "SKF 7898 H",
+        "amount": 40.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

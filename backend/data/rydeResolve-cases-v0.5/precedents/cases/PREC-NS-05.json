@@ -1,0 +1,313 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-NS-05",
+      "trip_id": "TRIP-PREC-NS-05",
+      "filed_by": "rider",
+      "dispute_type": "no_show_charge",
+      "description": "The app said driver arrived but he wasn't there. I stood outside the whole time.",
+      "filed_at": "2026-08-21T13:06:30+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-5107",
+      "name": "Sanjay Gupta",
+      "account_age_days": 420,
+      "total_trips": 110,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 44,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "email"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-14108",
+      "name": "Wesley Chan",
+      "account_age_days": 900,
+      "total_trips": 3100,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Subaru XV (SGU 4590 H)",
+      "age_years": 43,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-NS-05",
+      "rider_id": "R-5107",
+      "driver_id": "D-14108",
+      "pickup_location": {
+        "name": "Tanjong Pagar Centre",
+        "lat": 1.2762,
+        "lng": 103.8466,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Changi Airport Terminal 3 (Departures)",
+        "lat": 1.3555,
+        "lng": 103.9864,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-21T06:10:00+08:00",
+      "matched_at": "2026-08-21T06:10:15+08:00",
+      "scheduled_time": "2026-08-21T06:17:00+08:00",
+      "eta_at_assignment_min": 7,
+      "driver_arrival_time": "2026-08-21T06:17:00+08:00",
+      "driver_wait_start": "2026-08-21T06:17:00+08:00",
+      "cancellation_time": "2026-08-21T06:23:30+08:00",
+      "cancelled_by": "driver",
+      "cancellation_reason": "rider_no_show",
+      "cancellation_fee": 6.61,
+      "waiting_fee": 0.0,
+      "payment_status": "captured",
+      "trip_start": null,
+      "trip_end": null,
+      "trip_completed": false,
+      "planned_route": null,
+      "upfront_estimate": null,
+      "damage_claim": null
+    },
+    "cancellation_policy": {
+      "free_wait_time_min": 3,
+      "cancellation_fee_after_wait": 6.61,
+      "no_show_threshold_min": 3,
+      "fee_goes_to": "driver_compensation",
+      "driver_compensation": 4.5,
+      "waiting_fee": 5.0,
+      "driver_waiting_fee": 4.5,
+      "advance_free_before_min": 15
+    },
+    "fare_breakdown": null,
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-21T06:12:00+08:00",
+        "lat": 1.298703,
+        "lng": 103.845357,
+        "speed_kmh": 36,
+        "accuracy_m": 8.1,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-21T06:15:00+08:00",
+        "lat": 1.289723,
+        "lng": 103.845854,
+        "speed_kmh": 28,
+        "accuracy_m": 6.1,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-21T06:16:48+08:00",
+        "lat": 1.279666,
+        "lng": 103.846411,
+        "speed_kmh": 12,
+        "accuracy_m": 7.1,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-21T06:19:00+08:00",
+        "lat": 1.278499,
+        "lng": 103.846476,
+        "speed_kmh": 8,
+        "accuracy_m": 6.1,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-21T06:20:30+08:00",
+        "lat": 1.277075,
+        "lng": 103.846543,
+        "speed_kmh": 5,
+        "accuracy_m": 8.3,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-21T06:21:00+08:00",
+        "lat": 1.276229,
+        "lng": 103.846588,
+        "speed_kmh": 0,
+        "accuracy_m": 6.0,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-21T06:22:00+08:00",
+        "lat": 1.276243,
+        "lng": 103.846621,
+        "speed_kmh": 0,
+        "accuracy_m": 8.7,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-21T06:23:00+08:00",
+        "lat": 1.276246,
+        "lng": 103.846615,
+        "speed_kmh": 0,
+        "accuracy_m": 5.5,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-21T06:23:30+08:00",
+        "lat": 1.276263,
+        "lng": 103.846609,
+        "speed_kmh": 0,
+        "accuracy_m": 6.2,
+        "status": "cancelled",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": {
+      "available": true,
+      "note": null,
+      "pings": [
+        {
+          "timestamp": "2026-08-21T06:17:00+08:00",
+          "lat": 1.276326,
+          "lng": 103.846634,
+          "accuracy_m": 4.3
+        },
+        {
+          "timestamp": "2026-08-21T06:20:00+08:00",
+          "lat": 1.276294,
+          "lng": 103.846592,
+          "accuracy_m": 6.0
+        },
+        {
+          "timestamp": "2026-08-21T06:23:00+08:00",
+          "lat": 1.276328,
+          "lng": 103.846627,
+          "accuracy_m": 7.3
+        }
+      ]
+    },
+    "chat_logs": [
+      {
+        "timestamp": "2026-08-21T06:17:06+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Arrived."
+      },
+      {
+        "timestamp": "2026-08-21T06:20:00+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Where are you?"
+      },
+      {
+        "timestamp": "2026-08-21T06:23:00+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Cancelling."
+      },
+      {
+        "timestamp": "2026-08-21T06:23:30+08:00",
+        "sender": "system",
+        "type": "system",
+        "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+      }
+    ],
+    "app_events": [
+      {
+        "timestamp": "2026-08-21T06:10:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-5107 booked trip TRIP-PREC-NS-05 from Tanjong Pagar Centre to Changi Airport Terminal 3 (Departures). On-demand booking. Estimated pickup 06:17. Pickup pin set by rider."
+      },
+      {
+        "timestamp": "2026-08-21T06:10:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-14108 (Wesley Chan, Subaru XV (SGU 4590 H)) matched. ETA 7 min."
+      },
+      {
+        "timestamp": "2026-08-21T06:10:20+08:00",
+        "event_type": "driver_en_route",
+        "details": "Driver started navigating to pickup location. Live tracking enabled."
+      },
+      {
+        "timestamp": "2026-08-21T06:17:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver tapped 'I'm Here'. Driver GPS 386 m from pickup point at time of tap."
+      },
+      {
+        "timestamp": "2026-08-21T06:17:00+08:00",
+        "event_type": "wait_timer_started",
+        "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 06:20:00."
+      },
+      {
+        "timestamp": "2026-08-21T06:17:05+08:00",
+        "event_type": "rider_notified",
+        "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+      },
+      {
+        "timestamp": "2026-08-21T06:20:00+08:00",
+        "event_type": "wait_timer_threshold_reached",
+        "details": "Wait timer reached 3 min. Rider had not boarded."
+      },
+      {
+        "timestamp": "2026-08-21T06:23:30+08:00",
+        "event_type": "cancellation_fee_applied",
+        "details": "Driver cancelled with reason rider_no_show at 6.5 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+      },
+      {
+        "timestamp": "2026-08-21T06:23:35+08:00",
+        "event_type": "driver_released",
+        "details": "Driver D-14108 released from trip. Trip status: cancelled (rider_no_show)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-NS-05",
+    "outcome": "full_refund",
+    "refund_amount": 6.61,
+    "payer": "driver",
+    "rider_charge_amount": 0.0,
+    "driver_warning": true,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.91,
+    "rules_cited": [
+      "NS-1",
+      "NS-3",
+      "NS-10",
+      "G-6",
+      "G-7"
+    ],
+    "precedents_used": [],
+    "reasoning": "Driver tapped I'm Here while 380 m away and reached the pin 4 min later. The valid wait was 2.5 min (NS-1), not more than 3, so the fee was not valid. A tap that far out is outside the 100 m good-faith range: the driver is warned (NS-10).",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

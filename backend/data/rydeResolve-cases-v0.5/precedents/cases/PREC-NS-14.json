@@ -1,0 +1,313 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-NS-14",
+      "trip_id": "TRIP-PREC-NS-14",
+      "filed_by": "driver",
+      "dispute_type": "no_show_charge",
+      "description": "Passenger never came out. Cancelled after waiting, app gave me nothing. Want my compensation.",
+      "filed_at": "2026-09-07T20:33:30+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10111",
+      "name": "Hui Min Ong",
+      "account_age_days": 420,
+      "total_trips": 77,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 40,
+      "communication_preferences": {
+        "preferred_language": "Mandarin",
+        "accessibility_needs": null,
+        "channel": "email"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-9121",
+      "name": "Rocky Seah",
+      "account_age_days": 900,
+      "total_trips": 1500,
+      "avg_rating": 4.1,
+      "dispute_history": {
+        "total_disputes": 7,
+        "upheld_against": 3,
+        "rejected": 4
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 2,
+      "vehicle": "Toyota Axio (SGW 3318 K)",
+      "age_years": 45,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-NS-14",
+      "rider_id": "R-10111",
+      "driver_id": "D-9121",
+      "pickup_location": {
+        "name": "Compass One, Sengkang",
+        "lat": 1.392,
+        "lng": 103.895,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Junction 8, Bishan",
+        "lat": 1.3504,
+        "lng": 103.8485,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-09-07T19:15:00+08:00",
+      "matched_at": "2026-09-07T19:15:15+08:00",
+      "scheduled_time": "2026-09-07T19:23:00+08:00",
+      "eta_at_assignment_min": 8,
+      "driver_arrival_time": "2026-09-07T19:23:00+08:00",
+      "driver_wait_start": "2026-09-07T19:23:00+08:00",
+      "cancellation_time": "2026-09-07T19:27:30+08:00",
+      "cancelled_by": "driver",
+      "cancellation_reason": "other",
+      "cancellation_fee": 0.0,
+      "waiting_fee": 0.0,
+      "payment_status": "n/a",
+      "trip_start": null,
+      "trip_end": null,
+      "trip_completed": false,
+      "planned_route": null,
+      "upfront_estimate": null,
+      "damage_claim": null
+    },
+    "cancellation_policy": {
+      "free_wait_time_min": 3,
+      "cancellation_fee_after_wait": 6.61,
+      "no_show_threshold_min": 3,
+      "fee_goes_to": "driver_compensation",
+      "driver_compensation": 4.5,
+      "waiting_fee": 5.0,
+      "driver_waiting_fee": 4.5,
+      "advance_free_before_min": 15
+    },
+    "fare_breakdown": null,
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-09-07T19:17:00+08:00",
+        "lat": 1.397379,
+        "lng": 103.911242,
+        "speed_kmh": 17,
+        "accuracy_m": 5.3,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-07T19:20:00+08:00",
+        "lat": 1.397955,
+        "lng": 103.904069,
+        "speed_kmh": 14,
+        "accuracy_m": 4.2,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-07T19:22:00+08:00",
+        "lat": 1.398279,
+        "lng": 103.900033,
+        "speed_kmh": 9,
+        "accuracy_m": 5.2,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-07T19:23:00+08:00",
+        "lat": 1.398359,
+        "lng": 103.898673,
+        "speed_kmh": 0,
+        "accuracy_m": 8.3,
+        "status": "arrived",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-07T19:24:00+08:00",
+        "lat": 1.398386,
+        "lng": 103.898683,
+        "speed_kmh": 0,
+        "accuracy_m": 8.0,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-07T19:25:00+08:00",
+        "lat": 1.398385,
+        "lng": 103.898683,
+        "speed_kmh": 0,
+        "accuracy_m": 8.4,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-07T19:26:00+08:00",
+        "lat": 1.398385,
+        "lng": 103.8987,
+        "speed_kmh": 0,
+        "accuracy_m": 6.9,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-07T19:27:00+08:00",
+        "lat": 1.398395,
+        "lng": 103.898669,
+        "speed_kmh": 0,
+        "accuracy_m": 7.6,
+        "status": "waiting",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-07T19:27:30+08:00",
+        "lat": 1.398386,
+        "lng": 103.898688,
+        "speed_kmh": 0,
+        "accuracy_m": 8.3,
+        "status": "cancelled",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": {
+      "available": true,
+      "note": null,
+      "pings": [
+        {
+          "timestamp": "2026-09-07T19:23:00+08:00",
+          "lat": 1.392096,
+          "lng": 103.894987,
+          "accuracy_m": 6.0
+        },
+        {
+          "timestamp": "2026-09-07T19:25:00+08:00",
+          "lat": 1.392097,
+          "lng": 103.894996,
+          "accuracy_m": 5.9
+        },
+        {
+          "timestamp": "2026-09-07T19:27:00+08:00",
+          "lat": 1.392114,
+          "lng": 103.894999,
+          "accuracy_m": 7.7
+        }
+      ]
+    },
+    "chat_logs": [
+      {
+        "timestamp": "2026-09-07T19:23:06+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Reached."
+      },
+      {
+        "timestamp": "2026-09-07T19:25:00+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Hello where you"
+      },
+      {
+        "timestamp": "2026-09-07T19:27:12+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "No reply, cancel."
+      },
+      {
+        "timestamp": "2026-09-07T19:27:30+08:00",
+        "sender": "system",
+        "type": "system",
+        "content": "Trip cancelled by driver. Reason: other. No cancellation fee applied."
+      }
+    ],
+    "app_events": [
+      {
+        "timestamp": "2026-09-07T19:15:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10111 booked trip TRIP-PREC-NS-14 from Compass One, Sengkang to Junction 8, Bishan. On-demand booking. Estimated pickup 19:23. Pickup pin set by rider."
+      },
+      {
+        "timestamp": "2026-09-07T19:15:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-9121 (Rocky Seah, Toyota Axio (SGW 3318 K)) matched. ETA 8 min."
+      },
+      {
+        "timestamp": "2026-09-07T19:15:20+08:00",
+        "event_type": "driver_en_route",
+        "details": "Driver started navigating to pickup location. Live tracking enabled."
+      },
+      {
+        "timestamp": "2026-09-07T19:23:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver tapped 'I'm Here'. Driver GPS 817 m from pickup point at time of tap."
+      },
+      {
+        "timestamp": "2026-09-07T19:23:00+08:00",
+        "event_type": "wait_timer_started",
+        "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 19:26:00."
+      },
+      {
+        "timestamp": "2026-09-07T19:23:05+08:00",
+        "event_type": "rider_notified",
+        "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+      },
+      {
+        "timestamp": "2026-09-07T19:26:00+08:00",
+        "event_type": "wait_timer_threshold_reached",
+        "details": "Wait timer reached 3 min. Rider had not boarded."
+      },
+      {
+        "timestamp": "2026-09-07T19:27:30+08:00",
+        "event_type": "trip_cancelled_by_driver",
+        "details": "Driver cancelled with reason other. No cancellation fee applied."
+      },
+      {
+        "timestamp": "2026-09-07T19:27:35+08:00",
+        "event_type": "driver_released",
+        "details": "Driver D-9121 released from trip. Trip status: cancelled (other)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-NS-14",
+    "outcome": "no_action",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": true,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": true,
+    "confidence": 0.88,
+    "rules_cited": [
+      "NS-1",
+      "NS-10",
+      "NS-12",
+      "G-10",
+      "G-7"
+    ],
+    "precedents_used": [],
+    "reasoning": "The driver claims a no-show but GPS never places them within 50 m of the pin (they stayed about 820 m away), so there was no valid arrival (NS-1). The claim fails and the early tap is a breach (NS-10): warning. The driver already has 2 warnings in 30 days, so a fraud review is recommended (G-10a).",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

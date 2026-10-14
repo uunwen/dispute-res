@@ -1,0 +1,485 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-RD-03",
+    "trip_id": "TRIP-DISP-T-RD-03",
+    "filed_by": "rider",
+    "dispute_type": "route_deviation",
+    "description": "The driver stopped for about 10 minutes to collect something and I was charged for the time.",
+    "filed_at": "2026-09-24T10:29:01+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4109",
+    "name": "Marcus Teo",
+    "account_age_days": 420,
+    "total_trips": 210,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 45,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-28207",
+    "name": "Kevin Wong",
+    "account_age_days": 900,
+    "total_trips": 2200,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Tesla Model 3 (SGL 3931 Z)",
+    "age_years": 38,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-RD-03",
+    "rider_id": "R-4109",
+    "driver_id": "D-28207",
+    "pickup_location": {
+      "name": "Holland Village (Lorong Liput)",
+      "lat": 1.311,
+      "lng": 103.796,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Marina Bay Sands (Hotel Tower 1 lobby)",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-23T12:20:00+08:00",
+    "matched_at": "2026-09-23T12:20:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-23T12:26:00+08:00",
+    "driver_wait_start": "2026-09-23T12:26:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-23T12:27:00+08:00",
+    "trip_end": "2026-09-23T12:56:01+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 10.01,
+      "duration_min": 20.0,
+      "waypoints": [
+        {
+          "lat": 1.311,
+          "lng": 103.796
+        },
+        {
+          "lat": 1.27136,
+          "lng": 103.81732
+        },
+        {
+          "lat": 1.2834,
+          "lng": 103.8607
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 10.01,
+      "distance_charge": 6.51,
+      "duration_min": 20.0,
+      "time_charge": 4.4,
+      "surge_multiplier": 1.2,
+      "surge_amount": 2.78,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 17.29
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 10.01,
+    "distance_charge": 6.51,
+    "duration_min": 29.0,
+    "time_charge": 6.38,
+    "surge_multiplier": 1.2,
+    "surge_amount": 3.18,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 19.67,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-23T12:27:00+08:00",
+      "lat": 1.310984,
+      "lng": 103.795963,
+      "speed_kmh": 34,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:28:00+08:00",
+      "lat": 1.307053,
+      "lng": 103.798074,
+      "speed_kmh": 25,
+      "accuracy_m": 5.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:29:00+08:00",
+      "lat": 1.303063,
+      "lng": 103.8003,
+      "speed_kmh": 27,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:30:00+08:00",
+      "lat": 1.299119,
+      "lng": 103.802323,
+      "speed_kmh": 29,
+      "accuracy_m": 4.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:31:00+08:00",
+      "lat": 1.295102,
+      "lng": 103.804534,
+      "speed_kmh": 25,
+      "accuracy_m": 5.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:32:00+08:00",
+      "lat": 1.291148,
+      "lng": 103.806684,
+      "speed_kmh": 32,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:33:00+08:00",
+      "lat": 1.287239,
+      "lng": 103.808779,
+      "speed_kmh": 28,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:34:00+08:00",
+      "lat": 1.283301,
+      "lng": 103.810953,
+      "speed_kmh": 24,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:35:00+08:00",
+      "lat": 1.279267,
+      "lng": 103.813035,
+      "speed_kmh": 29,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:36:00+08:00",
+      "lat": 1.275344,
+      "lng": 103.815122,
+      "speed_kmh": 30,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:37:00+08:00",
+      "lat": 1.27533,
+      "lng": 103.815195,
+      "speed_kmh": 0,
+      "accuracy_m": 6.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:38:00+08:00",
+      "lat": 1.275317,
+      "lng": 103.815189,
+      "speed_kmh": 0,
+      "accuracy_m": 4.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:39:00+08:00",
+      "lat": 1.275334,
+      "lng": 103.815201,
+      "speed_kmh": 0,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:40:00+08:00",
+      "lat": 1.275337,
+      "lng": 103.815176,
+      "speed_kmh": 0,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:41:00+08:00",
+      "lat": 1.275317,
+      "lng": 103.81517,
+      "speed_kmh": 0,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:42:00+08:00",
+      "lat": 1.275338,
+      "lng": 103.815184,
+      "speed_kmh": 0,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:43:00+08:00",
+      "lat": 1.275335,
+      "lng": 103.815178,
+      "speed_kmh": 0,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:44:00+08:00",
+      "lat": 1.275316,
+      "lng": 103.815186,
+      "speed_kmh": 0,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:45:00+08:00",
+      "lat": 1.275324,
+      "lng": 103.815203,
+      "speed_kmh": 0,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:46:00+08:00",
+      "lat": 1.271419,
+      "lng": 103.817294,
+      "speed_kmh": 29,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:47:00+08:00",
+      "lat": 1.272555,
+      "lng": 103.82168,
+      "speed_kmh": 29,
+      "accuracy_m": 7.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:48:00+08:00",
+      "lat": 1.273729,
+      "lng": 103.825995,
+      "speed_kmh": 24,
+      "accuracy_m": 8.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:49:00+08:00",
+      "lat": 1.27493,
+      "lng": 103.830222,
+      "speed_kmh": 29,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:50:00+08:00",
+      "lat": 1.276129,
+      "lng": 103.834585,
+      "speed_kmh": 28,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:51:00+08:00",
+      "lat": 1.277339,
+      "lng": 103.838965,
+      "speed_kmh": 25,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:52:00+08:00",
+      "lat": 1.278565,
+      "lng": 103.843305,
+      "speed_kmh": 35,
+      "accuracy_m": 5.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:53:00+08:00",
+      "lat": 1.279773,
+      "lng": 103.847655,
+      "speed_kmh": 32,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:54:00+08:00",
+      "lat": 1.280972,
+      "lng": 103.851958,
+      "speed_kmh": 31,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:55:00+08:00",
+      "lat": 1.282226,
+      "lng": 103.856265,
+      "speed_kmh": 28,
+      "accuracy_m": 5.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:56:00+08:00",
+      "lat": 1.283352,
+      "lng": 103.860648,
+      "speed_kmh": 33,
+      "accuracy_m": 9.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T12:56:01+08:00",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "speed_kmh": 0,
+      "accuracy_m": 5.5,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-23T12:38:00+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Why have we stopped?"
+    },
+    {
+      "timestamp": "2026-09-23T12:38:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Just picking up a parcel for a friend, two minutes."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-23T12:20:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4109 booked trip TRIP-DISP-T-RD-03 from Holland Village (Lorong Liput) to Marina Bay Sands (Hotel Tower 1 lobby). Upfront estimate $17.29 for planned route 10.0 km / 20 min. Surge x1.2."
+    },
+    {
+      "timestamp": "2026-09-23T12:20:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-28207 (Kevin Wong, Tesla Model 3 (SGL 3931 Z)) assigned."
+    },
+    {
+      "timestamp": "2026-09-23T12:26:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 8 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-23T12:27:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-23T12:36:01+08:00",
+      "event_type": "unscheduled_stop_start",
+      "details": "Vehicle stationary for more than 60 s off the pickup and drop-off points. No rider-added stop on record."
+    },
+    {
+      "timestamp": "2026-09-23T12:45:01+08:00",
+      "event_type": "unscheduled_stop_end",
+      "details": "Vehicle moving again."
+    },
+    {
+      "timestamp": "2026-09-23T12:56:01+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Marina Bay Sands (Hotel Tower 1 lobby). Meter distance 10.01 km, duration 29.0 min."
+    },
+    {
+      "timestamp": "2026-09-23T12:56:21+08:00",
+      "event_type": "payment_captured",
+      "details": "$19.67 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": {
+    "source": "LTA traffic incident feed (mock)",
+    "query_window": [
+      "2026-09-23T12:27:00+08:00",
+      "2026-09-23T12:56:01+08:00"
+    ],
+    "incidents": []
+  },
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

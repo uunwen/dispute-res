@@ -1,0 +1,292 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-40",
+    "trip_id": "TRIP-DISP-T-NS-40",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "The app said my driver arrived but I stood at Lorong Liput the whole time and saw no car for the first few minutes. By the time a car came, he'd cancelled and I was charged $6.61.",
+    "filed_at": "2026-09-22T15:48:48+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9143",
+    "name": "Benedict Lau",
+    "account_age_days": 420,
+    "total_trips": 58,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 32,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-18221",
+    "name": "Hock Seng Tan",
+    "account_age_days": 900,
+    "total_trips": 2100,
+    "avg_rating": 4.0,
+    "dispute_history": {
+      "total_disputes": 7,
+      "upheld_against": 3,
+      "rejected": 4
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 2,
+    "vehicle": "Toyota Wish (SGP 3826 N)",
+    "age_years": 52,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-40",
+    "rider_id": "R-9143",
+    "driver_id": "D-18221",
+    "pickup_location": {
+      "name": "Holland Village (Lorong Liput)",
+      "lat": 1.311,
+      "lng": 103.796,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Kallang Wave Mall",
+      "lat": 1.302,
+      "lng": 103.875,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-22T12:10:00+08:00",
+    "matched_at": "2026-09-22T12:10:15+08:00",
+    "scheduled_time": "2026-09-22T12:20:00+08:00",
+    "eta_at_assignment_min": 10,
+    "driver_arrival_time": "2026-09-22T12:20:00+08:00",
+    "driver_wait_start": "2026-09-22T12:20:00+08:00",
+    "cancellation_time": "2026-09-22T12:25:48+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-22T12:14:00+08:00",
+      "lat": 1.311467,
+      "lng": 103.819385,
+      "speed_kmh": 38,
+      "accuracy_m": 4.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T12:17:00+08:00",
+      "lat": 1.31134,
+      "lng": 103.812189,
+      "speed_kmh": 30,
+      "accuracy_m": 10.6,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T12:19:48+08:00",
+      "lat": 1.311127,
+      "lng": 103.800137,
+      "speed_kmh": 14,
+      "accuracy_m": 11.0,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T12:21:30+08:00",
+      "lat": 1.311114,
+      "lng": 103.799418,
+      "speed_kmh": 12,
+      "accuracy_m": 8.5,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T12:23:00+08:00",
+      "lat": 1.311086,
+      "lng": 103.797799,
+      "speed_kmh": 8,
+      "accuracy_m": 6.2,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T12:24:12+08:00",
+      "lat": 1.311043,
+      "lng": 103.795987,
+      "speed_kmh": 0,
+      "accuracy_m": 4.3,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T12:25:12+08:00",
+      "lat": 1.311049,
+      "lng": 103.796005,
+      "speed_kmh": 0,
+      "accuracy_m": 4.6,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T12:25:48+08:00",
+      "lat": 1.311044,
+      "lng": 103.796009,
+      "speed_kmh": 0,
+      "accuracy_m": 5.6,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-09-22T12:20:00+08:00",
+        "lat": 1.310646,
+        "lng": 103.795848,
+        "accuracy_m": 5.2
+      },
+      {
+        "timestamp": "2026-09-22T12:22:00+08:00",
+        "lat": 1.310608,
+        "lng": 103.795837,
+        "accuracy_m": 4.5
+      },
+      {
+        "timestamp": "2026-09-22T12:24:00+08:00",
+        "lat": 1.310689,
+        "lng": 103.795905,
+        "accuracy_m": 6.6
+      },
+      {
+        "timestamp": "2026-09-22T12:25:30+08:00",
+        "lat": 1.310637,
+        "lng": 103.795853,
+        "accuracy_m": 7.4
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-22T12:20:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at Holland Village."
+    },
+    {
+      "timestamp": "2026-09-22T12:22:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Where are you?"
+    },
+    {
+      "timestamp": "2026-09-22T12:23:30+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-22T12:25:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I'm cancelling."
+    },
+    {
+      "timestamp": "2026-09-22T12:25:48+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-22T12:10:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9143 booked trip TRIP-DISP-T-NS-40 from Holland Village (Lorong Liput) to Kallang Wave Mall. On-demand booking. Estimated pickup 12:20. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-22T12:10:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-18221 (Hock Seng Tan, Toyota Wish (SGP 3826 N)) matched. ETA 10 min."
+    },
+    {
+      "timestamp": "2026-09-22T12:10:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-22T12:20:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 460 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-09-22T12:20:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 12:23:00."
+    },
+    {
+      "timestamp": "2026-09-22T12:20:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-09-22T12:23:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-09-22T12:23:30+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-22T12:25:48+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 5.8 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-09-22T12:25:53+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-18221 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

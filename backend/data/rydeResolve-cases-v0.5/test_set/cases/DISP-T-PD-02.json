@@ -1,0 +1,361 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-02",
+    "trip_id": "TRIP-DISP-T-PD-02",
+    "filed_by": "rider",
+    "dispute_type": "property_damage",
+    "description": "My bubble tea tipped over a little on the seat. I got charged $120 which is crazy for a drink.",
+    "filed_at": "2026-09-29T04:34:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9155",
+    "name": "Kelly Lim",
+    "account_age_days": 420,
+    "total_trips": 26,
+    "avg_rating": 4.5,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 22,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8231",
+    "name": "Abdul Razak",
+    "account_age_days": 900,
+    "total_trips": 4400,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Shuttle (SKB 4417 C)",
+    "age_years": 55,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-02",
+    "rider_id": "R-9155",
+    "driver_id": "D-8231",
+    "pickup_location": {
+      "name": "Clementi Mall",
+      "lat": 1.315,
+      "lng": 103.765,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-27T15:40:00+08:00",
+    "matched_at": "2026-09-27T15:40:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-27T15:45:00+08:00",
+    "driver_wait_start": "2026-09-27T15:45:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-27T15:46:00+08:00",
+    "trip_end": "2026-09-27T15:58:00+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 9.63,
+      "duration_min": 15.2,
+      "waypoints": [
+        {
+          "lat": 1.315,
+          "lng": 103.765
+        },
+        {
+          "lat": 1.28282,
+          "lng": 103.794
+        },
+        {
+          "lat": 1.304,
+          "lng": 103.8318
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 9.63,
+      "distance_charge": 6.26,
+      "duration_min": 15.2,
+      "time_charge": 3.34,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 13.2
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-02",
+      "submitted_at": "2026-09-27T20:58:00+08:00",
+      "mess_type_claimed": "bodily_fluids",
+      "amount_claimed": 120.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-02-1",
+        "ATT-CLM-PD-02-2"
+      ],
+      "status": "charged",
+      "amount_charged": 120.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 9.63,
+    "distance_charge": 6.26,
+    "duration_min": 12.0,
+    "time_charge": 2.64,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 12.5,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-27T15:46:00+08:00",
+      "lat": 1.314959,
+      "lng": 103.765031,
+      "speed_kmh": 29,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:47:00+08:00",
+      "lat": 1.311771,
+      "lng": 103.7679,
+      "speed_kmh": 32,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:48:00+08:00",
+      "lat": 1.308195,
+      "lng": 103.77115,
+      "speed_kmh": 31,
+      "accuracy_m": 7.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:49:00+08:00",
+      "lat": 1.304744,
+      "lng": 103.774222,
+      "speed_kmh": 34,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:50:00+08:00",
+      "lat": 1.300948,
+      "lng": 103.7776,
+      "speed_kmh": 69,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:51:00+08:00",
+      "lat": 1.29327,
+      "lng": 103.784557,
+      "speed_kmh": 63,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:52:00+08:00",
+      "lat": 1.286222,
+      "lng": 103.790876,
+      "speed_kmh": 63,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:53:00+08:00",
+      "lat": 1.285132,
+      "lng": 103.798203,
+      "speed_kmh": 63,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:54:00+08:00",
+      "lat": 1.289805,
+      "lng": 103.806403,
+      "speed_kmh": 66,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:55:00+08:00",
+      "lat": 1.294613,
+      "lng": 103.815028,
+      "speed_kmh": 67,
+      "accuracy_m": 6.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:56:00+08:00",
+      "lat": 1.29953,
+      "lng": 103.823812,
+      "speed_kmh": 32,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:57:00+08:00",
+      "lat": 1.301833,
+      "lng": 103.827993,
+      "speed_kmh": 29,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-27T15:58:00+08:00",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "speed_kmh": 0,
+      "accuracy_m": 9.5,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-09-27T15:40:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9155 booked trip TRIP-DISP-T-PD-02 from Clementi Mall to ION Orchard (Orchard Turn pickup point). Upfront estimate $13.20 for planned route 9.6 km / 15 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-27T15:40:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8231 (Abdul Razak, Honda Shuttle (SKB 4417 C)) assigned."
+    },
+    {
+      "timestamp": "2026-09-27T15:45:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-27T15:46:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-27T15:58:00+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at ION Orchard (Orchard Turn pickup point). Meter distance 9.63 km, duration 12.0 min."
+    },
+    {
+      "timestamp": "2026-09-27T15:58:20+08:00",
+      "event_type": "payment_captured",
+      "details": "$12.50 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-09-27T20:58:00+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-8231 submitted cleaning claim CLM-PD-02 for bodily_fluids: $120.00 with 2 attachment(s)."
+    },
+    {
+      "timestamp": "2026-09-28T22:58:00+08:00",
+      "event_type": "cleaning_fee_charged",
+      "details": "Cleaning fee $120.00 for claim CLM-PD-02 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-02-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-09-27T20:58:00+08:00",
+      "captured_at": "2026-09-27T16:04:00+08:00",
+      "location": {
+        "lat": 1.30411,
+        "lng": 103.83163
+      },
+      "file_hash": "sha256:f2d3cbc936f040f0cc0c9e36f28953578326eaef",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Brown liquid with tapioca pearls spilled on the rear seat cushion; the car plate is readable in the frame.",
+        "mess_type": "food_drink",
+        "severity": "moderate",
+        "plate_read": "SKB 4417 C",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.01,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-02-2",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-09-27T20:58:00+08:00",
+      "captured_at": "2026-09-27T20:33:00+08:00",
+      "location": null,
+      "file_hash": "sha256:6206107d5aee97d878b233a143a0eb02d8d0a7bf",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Seat shampoo and stain extraction, rear bench",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-09-27",
+        "car_plate": "SKB 4417 C",
+        "amount": 120.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

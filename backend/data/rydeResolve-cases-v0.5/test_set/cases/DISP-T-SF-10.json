@@ -1,0 +1,248 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-SF-10",
+    "trip_id": "TRIP-DISP-T-SF-10",
+    "filed_by": "rider",
+    "dispute_type": "safety_incident",
+    "description": "Driver stopped at the side of the road on the way to Punggol at night and told me to get out, no reason. I had to find another ride.",
+    "filed_at": "2026-10-04T16:54:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4161",
+    "name": "Suresh Babu",
+    "account_age_days": 420,
+    "total_trips": 44,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 53,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "sms"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-18235",
+    "name": "Hamid Yusoff",
+    "account_age_days": 900,
+    "total_trips": 2950,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Kia K5 (SKF 9269 H)",
+    "age_years": 46,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-SF-10",
+    "rider_id": "R-4161",
+    "driver_id": "D-18235",
+    "pickup_location": {
+      "name": "Junction 8, Bishan",
+      "lat": 1.3504,
+      "lng": 103.8485,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Waterway Point, Punggol",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-03T22:45:00+08:00",
+    "matched_at": "2026-10-03T22:45:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-03T22:50:00+08:00",
+    "driver_wait_start": "2026-10-03T22:50:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-03T22:51:00+08:00",
+    "trip_end": "2026-10-03T22:57:12+08:00",
+    "trip_completed": false,
+    "planned_route": {
+      "distance_km": 11.05,
+      "duration_min": 17.4,
+      "waypoints": [
+        {
+          "lat": 1.3504,
+          "lng": 103.8485
+        },
+        {
+          "lat": 1.357,
+          "lng": 103.89777
+        },
+        {
+          "lat": 1.4065,
+          "lng": 103.9022
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 11.05,
+      "distance_charge": 7.18,
+      "duration_min": 17.4,
+      "time_charge": 3.83,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 14.61
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 4.42,
+    "distance_charge": 2.87,
+    "duration_min": 6.2,
+    "time_charge": 1.36,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 7.83,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-03T22:51:00+08:00",
+      "lat": 1.350436,
+      "lng": 103.848538,
+      "speed_kmh": 29,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-03T22:52:00+08:00",
+      "lat": 1.350953,
+      "lng": 103.852788,
+      "speed_kmh": 35,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-03T22:53:00+08:00",
+      "lat": 1.351676,
+      "lng": 103.858007,
+      "speed_kmh": 34,
+      "accuracy_m": 9.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-03T22:54:00+08:00",
+      "lat": 1.35234,
+      "lng": 103.863067,
+      "speed_kmh": 33,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-03T22:55:00+08:00",
+      "lat": 1.35301,
+      "lng": 103.86794,
+      "speed_kmh": 63,
+      "accuracy_m": 8.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-03T22:56:00+08:00",
+      "lat": 1.354223,
+      "lng": 103.877318,
+      "speed_kmh": 68,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-03T22:57:00+08:00",
+      "lat": 1.35558,
+      "lng": 103.887427,
+      "speed_kmh": 66,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-03T22:57:12+08:00",
+      "lat": 1.355683,
+      "lng": 103.887914,
+      "speed_kmh": 0,
+      "accuracy_m": 6.7,
+      "status": "ended_early",
+      "speed_limit_kmh": 90
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-03T22:45:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4161 booked trip TRIP-DISP-T-SF-10 from Junction 8, Bishan to Waterway Point, Punggol. Upfront estimate $14.61 for planned route 11.1 km / 17 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-03T22:45:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-18235 (Hamid Yusoff, Kia K5 (SKF 9269 H)) assigned."
+    },
+    {
+      "timestamp": "2026-10-03T22:50:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-03T22:51:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-03T22:57:12+08:00",
+      "event_type": "trip_ended_early",
+      "details": "Driver ended the trip before the destination. Reason selected: none given. Meter distance 4.42 km, duration 6.2 min. Rider charged for the distance travelled."
+    },
+    {
+      "timestamp": "2026-10-03T22:57:32+08:00",
+      "event_type": "payment_captured",
+      "details": "$7.83 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

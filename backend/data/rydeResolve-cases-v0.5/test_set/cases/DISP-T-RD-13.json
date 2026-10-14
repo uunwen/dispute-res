@@ -1,0 +1,669 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-RD-13",
+    "trip_id": "TRIP-DISP-T-RD-13",
+    "filed_by": "rider",
+    "dispute_type": "route_deviation",
+    "description": "The driver went a totally different way and the fare is higher than the estimate.",
+    "filed_at": "2026-10-04T21:23:43+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4131",
+    "name": "Vincent Soh",
+    "account_age_days": 420,
+    "total_trips": 47,
+    "avg_rating": 3.7,
+    "dispute_history": {
+      "total_disputes": 7,
+      "upheld": 0,
+      "rejected": 7
+    },
+    "fraud_flags": 1,
+    "fraud_flag_details": "repeat_rejected_disputes",
+    "payment_method": "e-wallet",
+    "age_years": 39,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23205",
+    "name": "Daryl Tan",
+    "account_age_days": 380,
+    "total_trips": 900,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Kia Cerato (SGP 1752 L)",
+    "age_years": 29,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-RD-13",
+    "rider_id": "R-4131",
+    "driver_id": "D-23205",
+    "pickup_location": {
+      "name": "Northpoint City, Yishun",
+      "lat": 1.4295,
+      "lng": 103.836,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Raffles Place (Chulia St taxi stand)",
+      "lat": 1.284,
+      "lng": 103.8515,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-03T21:00:00+08:00",
+    "matched_at": "2026-10-03T21:00:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-03T21:06:00+08:00",
+    "driver_wait_start": "2026-10-03T21:06:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-03T21:07:00+08:00",
+    "trip_end": "2026-10-03T21:59:43+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 20.83,
+      "duration_min": 39.0,
+      "waypoints": [
+        {
+          "lat": 1.4295,
+          "lng": 103.836
+        },
+        {
+          "lat": 1.35056,
+          "lng": 103.78561
+        },
+        {
+          "lat": 1.284,
+          "lng": 103.8515
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 20.83,
+      "distance_charge": 13.54,
+      "duration_min": 39.0,
+      "time_charge": 8.58,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 25.72
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 28.12,
+    "distance_charge": 18.28,
+    "duration_min": 52.7,
+    "time_charge": 11.59,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 33.47,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-03T21:07:00+08:00",
+      "lat": 1.4295,
+      "lng": 103.836,
+      "speed_kmh": 28,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:08:00+08:00",
+      "lat": 1.426693,
+      "lng": 103.832107,
+      "speed_kmh": 28,
+      "accuracy_m": 10.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:09:00+08:00",
+      "lat": 1.423892,
+      "lng": 103.828224,
+      "speed_kmh": 31,
+      "accuracy_m": 9.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:10:00+08:00",
+      "lat": 1.421093,
+      "lng": 103.82436,
+      "speed_kmh": 36,
+      "accuracy_m": 4.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:11:00+08:00",
+      "lat": 1.418311,
+      "lng": 103.820466,
+      "speed_kmh": 31,
+      "accuracy_m": 4.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:12:00+08:00",
+      "lat": 1.415447,
+      "lng": 103.816579,
+      "speed_kmh": 37,
+      "accuracy_m": 4.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:13:00+08:00",
+      "lat": 1.412713,
+      "lng": 103.812634,
+      "speed_kmh": 35,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:14:00+08:00",
+      "lat": 1.409869,
+      "lng": 103.808765,
+      "speed_kmh": 24,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:15:00+08:00",
+      "lat": 1.407002,
+      "lng": 103.804846,
+      "speed_kmh": 38,
+      "accuracy_m": 9.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:16:00+08:00",
+      "lat": 1.404267,
+      "lng": 103.801051,
+      "speed_kmh": 31,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:17:00+08:00",
+      "lat": 1.401483,
+      "lng": 103.797108,
+      "speed_kmh": 33,
+      "accuracy_m": 8.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:18:00+08:00",
+      "lat": 1.398631,
+      "lng": 103.793157,
+      "speed_kmh": 37,
+      "accuracy_m": 9.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:19:00+08:00",
+      "lat": 1.395786,
+      "lng": 103.789346,
+      "speed_kmh": 38,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:20:00+08:00",
+      "lat": 1.392999,
+      "lng": 103.785402,
+      "speed_kmh": 36,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:21:00+08:00",
+      "lat": 1.390238,
+      "lng": 103.781542,
+      "speed_kmh": 35,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:22:00+08:00",
+      "lat": 1.387393,
+      "lng": 103.777643,
+      "speed_kmh": 36,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:23:00+08:00",
+      "lat": 1.384585,
+      "lng": 103.773748,
+      "speed_kmh": 25,
+      "accuracy_m": 9.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:24:00+08:00",
+      "lat": 1.381741,
+      "lng": 103.769841,
+      "speed_kmh": 25,
+      "accuracy_m": 6.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:25:00+08:00",
+      "lat": 1.378983,
+      "lng": 103.765974,
+      "speed_kmh": 32,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:26:00+08:00",
+      "lat": 1.376163,
+      "lng": 103.762144,
+      "speed_kmh": 29,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:27:00+08:00",
+      "lat": 1.373354,
+      "lng": 103.758195,
+      "speed_kmh": 26,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:28:00+08:00",
+      "lat": 1.37058,
+      "lng": 103.754313,
+      "speed_kmh": 38,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:29:00+08:00",
+      "lat": 1.367747,
+      "lng": 103.750426,
+      "speed_kmh": 28,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:30:00+08:00",
+      "lat": 1.364902,
+      "lng": 103.746519,
+      "speed_kmh": 28,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:31:00+08:00",
+      "lat": 1.362139,
+      "lng": 103.742659,
+      "speed_kmh": 27,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:32:00+08:00",
+      "lat": 1.359391,
+      "lng": 103.741929,
+      "speed_kmh": 36,
+      "accuracy_m": 9.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:33:00+08:00",
+      "lat": 1.356649,
+      "lng": 103.745961,
+      "speed_kmh": 30,
+      "accuracy_m": 4.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:34:00+08:00",
+      "lat": 1.353905,
+      "lng": 103.749853,
+      "speed_kmh": 36,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:35:00+08:00",
+      "lat": 1.351159,
+      "lng": 103.753745,
+      "speed_kmh": 34,
+      "accuracy_m": 8.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:36:00+08:00",
+      "lat": 1.34847,
+      "lng": 103.757764,
+      "speed_kmh": 37,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:37:00+08:00",
+      "lat": 1.345769,
+      "lng": 103.761743,
+      "speed_kmh": 31,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:38:00+08:00",
+      "lat": 1.343034,
+      "lng": 103.76567,
+      "speed_kmh": 32,
+      "accuracy_m": 7.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:39:00+08:00",
+      "lat": 1.340307,
+      "lng": 103.769606,
+      "speed_kmh": 30,
+      "accuracy_m": 7.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:40:00+08:00",
+      "lat": 1.33761,
+      "lng": 103.773595,
+      "speed_kmh": 36,
+      "accuracy_m": 8.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:41:00+08:00",
+      "lat": 1.334877,
+      "lng": 103.777521,
+      "speed_kmh": 37,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:42:00+08:00",
+      "lat": 1.332118,
+      "lng": 103.781455,
+      "speed_kmh": 29,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:43:00+08:00",
+      "lat": 1.329468,
+      "lng": 103.785449,
+      "speed_kmh": 24,
+      "accuracy_m": 6.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:44:00+08:00",
+      "lat": 1.326728,
+      "lng": 103.789432,
+      "speed_kmh": 26,
+      "accuracy_m": 5.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:45:00+08:00",
+      "lat": 1.323955,
+      "lng": 103.79332,
+      "speed_kmh": 25,
+      "accuracy_m": 4.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:46:00+08:00",
+      "lat": 1.3213,
+      "lng": 103.797297,
+      "speed_kmh": 29,
+      "accuracy_m": 6.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:47:00+08:00",
+      "lat": 1.318517,
+      "lng": 103.801228,
+      "speed_kmh": 26,
+      "accuracy_m": 5.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:48:00+08:00",
+      "lat": 1.315857,
+      "lng": 103.805207,
+      "speed_kmh": 27,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:49:00+08:00",
+      "lat": 1.313119,
+      "lng": 103.809166,
+      "speed_kmh": 27,
+      "accuracy_m": 7.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:50:00+08:00",
+      "lat": 1.31046,
+      "lng": 103.813063,
+      "speed_kmh": 27,
+      "accuracy_m": 4.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:51:00+08:00",
+      "lat": 1.307689,
+      "lng": 103.817025,
+      "speed_kmh": 36,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:52:00+08:00",
+      "lat": 1.304927,
+      "lng": 103.821032,
+      "speed_kmh": 36,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:53:00+08:00",
+      "lat": 1.302253,
+      "lng": 103.82494,
+      "speed_kmh": 35,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:54:00+08:00",
+      "lat": 1.299528,
+      "lng": 103.828902,
+      "speed_kmh": 30,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:55:00+08:00",
+      "lat": 1.296848,
+      "lng": 103.832808,
+      "speed_kmh": 34,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:56:00+08:00",
+      "lat": 1.29407,
+      "lng": 103.836854,
+      "speed_kmh": 37,
+      "accuracy_m": 4.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:57:00+08:00",
+      "lat": 1.291418,
+      "lng": 103.840755,
+      "speed_kmh": 28,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:58:00+08:00",
+      "lat": 1.288661,
+      "lng": 103.844699,
+      "speed_kmh": 36,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:59:00+08:00",
+      "lat": 1.285876,
+      "lng": 103.848675,
+      "speed_kmh": 32,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T21:59:43+08:00",
+      "lat": 1.284,
+      "lng": 103.8515,
+      "speed_kmh": 0,
+      "accuracy_m": 9.6,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-03T21:00:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4131 booked trip TRIP-DISP-T-RD-13 from Northpoint City, Yishun to Raffles Place (Chulia St taxi stand). Upfront estimate $25.72 for planned route 20.8 km / 39 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-03T21:00:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23205 (Daryl Tan, Kia Cerato (SGP 1752 L)) assigned."
+    },
+    {
+      "timestamp": "2026-10-03T21:06:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 8 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-03T21:07:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-03T21:59:43+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Raffles Place (Chulia St taxi stand). Meter distance 28.12 km, duration 52.7 min."
+    },
+    {
+      "timestamp": "2026-10-03T22:00:03+08:00",
+      "event_type": "payment_captured",
+      "details": "$33.47 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": {
+    "source": "LTA traffic incident feed (mock)",
+    "query_window": [
+      "2026-10-03T21:07:00+08:00",
+      "2026-10-03T21:59:43+08:00"
+    ],
+    "incidents": []
+  },
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

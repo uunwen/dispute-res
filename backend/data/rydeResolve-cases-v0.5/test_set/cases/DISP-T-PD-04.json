@@ -1,0 +1,349 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-04",
+    "trip_id": "TRIP-DISP-T-PD-04",
+    "filed_by": "rider",
+    "dispute_type": "property_damage",
+    "description": "Charged $110 for mud in the car. My shoes were clean and it was not raining that day.",
+    "filed_at": "2026-10-03T09:49:54+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9153",
+    "name": "Ann Tan",
+    "account_age_days": 420,
+    "total_trips": 137,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 44,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13234",
+    "name": "Gary Chong",
+    "account_age_days": 900,
+    "total_trips": 3700,
+    "avg_rating": 4.5,
+    "dispute_history": {
+      "total_disputes": 4,
+      "upheld_against": 2,
+      "rejected": 2
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Nissan Serena (SKE 5459 G)",
+    "age_years": 48,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-04",
+    "rider_id": "R-9153",
+    "driver_id": "D-13234",
+    "pickup_location": {
+      "name": "Suntec City (Tower 3 taxi stand)",
+      "lat": 1.295,
+      "lng": 103.858,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Blk 79 Toa Payoh Lor 1 (void deck)",
+      "lat": 1.3343,
+      "lng": 103.8499,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-30T19:05:00+08:00",
+    "matched_at": "2026-09-30T19:05:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-30T19:10:00+08:00",
+    "driver_wait_start": "2026-09-30T19:10:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-30T19:11:00+08:00",
+    "trip_end": "2026-09-30T19:21:54+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 5.71,
+      "duration_min": 9.0,
+      "waypoints": [
+        {
+          "lat": 1.295,
+          "lng": 103.858
+        },
+        {
+          "lat": 1.31789,
+          "lng": 103.86965
+        },
+        {
+          "lat": 1.3343,
+          "lng": 103.8499
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 5.71,
+      "distance_charge": 3.71,
+      "duration_min": 9.0,
+      "time_charge": 1.98,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 9.29
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-04",
+      "submitted_at": "2026-10-01T02:21:54+08:00",
+      "mess_type_claimed": "stains",
+      "amount_claimed": 110.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-04-1",
+        "ATT-CLM-PD-04-2"
+      ],
+      "status": "charged",
+      "amount_charged": 110.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 5.71,
+    "distance_charge": 3.71,
+    "duration_min": 10.9,
+    "time_charge": 2.4,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 9.71,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-30T19:11:00+08:00",
+      "lat": 1.29498,
+      "lng": 103.858013,
+      "speed_kmh": 34,
+      "accuracy_m": 4.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:12:00+08:00",
+      "lat": 1.299537,
+      "lng": 103.860364,
+      "speed_kmh": 32,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:13:00+08:00",
+      "lat": 1.303797,
+      "lng": 103.862475,
+      "speed_kmh": 34,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:14:00+08:00",
+      "lat": 1.30834,
+      "lng": 103.864806,
+      "speed_kmh": 34,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:15:00+08:00",
+      "lat": 1.312892,
+      "lng": 103.867121,
+      "speed_kmh": 28,
+      "accuracy_m": 4.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:16:00+08:00",
+      "lat": 1.316599,
+      "lng": 103.869,
+      "speed_kmh": 32,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:17:00+08:00",
+      "lat": 1.320033,
+      "lng": 103.867076,
+      "speed_kmh": 28,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:18:00+08:00",
+      "lat": 1.322736,
+      "lng": 103.863809,
+      "speed_kmh": 33,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:19:00+08:00",
+      "lat": 1.325893,
+      "lng": 103.860018,
+      "speed_kmh": 31,
+      "accuracy_m": 7.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:20:00+08:00",
+      "lat": 1.328856,
+      "lng": 103.856439,
+      "speed_kmh": 29,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:21:00+08:00",
+      "lat": 1.331658,
+      "lng": 103.85309,
+      "speed_kmh": 30,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T19:21:54+08:00",
+      "lat": 1.3343,
+      "lng": 103.8499,
+      "speed_kmh": 0,
+      "accuracy_m": 5.2,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-09-30T19:05:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9153 booked trip TRIP-DISP-T-PD-04 from Suntec City (Tower 3 taxi stand) to Blk 79 Toa Payoh Lor 1 (void deck). Upfront estimate $9.29 for planned route 5.7 km / 9 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-30T19:05:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13234 (Gary Chong, Nissan Serena (SKE 5459 G)) assigned."
+    },
+    {
+      "timestamp": "2026-09-30T19:10:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-30T19:11:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-30T19:21:54+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Blk 79 Toa Payoh Lor 1 (void deck). Meter distance 5.71 km, duration 10.9 min."
+    },
+    {
+      "timestamp": "2026-09-30T19:22:14+08:00",
+      "event_type": "payment_captured",
+      "details": "$9.71 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-01T02:21:54+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-13234 submitted cleaning claim CLM-PD-04 for stains: $110.00 with 2 attachment(s)."
+    },
+    {
+      "timestamp": "2026-10-02T04:21:54+08:00",
+      "event_type": "cleaning_fee_charged",
+      "details": "Cleaning fee $110.00 for claim CLM-PD-04 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-04-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-01T02:21:54+08:00",
+      "captured_at": "2026-09-30T16:06:00+08:00",
+      "location": null,
+      "file_hash": "sha256:55eff89395cb27d78aecfc2d8566a858dd3f8e7e",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Mud stains on the rear floor mat and seat edge; the car plate is readable through the rear window.",
+        "mess_type": "stains",
+        "severity": "moderate",
+        "plate_read": "SKE 5459 G",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.02,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-04-2",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-01T02:21:54+08:00",
+      "captured_at": "2026-10-01T01:56:54+08:00",
+      "location": null,
+      "file_hash": "sha256:97fcd6f68c9b07de3b0bf1b6cfd57bf6cb3179dc",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Interior shampoo and mud stain removal",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-09-30",
+        "car_plate": "SKE 5459 G",
+        "amount": 110.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

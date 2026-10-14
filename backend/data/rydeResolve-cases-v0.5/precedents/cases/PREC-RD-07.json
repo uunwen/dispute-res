@@ -1,0 +1,506 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-RD-07",
+      "trip_id": "TRIP-PREC-RD-07",
+      "filed_by": "rider",
+      "dispute_type": "route_deviation",
+      "description": "He stopped and I was charged for waiting.",
+      "filed_at": "2026-08-26T16:18:14+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-5108",
+      "name": "Rachel Tan",
+      "account_age_days": 420,
+      "total_trips": 95,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 37,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-19108",
+      "name": "Wesley Chan",
+      "account_age_days": 900,
+      "total_trips": 3100,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Subaru XV (SGU 5961 H)",
+      "age_years": 43,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-RD-07",
+      "rider_id": "R-5108",
+      "driver_id": "D-19108",
+      "pickup_location": {
+        "name": "Velocity@Novena Square",
+        "lat": 1.3203,
+        "lng": 103.8438,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Tampines Mall (Tampines Central 5 drop-off)",
+        "lat": 1.35245,
+        "lng": 103.9446,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-25T14:10:00+08:00",
+      "matched_at": "2026-08-25T14:10:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-08-25T14:16:00+08:00",
+      "driver_wait_start": "2026-08-25T14:16:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-08-25T14:17:00+08:00",
+      "trip_end": "2026-08-25T14:47:14+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 15.06,
+        "duration_min": 28.2,
+        "waypoints": [
+          {
+            "lat": 1.3203,
+            "lng": 103.8438
+          },
+          {
+            "lat": 1.37663,
+            "lng": 103.88135
+          },
+          {
+            "lat": 1.35245,
+            "lng": 103.9446
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 15.06,
+        "distance_charge": 9.79,
+        "duration_min": 28.2,
+        "time_charge": 6.2,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 19.59
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 15.06,
+      "distance_charge": 9.79,
+      "duration_min": 30.2,
+      "time_charge": 6.64,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 20.03,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-25T14:17:00+08:00",
+        "lat": 1.320257,
+        "lng": 103.843808,
+        "speed_kmh": 26,
+        "accuracy_m": 9.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:18:00+08:00",
+        "lat": 1.324287,
+        "lng": 103.846469,
+        "speed_kmh": 35,
+        "accuracy_m": 4.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:19:00+08:00",
+        "lat": 1.328273,
+        "lng": 103.849124,
+        "speed_kmh": 35,
+        "accuracy_m": 4.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:20:00+08:00",
+        "lat": 1.33231,
+        "lng": 103.851745,
+        "speed_kmh": 31,
+        "accuracy_m": 9.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:21:00+08:00",
+        "lat": 1.336267,
+        "lng": 103.854441,
+        "speed_kmh": 31,
+        "accuracy_m": 6.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:22:00+08:00",
+        "lat": 1.340253,
+        "lng": 103.857095,
+        "speed_kmh": 34,
+        "accuracy_m": 9.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:23:00+08:00",
+        "lat": 1.344268,
+        "lng": 103.859797,
+        "speed_kmh": 34,
+        "accuracy_m": 4.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:24:00+08:00",
+        "lat": 1.348223,
+        "lng": 103.862391,
+        "speed_kmh": 31,
+        "accuracy_m": 9.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:25:00+08:00",
+        "lat": 1.352265,
+        "lng": 103.865078,
+        "speed_kmh": 29,
+        "accuracy_m": 9.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:26:00+08:00",
+        "lat": 1.356189,
+        "lng": 103.867771,
+        "speed_kmh": 28,
+        "accuracy_m": 5.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:27:00+08:00",
+        "lat": 1.360271,
+        "lng": 103.870441,
+        "speed_kmh": 36,
+        "accuracy_m": 8.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:28:00+08:00",
+        "lat": 1.364181,
+        "lng": 103.873119,
+        "speed_kmh": 36,
+        "accuracy_m": 9.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:29:00+08:00",
+        "lat": 1.365384,
+        "lng": 103.873829,
+        "speed_kmh": 0,
+        "accuracy_m": 7.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:30:00+08:00",
+        "lat": 1.365352,
+        "lng": 103.873855,
+        "speed_kmh": 0,
+        "accuracy_m": 4.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:31:00+08:00",
+        "lat": 1.368202,
+        "lng": 103.875704,
+        "speed_kmh": 27,
+        "accuracy_m": 8.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:32:00+08:00",
+        "lat": 1.372178,
+        "lng": 103.878389,
+        "speed_kmh": 36,
+        "accuracy_m": 5.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:33:00+08:00",
+        "lat": 1.376133,
+        "lng": 103.88109,
+        "speed_kmh": 29,
+        "accuracy_m": 8.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:34:00+08:00",
+        "lat": 1.375093,
+        "lng": 103.885345,
+        "speed_kmh": 26,
+        "accuracy_m": 5.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:35:00+08:00",
+        "lat": 1.373374,
+        "lng": 103.889818,
+        "speed_kmh": 26,
+        "accuracy_m": 6.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:36:00+08:00",
+        "lat": 1.371732,
+        "lng": 103.894339,
+        "speed_kmh": 26,
+        "accuracy_m": 5.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:37:00+08:00",
+        "lat": 1.369941,
+        "lng": 103.89881,
+        "speed_kmh": 27,
+        "accuracy_m": 8.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:38:00+08:00",
+        "lat": 1.368273,
+        "lng": 103.903254,
+        "speed_kmh": 30,
+        "accuracy_m": 5.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:39:00+08:00",
+        "lat": 1.366548,
+        "lng": 103.907739,
+        "speed_kmh": 37,
+        "accuracy_m": 7.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:40:00+08:00",
+        "lat": 1.364829,
+        "lng": 103.912198,
+        "speed_kmh": 33,
+        "accuracy_m": 9.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:41:00+08:00",
+        "lat": 1.363148,
+        "lng": 103.916668,
+        "speed_kmh": 35,
+        "accuracy_m": 6.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:42:00+08:00",
+        "lat": 1.361433,
+        "lng": 103.921166,
+        "speed_kmh": 35,
+        "accuracy_m": 9.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:43:00+08:00",
+        "lat": 1.359654,
+        "lng": 103.92566,
+        "speed_kmh": 34,
+        "accuracy_m": 6.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:44:00+08:00",
+        "lat": 1.357945,
+        "lng": 103.930141,
+        "speed_kmh": 37,
+        "accuracy_m": 5.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:45:00+08:00",
+        "lat": 1.356263,
+        "lng": 103.93459,
+        "speed_kmh": 38,
+        "accuracy_m": 6.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:46:00+08:00",
+        "lat": 1.354562,
+        "lng": 103.939094,
+        "speed_kmh": 34,
+        "accuracy_m": 6.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:47:00+08:00",
+        "lat": 1.352841,
+        "lng": 103.943587,
+        "speed_kmh": 36,
+        "accuracy_m": 6.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-25T14:47:14+08:00",
+        "lat": 1.35245,
+        "lng": 103.9446,
+        "speed_kmh": 0,
+        "accuracy_m": 7.8,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-08-25T14:10:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-5108 booked trip TRIP-PREC-RD-07 from Velocity@Novena Square to Tampines Mall (Tampines Central 5 drop-off). Upfront estimate $19.59 for planned route 15.1 km / 28 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-08-25T14:10:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-19108 (Wesley Chan, Subaru XV (SGU 5961 H)) assigned."
+      },
+      {
+        "timestamp": "2026-08-25T14:16:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 8 m of pickup point."
+      },
+      {
+        "timestamp": "2026-08-25T14:17:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-08-25T14:28:17+08:00",
+        "event_type": "unscheduled_stop_start",
+        "details": "Vehicle stationary for more than 60 s. No rider-added stop on record."
+      },
+      {
+        "timestamp": "2026-08-25T14:30:17+08:00",
+        "event_type": "unscheduled_stop_end",
+        "details": "Vehicle moving again."
+      },
+      {
+        "timestamp": "2026-08-25T14:47:14+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Tampines Mall (Tampines Central 5 drop-off). Meter distance 15.06 km, duration 30.2 min."
+      },
+      {
+        "timestamp": "2026-08-25T14:47:34+08:00",
+        "event_type": "payment_captured",
+        "details": "$20.03 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": {
+      "source": "LTA traffic incident feed (mock)",
+      "query_window": [
+        "2026-08-25T14:17:00+08:00",
+        "2026-08-25T14:47:14+08:00"
+      ],
+      "incidents": []
+    },
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-RD-07",
+    "outcome": "no_action",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.88,
+    "rules_cited": [
+      "RD-6"
+    ],
+    "precedents_used": [],
+    "reasoning": "A 2 min unscheduled stop is within the 3 min allowance (RD-6). Nothing to refund.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

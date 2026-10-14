@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RydeResolve ruling (v0.5)",
+  "description": "What the Judge outputs. Generated from schema/ruling_fields.json. The answer key and the past rulings use exactly these fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "outcome",
+    "refund_amount",
+    "payer",
+    "rider_charge_amount",
+    "driver_warning",
+    "rider_warning",
+    "driver_goodwill_paid_by_ryde",
+    "escalate",
+    "provisional_outcome",
+    "safety_referral",
+    "security_flag",
+    "fraud_flag",
+    "confidence",
+    "rules_cited",
+    "precedents_used",
+    "reasoning",
+    "rider_explanation",
+    "driver_explanation"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "dispute_id of the case."
+    },
+    "outcome": {
+      "enum": [
+        "charge_upheld",
+        "no_action",
+        "full_refund",
+        "partial_refund",
+        "escalate_to_human"
+      ],
+      "description": "One of the five outcomes (policy, Outcomes table)."
+    },
+    "refund_amount": {
+      "type": "number",
+      "description": "SGD returned to the rider. 0 when nothing is refunded or the case is escalated."
+    },
+    "payer": {
+      "enum": [
+        "driver",
+        "ryde",
+        null
+      ],
+      "description": "Who bears the refund (G-6). null when nothing is refunded."
+    },
+    "rider_charge_amount": {
+      "type": "number",
+      "description": "SGD newly charged to the rider by this ruling: an approved cleaning claim (PD-1) or a driver's upheld claim for an unapplied fee (NS-12). 0 otherwise."
+    },
+    "driver_warning": {
+      "type": "boolean",
+      "description": "A warning is added to the driver's record (G-7)."
+    },
+    "rider_warning": {
+      "type": "boolean",
+      "description": "A warning is added to the rider's record (G-7b): the rider abused, threatened or discriminated against the driver."
+    },
+    "driver_goodwill_paid_by_ryde": {
+      "type": "number",
+      "description": "SGD Ryde pays the driver as goodwill (NS-9, NS-13). 0 otherwise."
+    },
+    "escalate": {
+      "type": "boolean",
+      "description": "A human decides (G-4). When true: outcome escalate_to_human, refund 0, payer null, no warnings."
+    },
+    "provisional_outcome": {
+      "enum": [
+        "charge_upheld",
+        "no_action",
+        "full_refund",
+        "partial_refund",
+        null
+      ],
+      "description": "The recommendation attached to an escalation. null when not escalated."
+    },
+    "safety_referral": {
+      "type": "boolean",
+      "description": "Referred to Ryde's safety team (SF-1 to SF-4, and any escalation over a safety concern)."
+    },
+    "security_flag": {
+      "type": "boolean",
+      "description": "An instruction aimed at the dispute system was found inside user-written text (G-3)."
+    },
+    "fraud_flag": {
+      "type": "boolean",
+      "description": "Recommend a human fraud review of an account (G-10). Never changes the money outcome."
+    },
+    "confidence": {
+      "type": "number",
+      "description": "0 to 1. Below 0.70 the case must be escalated (G-4). In the answer key this is the key author's rough guide and is not scored."
+    },
+    "rules_cited": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Policy rule IDs relied on, for example [\"NS-3\", \"G-6\"]. Not scored."
+    },
+    "precedents_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of past rulings relied on, for example [\"PREC-NS-03\"]. Empty in the answer key. Not scored."
+    },
+    "reasoning": {
+      "type": "string",
+      "description": "Why, citing the rules. In the answer key this is the expected reasoning. Not scored."
+    },
+    "rider_explanation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Plain-language explanation for the rider. null in the answer key and in past rulings. Not scored."
+    },
+    "driver_explanation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Plain-language explanation for the driver. null in the answer key and in past rulings. Not scored."
+    }
+  }
+}

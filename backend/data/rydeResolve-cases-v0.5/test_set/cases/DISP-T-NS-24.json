@@ -1,0 +1,346 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-24",
+    "trip_id": "TRIP-DISP-T-NS-24",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "I came as fast as I could. I shouldn't pay a waiting fee.",
+    "filed_at": "2026-09-20T14:21:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4101",
+    "name": "Priya Nair",
+    "account_age_days": 420,
+    "total_trips": 60,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 29,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8201",
+    "name": "Lim Wei Ming",
+    "account_age_days": 900,
+    "total_trips": 3201,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda HR-V (SGP 4521 M)",
+    "age_years": 44,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-24",
+    "rider_id": "R-4101",
+    "driver_id": "D-8201",
+    "pickup_location": {
+      "name": "NEX, Serangoon Central",
+      "lat": 1.3507,
+      "lng": 103.8723,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Tampines Mall (Tampines Central 5 drop-off)",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-20T08:30:00+08:00",
+    "matched_at": "2026-09-20T08:30:15+08:00",
+    "scheduled_time": "2026-09-20T08:37:00+08:00",
+    "eta_at_assignment_min": 7,
+    "driver_arrival_time": "2026-09-20T08:37:00+08:00",
+    "driver_wait_start": "2026-09-20T08:37:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": 0.0,
+    "waiting_fee": 5.0,
+    "payment_status": "captured",
+    "trip_start": "2026-09-20T08:42:12+08:00",
+    "trip_end": "2026-09-20T08:56:12+08:00",
+    "trip_completed": true,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-20T08:31:00+08:00",
+      "lat": 1.34297,
+      "lng": 103.862402,
+      "speed_kmh": 17,
+      "accuracy_m": 10.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:34:00+08:00",
+      "lat": 1.347418,
+      "lng": 103.868058,
+      "speed_kmh": 14,
+      "accuracy_m": 9.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:36:00+08:00",
+      "lat": 1.34992,
+      "lng": 103.871239,
+      "speed_kmh": 9,
+      "accuracy_m": 8.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:37:00+08:00",
+      "lat": 1.350753,
+      "lng": 103.872333,
+      "speed_kmh": 0,
+      "accuracy_m": 8.9,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:38:00+08:00",
+      "lat": 1.350754,
+      "lng": 103.872301,
+      "speed_kmh": 0,
+      "accuracy_m": 5.2,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:39:00+08:00",
+      "lat": 1.350773,
+      "lng": 103.872324,
+      "speed_kmh": 0,
+      "accuracy_m": 5.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:40:00+08:00",
+      "lat": 1.350781,
+      "lng": 103.872315,
+      "speed_kmh": 0,
+      "accuracy_m": 5.8,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:41:00+08:00",
+      "lat": 1.350773,
+      "lng": 103.872316,
+      "speed_kmh": 0,
+      "accuracy_m": 5.7,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:42:00+08:00",
+      "lat": 1.350739,
+      "lng": 103.872306,
+      "speed_kmh": 0,
+      "accuracy_m": 5.1,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:42:12+08:00",
+      "lat": 1.350745,
+      "lng": 103.872298,
+      "speed_kmh": 0,
+      "accuracy_m": 4.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:44:12+08:00",
+      "lat": 1.350996,
+      "lng": 103.882629,
+      "speed_kmh": 38,
+      "accuracy_m": 8.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:46:12+08:00",
+      "lat": 1.351239,
+      "lng": 103.892957,
+      "speed_kmh": 30,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:48:12+08:00",
+      "lat": 1.351481,
+      "lng": 103.903286,
+      "speed_kmh": 38,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:50:12+08:00",
+      "lat": 1.351723,
+      "lng": 103.913614,
+      "speed_kmh": 28,
+      "accuracy_m": 8.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:52:12+08:00",
+      "lat": 1.351965,
+      "lng": 103.923943,
+      "speed_kmh": 34,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:54:12+08:00",
+      "lat": 1.352208,
+      "lng": 103.934271,
+      "speed_kmh": 38,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-20T08:56:12+08:00",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "speed_kmh": 0,
+      "accuracy_m": 6.4,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-20T08:37:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at NEX main pickup, Honda HR-V SGP 4521 M."
+    },
+    {
+      "timestamp": "2026-09-20T08:38:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I'm at the pickup point, downstairs."
+    },
+    {
+      "timestamp": "2026-09-20T08:40:00+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-20T08:30:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4101 booked trip TRIP-DISP-T-NS-24 from NEX, Serangoon Central to Tampines Mall (Tampines Central 5 drop-off). On-demand booking. Estimated pickup 08:37. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-20T08:30:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8201 (Lim Wei Ming, Honda HR-V (SGP 4521 M)) matched. ETA 7 min."
+    },
+    {
+      "timestamp": "2026-09-20T08:30:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-20T08:37:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 7 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-09-20T08:37:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 08:40:00."
+    },
+    {
+      "timestamp": "2026-09-20T08:37:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-09-20T08:40:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-09-20T08:40:00+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-20T08:42:12+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-20T08:56:12+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Tampines Mall (Tampines Central 5 drop-off)."
+    },
+    {
+      "timestamp": "2026-09-20T08:56:22+08:00",
+      "event_type": "waiting_fee_applied",
+      "details": "Waiting time fee $5.00 added to fare. Driver tapped 'I'm Here' 5.2 min before the rider boarded."
+    },
+    {
+      "timestamp": "2026-09-20T08:56:32+08:00",
+      "event_type": "payment_captured",
+      "details": "Fare and fees charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

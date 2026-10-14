@@ -1,0 +1,285 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-03",
+    "trip_id": "TRIP-DISP-T-NS-03",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "Driver never showed up. I was at ION Orchard. Please reverse the charge.",
+    "filed_at": "2026-09-23T12:04:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4105",
+    "name": "Arjun Mehta",
+    "account_age_days": 420,
+    "total_trips": 140,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 41,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23207",
+    "name": "Kevin Wong",
+    "account_age_days": 900,
+    "total_trips": 2200,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Tesla Model 3 (SGL 2560 Z)",
+    "age_years": 38,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-03",
+    "rider_id": "R-4105",
+    "driver_id": "D-23207",
+    "pickup_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Changi Airport Terminal 3 (Departures)",
+      "lat": 1.3555,
+      "lng": 103.9864,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-23T05:20:00+08:00",
+    "matched_at": "2026-09-23T05:20:15+08:00",
+    "scheduled_time": "2026-09-23T05:31:00+08:00",
+    "eta_at_assignment_min": 11,
+    "driver_arrival_time": "2026-09-23T05:31:00+08:00",
+    "driver_wait_start": "2026-09-23T05:31:00+08:00",
+    "cancellation_time": "2026-09-23T05:35:12+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-23T05:22:00+08:00",
+      "lat": 1.32343,
+      "lng": 103.824911,
+      "speed_kmh": 19,
+      "accuracy_m": 4.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:25:00+08:00",
+      "lat": 1.315794,
+      "lng": 103.827595,
+      "speed_kmh": 17,
+      "accuracy_m": 6.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:28:00+08:00",
+      "lat": 1.309006,
+      "lng": 103.82998,
+      "speed_kmh": 14,
+      "accuracy_m": 10.4,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:30:00+08:00",
+      "lat": 1.305188,
+      "lng": 103.831322,
+      "speed_kmh": 9,
+      "accuracy_m": 6.4,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:31:00+08:00",
+      "lat": 1.303909,
+      "lng": 103.831766,
+      "speed_kmh": 0,
+      "accuracy_m": 4.9,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:32:00+08:00",
+      "lat": 1.303892,
+      "lng": 103.831781,
+      "speed_kmh": 0,
+      "accuracy_m": 7.7,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:33:00+08:00",
+      "lat": 1.303931,
+      "lng": 103.831777,
+      "speed_kmh": 0,
+      "accuracy_m": 4.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:34:00+08:00",
+      "lat": 1.303909,
+      "lng": 103.831763,
+      "speed_kmh": 0,
+      "accuracy_m": 7.1,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:35:00+08:00",
+      "lat": 1.303914,
+      "lng": 103.831767,
+      "speed_kmh": 0,
+      "accuracy_m": 8.3,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-23T05:35:12+08:00",
+      "lat": 1.303916,
+      "lng": 103.831769,
+      "speed_kmh": 0,
+      "accuracy_m": 4.5,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-23T05:31:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at ION Orchard Turn pickup point. White Tesla SGL 2560 Z."
+    },
+    {
+      "timestamp": "2026-09-23T05:32:12+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-23T05:33:30+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I'm next to the Starbucks side of Orchard Turn, near the taxi bay."
+    },
+    {
+      "timestamp": "2026-09-23T05:34:48+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Last chance before I cancel."
+    },
+    {
+      "timestamp": "2026-09-23T05:35:12+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-23T05:20:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4105 booked trip TRIP-DISP-T-NS-03 from ION Orchard (Orchard Turn pickup point) to Changi Airport Terminal 3 (Departures). On-demand booking. Estimated pickup 05:31. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-23T05:20:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23207 (Kevin Wong, Tesla Model 3 (SGL 2560 Z)) matched. ETA 11 min."
+    },
+    {
+      "timestamp": "2026-09-23T05:20:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-23T05:31:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 11 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-09-23T05:31:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 05:34:00."
+    },
+    {
+      "timestamp": "2026-09-23T05:31:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-09-23T05:32:12+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-23T05:34:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-09-23T05:35:12+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 4.2 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-09-23T05:35:17+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-23207 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

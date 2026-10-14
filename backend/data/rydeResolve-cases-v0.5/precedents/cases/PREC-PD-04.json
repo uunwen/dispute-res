@@ -1,0 +1,398 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-PD-04",
+      "trip_id": "TRIP-PREC-PD-04",
+      "filed_by": "rider",
+      "dispute_type": "property_damage",
+      "description": "I was charged $120 for a mess I did not make. Please check.",
+      "filed_at": "2026-08-30T13:36:24+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10153",
+      "name": "Naveen Kumar",
+      "account_age_days": 420,
+      "total_trips": 96,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 38,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "email"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-9133",
+      "name": "Yusri Hamid",
+      "account_age_days": 900,
+      "total_trips": 2800,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Toyota Noah (SHB 7260 D)",
+      "age_years": 44,
+      "communication_preferences": {
+        "preferred_language": "Malay",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-PD-04",
+      "rider_id": "R-10153",
+      "driver_id": "D-9133",
+      "pickup_location": {
+        "name": "West Mall, Bukit Batok",
+        "lat": 1.3498,
+        "lng": 103.7496,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Jurong Point",
+        "lat": 1.3397,
+        "lng": 103.7067,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-28T09:10:00+08:00",
+      "matched_at": "2026-08-28T09:10:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-08-28T09:15:00+08:00",
+      "driver_wait_start": "2026-08-28T09:15:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-08-28T09:16:00+08:00",
+      "trip_end": "2026-08-28T09:28:24+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 6.27,
+        "duration_min": 9.9,
+        "waypoints": [
+          {
+            "lat": 1.3498,
+            "lng": 103.7496
+          },
+          {
+            "lat": 1.36188,
+            "lng": 103.72411
+          },
+          {
+            "lat": 1.3397,
+            "lng": 103.7067
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 6.27,
+        "distance_charge": 4.08,
+        "duration_min": 9.9,
+        "time_charge": 2.18,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 9.86
+      },
+      "damage_claim": {
+        "claim_id": "CLM-PPD-04",
+        "submitted_at": "2026-08-28T17:28:24+08:00",
+        "mess_type_claimed": "bodily_fluids",
+        "amount_claimed": 120.0,
+        "attachment_ids": [
+          "ATT-CLM-PPD-04-1",
+          "ATT-CLM-PPD-04-2"
+        ],
+        "status": "charged",
+        "amount_charged": 120.0
+      }
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 6.27,
+      "distance_charge": 4.08,
+      "duration_min": 12.4,
+      "time_charge": 2.73,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 10.41,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-28T09:16:00+08:00",
+        "lat": 1.34983,
+        "lng": 103.749628,
+        "speed_kmh": 29,
+        "accuracy_m": 8.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:17:00+08:00",
+        "lat": 1.35168,
+        "lng": 103.745654,
+        "speed_kmh": 28,
+        "accuracy_m": 5.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:18:00+08:00",
+        "lat": 1.353444,
+        "lng": 103.741848,
+        "speed_kmh": 34,
+        "accuracy_m": 7.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:19:00+08:00",
+        "lat": 1.355624,
+        "lng": 103.737263,
+        "speed_kmh": 32,
+        "accuracy_m": 5.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:20:00+08:00",
+        "lat": 1.35771,
+        "lng": 103.732926,
+        "speed_kmh": 29,
+        "accuracy_m": 5.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:21:00+08:00",
+        "lat": 1.359532,
+        "lng": 103.729033,
+        "speed_kmh": 28,
+        "accuracy_m": 9.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:22:00+08:00",
+        "lat": 1.361367,
+        "lng": 103.725207,
+        "speed_kmh": 33,
+        "accuracy_m": 7.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:23:00+08:00",
+        "lat": 1.358954,
+        "lng": 103.721761,
+        "speed_kmh": 28,
+        "accuracy_m": 9.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:24:00+08:00",
+        "lat": 1.355626,
+        "lng": 103.7192,
+        "speed_kmh": 32,
+        "accuracy_m": 6.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:25:00+08:00",
+        "lat": 1.351837,
+        "lng": 103.716245,
+        "speed_kmh": 28,
+        "accuracy_m": 4.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:26:00+08:00",
+        "lat": 1.348622,
+        "lng": 103.713688,
+        "speed_kmh": 33,
+        "accuracy_m": 8.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:27:00+08:00",
+        "lat": 1.344723,
+        "lng": 103.710631,
+        "speed_kmh": 29,
+        "accuracy_m": 7.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:28:00+08:00",
+        "lat": 1.341271,
+        "lng": 103.707937,
+        "speed_kmh": 31,
+        "accuracy_m": 5.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-28T09:28:24+08:00",
+        "lat": 1.3397,
+        "lng": 103.7067,
+        "speed_kmh": 0,
+        "accuracy_m": 6.1,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-08-28T09:10:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10153 booked trip TRIP-PREC-PD-04 from West Mall, Bukit Batok to Jurong Point. Upfront estimate $9.86 for planned route 6.3 km / 10 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-08-28T09:10:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-9133 (Yusri Hamid, Toyota Noah (SHB 7260 D)) assigned."
+      },
+      {
+        "timestamp": "2026-08-28T09:15:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 9 m of pickup point."
+      },
+      {
+        "timestamp": "2026-08-28T09:16:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-08-28T09:28:24+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Jurong Point. Meter distance 6.27 km, duration 12.4 min."
+      },
+      {
+        "timestamp": "2026-08-28T09:28:44+08:00",
+        "event_type": "payment_captured",
+        "details": "$10.41 charged to rider payment method (e-wallet)."
+      },
+      {
+        "timestamp": "2026-08-28T17:28:24+08:00",
+        "event_type": "cleaning_claim_submitted",
+        "details": "Driver D-9133 submitted cleaning claim CLM-PPD-04 for bodily_fluids: $120.00 with 2 attachment(s)."
+      },
+      {
+        "timestamp": "2026-08-29T19:28:24+08:00",
+        "event_type": "cleaning_fee_charged",
+        "details": "Cleaning fee $120.00 for claim CLM-PPD-04 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [
+      {
+        "attachment_id": "ATT-CLM-PPD-04-1",
+        "attachment_type": "photo",
+        "uploaded_by": "driver",
+        "uploaded_at": "2026-08-28T17:28:24+08:00",
+        "captured_at": "2026-08-28T09:35:24+08:00",
+        "location": {
+          "lat": 1.33972,
+          "lng": 103.70678
+        },
+        "file_hash": "sha256:6e9ea08dc85aba3e63c848df9d9bca08895e611a",
+        "simulated_vision_analysis": {
+          "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+          "description": "Stained rear seat; the readable plate is SFH 8203 Z.",
+          "mess_type": "bodily_fluids",
+          "severity": "moderate",
+          "plate_read": "SFH 8203 Z",
+          "interior_matches_vehicle_model": true,
+          "ai_generated_likelihood": 0.05,
+          "duplicate_of": null
+        },
+        "receipt_details": null
+      },
+      {
+        "attachment_id": "ATT-CLM-PPD-04-2",
+        "attachment_type": "receipt",
+        "uploaded_by": "driver",
+        "uploaded_at": "2026-08-28T17:28:24+08:00",
+        "captured_at": "2026-08-28T17:03:24+08:00",
+        "location": null,
+        "file_hash": "sha256:7025e143676937eb9fb7df0360bed71be34eeae9",
+        "simulated_vision_analysis": null,
+        "receipt_details": {
+          "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+          "uen": "201912345K",
+          "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+          "contact_number": "+65 6745 1122",
+          "service_description": "Biohazard cleaning, rear seat",
+          "professional_cleaning": true,
+          "cleaning_date": "2026-08-28",
+          "car_plate": "SHB 7260 D",
+          "amount": 120.0,
+          "signed": true,
+          "company_stamp": true
+        }
+      }
+    ],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-PD-04",
+    "outcome": "full_refund",
+    "refund_amount": 120.0,
+    "payer": "driver",
+    "rider_charge_amount": 0.0,
+    "driver_warning": true,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": true,
+    "confidence": 0.9,
+    "rules_cited": [
+      "PD-7",
+      "PD-8",
+      "G-7",
+      "G-10"
+    ],
+    "precedents_used": [],
+    "reasoning": "The plate readable in the claim photo belongs to a different vehicle, not the car that did this trip. That is false evidence (PD-7): the S$120 is refunded and recovered from the driver, with a warning and a fraud review (G-7, G-10g).",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

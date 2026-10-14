@@ -1,0 +1,238 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-32",
+    "trip_id": "TRIP-DISP-T-NS-32",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "Driver cancelled after 2 minutes and I was charged $6.61. I only noticed on my statement.",
+    "filed_at": "2026-09-17T20:40:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9107",
+    "name": "Kumar Subramaniam",
+    "account_age_days": 420,
+    "total_trips": 48,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 58,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "sms"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13210",
+    "name": "Jamal Hussain",
+    "account_age_days": 600,
+    "total_trips": 1500,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Jazz (SGU 5095 E)",
+    "age_years": 33,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-32",
+    "rider_id": "R-9107",
+    "driver_id": "D-13210",
+    "pickup_location": {
+      "name": "Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay)",
+      "lat": 1.3693,
+      "lng": 103.8486,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-08-20T19:10:00+08:00",
+    "matched_at": "2026-08-20T19:10:15+08:00",
+    "scheduled_time": "2026-08-20T19:18:00+08:00",
+    "eta_at_assignment_min": 8,
+    "driver_arrival_time": "2026-08-20T19:18:00+08:00",
+    "driver_wait_start": "2026-08-20T19:18:00+08:00",
+    "cancellation_time": "2026-08-20T19:20:00+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-08-20T19:12:00+08:00",
+      "lat": 1.35771,
+      "lng": 103.853301,
+      "speed_kmh": 17,
+      "accuracy_m": 6.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-08-20T19:15:00+08:00",
+      "lat": 1.364384,
+      "lng": 103.850615,
+      "speed_kmh": 14,
+      "accuracy_m": 9.2,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-08-20T19:17:00+08:00",
+      "lat": 1.368138,
+      "lng": 103.849104,
+      "speed_kmh": 9,
+      "accuracy_m": 4.4,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-08-20T19:18:00+08:00",
+      "lat": 1.36938,
+      "lng": 103.848584,
+      "speed_kmh": 0,
+      "accuracy_m": 7.1,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-08-20T19:19:00+08:00",
+      "lat": 1.36938,
+      "lng": 103.848574,
+      "speed_kmh": 0,
+      "accuracy_m": 5.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-08-20T19:20:00+08:00",
+      "lat": 1.369401,
+      "lng": 103.848634,
+      "speed_kmh": 0,
+      "accuracy_m": 8.0,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-08-20T19:18:12+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at AMK Hub."
+    },
+    {
+      "timestamp": "2026-08-20T19:19:00+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-08-20T19:19:48+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling."
+    },
+    {
+      "timestamp": "2026-08-20T19:20:00+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-08-20T19:10:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9107 booked trip TRIP-DISP-T-NS-32 from Ang Mo Kio Hub (Ang Mo Kio Ave 3 pickup bay) to ION Orchard (Orchard Turn pickup point). On-demand booking. Estimated pickup 19:18. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-08-20T19:10:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13210 (Jamal Hussain, Honda Jazz (SGU 5095 E)) matched. ETA 8 min."
+    },
+    {
+      "timestamp": "2026-08-20T19:10:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-08-20T19:18:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 9 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-08-20T19:18:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 19:21:00."
+    },
+    {
+      "timestamp": "2026-08-20T19:18:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-08-20T19:19:00+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-08-20T19:20:00+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 2.0 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-08-20T19:20:05+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-13210 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

@@ -1,0 +1,309 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-25",
+    "trip_id": "TRIP-DISP-T-NS-25",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "司机还没到就按了到达，我一出来上车就被收等候费。",
+    "filed_at": "2026-09-30T21:30:24+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9142",
+    "name": "Zhang Mei Fen",
+    "account_age_days": 420,
+    "total_trips": 19,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 70,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": "large_text",
+      "channel": "sms"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-18213",
+    "name": "Manimaran Subbu",
+    "account_age_days": 900,
+    "total_trips": 3300,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Hyundai Elantra (SGN 3929 P)",
+    "age_years": 49,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-25",
+    "rider_id": "R-9142",
+    "driver_id": "D-18213",
+    "pickup_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Holland Village (Lorong Liput)",
+      "lat": 1.311,
+      "lng": 103.796,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-30T14:00:00+08:00",
+    "matched_at": "2026-09-30T14:00:15+08:00",
+    "scheduled_time": "2026-09-30T14:08:00+08:00",
+    "eta_at_assignment_min": 8,
+    "driver_arrival_time": "2026-09-30T14:08:00+08:00",
+    "driver_wait_start": "2026-09-30T14:08:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": 0.0,
+    "waiting_fee": 5.0,
+    "payment_status": "captured",
+    "trip_start": "2026-09-30T14:12:24+08:00",
+    "trip_end": "2026-09-30T14:22:24+08:00",
+    "trip_completed": true,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-30T14:03:00+08:00",
+      "lat": 1.313256,
+      "lng": 103.807391,
+      "speed_kmh": 38,
+      "accuracy_m": 4.7,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:06:00+08:00",
+      "lat": 1.309448,
+      "lng": 103.817491,
+      "speed_kmh": 30,
+      "accuracy_m": 10.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:07:48+08:00",
+      "lat": 1.305387,
+      "lng": 103.828265,
+      "speed_kmh": 12,
+      "accuracy_m": 9.8,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:09:30+08:00",
+      "lat": 1.305006,
+      "lng": 103.829275,
+      "speed_kmh": 9,
+      "accuracy_m": 5.5,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:10:48+08:00",
+      "lat": 1.30434,
+      "lng": 103.831042,
+      "speed_kmh": 6,
+      "accuracy_m": 4.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:11:36+08:00",
+      "lat": 1.304055,
+      "lng": 103.831804,
+      "speed_kmh": 0,
+      "accuracy_m": 4.1,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:12:24+08:00",
+      "lat": 1.304065,
+      "lng": 103.831807,
+      "speed_kmh": 0,
+      "accuracy_m": 7.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:14:24+08:00",
+      "lat": 1.305443,
+      "lng": 103.82464,
+      "speed_kmh": 39,
+      "accuracy_m": 7.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:16:24+08:00",
+      "lat": 1.306832,
+      "lng": 103.81748,
+      "speed_kmh": 30,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:18:24+08:00",
+      "lat": 1.308222,
+      "lng": 103.81032,
+      "speed_kmh": 31,
+      "accuracy_m": 4.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:20:24+08:00",
+      "lat": 1.309611,
+      "lng": 103.80316,
+      "speed_kmh": 38,
+      "accuracy_m": 8.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-30T14:22:24+08:00",
+      "lat": 1.311,
+      "lng": 103.796,
+      "speed_kmh": 0,
+      "accuracy_m": 5.9,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-09-30T14:08:00+08:00",
+        "lat": 1.304061,
+        "lng": 103.831815,
+        "accuracy_m": 4.3
+      },
+      {
+        "timestamp": "2026-09-30T14:10:00+08:00",
+        "lat": 1.304044,
+        "lng": 103.831813,
+        "accuracy_m": 5.7
+      },
+      {
+        "timestamp": "2026-09-30T14:12:00+08:00",
+        "lat": 1.3041,
+        "lng": 103.831772,
+        "accuracy_m": 4.1
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-30T14:08:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I'm here."
+    },
+    {
+      "timestamp": "2026-09-30T14:10:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Where are you?"
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-30T14:00:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9142 booked trip TRIP-DISP-T-NS-25 from ION Orchard (Orchard Turn pickup point) to Holland Village (Lorong Liput). On-demand booking. Estimated pickup 14:08. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-30T14:00:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-18213 (Manimaran Subbu, Hyundai Elantra (SGN 3929 P)) matched. ETA 8 min."
+    },
+    {
+      "timestamp": "2026-09-30T14:00:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-30T14:08:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 422 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-09-30T14:08:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 14:11:00."
+    },
+    {
+      "timestamp": "2026-09-30T14:08:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-09-30T14:11:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-09-30T14:12:24+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-30T14:22:24+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Holland Village (Lorong Liput)."
+    },
+    {
+      "timestamp": "2026-09-30T14:22:34+08:00",
+      "event_type": "waiting_fee_applied",
+      "details": "Waiting time fee $5.00 added to fare. Driver tapped 'I'm Here' 4.4 min before the rider boarded."
+    },
+    {
+      "timestamp": "2026-09-30T14:22:44+08:00",
+      "event_type": "payment_captured",
+      "details": "Fare and fees charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

@@ -1,0 +1,301 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-38",
+    "trip_id": "TRIP-DISP-T-NS-38",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "நான் கீழே வருகிறேன் என்று செய்தி அனுப்பினேன், ஆனால் ஓட்டுநர் ரத்து செய்துவிட்டார்.",
+    "filed_at": "2026-09-25T22:21:48+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9141",
+    "name": "Selvi Arumugam",
+    "account_age_days": 420,
+    "total_trips": 41,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 63,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "sms"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-18201",
+    "name": "Lim Wei Ming",
+    "account_age_days": 900,
+    "total_trips": 3201,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda HR-V (SGP 8389 M)",
+    "age_years": 44,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-38",
+    "rider_id": "R-9141",
+    "driver_id": "D-18201",
+    "pickup_location": {
+      "name": "Marina Bay Sands (Hotel Tower 1 lobby)",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Changi Airport Terminal 3 (Departures)",
+      "lat": 1.3555,
+      "lng": 103.9864,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-25T21:10:00+08:00",
+    "matched_at": "2026-09-25T21:10:15+08:00",
+    "scheduled_time": "2026-09-25T21:18:00+08:00",
+    "eta_at_assignment_min": 8,
+    "driver_arrival_time": "2026-09-25T21:18:00+08:00",
+    "driver_wait_start": "2026-09-25T21:18:00+08:00",
+    "cancellation_time": "2026-09-25T21:22:48+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-25T21:12:00+08:00",
+      "lat": 1.29488,
+      "lng": 103.866066,
+      "speed_kmh": 17,
+      "accuracy_m": 5.2,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T21:15:00+08:00",
+      "lat": 1.288371,
+      "lng": 103.863,
+      "speed_kmh": 14,
+      "accuracy_m": 6.2,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T21:17:00+08:00",
+      "lat": 1.28471,
+      "lng": 103.861275,
+      "speed_kmh": 9,
+      "accuracy_m": 7.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T21:18:00+08:00",
+      "lat": 1.283501,
+      "lng": 103.860701,
+      "speed_kmh": 0,
+      "accuracy_m": 7.8,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T21:19:00+08:00",
+      "lat": 1.283491,
+      "lng": 103.860693,
+      "speed_kmh": 0,
+      "accuracy_m": 7.9,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T21:20:00+08:00",
+      "lat": 1.283488,
+      "lng": 103.860699,
+      "speed_kmh": 0,
+      "accuracy_m": 7.9,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T21:21:00+08:00",
+      "lat": 1.283513,
+      "lng": 103.860717,
+      "speed_kmh": 0,
+      "accuracy_m": 4.9,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T21:22:00+08:00",
+      "lat": 1.283501,
+      "lng": 103.860732,
+      "speed_kmh": 0,
+      "accuracy_m": 8.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T21:22:48+08:00",
+      "lat": 1.2835,
+      "lng": 103.860692,
+      "speed_kmh": 0,
+      "accuracy_m": 6.8,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-09-25T21:19:00+08:00",
+        "lat": 1.28593,
+        "lng": 103.861632,
+        "accuracy_m": 8.2
+      },
+      {
+        "timestamp": "2026-09-25T21:21:00+08:00",
+        "lat": 1.285005,
+        "lng": 103.861302,
+        "accuracy_m": 7.6
+      },
+      {
+        "timestamp": "2026-09-25T21:22:30+08:00",
+        "lat": 1.283909,
+        "lng": 103.860873,
+        "accuracy_m": 7.1
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-25T21:18:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at MBS Hotel Tower 1 lobby, grey Honda HR-V."
+    },
+    {
+      "timestamp": "2026-09-25T21:19:00+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-25T21:20:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Are you coming down?"
+    },
+    {
+      "timestamp": "2026-09-25T21:20:36+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Sekejap, turun sekarang, 2 minit"
+    },
+    {
+      "timestamp": "2026-09-25T21:22:36+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling, waited too long."
+    },
+    {
+      "timestamp": "2026-09-25T21:22:48+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-25T21:10:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9141 booked trip TRIP-DISP-T-NS-38 from Marina Bay Sands (Hotel Tower 1 lobby) to Changi Airport Terminal 3 (Departures). On-demand booking. Estimated pickup 21:18. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-25T21:10:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-18201 (Lim Wei Ming, Honda HR-V (SGP 8389 M)) matched. ETA 8 min."
+    },
+    {
+      "timestamp": "2026-09-25T21:10:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-25T21:18:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 11 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-09-25T21:18:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 21:21:00."
+    },
+    {
+      "timestamp": "2026-09-25T21:18:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-09-25T21:19:00+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-25T21:21:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-09-25T21:22:48+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 4.8 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-09-25T21:22:53+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-18201 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

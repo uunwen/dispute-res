@@ -1,0 +1,284 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-30",
+    "trip_id": "TRIP-DISP-T-NS-30",
+    "filed_by": "driver",
+    "dispute_type": "no_show_charge",
+    "description": "Rider no show. I waited at the pickup point for about 5 minutes. I chose the wrong reason when I cancelled so I didn't get the fee. Please pay me the fee.",
+    "filed_at": "2026-10-04T21:23:30+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-14114",
+    "name": "Chen Jia Hui",
+    "account_age_days": 420,
+    "total_trips": 52,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 26,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23221",
+    "name": "Hock Seng Tan",
+    "account_age_days": 900,
+    "total_trips": 2100,
+    "avg_rating": 4.0,
+    "dispute_history": {
+      "total_disputes": 7,
+      "upheld_against": 3,
+      "rejected": 4
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 2,
+    "vehicle": "Toyota Wish (SGP 5197 N)",
+    "age_years": 52,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-30",
+    "rider_id": "R-14114",
+    "driver_id": "D-23221",
+    "pickup_location": {
+      "name": "Hillview Grove Condominium (lobby)",
+      "lat": 1.3621,
+      "lng": 103.7642,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Northpoint City, Yishun",
+      "lat": 1.4295,
+      "lng": 103.836,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-04T19:50:00+08:00",
+    "matched_at": "2026-10-04T19:50:15+08:00",
+    "scheduled_time": "2026-10-04T19:58:00+08:00",
+    "eta_at_assignment_min": 8,
+    "driver_arrival_time": "2026-10-04T19:58:00+08:00",
+    "driver_wait_start": "2026-10-04T19:58:00+08:00",
+    "cancellation_time": "2026-10-04T20:02:30+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "other",
+    "cancellation_fee": 0.0,
+    "waiting_fee": 0.0,
+    "payment_status": "n/a",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-04T19:52:00+08:00",
+      "lat": 1.374498,
+      "lng": 103.756844,
+      "speed_kmh": 17,
+      "accuracy_m": 5.9,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T19:55:00+08:00",
+      "lat": 1.370529,
+      "lng": 103.762847,
+      "speed_kmh": 14,
+      "accuracy_m": 10.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T19:57:00+08:00",
+      "lat": 1.368296,
+      "lng": 103.766223,
+      "speed_kmh": 9,
+      "accuracy_m": 7.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T19:58:00+08:00",
+      "lat": 1.367556,
+      "lng": 103.767348,
+      "speed_kmh": 0,
+      "accuracy_m": 4.0,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T19:59:00+08:00",
+      "lat": 1.367554,
+      "lng": 103.767342,
+      "speed_kmh": 0,
+      "accuracy_m": 5.7,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T20:00:00+08:00",
+      "lat": 1.367546,
+      "lng": 103.767366,
+      "speed_kmh": 0,
+      "accuracy_m": 5.4,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T20:01:00+08:00",
+      "lat": 1.367572,
+      "lng": 103.767363,
+      "speed_kmh": 0,
+      "accuracy_m": 4.2,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T20:02:00+08:00",
+      "lat": 1.367539,
+      "lng": 103.767353,
+      "speed_kmh": 0,
+      "accuracy_m": 5.8,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-04T20:02:30+08:00",
+      "lat": 1.367571,
+      "lng": 103.767337,
+      "speed_kmh": 0,
+      "accuracy_m": 8.1,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-10-04T19:58:00+08:00",
+        "lat": 1.362192,
+        "lng": 103.764178,
+        "accuracy_m": 4.1
+      },
+      {
+        "timestamp": "2026-10-04T20:00:00+08:00",
+        "lat": 1.36215,
+        "lng": 103.76423,
+        "accuracy_m": 7.7
+      },
+      {
+        "timestamp": "2026-10-04T20:02:00+08:00",
+        "lat": 1.362203,
+        "lng": 103.764233,
+        "accuracy_m": 6.3
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-04T19:58:06+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "I'm here."
+    },
+    {
+      "timestamp": "2026-10-04T20:00:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Where are you?"
+    },
+    {
+      "timestamp": "2026-10-04T20:02:12+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling."
+    },
+    {
+      "timestamp": "2026-10-04T20:02:30+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: other. No cancellation fee applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-04T19:50:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-14114 booked trip TRIP-DISP-T-NS-30 from Hillview Grove Condominium (lobby) to Northpoint City, Yishun. On-demand booking. Estimated pickup 19:58. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-04T19:50:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23221 (Hock Seng Tan, Toyota Wish (SGP 5197 N)) matched. ETA 8 min."
+    },
+    {
+      "timestamp": "2026-10-04T19:50:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-04T19:58:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 700 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-10-04T19:58:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 20:01:00."
+    },
+    {
+      "timestamp": "2026-10-04T19:58:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-10-04T20:01:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-10-04T20:02:30+08:00",
+      "event_type": "trip_cancelled_by_driver",
+      "details": "Driver cancelled with reason other. No cancellation fee applied."
+    },
+    {
+      "timestamp": "2026-10-04T20:02:35+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-23221 released from trip. Trip status: cancelled (other)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

@@ -1,0 +1,361 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-10",
+    "trip_id": "TRIP-DISP-T-PD-10",
+    "filed_by": "rider",
+    "dispute_type": "property_damage",
+    "description": "I booked a pet-friendly ride with my dog. The dog did not pee, it only shed some fur. Why $120?",
+    "filed_at": "2026-10-07T11:35:24+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9163",
+    "name": "Irene Seah",
+    "account_age_days": 420,
+    "total_trips": 40,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 58,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13239",
+    "name": "Wilson Koh",
+    "account_age_days": 900,
+    "total_trips": 2250,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Odyssey (SKK 6661 M)",
+    "age_years": 40,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-10",
+    "rider_id": "R-9163",
+    "driver_id": "D-13239",
+    "pickup_location": {
+      "name": "Paya Lebar Quarter (Mall drop-off)",
+      "lat": 1.317,
+      "lng": 103.893,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Bugis Junction (Victoria St taxi stand)",
+      "lat": 1.29935,
+      "lng": 103.8548,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-05T10:30:00+08:00",
+    "matched_at": "2026-10-05T10:30:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-05T10:35:00+08:00",
+    "driver_wait_start": "2026-10-05T10:35:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-05T10:36:00+08:00",
+    "trip_end": "2026-10-05T10:47:24+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 5.99,
+      "duration_min": 9.5,
+      "waypoints": [
+        {
+          "lat": 1.317,
+          "lng": 103.893
+        },
+        {
+          "lat": 1.32343,
+          "lng": 103.86685
+        },
+        {
+          "lat": 1.29935,
+          "lng": 103.8548
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 5.99,
+      "distance_charge": 3.89,
+      "duration_min": 9.5,
+      "time_charge": 2.09,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 9.58
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-10",
+      "submitted_at": "2026-10-05T16:47:24+08:00",
+      "mess_type_claimed": "bodily_fluids",
+      "amount_claimed": 120.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-10-1",
+        "ATT-CLM-PD-10-2"
+      ],
+      "status": "charged",
+      "amount_charged": 120.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 5.99,
+    "distance_charge": 3.89,
+    "duration_min": 11.4,
+    "time_charge": 2.51,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 10.0,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-05T10:36:00+08:00",
+      "lat": 1.316984,
+      "lng": 103.892993,
+      "speed_kmh": 31,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:37:00+08:00",
+      "lat": 1.318123,
+      "lng": 103.888493,
+      "speed_kmh": 28,
+      "accuracy_m": 4.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:38:00+08:00",
+      "lat": 1.319156,
+      "lng": 103.884397,
+      "speed_kmh": 34,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:39:00+08:00",
+      "lat": 1.320349,
+      "lng": 103.879454,
+      "speed_kmh": 28,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:40:00+08:00",
+      "lat": 1.321312,
+      "lng": 103.875367,
+      "speed_kmh": 33,
+      "accuracy_m": 8.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:41:00+08:00",
+      "lat": 1.322528,
+      "lng": 103.870573,
+      "speed_kmh": 33,
+      "accuracy_m": 6.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:42:00+08:00",
+      "lat": 1.322423,
+      "lng": 103.86631,
+      "speed_kmh": 29,
+      "accuracy_m": 4.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:43:00+08:00",
+      "lat": 1.318572,
+      "lng": 103.864436,
+      "speed_kmh": 32,
+      "accuracy_m": 9.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:44:00+08:00",
+      "lat": 1.314217,
+      "lng": 103.862265,
+      "speed_kmh": 32,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:45:00+08:00",
+      "lat": 1.309972,
+      "lng": 103.860089,
+      "speed_kmh": 34,
+      "accuracy_m": 8.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:46:00+08:00",
+      "lat": 1.305428,
+      "lng": 103.857837,
+      "speed_kmh": 34,
+      "accuracy_m": 6.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:47:00+08:00",
+      "lat": 1.300864,
+      "lng": 103.855592,
+      "speed_kmh": 28,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-05T10:47:24+08:00",
+      "lat": 1.29935,
+      "lng": 103.8548,
+      "speed_kmh": 0,
+      "accuracy_m": 7.2,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-05T10:30:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9163 booked trip TRIP-DISP-T-PD-10 from Paya Lebar Quarter (Mall drop-off) to Bugis Junction (Victoria St taxi stand). Upfront estimate $9.58 for planned route 6.0 km / 9 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-05T10:30:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13239 (Wilson Koh, Honda Odyssey (SKK 6661 M)) assigned."
+    },
+    {
+      "timestamp": "2026-10-05T10:35:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-05T10:36:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-05T10:47:24+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Bugis Junction (Victoria St taxi stand). Meter distance 5.99 km, duration 11.4 min."
+    },
+    {
+      "timestamp": "2026-10-05T10:47:44+08:00",
+      "event_type": "payment_captured",
+      "details": "$10.00 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-05T16:47:24+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-13239 submitted cleaning claim CLM-PD-10 for bodily_fluids: $120.00 with 2 attachment(s)."
+    },
+    {
+      "timestamp": "2026-10-06T18:47:24+08:00",
+      "event_type": "cleaning_fee_charged",
+      "details": "Cleaning fee $120.00 for claim CLM-PD-10 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-10-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-05T16:47:24+08:00",
+      "captured_at": "2026-10-05T10:51:24+08:00",
+      "location": {
+        "lat": 1.29938,
+        "lng": 103.85475
+      },
+      "file_hash": "sha256:7fc96486f1d2a0022047c896e25ad8c82753e81a",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Light-coloured dog fur on the rear seat cover; no stains or liquid; plate readable.",
+        "mess_type": "pet_fur_saliva",
+        "severity": "light",
+        "plate_read": "SKK 6661 M",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.02,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-10-2",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-05T16:47:24+08:00",
+      "captured_at": "2026-10-05T16:22:24+08:00",
+      "location": null,
+      "file_hash": "sha256:5a36d7cb1da313c4d4186425b2cb85653027026b",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Pet hair removal and interior vacuum",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-10-05",
+        "car_plate": "SKK 6661 M",
+        "amount": 120.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

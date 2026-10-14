@@ -1,0 +1,371 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-05",
+    "trip_id": "TRIP-DISP-T-PD-05",
+    "filed_by": "driver",
+    "dispute_type": "property_damage",
+    "description": "Rider vomited at the back. Professional cleaning cost $180, receipt attached.",
+    "filed_at": "2026-10-02T13:23:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9160",
+    "name": "Megan Chia",
+    "account_age_days": 420,
+    "total_trips": 69,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 30,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13237",
+    "name": "Clement Lau",
+    "account_age_days": 900,
+    "total_trips": 1200,
+    "avg_rating": 4.4,
+    "dispute_history": {
+      "total_disputes": 3,
+      "upheld_against": 1,
+      "rejected": 2
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 1,
+    "vehicle": "BYD Atto 3 (SKH 8630 K)",
+    "age_years": 35,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-05",
+    "rider_id": "R-9160",
+    "driver_id": "D-13237",
+    "pickup_location": {
+      "name": "Holland Village (Lorong Liput)",
+      "lat": 1.311,
+      "lng": 103.796,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Raffles Place (Chulia St taxi stand)",
+      "lat": 1.284,
+      "lng": 103.8515,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-01T22:30:00+08:00",
+    "matched_at": "2026-10-01T22:30:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-01T22:35:00+08:00",
+    "driver_wait_start": "2026-10-01T22:35:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-01T22:36:00+08:00",
+    "trip_end": "2026-10-01T22:46:12+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 8.78,
+      "duration_min": 13.9,
+      "waypoints": [
+        {
+          "lat": 1.311,
+          "lng": 103.796
+        },
+        {
+          "lat": 1.27533,
+          "lng": 103.81296
+        },
+        {
+          "lat": 1.284,
+          "lng": 103.8515
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 8.78,
+      "distance_charge": 5.71,
+      "duration_min": 13.9,
+      "time_charge": 3.06,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 12.37
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-05",
+      "submitted_at": "2026-10-02T12:46:12+08:00",
+      "mess_type_claimed": "vomit",
+      "amount_claimed": 180.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-05-1",
+        "ATT-CLM-PD-05-2",
+        "ATT-CLM-PD-05-3"
+      ],
+      "status": "under_review",
+      "amount_charged": 0.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 8.78,
+    "distance_charge": 5.71,
+    "duration_min": 10.2,
+    "time_charge": 2.24,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 11.55,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-01T22:36:00+08:00",
+      "lat": 1.310993,
+      "lng": 103.796,
+      "speed_kmh": 34,
+      "accuracy_m": 9.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:37:00+08:00",
+      "lat": 1.306373,
+      "lng": 103.798169,
+      "speed_kmh": 34,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:38:00+08:00",
+      "lat": 1.301804,
+      "lng": 103.800406,
+      "speed_kmh": 32,
+      "accuracy_m": 9.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:39:00+08:00",
+      "lat": 1.297436,
+      "lng": 103.802435,
+      "speed_kmh": 63,
+      "accuracy_m": 8.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:40:00+08:00",
+      "lat": 1.288911,
+      "lng": 103.806532,
+      "speed_kmh": 63,
+      "accuracy_m": 6.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:41:00+08:00",
+      "lat": 1.280405,
+      "lng": 103.810546,
+      "speed_kmh": 69,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:42:00+08:00",
+      "lat": 1.27642,
+      "lng": 103.817578,
+      "speed_kmh": 66,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:43:00+08:00",
+      "lat": 1.278539,
+      "lng": 103.827191,
+      "speed_kmh": 65,
+      "accuracy_m": 9.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:44:00+08:00",
+      "lat": 1.280659,
+      "lng": 103.836734,
+      "speed_kmh": 64,
+      "accuracy_m": 6.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:45:00+08:00",
+      "lat": 1.28276,
+      "lng": 103.846097,
+      "speed_kmh": 31,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:46:00+08:00",
+      "lat": 1.283849,
+      "lng": 103.85064,
+      "speed_kmh": 29,
+      "accuracy_m": 4.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-01T22:46:12+08:00",
+      "lat": 1.284,
+      "lng": 103.8515,
+      "speed_kmh": 0,
+      "accuracy_m": 4.7,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-01T22:30:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9160 booked trip TRIP-DISP-T-PD-05 from Holland Village (Lorong Liput) to Raffles Place (Chulia St taxi stand). Upfront estimate $12.37 for planned route 8.8 km / 14 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-01T22:30:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13237 (Clement Lau, BYD Atto 3 (SKH 8630 K)) assigned."
+    },
+    {
+      "timestamp": "2026-10-01T22:35:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-01T22:36:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-01T22:46:12+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Raffles Place (Chulia St taxi stand). Meter distance 8.78 km, duration 10.2 min."
+    },
+    {
+      "timestamp": "2026-10-01T22:46:32+08:00",
+      "event_type": "payment_captured",
+      "details": "$11.55 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-02T12:46:12+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-13237 submitted cleaning claim CLM-PD-05 for vomit: $180.00 with 3 attachment(s)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-05-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-02T12:46:12+08:00",
+      "captured_at": "2026-10-01T22:58:12+08:00",
+      "location": {
+        "lat": 1.28417,
+        "lng": 103.85157
+      },
+      "file_hash": "sha256:c2760627375321c9d222d071edb1ab5079c541d9",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Vomit on the rear seat and seat belt buckle.",
+        "mess_type": "vomit",
+        "severity": "heavy",
+        "plate_read": null,
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.02,
+        "duplicate_of": "ATT-CLM-0819-2 (claim CLM-0819, 19 Aug 2026)"
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-05-2",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-02T12:46:12+08:00",
+      "captured_at": "2026-10-01T22:59:12+08:00",
+      "location": {
+        "lat": 1.28399,
+        "lng": 103.85159
+      },
+      "file_hash": "sha256:e07ef5390c87feb62fba2b6d7b7f04eee11a9bb1",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Rear of the car with the plate readable; no mess visible.",
+        "mess_type": "none",
+        "severity": "none",
+        "plate_read": "SKH 8630 K",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.02,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-05-3",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-02T12:46:12+08:00",
+      "captured_at": "2026-10-02T12:21:12+08:00",
+      "location": null,
+      "file_hash": "sha256:e3a012048ef5d41226a7c5d824970ca306c009a1",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Professional interior deep cleaning and sanitisation (vomit, rear seat and floor)",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-10-02",
+        "car_plate": "SKH 8630 K",
+        "amount": 180.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

@@ -1,0 +1,379 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-06",
+    "trip_id": "TRIP-DISP-T-PD-06",
+    "filed_by": "rider",
+    "dispute_type": "property_damage",
+    "description": "我没有在车上呕吐，却被收了200元清洁费。请退款。",
+    "filed_at": "2026-10-04T21:08:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4159",
+    "name": "Zhou Yan",
+    "account_age_days": 420,
+    "total_trips": 37,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 25,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13233",
+    "name": "Tan Jun Hao",
+    "account_age_days": 900,
+    "total_trips": 1400,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Corolla (SKD 9401 E)",
+    "age_years": 33,
+    "communication_preferences": {
+      "preferred_language": "Mandarin",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-06",
+    "rider_id": "R-4159",
+    "driver_id": "D-13233",
+    "pickup_location": {
+      "name": "NEX, Serangoon Central",
+      "lat": 1.3507,
+      "lng": 103.8723,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Tampines Mall (Tampines Central 5 drop-off)",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-02T21:15:00+08:00",
+    "matched_at": "2026-10-02T21:15:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-02T21:20:00+08:00",
+    "driver_wait_start": "2026-10-02T21:20:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-02T21:21:00+08:00",
+    "trip_end": "2026-10-02T21:34:12+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 10.29,
+      "duration_min": 16.2,
+      "waypoints": [
+        {
+          "lat": 1.3507,
+          "lng": 103.8723
+        },
+        {
+          "lat": 1.3227,
+          "lng": 103.90915
+        },
+        {
+          "lat": 1.35245,
+          "lng": 103.9446
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 10.29,
+      "distance_charge": 6.69,
+      "duration_min": 16.2,
+      "time_charge": 3.56,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 13.85
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-06",
+      "submitted_at": "2026-10-03T08:34:12+08:00",
+      "mess_type_claimed": "vomit",
+      "amount_claimed": 200.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-06-1",
+        "ATT-CLM-PD-06-2"
+      ],
+      "status": "charged",
+      "amount_charged": 200.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 10.29,
+    "distance_charge": 6.69,
+    "duration_min": 13.2,
+    "time_charge": 2.9,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 13.19,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-02T21:21:00+08:00",
+      "lat": 1.350715,
+      "lng": 103.872339,
+      "speed_kmh": 31,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:22:00+08:00",
+      "lat": 1.347871,
+      "lng": 103.876032,
+      "speed_kmh": 33,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:23:00+08:00",
+      "lat": 1.344897,
+      "lng": 103.879942,
+      "speed_kmh": 29,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:24:00+08:00",
+      "lat": 1.342268,
+      "lng": 103.883436,
+      "speed_kmh": 34,
+      "accuracy_m": 7.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:25:00+08:00",
+      "lat": 1.339171,
+      "lng": 103.887474,
+      "speed_kmh": 63,
+      "accuracy_m": 5.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:26:00+08:00",
+      "lat": 1.333455,
+      "lng": 103.894961,
+      "speed_kmh": 69,
+      "accuracy_m": 8.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:27:00+08:00",
+      "lat": 1.32722,
+      "lng": 103.903199,
+      "speed_kmh": 63,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:28:00+08:00",
+      "lat": 1.323965,
+      "lng": 103.910624,
+      "speed_kmh": 69,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:29:00+08:00",
+      "lat": 1.330657,
+      "lng": 103.918625,
+      "speed_kmh": 67,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:30:00+08:00",
+      "lat": 1.337104,
+      "lng": 103.9263,
+      "speed_kmh": 69,
+      "accuracy_m": 6.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:31:00+08:00",
+      "lat": 1.343743,
+      "lng": 103.934212,
+      "speed_kmh": 28,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:32:00+08:00",
+      "lat": 1.346437,
+      "lng": 103.937388,
+      "speed_kmh": 33,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:33:00+08:00",
+      "lat": 1.349578,
+      "lng": 103.941223,
+      "speed_kmh": 29,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:34:00+08:00",
+      "lat": 1.352386,
+      "lng": 103.944549,
+      "speed_kmh": 28,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-02T21:34:12+08:00",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "speed_kmh": 0,
+      "accuracy_m": 4.9,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-02T21:15:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4159 booked trip TRIP-DISP-T-PD-06 from NEX, Serangoon Central to Tampines Mall (Tampines Central 5 drop-off). Upfront estimate $13.85 for planned route 10.3 km / 16 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-02T21:15:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13233 (Tan Jun Hao, Toyota Corolla (SKD 9401 E)) assigned."
+    },
+    {
+      "timestamp": "2026-10-02T21:20:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-02T21:21:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-02T21:34:12+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Tampines Mall (Tampines Central 5 drop-off). Meter distance 10.29 km, duration 13.2 min."
+    },
+    {
+      "timestamp": "2026-10-02T21:34:32+08:00",
+      "event_type": "payment_captured",
+      "details": "$13.19 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-10-03T08:34:12+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-13233 submitted cleaning claim CLM-PD-06 for vomit: $200.00 with 2 attachment(s)."
+    },
+    {
+      "timestamp": "2026-10-04T10:34:12+08:00",
+      "event_type": "cleaning_fee_charged",
+      "details": "Cleaning fee $200.00 for claim CLM-PD-06 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-06-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-03T08:34:12+08:00",
+      "captured_at": "2026-10-02T21:49:12+08:00",
+      "location": {
+        "lat": 1.3526,
+        "lng": 103.94438
+      },
+      "file_hash": "sha256:e0b0286bc456dfca9a532596000d6ad4220b5753",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Vomit on the rear seat; plate readable on a sticker at the rear window. Lighting and textures look unusually uniform.",
+        "mess_type": "vomit",
+        "severity": "heavy",
+        "plate_read": "SKD 9401 E",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.91,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-06-2",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-10-03T08:34:12+08:00",
+      "captured_at": "2026-10-03T08:09:12+08:00",
+      "location": null,
+      "file_hash": "sha256:0173d539c491fb9e8f28092f8403643bc99c79e9",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Professional interior deep cleaning and sanitisation (vomit, rear seat and floor)",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-10-03",
+        "car_plate": "SKD 9401 E",
+        "amount": 200.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

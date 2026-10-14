@@ -1,0 +1,1163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RydeResolve dispute case (v0.5, one format for all four dispute types)",
+  "description": "Every key is required in every case. A section that does not apply to a dispute type is null (object) or [] (list). See schema/case_format.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dispute_ticket",
+    "rider_profile",
+    "driver_profile",
+    "trip_data",
+    "cancellation_policy",
+    "fare_breakdown",
+    "gps_telemetry",
+    "rider_app_location",
+    "chat_logs",
+    "app_events",
+    "traffic_incidents",
+    "attachments",
+    "policy_ref"
+  ],
+  "properties": {
+    "dispute_ticket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dispute_id",
+        "trip_id",
+        "filed_by",
+        "dispute_type",
+        "description",
+        "filed_at",
+        "status"
+      ],
+      "properties": {
+        "dispute_id": {
+          "type": "string"
+        },
+        "trip_id": {
+          "type": "string"
+        },
+        "filed_by": {
+          "enum": [
+            "rider",
+            "driver"
+          ]
+        },
+        "dispute_type": {
+          "enum": [
+            "no_show_charge",
+            "route_deviation",
+            "property_damage",
+            "safety_incident"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "filed_at": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "rider_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rider_id",
+        "name",
+        "account_age_days",
+        "total_trips",
+        "avg_rating",
+        "dispute_history",
+        "fraud_flags",
+        "fraud_flag_details",
+        "payment_method",
+        "age_years",
+        "communication_preferences"
+      ],
+      "properties": {
+        "rider_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "account_age_days": {
+          "type": "integer"
+        },
+        "total_trips": {
+          "type": "integer"
+        },
+        "avg_rating": {
+          "type": "number"
+        },
+        "dispute_history": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "total_disputes",
+            "upheld",
+            "rejected"
+          ],
+          "properties": {
+            "total_disputes": {
+              "type": "integer"
+            },
+            "upheld": {
+              "type": "integer"
+            },
+            "rejected": {
+              "type": "integer"
+            }
+          }
+        },
+        "fraud_flags": {
+          "type": "integer"
+        },
+        "fraud_flag_details": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "payment_method": {
+          "type": "string"
+        },
+        "age_years": {
+          "type": "integer"
+        },
+        "communication_preferences": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "preferred_language",
+            "accessibility_needs",
+            "channel"
+          ],
+          "properties": {
+            "preferred_language": {
+              "type": "string"
+            },
+            "accessibility_needs": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "channel": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "driver_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "driver_id",
+        "name",
+        "account_age_days",
+        "total_trips",
+        "avg_rating",
+        "dispute_history",
+        "fraud_flags",
+        "fraud_flag_details",
+        "warnings_last_30_days",
+        "vehicle",
+        "age_years",
+        "communication_preferences"
+      ],
+      "properties": {
+        "driver_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "account_age_days": {
+          "type": "integer"
+        },
+        "total_trips": {
+          "type": "integer"
+        },
+        "avg_rating": {
+          "type": "number"
+        },
+        "dispute_history": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "total_disputes",
+            "upheld_against",
+            "rejected"
+          ],
+          "properties": {
+            "total_disputes": {
+              "type": "integer"
+            },
+            "upheld_against": {
+              "type": "integer"
+            },
+            "rejected": {
+              "type": "integer"
+            }
+          }
+        },
+        "fraud_flags": {
+          "type": "integer"
+        },
+        "fraud_flag_details": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "warnings_last_30_days": {
+          "type": "integer"
+        },
+        "vehicle": {
+          "type": "string"
+        },
+        "age_years": {
+          "type": "integer"
+        },
+        "communication_preferences": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "preferred_language",
+            "accessibility_needs",
+            "channel"
+          ],
+          "properties": {
+            "preferred_language": {
+              "type": "string"
+            },
+            "accessibility_needs": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "channel": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "trip_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trip_id",
+        "rider_id",
+        "driver_id",
+        "pickup_location",
+        "dropoff_location",
+        "trip_type",
+        "booked_at",
+        "matched_at",
+        "scheduled_time",
+        "eta_at_assignment_min",
+        "driver_arrival_time",
+        "driver_wait_start",
+        "cancellation_time",
+        "cancelled_by",
+        "cancellation_reason",
+        "cancellation_fee",
+        "waiting_fee",
+        "payment_status",
+        "trip_start",
+        "trip_end",
+        "trip_completed",
+        "planned_route",
+        "upfront_estimate",
+        "damage_claim"
+      ],
+      "properties": {
+        "trip_id": {
+          "type": "string"
+        },
+        "rider_id": {
+          "type": "string"
+        },
+        "driver_id": {
+          "type": "string"
+        },
+        "pickup_location": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "lat",
+            "lng",
+            "multi_entrance_venue"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "lat": {
+              "type": "number"
+            },
+            "lng": {
+              "type": "number"
+            },
+            "multi_entrance_venue": {
+              "type": "boolean"
+            }
+          }
+        },
+        "dropoff_location": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "lat",
+            "lng",
+            "multi_entrance_venue"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "lat": {
+              "type": "number"
+            },
+            "lng": {
+              "type": "number"
+            },
+            "multi_entrance_venue": {
+              "type": "boolean"
+            }
+          }
+        },
+        "trip_type": {
+          "type": "string"
+        },
+        "booked_at": {
+          "type": "string"
+        },
+        "matched_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scheduled_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "eta_at_assignment_min": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "driver_arrival_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "driver_wait_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cancellation_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cancelled_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cancellation_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cancellation_fee": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "waiting_fee": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "payment_status": {
+          "type": "string"
+        },
+        "trip_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trip_end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trip_completed": {
+          "type": "boolean"
+        },
+        "planned_route": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "distance_km",
+                "duration_min",
+                "waypoints",
+                "erp_gantries"
+              ],
+              "properties": {
+                "distance_km": {
+                  "type": "number"
+                },
+                "duration_min": {
+                  "type": "number"
+                },
+                "waypoints": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "lat",
+                      "lng"
+                    ],
+                    "properties": {
+                      "lat": {
+                        "type": "number"
+                      },
+                      "lng": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "erp_gantries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "gantry",
+                      "charge"
+                    ],
+                    "properties": {
+                      "gantry": {
+                        "type": "string"
+                      },
+                      "charge": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "upfront_estimate": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "base_fare",
+                "distance_km",
+                "distance_charge",
+                "duration_min",
+                "time_charge",
+                "surge_multiplier",
+                "surge_amount",
+                "erp_charges",
+                "platform_fee",
+                "promo_discount",
+                "total"
+              ],
+              "properties": {
+                "base_fare": {
+                  "type": "number"
+                },
+                "distance_km": {
+                  "type": "number"
+                },
+                "distance_charge": {
+                  "type": "number"
+                },
+                "duration_min": {
+                  "type": "number"
+                },
+                "time_charge": {
+                  "type": "number"
+                },
+                "surge_multiplier": {
+                  "type": "number"
+                },
+                "surge_amount": {
+                  "type": "number"
+                },
+                "erp_charges": {
+                  "type": "number"
+                },
+                "platform_fee": {
+                  "type": "number"
+                },
+                "promo_discount": {
+                  "type": "number"
+                },
+                "total": {
+                  "type": "number"
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "damage_claim": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "claim_id",
+                "submitted_at",
+                "mess_type_claimed",
+                "amount_claimed",
+                "attachment_ids",
+                "status",
+                "amount_charged"
+              ],
+              "properties": {
+                "claim_id": {
+                  "type": "string"
+                },
+                "submitted_at": {
+                  "type": "string"
+                },
+                "mess_type_claimed": {
+                  "type": "string"
+                },
+                "amount_claimed": {
+                  "type": "number"
+                },
+                "attachment_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "status": {
+                  "type": "string"
+                },
+                "amount_charged": {
+                  "type": "number"
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "cancellation_policy": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "free_wait_time_min",
+            "cancellation_fee_after_wait",
+            "no_show_threshold_min",
+            "fee_goes_to",
+            "driver_compensation",
+            "waiting_fee",
+            "driver_waiting_fee",
+            "advance_free_before_min"
+          ],
+          "properties": {
+            "free_wait_time_min": {
+              "type": "integer"
+            },
+            "cancellation_fee_after_wait": {
+              "type": "number"
+            },
+            "no_show_threshold_min": {
+              "type": "integer"
+            },
+            "fee_goes_to": {
+              "type": "string"
+            },
+            "driver_compensation": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "waiting_fee": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "driver_waiting_fee": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "advance_free_before_min": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fare_breakdown": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "base_fare",
+            "distance_km",
+            "distance_charge",
+            "duration_min",
+            "time_charge",
+            "surge_multiplier",
+            "surge_amount",
+            "erp_charges",
+            "platform_fee",
+            "promo_discount",
+            "total",
+            "promo_code",
+            "erp_gantries_passed",
+            "destination_change_fee"
+          ],
+          "properties": {
+            "base_fare": {
+              "type": "number"
+            },
+            "distance_km": {
+              "type": "number"
+            },
+            "distance_charge": {
+              "type": "number"
+            },
+            "duration_min": {
+              "type": "number"
+            },
+            "time_charge": {
+              "type": "number"
+            },
+            "surge_multiplier": {
+              "type": "number"
+            },
+            "surge_amount": {
+              "type": "number"
+            },
+            "erp_charges": {
+              "type": "number"
+            },
+            "platform_fee": {
+              "type": "number"
+            },
+            "promo_discount": {
+              "type": "number"
+            },
+            "total": {
+              "type": "number"
+            },
+            "promo_code": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "erp_gantries_passed": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "gantry",
+                  "charge"
+                ],
+                "properties": {
+                  "gantry": {
+                    "type": "string"
+                  },
+                  "charge": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "destination_change_fee": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "gps_telemetry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "timestamp",
+          "lat",
+          "lng",
+          "speed_kmh",
+          "accuracy_m",
+          "status",
+          "speed_limit_kmh"
+        ],
+        "properties": {
+          "timestamp": {
+            "type": "string"
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lng": {
+            "type": "number"
+          },
+          "speed_kmh": {
+            "type": "integer"
+          },
+          "accuracy_m": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          },
+          "speed_limit_kmh": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "rider_app_location": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "available",
+            "note",
+            "pings"
+          ],
+          "properties": {
+            "available": {
+              "type": "boolean"
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "pings": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "timestamp",
+                  "lat",
+                  "lng",
+                  "accuracy_m"
+                ],
+                "properties": {
+                  "timestamp": {
+                    "type": "string"
+                  },
+                  "lat": {
+                    "type": "number"
+                  },
+                  "lng": {
+                    "type": "number"
+                  },
+                  "accuracy_m": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "chat_logs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "timestamp",
+          "sender",
+          "type",
+          "content"
+        ],
+        "properties": {
+          "timestamp": {
+            "type": "string"
+          },
+          "sender": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "app_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "timestamp",
+          "event_type",
+          "details"
+        ],
+        "properties": {
+          "timestamp": {
+            "type": "string"
+          },
+          "event_type": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "traffic_incidents": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "query_window",
+            "incidents"
+          ],
+          "properties": {
+            "source": {
+              "type": "string"
+            },
+            "query_window": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "incidents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "incident_id",
+                  "type",
+                  "road",
+                  "description",
+                  "severity",
+                  "location",
+                  "reported_at",
+                  "cleared_at"
+                ],
+                "properties": {
+                  "incident_id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "road": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "severity": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "lat",
+                      "lng"
+                    ],
+                    "properties": {
+                      "lat": {
+                        "type": "number"
+                      },
+                      "lng": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "reported_at": {
+                    "type": "string"
+                  },
+                  "cleared_at": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "attachment_id",
+          "attachment_type",
+          "uploaded_by",
+          "uploaded_at",
+          "captured_at",
+          "location",
+          "file_hash",
+          "simulated_vision_analysis",
+          "receipt_details"
+        ],
+        "properties": {
+          "attachment_id": {
+            "type": "string"
+          },
+          "attachment_type": {
+            "type": "string"
+          },
+          "uploaded_by": {
+            "type": "string"
+          },
+          "uploaded_at": {
+            "type": "string"
+          },
+          "captured_at": {
+            "type": "string"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "lat",
+                  "lng"
+                ],
+                "properties": {
+                  "lat": {
+                    "type": "number"
+                  },
+                  "lng": {
+                    "type": "number"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "file_hash": {
+            "type": "string"
+          },
+          "simulated_vision_analysis": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "note",
+                  "description",
+                  "mess_type",
+                  "severity",
+                  "plate_read",
+                  "interior_matches_vehicle_model",
+                  "ai_generated_likelihood",
+                  "duplicate_of"
+                ],
+                "properties": {
+                  "note": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "mess_type": {
+                    "type": "string"
+                  },
+                  "severity": {
+                    "type": "string"
+                  },
+                  "plate_read": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "interior_matches_vehicle_model": {
+                    "type": "boolean"
+                  },
+                  "ai_generated_likelihood": {
+                    "type": "number"
+                  },
+                  "duplicate_of": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "receipt_details": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "company_name",
+                  "uen",
+                  "address",
+                  "contact_number",
+                  "service_description",
+                  "professional_cleaning",
+                  "cleaning_date",
+                  "car_plate",
+                  "amount",
+                  "signed",
+                  "company_stamp"
+                ],
+                "properties": {
+                  "company_name": {
+                    "type": "string"
+                  },
+                  "uen": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "address": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "contact_number": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "service_description": {
+                    "type": "string"
+                  },
+                  "professional_cleaning": {
+                    "type": "boolean"
+                  },
+                  "cleaning_date": {
+                    "type": "string"
+                  },
+                  "car_plate": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "amount": {
+                    "type": "number"
+                  },
+                  "signed": {
+                    "type": "boolean"
+                  },
+                  "company_stamp": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "policy_ref": {
+      "type": "string"
+    }
+  }
+}

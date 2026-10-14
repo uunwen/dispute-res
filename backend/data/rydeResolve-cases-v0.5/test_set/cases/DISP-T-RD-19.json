@@ -1,0 +1,426 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-RD-19",
+    "trip_id": "TRIP-DISP-T-RD-19",
+    "filed_by": "rider",
+    "dispute_type": "route_deviation",
+    "description": "I never changed my destination. Why is there a $3.00 destination fee?",
+    "filed_at": "2026-10-07T22:10:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-14112",
+    "name": "Grace Lee",
+    "account_age_days": 420,
+    "total_trips": 31,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 67,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": "large_text",
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23201",
+    "name": "Lim Wei Ming",
+    "account_age_days": 900,
+    "total_trips": 3201,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda HR-V (SGP 9760 M)",
+    "age_years": 44,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-RD-19",
+    "rider_id": "R-14112",
+    "driver_id": "D-23201",
+    "pickup_location": {
+      "name": "Kallang Wave Mall",
+      "lat": 1.302,
+      "lng": 103.875,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Tampines Mall (Tampines Central 5 drop-off)",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-07T14:40:00+08:00",
+    "matched_at": "2026-10-07T14:40:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-07T14:46:00+08:00",
+    "driver_wait_start": "2026-10-07T14:46:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-07T14:47:00+08:00",
+    "trip_end": "2026-10-07T15:12:12+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 12.23,
+      "duration_min": 24.5,
+      "waypoints": [
+        {
+          "lat": 1.302,
+          "lng": 103.875
+        },
+        {
+          "lat": 1.35502,
+          "lng": 103.88964
+        },
+        {
+          "lat": 1.35245,
+          "lng": 103.9446
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 12.23,
+      "distance_charge": 7.95,
+      "duration_min": 24.5,
+      "time_charge": 5.39,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 16.94
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 12.6,
+    "distance_charge": 8.19,
+    "duration_min": 25.2,
+    "time_charge": 5.54,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 20.33,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 3.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-07T14:47:00+08:00",
+      "lat": 1.302038,
+      "lng": 103.875052,
+      "speed_kmh": 34,
+      "accuracy_m": 9.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:48:00+08:00",
+      "lat": 1.306373,
+      "lng": 103.876038,
+      "speed_kmh": 31,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:49:00+08:00",
+      "lat": 1.310774,
+      "lng": 103.8771,
+      "speed_kmh": 24,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:50:00+08:00",
+      "lat": 1.315119,
+      "lng": 103.878104,
+      "speed_kmh": 25,
+      "accuracy_m": 5.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:51:00+08:00",
+      "lat": 1.319494,
+      "lng": 103.879104,
+      "speed_kmh": 23,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:52:00+08:00",
+      "lat": 1.32393,
+      "lng": 103.880233,
+      "speed_kmh": 35,
+      "accuracy_m": 5.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:53:00+08:00",
+      "lat": 1.32829,
+      "lng": 103.88125,
+      "speed_kmh": 31,
+      "accuracy_m": 4.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:54:00+08:00",
+      "lat": 1.332656,
+      "lng": 103.882293,
+      "speed_kmh": 23,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:55:00+08:00",
+      "lat": 1.336999,
+      "lng": 103.883261,
+      "speed_kmh": 33,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:56:00+08:00",
+      "lat": 1.341308,
+      "lng": 103.884347,
+      "speed_kmh": 25,
+      "accuracy_m": 6.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:57:00+08:00",
+      "lat": 1.345709,
+      "lng": 103.885369,
+      "speed_kmh": 30,
+      "accuracy_m": 5.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:58:00+08:00",
+      "lat": 1.350127,
+      "lng": 103.886455,
+      "speed_kmh": 35,
+      "accuracy_m": 5.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T14:59:00+08:00",
+      "lat": 1.354493,
+      "lng": 103.887496,
+      "speed_kmh": 34,
+      "accuracy_m": 6.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:00:00+08:00",
+      "lat": 1.356971,
+      "lng": 103.889913,
+      "speed_kmh": 27,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:01:00+08:00",
+      "lat": 1.356565,
+      "lng": 103.89443,
+      "speed_kmh": 27,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:02:00+08:00",
+      "lat": 1.356171,
+      "lng": 103.898919,
+      "speed_kmh": 34,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:03:00+08:00",
+      "lat": 1.355843,
+      "lng": 103.903409,
+      "speed_kmh": 29,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:04:00+08:00",
+      "lat": 1.355463,
+      "lng": 103.907843,
+      "speed_kmh": 35,
+      "accuracy_m": 5.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:05:00+08:00",
+      "lat": 1.355179,
+      "lng": 103.912349,
+      "speed_kmh": 35,
+      "accuracy_m": 9.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:06:00+08:00",
+      "lat": 1.354759,
+      "lng": 103.916863,
+      "speed_kmh": 30,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:07:00+08:00",
+      "lat": 1.354397,
+      "lng": 103.921294,
+      "speed_kmh": 34,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:08:00+08:00",
+      "lat": 1.353975,
+      "lng": 103.925771,
+      "speed_kmh": 31,
+      "accuracy_m": 6.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:09:00+08:00",
+      "lat": 1.353636,
+      "lng": 103.930267,
+      "speed_kmh": 32,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:10:00+08:00",
+      "lat": 1.353295,
+      "lng": 103.934775,
+      "speed_kmh": 24,
+      "accuracy_m": 4.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:11:00+08:00",
+      "lat": 1.352891,
+      "lng": 103.939222,
+      "speed_kmh": 29,
+      "accuracy_m": 4.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:12:00+08:00",
+      "lat": 1.352505,
+      "lng": 103.943718,
+      "speed_kmh": 26,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-07T15:12:12+08:00",
+      "lat": 1.35245,
+      "lng": 103.9446,
+      "speed_kmh": 0,
+      "accuracy_m": 6.3,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-07T14:40:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-14112 booked trip TRIP-DISP-T-RD-19 from Kallang Wave Mall to Tampines Mall (Tampines Central 5 drop-off). Upfront estimate $16.94 for planned route 12.2 km / 24 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-07T14:40:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23201 (Lim Wei Ming, Honda HR-V (SGP 9760 M)) assigned."
+    },
+    {
+      "timestamp": "2026-10-07T14:46:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 8 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-07T14:47:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-07T15:12:12+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Tampines Mall (Tampines Central 5 drop-off). Meter distance 12.60 km, duration 25.2 min."
+    },
+    {
+      "timestamp": "2026-10-07T15:12:32+08:00",
+      "event_type": "payment_captured",
+      "details": "$20.33 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": {
+    "source": "LTA traffic incident feed (mock)",
+    "query_window": [
+      "2026-10-07T14:47:00+08:00",
+      "2026-10-07T15:12:12+08:00"
+    ],
+    "incidents": []
+  },
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

@@ -1,0 +1,398 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-RD-09",
+      "trip_id": "TRIP-PREC-RD-09",
+      "filed_by": "rider",
+      "dispute_type": "route_deviation",
+      "description": "The final fare is much more than I expected for this distance.",
+      "filed_at": "2026-09-01T11:57:43+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10107",
+      "name": "Sanjay Gupta",
+      "account_age_days": 420,
+      "total_trips": 110,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 44,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "email"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-19102",
+      "name": "Ismail Yusof",
+      "account_age_days": 900,
+      "total_trips": 4300,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Toyota Sienta (SGN 8919 B)",
+      "age_years": 53,
+      "communication_preferences": {
+        "preferred_language": "Malay",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-RD-09",
+      "rider_id": "R-10107",
+      "driver_id": "D-19102",
+      "pickup_location": {
+        "name": "Jurong Point",
+        "lat": 1.3397,
+        "lng": 103.7067,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Fusionopolis, one-north",
+        "lat": 1.299,
+        "lng": 103.7876,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-09-01T09:20:00+08:00",
+      "matched_at": "2026-09-01T09:20:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-09-01T09:26:00+08:00",
+      "driver_wait_start": "2026-09-01T09:26:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-09-01T09:27:00+08:00",
+      "trip_end": "2026-09-01T09:46:43+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 12.89,
+        "duration_min": 19.3,
+        "waypoints": [
+          {
+            "lat": 1.3397,
+            "lng": 103.7067
+          },
+          {
+            "lat": 1.35166,
+            "lng": 103.76341
+          },
+          {
+            "lat": 1.299,
+            "lng": 103.7876
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 12.89,
+        "distance_charge": 8.38,
+        "duration_min": 19.3,
+        "time_charge": 4.25,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 16.23
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 17.09,
+      "distance_charge": 11.11,
+      "duration_min": 19.7,
+      "time_charge": 4.33,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 19.04,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-09-01T09:27:00+08:00",
+        "lat": 1.339685,
+        "lng": 103.706757,
+        "speed_kmh": 44,
+        "accuracy_m": 7.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:28:00+08:00",
+        "lat": 1.34108,
+        "lng": 103.712523,
+        "speed_kmh": 32,
+        "accuracy_m": 9.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:29:00+08:00",
+        "lat": 1.342428,
+        "lng": 103.718395,
+        "speed_kmh": 32,
+        "accuracy_m": 9.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:30:00+08:00",
+        "lat": 1.343861,
+        "lng": 103.72419,
+        "speed_kmh": 36,
+        "accuracy_m": 9.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:31:00+08:00",
+        "lat": 1.345165,
+        "lng": 103.729997,
+        "speed_kmh": 46,
+        "accuracy_m": 9.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:32:00+08:00",
+        "lat": 1.346593,
+        "lng": 103.735882,
+        "speed_kmh": 37,
+        "accuracy_m": 7.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:33:00+08:00",
+        "lat": 1.347991,
+        "lng": 103.741699,
+        "speed_kmh": 46,
+        "accuracy_m": 8.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:34:00+08:00",
+        "lat": 1.349333,
+        "lng": 103.747602,
+        "speed_kmh": 45,
+        "accuracy_m": 5.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:35:00+08:00",
+        "lat": 1.350758,
+        "lng": 103.753384,
+        "speed_kmh": 33,
+        "accuracy_m": 8.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:36:00+08:00",
+        "lat": 1.352117,
+        "lng": 103.759214,
+        "speed_kmh": 34,
+        "accuracy_m": 9.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:37:00+08:00",
+        "lat": 1.35252,
+        "lng": 103.764583,
+        "speed_kmh": 44,
+        "accuracy_m": 4.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:38:00+08:00",
+        "lat": 1.347049,
+        "lng": 103.76697,
+        "speed_kmh": 43,
+        "accuracy_m": 8.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:39:00+08:00",
+        "lat": 1.341479,
+        "lng": 103.76929,
+        "speed_kmh": 37,
+        "accuracy_m": 8.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:40:00+08:00",
+        "lat": 1.336003,
+        "lng": 103.771628,
+        "speed_kmh": 46,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:41:00+08:00",
+        "lat": 1.330532,
+        "lng": 103.774072,
+        "speed_kmh": 33,
+        "accuracy_m": 6.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:42:00+08:00",
+        "lat": 1.324991,
+        "lng": 103.776416,
+        "speed_kmh": 44,
+        "accuracy_m": 8.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:43:00+08:00",
+        "lat": 1.319451,
+        "lng": 103.778778,
+        "speed_kmh": 41,
+        "accuracy_m": 7.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:44:00+08:00",
+        "lat": 1.313942,
+        "lng": 103.781165,
+        "speed_kmh": 33,
+        "accuracy_m": 5.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:45:00+08:00",
+        "lat": 1.308454,
+        "lng": 103.783536,
+        "speed_kmh": 43,
+        "accuracy_m": 8.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:46:00+08:00",
+        "lat": 1.302892,
+        "lng": 103.785922,
+        "speed_kmh": 34,
+        "accuracy_m": 9.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-01T09:46:43+08:00",
+        "lat": 1.299,
+        "lng": 103.7876,
+        "speed_kmh": 0,
+        "accuracy_m": 5.7,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-09-01T09:20:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10107 booked trip TRIP-PREC-RD-09 from Jurong Point to Fusionopolis, one-north. Upfront estimate $16.23 for planned route 12.9 km / 19 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-09-01T09:20:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-19102 (Ismail Yusof, Toyota Sienta (SGN 8919 B)) assigned."
+      },
+      {
+        "timestamp": "2026-09-01T09:26:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 8 m of pickup point."
+      },
+      {
+        "timestamp": "2026-09-01T09:27:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-09-01T09:46:43+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Fusionopolis, one-north. Meter distance 17.09 km, duration 19.7 min."
+      },
+      {
+        "timestamp": "2026-09-01T09:47:03+08:00",
+        "event_type": "payment_captured",
+        "details": "$19.04 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": {
+      "source": "LTA traffic incident feed (mock)",
+      "query_window": [
+        "2026-09-01T09:27:00+08:00",
+        "2026-09-01T09:46:43+08:00"
+      ],
+      "incidents": []
+    },
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-RD-09",
+    "outcome": "partial_refund",
+    "refund_amount": 2.57,
+    "payer": "ryde",
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.89,
+    "rules_cited": [
+      "RD-8",
+      "G-6"
+    ],
+    "precedents_used": [],
+    "reasoning": "Meter distance is 30% above the GPS trail on a normal route (RD-8). Use the GPS trail, refund the overcharge, flag for engineering. Ryde pays.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

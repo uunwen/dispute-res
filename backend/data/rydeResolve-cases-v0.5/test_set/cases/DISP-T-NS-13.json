@@ -1,0 +1,286 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-13",
+    "trip_id": "TRIP-DISP-T-NS-13",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "I was standing right at Waterway Point. I never saw any car, but I got a message that the driver arrived.",
+    "filed_at": "2026-10-03T18:09:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4116",
+    "name": "Aisha Khan",
+    "account_age_days": 420,
+    "total_trips": 88,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 33,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8220",
+    "name": "Steven Quek",
+    "account_age_days": 900,
+    "total_trips": 1200,
+    "avg_rating": 4.2,
+    "dispute_history": {
+      "total_disputes": 6,
+      "upheld_against": 3,
+      "rejected": 3
+    },
+    "fraud_flags": 1,
+    "fraud_flag_details": "repeat_route_complaints",
+    "warnings_last_30_days": 1,
+    "vehicle": "Nissan Note (SGR 2294 J)",
+    "age_years": 37,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-13",
+    "rider_id": "R-4116",
+    "driver_id": "D-8220",
+    "pickup_location": {
+      "name": "Waterway Point, Punggol",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "NEX, Serangoon Central",
+      "lat": 1.3507,
+      "lng": 103.8723,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-03T10:20:00+08:00",
+    "matched_at": "2026-10-03T10:20:15+08:00",
+    "scheduled_time": "2026-10-03T10:32:00+08:00",
+    "eta_at_assignment_min": 12,
+    "driver_arrival_time": "2026-10-03T10:32:00+08:00",
+    "driver_wait_start": "2026-10-03T10:32:00+08:00",
+    "cancellation_time": "2026-10-03T10:36:12+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-03T10:23:00+08:00",
+      "lat": 1.385508,
+      "lng": 103.877545,
+      "speed_kmh": 38,
+      "accuracy_m": 1.0,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T10:31:00+08:00",
+      "lat": 1.386383,
+      "lng": 103.878572,
+      "speed_kmh": 35,
+      "accuracy_m": 1.0,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T10:32:00+08:00",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "speed_kmh": 0,
+      "accuracy_m": 1.0,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T10:33:00+08:00",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "speed_kmh": 0,
+      "accuracy_m": 1.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T10:34:00+08:00",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "speed_kmh": 0,
+      "accuracy_m": 1.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T10:35:00+08:00",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "speed_kmh": 0,
+      "accuracy_m": 1.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T10:36:00+08:00",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "speed_kmh": 0,
+      "accuracy_m": 1.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-10-03T10:36:12+08:00",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "speed_kmh": 0,
+      "accuracy_m": 1.0,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": true,
+    "note": null,
+    "pings": [
+      {
+        "timestamp": "2026-10-03T10:32:00+08:00",
+        "lat": 1.406627,
+        "lng": 103.902186,
+        "accuracy_m": 4.2
+      },
+      {
+        "timestamp": "2026-10-03T10:34:00+08:00",
+        "lat": 1.40661,
+        "lng": 103.90221,
+        "accuracy_m": 7.5
+      },
+      {
+        "timestamp": "2026-10-03T10:36:00+08:00",
+        "lat": 1.406655,
+        "lng": 103.902203,
+        "accuracy_m": 6.7
+      }
+    ]
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-10-03T10:32:12+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at Waterway Point."
+    },
+    {
+      "timestamp": "2026-10-03T10:33:12+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-03T10:34:36+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Are you coming?"
+    },
+    {
+      "timestamp": "2026-10-03T10:36:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling now."
+    },
+    {
+      "timestamp": "2026-10-03T10:36:12+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-10-03T10:20:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4116 booked trip TRIP-DISP-T-NS-13 from Waterway Point, Punggol to NEX, Serangoon Central. On-demand booking. Estimated pickup 10:32. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-10-03T10:20:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8220 (Steven Quek, Nissan Note (SGR 2294 J)) matched. ETA 12 min."
+    },
+    {
+      "timestamp": "2026-10-03T10:20:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-10-03T10:32:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 1 m of pickup point. Speed 0 km/h. Arrival auto-confirmed."
+    },
+    {
+      "timestamp": "2026-10-03T10:32:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 10:35:00."
+    },
+    {
+      "timestamp": "2026-10-03T10:32:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-10-03T10:33:12+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-10-03T10:35:00+08:00",
+      "event_type": "wait_timer_threshold_reached",
+      "details": "Wait timer reached 3 min. Rider had not boarded."
+    },
+    {
+      "timestamp": "2026-10-03T10:36:12+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 4.2 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-10-03T10:36:17+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-8220 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

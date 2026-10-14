@@ -1,0 +1,316 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-RD-11",
+      "trip_id": "TRIP-PREC-RD-11",
+      "filed_by": "rider",
+      "dispute_type": "route_deviation",
+      "description": "Why is there an extra $3 on my receipt?",
+      "filed_at": "2026-09-09T00:49:27+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-15111",
+      "name": "Hui Min Ong",
+      "account_age_days": 420,
+      "total_trips": 77,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 40,
+      "communication_preferences": {
+        "preferred_language": "Mandarin",
+        "accessibility_needs": null,
+        "channel": "email"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-29107",
+      "name": "Edwin Teo",
+      "account_age_days": 900,
+      "total_trips": 2500,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Kia Carnival (SGT 2890 G)",
+      "age_years": 40,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-RD-11",
+      "rider_id": "R-15111",
+      "driver_id": "D-29107",
+      "pickup_location": {
+        "name": "West Mall, Bukit Batok",
+        "lat": 1.3498,
+        "lng": 103.7496,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Hillion Mall, Bukit Panjang",
+        "lat": 1.3778,
+        "lng": 103.7623,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-09-08T12:00:00+08:00",
+      "matched_at": "2026-09-08T12:00:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-09-08T12:06:00+08:00",
+      "driver_wait_start": "2026-09-08T12:06:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-09-08T12:07:00+08:00",
+      "trip_end": "2026-09-08T12:15:27+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 4.38,
+        "duration_min": 8.2,
+        "waypoints": [
+          {
+            "lat": 1.3498,
+            "lng": 103.7496
+          },
+          {
+            "lat": 1.35873,
+            "lng": 103.76714
+          },
+          {
+            "lat": 1.3778,
+            "lng": 103.7623
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 4.38,
+        "distance_charge": 2.85,
+        "duration_min": 8.2,
+        "time_charge": 1.8,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 8.25
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 4.51,
+      "distance_charge": 2.93,
+      "duration_min": 8.5,
+      "time_charge": 1.87,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 11.4,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 3.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-09-08T12:07:00+08:00",
+        "lat": 1.349826,
+        "lng": 103.74962,
+        "speed_kmh": 33,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:08:00+08:00",
+        "lat": 1.35184,
+        "lng": 103.753965,
+        "speed_kmh": 33,
+        "accuracy_m": 6.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:09:00+08:00",
+        "lat": 1.353844,
+        "lng": 103.758341,
+        "speed_kmh": 36,
+        "accuracy_m": 6.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:10:00+08:00",
+        "lat": 1.35586,
+        "lng": 103.762652,
+        "speed_kmh": 25,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:11:00+08:00",
+        "lat": 1.357918,
+        "lng": 103.766956,
+        "speed_kmh": 32,
+        "accuracy_m": 5.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:12:00+08:00",
+        "lat": 1.361914,
+        "lng": 103.76689,
+        "speed_kmh": 38,
+        "accuracy_m": 5.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:13:00+08:00",
+        "lat": 1.366543,
+        "lng": 103.765531,
+        "speed_kmh": 34,
+        "accuracy_m": 5.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:14:00+08:00",
+        "lat": 1.371145,
+        "lng": 103.764272,
+        "speed_kmh": 28,
+        "accuracy_m": 8.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:15:00+08:00",
+        "lat": 1.375715,
+        "lng": 103.762914,
+        "speed_kmh": 30,
+        "accuracy_m": 5.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-08T12:15:27+08:00",
+        "lat": 1.3778,
+        "lng": 103.7623,
+        "speed_kmh": 0,
+        "accuracy_m": 6.4,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [
+      {
+        "timestamp": "2026-09-08T12:08:30+08:00",
+        "sender": "rider",
+        "type": "message",
+        "content": "Can you drop me at Hillion instead of Jurong Point?"
+      }
+    ],
+    "app_events": [
+      {
+        "timestamp": "2026-09-08T12:00:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-15111 booked trip TRIP-PREC-RD-11 from West Mall, Bukit Batok to Jurong Point. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-09-08T12:00:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-29107 (Edwin Teo, Kia Carnival (SGT 2890 G)) assigned."
+      },
+      {
+        "timestamp": "2026-09-08T12:06:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 8 m of pickup point."
+      },
+      {
+        "timestamp": "2026-09-08T12:07:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-09-08T12:09:00+08:00",
+        "event_type": "destination_edit_requested",
+        "details": "Rider requested to change the destination from Jurong Point to Hillion Mall, Bukit Panjang."
+      },
+      {
+        "timestamp": "2026-09-08T12:09:30+08:00",
+        "event_type": "destination_edit_accepted",
+        "details": "Driver accepted the destination change. Route and upfront estimate re-quoted for the new destination: $8.25 for 4.4 km / 8 min. A $3.00 add/edit destination fee will apply."
+      },
+      {
+        "timestamp": "2026-09-08T12:15:27+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Hillion Mall, Bukit Panjang. Meter distance 4.51 km, duration 8.5 min."
+      },
+      {
+        "timestamp": "2026-09-08T12:15:47+08:00",
+        "event_type": "payment_captured",
+        "details": "$11.40 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": {
+      "source": "LTA traffic incident feed (mock)",
+      "query_window": [
+        "2026-09-08T12:07:00+08:00",
+        "2026-09-08T12:15:27+08:00"
+      ],
+      "incidents": []
+    },
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-RD-11",
+    "outcome": "no_action",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.92,
+    "rules_cited": [
+      "RD-11",
+      "G-1"
+    ],
+    "precedents_used": [],
+    "reasoning": "The receipt is S$3.00 above the estimate. The event log shows the rider asked to change the destination and the driver accepted, so the add/edit destination fee is valid (RD-11).",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

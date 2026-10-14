@@ -1,0 +1,392 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-SF-08",
+    "trip_id": "TRIP-DISP-T-SF-08",
+    "filed_by": "rider",
+    "dispute_type": "safety_incident",
+    "description": "The driver behaved inappropriately during the trip and made me very uncomfortable. I want this reported and my fare refunded.",
+    "filed_at": "2026-10-01T21:15:12+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4163",
+    "name": "Irene Seah",
+    "account_age_days": 420,
+    "total_trips": 40,
+    "avg_rating": 4.9,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 58,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13232",
+    "name": "Vinod Krishnan",
+    "account_age_days": 900,
+    "total_trips": 1900,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Hyundai Kona Electric (SKC 2285 D)",
+    "age_years": 38,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-SF-08",
+    "rider_id": "R-4163",
+    "driver_id": "D-13232",
+    "pickup_location": {
+      "name": "ION Orchard (Orchard Turn pickup point)",
+      "lat": 1.304,
+      "lng": 103.8318,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Waterway Point, Punggol",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-10-01T19:40:00+08:00",
+    "matched_at": "2026-10-01T19:40:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-10-01T19:45:00+08:00",
+    "driver_wait_start": "2026-10-01T19:45:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-10-01T19:46:00+08:00",
+    "trip_end": "2026-10-01T20:08:12+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 17.7,
+      "duration_min": 27.9,
+      "waypoints": [
+        {
+          "lat": 1.304,
+          "lng": 103.8318
+        },
+        {
+          "lat": 1.32713,
+          "lng": 103.90796
+        },
+        {
+          "lat": 1.4065,
+          "lng": 103.9022
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 17.7,
+      "distance_charge": 11.51,
+      "duration_min": 27.9,
+      "time_charge": 6.14,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 21.25
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 17.7,
+    "distance_charge": 11.51,
+    "duration_min": 22.2,
+    "time_charge": 4.88,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 19.99,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-10-01T19:46:00+08:00",
+      "lat": 1.304018,
+      "lng": 103.831789,
+      "speed_kmh": 33,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T19:47:00+08:00",
+      "lat": 1.305447,
+      "lng": 103.836535,
+      "speed_kmh": 34,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T19:48:00+08:00",
+      "lat": 1.306944,
+      "lng": 103.841415,
+      "speed_kmh": 32,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T19:49:00+08:00",
+      "lat": 1.308314,
+      "lng": 103.845985,
+      "speed_kmh": 31,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T19:50:00+08:00",
+      "lat": 1.309679,
+      "lng": 103.850436,
+      "speed_kmh": 32,
+      "accuracy_m": 9.6,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T19:51:00+08:00",
+      "lat": 1.311078,
+      "lng": 103.854996,
+      "speed_kmh": 33,
+      "accuracy_m": 9.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T19:52:00+08:00",
+      "lat": 1.312496,
+      "lng": 103.859735,
+      "speed_kmh": 64,
+      "accuracy_m": 7.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T19:53:00+08:00",
+      "lat": 1.315261,
+      "lng": 103.868928,
+      "speed_kmh": 63,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T19:54:00+08:00",
+      "lat": 1.318041,
+      "lng": 103.878004,
+      "speed_kmh": 67,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T19:55:00+08:00",
+      "lat": 1.32097,
+      "lng": 103.887601,
+      "speed_kmh": 63,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T19:56:00+08:00",
+      "lat": 1.323695,
+      "lng": 103.896608,
+      "speed_kmh": 69,
+      "accuracy_m": 9.0,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T19:57:00+08:00",
+      "lat": 1.326725,
+      "lng": 103.906537,
+      "speed_kmh": 66,
+      "accuracy_m": 8.5,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T19:58:00+08:00",
+      "lat": 1.335544,
+      "lng": 103.907309,
+      "speed_kmh": 63,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T19:59:00+08:00",
+      "lat": 1.344934,
+      "lng": 103.906671,
+      "speed_kmh": 66,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T20:00:00+08:00",
+      "lat": 1.354754,
+      "lng": 103.905933,
+      "speed_kmh": 69,
+      "accuracy_m": 8.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T20:01:00+08:00",
+      "lat": 1.365124,
+      "lng": 103.905158,
+      "speed_kmh": 65,
+      "accuracy_m": 9.1,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T20:02:00+08:00",
+      "lat": 1.374836,
+      "lng": 103.904459,
+      "speed_kmh": 64,
+      "accuracy_m": 9.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 90
+    },
+    {
+      "timestamp": "2026-10-01T20:03:00+08:00",
+      "lat": 1.384428,
+      "lng": 103.903781,
+      "speed_kmh": 33,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T20:04:00+08:00",
+      "lat": 1.389334,
+      "lng": 103.903448,
+      "speed_kmh": 27,
+      "accuracy_m": 5.2,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T20:05:00+08:00",
+      "lat": 1.393409,
+      "lng": 103.903175,
+      "speed_kmh": 28,
+      "accuracy_m": 7.4,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T20:06:00+08:00",
+      "lat": 1.397572,
+      "lng": 103.902881,
+      "speed_kmh": 27,
+      "accuracy_m": 8.3,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T20:07:00+08:00",
+      "lat": 1.40161,
+      "lng": 103.90255,
+      "speed_kmh": 31,
+      "accuracy_m": 4.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T20:08:00+08:00",
+      "lat": 1.406211,
+      "lng": 103.902208,
+      "speed_kmh": 32,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": 50
+    },
+    {
+      "timestamp": "2026-10-01T20:08:12+08:00",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "speed_kmh": 0,
+      "accuracy_m": 5.8,
+      "status": "completed",
+      "speed_limit_kmh": 50
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-10-01T19:40:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4163 booked trip TRIP-DISP-T-SF-08 from ION Orchard (Orchard Turn pickup point) to Waterway Point, Punggol. Upfront estimate $21.25 for planned route 17.7 km / 28 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-10-01T19:40:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13232 (Vinod Krishnan, Hyundai Kona Electric (SKC 2285 D)) assigned."
+    },
+    {
+      "timestamp": "2026-10-01T19:45:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-10-01T19:46:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-10-01T20:08:12+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Waterway Point, Punggol. Meter distance 17.70 km, duration 22.2 min."
+    },
+    {
+      "timestamp": "2026-10-01T20:08:32+08:00",
+      "event_type": "payment_captured",
+      "details": "$19.99 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

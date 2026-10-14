@@ -1,0 +1,50 @@
+{
+  "PREC-NS-03": {
+    "outcome": "full_refund",
+    "refund_amount": 6.61,
+    "payer": "driver",
+    "rider_charge_amount": 0.0,
+    "driver_warning": true,
+    "rider_warning": false,
+    "escalate": false,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false
+  },
+  "PREC-RD-01": {
+    "outcome": "partial_refund",
+    "refund_amount": 5.38,
+    "payer": "driver",
+    "rider_charge_amount": 0.0,
+    "driver_warning": true,
+    "rider_warning": false,
+    "escalate": false,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false
+  },
+  "PREC-PD-02": {
+    "outcome": "partial_refund",
+    "refund_amount": 60.0,
+    "payer": "driver",
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "escalate": false,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false
+  },
+  "PREC-SF-06": {
+    "outcome": "full_refund",
+    "refund_amount": 20.36,
+    "payer": "driver",
+    "rider_charge_amount": 0.0,
+    "driver_warning": true,
+    "rider_warning": false,
+    "escalate": false,
+    "safety_referral": true,
+    "security_flag": false,
+    "fraud_flag": false
+  }
+}

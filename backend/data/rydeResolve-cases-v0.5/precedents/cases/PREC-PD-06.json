@@ -1,0 +1,541 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-PD-06",
+      "trip_id": "TRIP-PREC-PD-06",
+      "filed_by": "rider",
+      "dispute_type": "property_damage",
+      "description": "My cat had an accident. I understand a cleaning fee but the page says $120 for bodily fluids, I paid $150.",
+      "filed_at": "2026-09-07T05:39:12+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-10155",
+      "name": "Ahmad Fauzi",
+      "account_age_days": 420,
+      "total_trips": 39,
+      "avg_rating": 4.5,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 26,
+      "communication_preferences": {
+        "preferred_language": "Malay",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-14134",
+      "name": "Ng Wei Liang",
+      "account_age_days": 900,
+      "total_trips": 2000,
+      "avg_rating": 4.5,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 1,
+      "vehicle": "Mazda 6 (SHC 7576 E)",
+      "age_years": 39,
+      "communication_preferences": {
+        "preferred_language": "Mandarin",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-PD-06",
+      "rider_id": "R-10155",
+      "driver_id": "D-14134",
+      "pickup_location": {
+        "name": "Anchorpoint, Queenstown",
+        "lat": 1.2889,
+        "lng": 103.8086,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Sun Plaza, Sembawang",
+        "lat": 1.4487,
+        "lng": 103.8197,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-09-05T11:05:00+08:00",
+      "matched_at": "2026-09-05T11:05:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-09-05T11:10:00+08:00",
+      "driver_wait_start": "2026-09-05T11:10:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-09-05T11:11:00+08:00",
+      "trip_end": "2026-09-05T11:39:12+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 22.8,
+        "duration_min": 36.0,
+        "waypoints": [
+          {
+            "lat": 1.2889,
+            "lng": 103.8086
+          },
+          {
+            "lat": 1.36437,
+            "lng": 103.87801
+          },
+          {
+            "lat": 1.4487,
+            "lng": 103.8197
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 22.8,
+        "distance_charge": 14.82,
+        "duration_min": 36.0,
+        "time_charge": 7.92,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 26.34
+      },
+      "damage_claim": {
+        "claim_id": "CLM-PPD-06",
+        "submitted_at": "2026-09-05T16:39:12+08:00",
+        "mess_type_claimed": "bodily_fluids",
+        "amount_claimed": 150.0,
+        "attachment_ids": [
+          "ATT-CLM-PPD-06-1",
+          "ATT-CLM-PPD-06-2"
+        ],
+        "status": "charged",
+        "amount_charged": 150.0
+      }
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 22.8,
+      "distance_charge": 14.82,
+      "duration_min": 28.2,
+      "time_charge": 6.2,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 24.62,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-09-05T11:11:00+08:00",
+        "lat": 1.288884,
+        "lng": 103.808594,
+        "speed_kmh": 30,
+        "accuracy_m": 4.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:12:00+08:00",
+        "lat": 1.292243,
+        "lng": 103.811636,
+        "speed_kmh": 34,
+        "accuracy_m": 7.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:13:00+08:00",
+        "lat": 1.295976,
+        "lng": 103.815107,
+        "speed_kmh": 33,
+        "accuracy_m": 9.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:14:00+08:00",
+        "lat": 1.299559,
+        "lng": 103.818451,
+        "speed_kmh": 35,
+        "accuracy_m": 10.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:15:00+08:00",
+        "lat": 1.303449,
+        "lng": 103.821996,
+        "speed_kmh": 30,
+        "accuracy_m": 8.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:16:00+08:00",
+        "lat": 1.306772,
+        "lng": 103.825067,
+        "speed_kmh": 34,
+        "accuracy_m": 8.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:17:00+08:00",
+        "lat": 1.310492,
+        "lng": 103.828513,
+        "speed_kmh": 31,
+        "accuracy_m": 6.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:18:00+08:00",
+        "lat": 1.313921,
+        "lng": 103.831672,
+        "speed_kmh": 32,
+        "accuracy_m": 8.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:19:00+08:00",
+        "lat": 1.317506,
+        "lng": 103.834856,
+        "speed_kmh": 67,
+        "accuracy_m": 9.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:20:00+08:00",
+        "lat": 1.324876,
+        "lng": 103.841721,
+        "speed_kmh": 65,
+        "accuracy_m": 9.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:21:00+08:00",
+        "lat": 1.332017,
+        "lng": 103.84828,
+        "speed_kmh": 67,
+        "accuracy_m": 6.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:22:00+08:00",
+        "lat": 1.339438,
+        "lng": 103.855079,
+        "speed_kmh": 69,
+        "accuracy_m": 9.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:23:00+08:00",
+        "lat": 1.347034,
+        "lng": 103.862097,
+        "speed_kmh": 64,
+        "accuracy_m": 6.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:24:00+08:00",
+        "lat": 1.354069,
+        "lng": 103.868554,
+        "speed_kmh": 69,
+        "accuracy_m": 6.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:25:00+08:00",
+        "lat": 1.361718,
+        "lng": 103.875575,
+        "speed_kmh": 67,
+        "accuracy_m": 6.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:26:00+08:00",
+        "lat": 1.369658,
+        "lng": 103.874384,
+        "speed_kmh": 64,
+        "accuracy_m": 9.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:27:00+08:00",
+        "lat": 1.377562,
+        "lng": 103.868911,
+        "speed_kmh": 64,
+        "accuracy_m": 9.0,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:28:00+08:00",
+        "lat": 1.385459,
+        "lng": 103.86345,
+        "speed_kmh": 68,
+        "accuracy_m": 6.5,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:29:00+08:00",
+        "lat": 1.393835,
+        "lng": 103.857597,
+        "speed_kmh": 63,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:30:00+08:00",
+        "lat": 1.401612,
+        "lng": 103.852254,
+        "speed_kmh": 68,
+        "accuracy_m": 4.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:31:00+08:00",
+        "lat": 1.409981,
+        "lng": 103.846483,
+        "speed_kmh": 68,
+        "accuracy_m": 4.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:32:00+08:00",
+        "lat": 1.418355,
+        "lng": 103.840716,
+        "speed_kmh": 65,
+        "accuracy_m": 9.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:33:00+08:00",
+        "lat": 1.426413,
+        "lng": 103.835118,
+        "speed_kmh": 27,
+        "accuracy_m": 4.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:34:00+08:00",
+        "lat": 1.429722,
+        "lng": 103.832834,
+        "speed_kmh": 33,
+        "accuracy_m": 6.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:35:00+08:00",
+        "lat": 1.433804,
+        "lng": 103.830002,
+        "speed_kmh": 28,
+        "accuracy_m": 7.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:36:00+08:00",
+        "lat": 1.437271,
+        "lng": 103.827582,
+        "speed_kmh": 30,
+        "accuracy_m": 7.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:37:00+08:00",
+        "lat": 1.440912,
+        "lng": 103.825091,
+        "speed_kmh": 27,
+        "accuracy_m": 9.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:38:00+08:00",
+        "lat": 1.444275,
+        "lng": 103.822816,
+        "speed_kmh": 28,
+        "accuracy_m": 5.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:39:00+08:00",
+        "lat": 1.447756,
+        "lng": 103.820398,
+        "speed_kmh": 33,
+        "accuracy_m": 8.8,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-05T11:39:12+08:00",
+        "lat": 1.4487,
+        "lng": 103.8197,
+        "speed_kmh": 0,
+        "accuracy_m": 9.6,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-09-05T11:05:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-10155 booked trip TRIP-PREC-PD-06 from Anchorpoint, Queenstown to Sun Plaza, Sembawang. Upfront estimate $26.34 for planned route 22.8 km / 36 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-09-05T11:05:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-14134 (Ng Wei Liang, Mazda 6 (SHC 7576 E)) assigned."
+      },
+      {
+        "timestamp": "2026-09-05T11:10:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 9 m of pickup point."
+      },
+      {
+        "timestamp": "2026-09-05T11:11:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-09-05T11:39:12+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at Sun Plaza, Sembawang. Meter distance 22.80 km, duration 28.2 min."
+      },
+      {
+        "timestamp": "2026-09-05T11:39:32+08:00",
+        "event_type": "payment_captured",
+        "details": "$24.62 charged to rider payment method (e-wallet)."
+      },
+      {
+        "timestamp": "2026-09-05T16:39:12+08:00",
+        "event_type": "cleaning_claim_submitted",
+        "details": "Driver D-14134 submitted cleaning claim CLM-PPD-06 for bodily_fluids: $150.00 with 2 attachment(s)."
+      },
+      {
+        "timestamp": "2026-09-06T18:39:12+08:00",
+        "event_type": "cleaning_fee_charged",
+        "details": "Cleaning fee $150.00 for claim CLM-PPD-06 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [
+      {
+        "attachment_id": "ATT-CLM-PPD-06-1",
+        "attachment_type": "photo",
+        "uploaded_by": "driver",
+        "uploaded_at": "2026-09-05T16:39:12+08:00",
+        "captured_at": "2026-09-05T11:45:12+08:00",
+        "location": {
+          "lat": 1.44864,
+          "lng": 103.81967
+        },
+        "file_hash": "sha256:b9a3f96de80efb70e85ed58623841d63b45a3a3f",
+        "simulated_vision_analysis": {
+          "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+          "description": "Cat urine soaked into the rear seat cover; plate readable.",
+          "mess_type": "bodily_fluids",
+          "severity": "moderate",
+          "plate_read": "SHC 7576 E",
+          "interior_matches_vehicle_model": true,
+          "ai_generated_likelihood": 0.03,
+          "duplicate_of": null
+        },
+        "receipt_details": null
+      },
+      {
+        "attachment_id": "ATT-CLM-PPD-06-2",
+        "attachment_type": "receipt",
+        "uploaded_by": "driver",
+        "uploaded_at": "2026-09-05T16:39:12+08:00",
+        "captured_at": "2026-09-05T16:14:12+08:00",
+        "location": null,
+        "file_hash": "sha256:2ec2db02846350dd8f54cf35ff42a3343584a77e",
+        "simulated_vision_analysis": null,
+        "receipt_details": {
+          "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+          "uen": "201912345K",
+          "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+          "contact_number": "+65 6745 1122",
+          "service_description": "Pet urine extraction and odour treatment",
+          "professional_cleaning": true,
+          "cleaning_date": "2026-09-05",
+          "car_plate": "SHC 7576 E",
+          "amount": 150.0,
+          "signed": true,
+          "company_stamp": true
+        }
+      }
+    ],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-PD-06",
+    "outcome": "partial_refund",
+    "refund_amount": 30.0,
+    "payer": "ryde",
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.85,
+    "rules_cited": [
+      "PD-4",
+      "PD-8",
+      "G-9"
+    ],
+    "precedents_used": [],
+    "reasoning": "A pet urinated on the seat: bodily fluids, cap S$120 (PD-4). The rider was charged S$150, the figure on Ryde's older pet page (S21). The claims table governs (PD-8), so S$30 is refunded. The driver claimed the right type, so Ryde pays.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

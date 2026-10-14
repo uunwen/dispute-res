@@ -1,0 +1,247 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-05",
+    "trip_id": "TRIP-DISP-T-NS-05",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "I was walking over from the MRT and the driver cancelled after about 2 minutes. I'm charged $6.61 but he didn't even wait the 3 minutes.",
+    "filed_at": "2026-09-26T03:44:06+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4111",
+    "name": "Daniel Chua",
+    "account_age_days": 95,
+    "total_trips": 18,
+    "avg_rating": 4.4,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 27,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-23210",
+    "name": "Jamal Hussain",
+    "account_age_days": 600,
+    "total_trips": 1500,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Jazz (SGU 7837 E)",
+    "age_years": 33,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-05",
+    "rider_id": "R-4111",
+    "driver_id": "D-23210",
+    "pickup_location": {
+      "name": "Paya Lebar Quarter (Mall drop-off)",
+      "lat": 1.317,
+      "lng": 103.893,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Clementi Mall",
+      "lat": 1.315,
+      "lng": 103.765,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-25T19:30:00+08:00",
+    "matched_at": "2026-09-25T19:30:15+08:00",
+    "scheduled_time": "2026-09-25T19:38:00+08:00",
+    "eta_at_assignment_min": 8,
+    "driver_arrival_time": "2026-09-25T19:38:00+08:00",
+    "driver_wait_start": "2026-09-25T19:38:00+08:00",
+    "cancellation_time": "2026-09-25T19:40:06+08:00",
+    "cancelled_by": "driver",
+    "cancellation_reason": "rider_no_show",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-25T19:32:00+08:00",
+      "lat": 1.319007,
+      "lng": 103.880553,
+      "speed_kmh": 17,
+      "accuracy_m": 6.6,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T19:35:00+08:00",
+      "lat": 1.317912,
+      "lng": 103.887666,
+      "speed_kmh": 14,
+      "accuracy_m": 7.3,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T19:37:00+08:00",
+      "lat": 1.317295,
+      "lng": 103.891666,
+      "speed_kmh": 9,
+      "accuracy_m": 5.1,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T19:38:00+08:00",
+      "lat": 1.31709,
+      "lng": 103.893016,
+      "speed_kmh": 0,
+      "accuracy_m": 8.6,
+      "status": "arrived",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T19:39:00+08:00",
+      "lat": 1.317081,
+      "lng": 103.892983,
+      "speed_kmh": 0,
+      "accuracy_m": 4.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T19:40:00+08:00",
+      "lat": 1.317077,
+      "lng": 103.892996,
+      "speed_kmh": 0,
+      "accuracy_m": 5.0,
+      "status": "waiting",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-25T19:40:06+08:00",
+      "lat": 1.317094,
+      "lng": 103.892998,
+      "speed_kmh": 0,
+      "accuracy_m": 7.3,
+      "status": "cancelled",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-25T19:38:12+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Arrived at Paya Lebar Quarter."
+    },
+    {
+      "timestamp": "2026-09-25T19:39:00+08:00",
+      "sender": "driver",
+      "type": "call",
+      "content": "Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-25T19:39:54+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Cancelling now, can't wait."
+    },
+    {
+      "timestamp": "2026-09-25T19:40:06+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by driver. Reason: rider_no_show. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-25T19:30:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4111 booked trip TRIP-DISP-T-NS-05 from Paya Lebar Quarter (Mall drop-off) to Clementi Mall. On-demand booking. Estimated pickup 19:38. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-25T19:30:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-23210 (Jamal Hussain, Honda Jazz (SGU 7837 E)) matched. ETA 8 min."
+    },
+    {
+      "timestamp": "2026-09-25T19:30:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-25T19:38:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver tapped 'I'm Here'. Driver GPS 10 m from pickup point at time of tap."
+    },
+    {
+      "timestamp": "2026-09-25T19:38:00+08:00",
+      "event_type": "wait_timer_started",
+      "details": "Wait timer started at the arrival event. The no-show threshold (3 min) is reached at 19:41:00."
+    },
+    {
+      "timestamp": "2026-09-25T19:38:05+08:00",
+      "event_type": "rider_notified",
+      "details": "Push notification + in-app alert sent to rider: 'Your driver has arrived.'"
+    },
+    {
+      "timestamp": "2026-09-25T19:39:00+08:00",
+      "event_type": "driver_called_rider",
+      "details": "Driver initiated in-app call. Outgoing call to rider: not answered (rang 22s, no response)."
+    },
+    {
+      "timestamp": "2026-09-25T19:40:06+08:00",
+      "event_type": "cancellation_fee_applied",
+      "details": "Driver cancelled with reason rider_no_show at 2.1 min on the wait timer. $6.61 cancellation fee charged to rider payment method (e-wallet). The app charges the fee whenever a driver cancels with this reason; validity is checked only if the rider disputes it."
+    },
+    {
+      "timestamp": "2026-09-25T19:40:11+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-23210 released from trip. Trip status: cancelled (rider_no_show)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

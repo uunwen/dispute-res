@@ -1,0 +1,298 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-RD-02",
+      "trip_id": "TRIP-PREC-RD-02",
+      "filed_by": "rider",
+      "dispute_type": "route_deviation",
+      "description": "The route was longer than the estimate.",
+      "filed_at": "2026-08-14T05:07:16+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-5109",
+      "name": "Amir Hakim",
+      "account_age_days": 420,
+      "total_trips": 66,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 31,
+      "communication_preferences": {
+        "preferred_language": "Malay",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-14107",
+      "name": "Edwin Teo",
+      "account_age_days": 900,
+      "total_trips": 2500,
+      "avg_rating": 4.8,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Kia Carnival (SGT 7777 G)",
+      "age_years": 40,
+      "communication_preferences": {
+        "preferred_language": "English",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-RD-02",
+      "rider_id": "R-5109",
+      "driver_id": "D-14107",
+      "pickup_location": {
+        "name": "Anchorpoint, Queenstown",
+        "lat": 1.2889,
+        "lng": 103.8086,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "ION Orchard (Orchard Turn pickup point)",
+        "lat": 1.304,
+        "lng": 103.8318,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-08-13T08:40:00+08:00",
+      "matched_at": "2026-08-13T08:40:15+08:00",
+      "scheduled_time": null,
+      "eta_at_assignment_min": null,
+      "driver_arrival_time": "2026-08-13T08:46:00+08:00",
+      "driver_wait_start": "2026-08-13T08:46:00+08:00",
+      "cancellation_time": null,
+      "cancelled_by": null,
+      "cancellation_reason": null,
+      "cancellation_fee": null,
+      "waiting_fee": null,
+      "payment_status": "captured",
+      "trip_start": "2026-08-13T08:47:00+08:00",
+      "trip_end": "2026-08-13T08:55:16+08:00",
+      "trip_completed": true,
+      "planned_route": {
+        "distance_km": 3.94,
+        "duration_min": 7.4,
+        "waypoints": [
+          {
+            "lat": 1.2889,
+            "lng": 103.8086
+          },
+          {
+            "lat": 1.28718,
+            "lng": 103.82623
+          },
+          {
+            "lat": 1.304,
+            "lng": 103.8318
+          }
+        ],
+        "erp_gantries": []
+      },
+      "upfront_estimate": {
+        "base_fare": 3.0,
+        "distance_km": 3.94,
+        "distance_charge": 2.56,
+        "duration_min": 7.4,
+        "time_charge": 1.63,
+        "surge_multiplier": 1.0,
+        "surge_amount": 0.0,
+        "erp_charges": 0.0,
+        "platform_fee": 0.6,
+        "promo_discount": 0.0,
+        "total": 7.79
+      },
+      "damage_claim": null
+    },
+    "cancellation_policy": null,
+    "fare_breakdown": {
+      "base_fare": 3.0,
+      "distance_km": 4.41,
+      "distance_charge": 2.87,
+      "duration_min": 8.3,
+      "time_charge": 1.83,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 8.3,
+      "promo_code": null,
+      "erp_gantries_passed": [],
+      "destination_change_fee": 0.0
+    },
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-08-13T08:47:00+08:00",
+        "lat": 1.288907,
+        "lng": 103.808575,
+        "speed_kmh": 32,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:48:00+08:00",
+        "lat": 1.287815,
+        "lng": 103.813223,
+        "speed_kmh": 32,
+        "accuracy_m": 6.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:49:00+08:00",
+        "lat": 1.286786,
+        "lng": 103.817976,
+        "speed_kmh": 34,
+        "accuracy_m": 7.2,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:50:00+08:00",
+        "lat": 1.285737,
+        "lng": 103.822639,
+        "speed_kmh": 37,
+        "accuracy_m": 4.9,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:51:00+08:00",
+        "lat": 1.284678,
+        "lng": 103.827322,
+        "speed_kmh": 35,
+        "accuracy_m": 4.1,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:52:00+08:00",
+        "lat": 1.288645,
+        "lng": 103.828781,
+        "speed_kmh": 37,
+        "accuracy_m": 6.4,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:53:00+08:00",
+        "lat": 1.293335,
+        "lng": 103.829722,
+        "speed_kmh": 25,
+        "accuracy_m": 5.7,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:54:00+08:00",
+        "lat": 1.297992,
+        "lng": 103.830567,
+        "speed_kmh": 28,
+        "accuracy_m": 4.6,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:55:00+08:00",
+        "lat": 1.302702,
+        "lng": 103.831523,
+        "speed_kmh": 28,
+        "accuracy_m": 7.3,
+        "status": "on_trip",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-08-13T08:55:16+08:00",
+        "lat": 1.304,
+        "lng": 103.8318,
+        "speed_kmh": 0,
+        "accuracy_m": 8.0,
+        "status": "completed",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": null,
+    "chat_logs": [],
+    "app_events": [
+      {
+        "timestamp": "2026-08-13T08:40:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-5109 booked trip TRIP-PREC-RD-02 from Anchorpoint, Queenstown to ION Orchard (Orchard Turn pickup point). Upfront estimate $7.79 for planned route 3.9 km / 7 min. Surge x1.0."
+      },
+      {
+        "timestamp": "2026-08-13T08:40:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-14107 (Edwin Teo, Kia Carnival (SGT 7777 G)) assigned."
+      },
+      {
+        "timestamp": "2026-08-13T08:46:00+08:00",
+        "event_type": "driver_arrived",
+        "details": "Driver GPS within 8 m of pickup point."
+      },
+      {
+        "timestamp": "2026-08-13T08:47:00+08:00",
+        "event_type": "trip_started",
+        "details": "Rider boarded. Trip meter started."
+      },
+      {
+        "timestamp": "2026-08-13T08:55:16+08:00",
+        "event_type": "trip_completed",
+        "details": "Trip completed at ION Orchard (Orchard Turn pickup point). Meter distance 4.41 km, duration 8.3 min."
+      },
+      {
+        "timestamp": "2026-08-13T08:55:36+08:00",
+        "event_type": "payment_captured",
+        "details": "$8.30 charged to rider payment method (e-wallet)."
+      }
+    ],
+    "traffic_incidents": {
+      "source": "LTA traffic incident feed (mock)",
+      "query_window": [
+        "2026-08-13T08:47:00+08:00",
+        "2026-08-13T08:55:16+08:00"
+      ],
+      "incidents": []
+    },
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-RD-02",
+    "outcome": "no_action",
+    "refund_amount": 0.0,
+    "payer": null,
+    "rider_charge_amount": 0.0,
+    "driver_warning": false,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.93,
+    "rules_cited": [
+      "RD-2"
+    ],
+    "precedents_used": [],
+    "reasoning": "Distance is 12% over plan, inside the 15% tolerance (RD-2). No action.",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}

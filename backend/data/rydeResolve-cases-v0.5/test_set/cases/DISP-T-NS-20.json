@@ -1,0 +1,203 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-NS-20",
+    "trip_id": "TRIP-DISP-T-NS-20",
+    "filed_by": "rider",
+    "dispute_type": "no_show_charge",
+    "description": "Driver told me to cancel the trip, then I got charged $6.61.",
+    "filed_at": "2026-09-18T08:39:00+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-4110",
+    "name": "Nur Fatimah Abdullah",
+    "account_age_days": 420,
+    "total_trips": 96,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 38,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-18210",
+    "name": "Jamal Hussain",
+    "account_age_days": 600,
+    "total_trips": 1500,
+    "avg_rating": 4.6,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Honda Jazz (SGU 6466 E)",
+    "age_years": 33,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-NS-20",
+    "rider_id": "R-4110",
+    "driver_id": "D-18210",
+    "pickup_location": {
+      "name": "Causeway Point, Woodlands",
+      "lat": 1.436,
+      "lng": 103.786,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Changi Airport Terminal 3 (Departures)",
+      "lat": 1.3555,
+      "lng": 103.9864,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-18T07:05:00+08:00",
+    "matched_at": "2026-09-18T07:05:15+08:00",
+    "scheduled_time": "2026-09-18T07:12:00+08:00",
+    "eta_at_assignment_min": 7,
+    "driver_arrival_time": null,
+    "driver_wait_start": null,
+    "cancellation_time": "2026-09-18T07:11:00+08:00",
+    "cancelled_by": "rider",
+    "cancellation_reason": "rider_cancelled",
+    "cancellation_fee": 6.61,
+    "waiting_fee": 0.0,
+    "payment_status": "captured",
+    "trip_start": null,
+    "trip_end": null,
+    "trip_completed": false,
+    "planned_route": null,
+    "upfront_estimate": null,
+    "damage_claim": null
+  },
+  "cancellation_policy": {
+    "free_wait_time_min": 3,
+    "cancellation_fee_after_wait": 6.61,
+    "no_show_threshold_min": 3,
+    "fee_goes_to": "driver_compensation",
+    "driver_compensation": 4.5,
+    "waiting_fee": 5.0,
+    "driver_waiting_fee": 4.5,
+    "advance_free_before_min": 15
+  },
+  "fare_breakdown": null,
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-18T07:05:30+08:00",
+      "lat": 1.412484,
+      "lng": 103.780162,
+      "speed_kmh": 36,
+      "accuracy_m": 7.4,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-18T07:07:00+08:00",
+      "lat": 1.416849,
+      "lng": 103.781243,
+      "speed_kmh": 30,
+      "accuracy_m": 4.7,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-18T07:08:30+08:00",
+      "lat": 1.421214,
+      "lng": 103.782324,
+      "speed_kmh": 33,
+      "accuracy_m": 4.8,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-18T07:10:00+08:00",
+      "lat": 1.425578,
+      "lng": 103.783405,
+      "speed_kmh": 30,
+      "accuracy_m": 5.2,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-18T07:10:48+08:00",
+      "lat": 1.428197,
+      "lng": 103.784054,
+      "speed_kmh": 28,
+      "accuracy_m": 6.5,
+      "status": "en_route",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": {
+    "available": false,
+    "note": "Rider app location not shared during this trip.",
+    "pings": []
+  },
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-18T07:07:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Sir this trip too far for me. Can you cancel first? I don't want to take."
+    },
+    {
+      "timestamp": "2026-09-18T07:07:30+08:00",
+      "sender": "rider",
+      "type": "message",
+      "content": "Ok fine I cancel."
+    },
+    {
+      "timestamp": "2026-09-18T07:11:00+08:00",
+      "sender": "system",
+      "type": "system",
+      "content": "Trip cancelled by rider. Cancellation fee of $6.61 applied."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-18T07:05:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-4110 booked trip TRIP-DISP-T-NS-20 from Causeway Point, Woodlands to Changi Airport Terminal 3 (Departures). On-demand booking. Estimated pickup 07:12. Pickup pin set by rider."
+    },
+    {
+      "timestamp": "2026-09-18T07:05:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-18210 (Jamal Hussain, Honda Jazz (SGU 6466 E)) matched. ETA 7 min."
+    },
+    {
+      "timestamp": "2026-09-18T07:05:20+08:00",
+      "event_type": "driver_en_route",
+      "details": "Driver started navigating to pickup location. Live tracking enabled."
+    },
+    {
+      "timestamp": "2026-09-18T07:11:00+08:00",
+      "event_type": "trip_cancelled_by_rider",
+      "details": "Rider cancelled the trip in-app 5.8 min after matching. $6.61 cancellation fee charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-09-18T07:11:05+08:00",
+      "event_type": "driver_released",
+      "details": "Driver D-18210 released from trip. Trip status: cancelled (rider_cancelled)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

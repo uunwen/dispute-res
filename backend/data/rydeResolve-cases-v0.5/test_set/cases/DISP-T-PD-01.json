@@ -1,0 +1,484 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-PD-01",
+    "trip_id": "TRIP-DISP-T-PD-01",
+    "filed_by": "rider",
+    "dispute_type": "property_damage",
+    "description": "I was not sick in the car. I was charged $200 for cleaning and I want it refunded.",
+    "filed_at": "2026-09-29T10:30:42+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9152",
+    "name": "Rizwan Shah",
+    "account_age_days": 420,
+    "total_trips": 102,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 36,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "email"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-13230",
+    "name": "Aaron Sim",
+    "account_age_days": 900,
+    "total_trips": 2600,
+    "avg_rating": 4.8,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Prius C (SKA 1232 B)",
+    "age_years": 42,
+    "communication_preferences": {
+      "preferred_language": "English",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-PD-01",
+    "rider_id": "R-9152",
+    "driver_id": "D-13230",
+    "pickup_location": {
+      "name": "Marina Bay Sands (Hotel Tower 1 lobby)",
+      "lat": 1.2834,
+      "lng": 103.8607,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "Waterway Point, Punggol",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "multi_entrance_venue": false
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-26T23:20:00+08:00",
+    "matched_at": "2026-09-26T23:20:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-26T23:25:00+08:00",
+    "driver_wait_start": "2026-09-26T23:25:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-26T23:26:00+08:00",
+    "trip_end": "2026-09-26T23:48:42+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 18.49,
+      "duration_min": 29.2,
+      "waypoints": [
+        {
+          "lat": 1.2834,
+          "lng": 103.8607
+        },
+        {
+          "lat": 1.32838,
+          "lng": 103.93064
+        },
+        {
+          "lat": 1.4065,
+          "lng": 103.9022
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 18.49,
+      "distance_charge": 12.02,
+      "duration_min": 29.2,
+      "time_charge": 6.42,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 22.04
+    },
+    "damage_claim": {
+      "claim_id": "CLM-PD-01",
+      "submitted_at": "2026-09-27T18:48:42+08:00",
+      "mess_type_claimed": "vomit",
+      "amount_claimed": 230.0,
+      "attachment_ids": [
+        "ATT-CLM-PD-01-1",
+        "ATT-CLM-PD-01-2",
+        "ATT-CLM-PD-01-3"
+      ],
+      "status": "charged",
+      "amount_charged": 200.0
+    }
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 18.49,
+    "distance_charge": 12.02,
+    "duration_min": 22.7,
+    "time_charge": 4.99,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 20.61,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-26T23:26:00+08:00",
+      "lat": 1.283422,
+      "lng": 103.860695,
+      "speed_kmh": 32,
+      "accuracy_m": 8.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:27:00+08:00",
+      "lat": 1.285943,
+      "lng": 103.86472,
+      "speed_kmh": 35,
+      "accuracy_m": 6.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:28:00+08:00",
+      "lat": 1.288822,
+      "lng": 103.869131,
+      "speed_kmh": 31,
+      "accuracy_m": 7.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:29:00+08:00",
+      "lat": 1.291299,
+      "lng": 103.873071,
+      "speed_kmh": 30,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:30:00+08:00",
+      "lat": 1.293806,
+      "lng": 103.876865,
+      "speed_kmh": 34,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:31:00+08:00",
+      "lat": 1.296543,
+      "lng": 103.881109,
+      "speed_kmh": 33,
+      "accuracy_m": 7.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:32:00+08:00",
+      "lat": 1.299211,
+      "lng": 103.885292,
+      "speed_kmh": 33,
+      "accuracy_m": 9.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:33:00+08:00",
+      "lat": 1.30186,
+      "lng": 103.889463,
+      "speed_kmh": 68,
+      "accuracy_m": 5.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:34:00+08:00",
+      "lat": 1.307423,
+      "lng": 103.898023,
+      "speed_kmh": 68,
+      "accuracy_m": 8.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:35:00+08:00",
+      "lat": 1.312906,
+      "lng": 103.906601,
+      "speed_kmh": 67,
+      "accuracy_m": 9.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:36:00+08:00",
+      "lat": 1.318354,
+      "lng": 103.915013,
+      "speed_kmh": 64,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:37:00+08:00",
+      "lat": 1.323536,
+      "lng": 103.923151,
+      "speed_kmh": 66,
+      "accuracy_m": 8.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:38:00+08:00",
+      "lat": 1.329291,
+      "lng": 103.930342,
+      "speed_kmh": 66,
+      "accuracy_m": 8.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:39:00+08:00",
+      "lat": 1.33857,
+      "lng": 103.926952,
+      "speed_kmh": 67,
+      "accuracy_m": 5.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:40:00+08:00",
+      "lat": 1.347986,
+      "lng": 103.92351,
+      "speed_kmh": 66,
+      "accuracy_m": 4.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:41:00+08:00",
+      "lat": 1.357286,
+      "lng": 103.920102,
+      "speed_kmh": 69,
+      "accuracy_m": 7.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:42:00+08:00",
+      "lat": 1.36705,
+      "lng": 103.916561,
+      "speed_kmh": 64,
+      "accuracy_m": 7.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:43:00+08:00",
+      "lat": 1.376033,
+      "lng": 103.913295,
+      "speed_kmh": 65,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:44:00+08:00",
+      "lat": 1.385156,
+      "lng": 103.909961,
+      "speed_kmh": 32,
+      "accuracy_m": 10.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:45:00+08:00",
+      "lat": 1.389695,
+      "lng": 103.908271,
+      "speed_kmh": 33,
+      "accuracy_m": 7.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:46:00+08:00",
+      "lat": 1.394333,
+      "lng": 103.906625,
+      "speed_kmh": 33,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:47:00+08:00",
+      "lat": 1.398991,
+      "lng": 103.904938,
+      "speed_kmh": 31,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:48:00+08:00",
+      "lat": 1.403392,
+      "lng": 103.903341,
+      "speed_kmh": 30,
+      "accuracy_m": 7.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-26T23:48:42+08:00",
+      "lat": 1.4065,
+      "lng": 103.9022,
+      "speed_kmh": 0,
+      "accuracy_m": 5.5,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [],
+  "app_events": [
+    {
+      "timestamp": "2026-09-26T23:20:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9152 booked trip TRIP-DISP-T-PD-01 from Marina Bay Sands (Hotel Tower 1 lobby) to Waterway Point, Punggol. Upfront estimate $22.04 for planned route 18.5 km / 29 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-26T23:20:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-13230 (Aaron Sim, Toyota Prius C (SKA 1232 B)) assigned."
+    },
+    {
+      "timestamp": "2026-09-26T23:25:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 9 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-26T23:26:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-26T23:48:42+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at Waterway Point, Punggol. Meter distance 18.49 km, duration 22.7 min."
+    },
+    {
+      "timestamp": "2026-09-26T23:49:02+08:00",
+      "event_type": "payment_captured",
+      "details": "$20.61 charged to rider payment method (e-wallet)."
+    },
+    {
+      "timestamp": "2026-09-27T18:48:42+08:00",
+      "event_type": "cleaning_claim_submitted",
+      "details": "Driver D-13230 submitted cleaning claim CLM-PD-01 for vomit: $230.00 with 3 attachment(s)."
+    },
+    {
+      "timestamp": "2026-09-28T20:48:42+08:00",
+      "event_type": "cleaning_fee_charged",
+      "details": "Cleaning fee $200.00 for claim CLM-PD-01 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": null,
+  "attachments": [
+    {
+      "attachment_id": "ATT-CLM-PD-01-1",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-09-27T18:48:42+08:00",
+      "captured_at": "2026-09-26T23:57:42+08:00",
+      "location": {
+        "lat": 1.40646,
+        "lng": 103.90223
+      },
+      "file_hash": "sha256:5faf4fce4350b6792d2de36c3d21861899004843",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Vomit across the rear seat and footwell; the car plate is readable through the open rear door.",
+        "mess_type": "vomit",
+        "severity": "heavy",
+        "plate_read": "SKA 1232 B",
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.03,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-01-2",
+      "attachment_type": "photo",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-09-27T18:48:42+08:00",
+      "captured_at": "2026-09-26T23:58:42+08:00",
+      "location": {
+        "lat": 1.40653,
+        "lng": 103.90238
+      },
+      "file_hash": "sha256:3dcb6cdb316ee8ce4061a7ce90ff71a64d418a84",
+      "simulated_vision_analysis": {
+        "note": "Simulated output of an image-analysis model, generated for this test case. No image file exists.",
+        "description": "Close-up of vomit soaked into the rear floor mat.",
+        "mess_type": "vomit",
+        "severity": "heavy",
+        "plate_read": null,
+        "interior_matches_vehicle_model": true,
+        "ai_generated_likelihood": 0.02,
+        "duplicate_of": null
+      },
+      "receipt_details": null
+    },
+    {
+      "attachment_id": "ATT-CLM-PD-01-3",
+      "attachment_type": "receipt",
+      "uploaded_by": "driver",
+      "uploaded_at": "2026-09-27T18:48:42+08:00",
+      "captured_at": "2026-09-27T18:23:42+08:00",
+      "location": null,
+      "file_hash": "sha256:32557d24a98835da5e664409572dd0110e62f008",
+      "simulated_vision_analysis": null,
+      "receipt_details": {
+        "company_name": "SparkleCar Interior Cleaning Pte Ltd",
+        "uen": "201912345K",
+        "address": "10 Ubi Crescent, #01-23, Singapore 408564",
+        "contact_number": "+65 6745 1122",
+        "service_description": "Professional interior deep cleaning and sanitisation (vomit, rear seat and floor)",
+        "professional_cleaning": true,
+        "cleaning_date": "2026-09-27",
+        "car_plate": "SKA 1232 B",
+        "amount": 230.0,
+        "signed": true,
+        "company_stamp": true
+      }
+    }
+  ],
+  "policy_ref": "ryde-policy-v0.4"
+}

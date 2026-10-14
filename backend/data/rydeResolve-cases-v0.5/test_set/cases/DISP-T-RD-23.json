@@ -1,0 +1,586 @@
+{
+  "dispute_ticket": {
+    "dispute_id": "DISP-T-RD-23",
+    "trip_id": "TRIP-DISP-T-RD-23",
+    "filed_by": "rider",
+    "dispute_type": "route_deviation",
+    "description": "Pemandu kata jalan ditutup tetapi jalan itu terbuka. Perjalanan lebih lama dan lebih mahal.",
+    "filed_at": "2026-09-23T08:54:24+08:00",
+    "status": "open"
+  },
+  "rider_profile": {
+    "rider_id": "R-9103",
+    "name": "Siti Nurhaliza Binte Rahman",
+    "account_age_days": 420,
+    "total_trips": 60,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "payment_method": "e-wallet",
+    "age_years": 52,
+    "communication_preferences": {
+      "preferred_language": "Malay",
+      "accessibility_needs": null,
+      "channel": "sms"
+    }
+  },
+  "driver_profile": {
+    "driver_id": "D-8212",
+    "name": "Devendran Raj",
+    "account_age_days": 900,
+    "total_trips": 3900,
+    "avg_rating": 4.7,
+    "dispute_history": {
+      "total_disputes": 0,
+      "upheld_against": 0,
+      "rejected": 0
+    },
+    "fraud_flags": 0,
+    "fraud_flag_details": null,
+    "warnings_last_30_days": 0,
+    "vehicle": "Toyota Alphard (SGK 1205 G)",
+    "age_years": 50,
+    "communication_preferences": {
+      "preferred_language": "Tamil",
+      "accessibility_needs": null,
+      "channel": "in_app"
+    }
+  },
+  "trip_data": {
+    "trip_id": "TRIP-DISP-T-RD-23",
+    "rider_id": "R-9103",
+    "driver_id": "D-8212",
+    "pickup_location": {
+      "name": "Bugis Junction (Victoria St taxi stand)",
+      "lat": 1.29935,
+      "lng": 103.8548,
+      "multi_entrance_venue": false
+    },
+    "dropoff_location": {
+      "name": "JEM, Jurong East",
+      "lat": 1.3333,
+      "lng": 103.743,
+      "multi_entrance_venue": true
+    },
+    "trip_type": "on_demand",
+    "booked_at": "2026-09-22T13:20:00+08:00",
+    "matched_at": "2026-09-22T13:20:15+08:00",
+    "scheduled_time": null,
+    "eta_at_assignment_min": null,
+    "driver_arrival_time": "2026-09-22T13:26:00+08:00",
+    "driver_wait_start": "2026-09-22T13:26:00+08:00",
+    "cancellation_time": null,
+    "cancelled_by": null,
+    "cancellation_reason": null,
+    "cancellation_fee": null,
+    "waiting_fee": null,
+    "payment_status": "captured",
+    "trip_start": "2026-09-22T13:27:00+08:00",
+    "trip_end": "2026-09-22T14:09:24+08:00",
+    "trip_completed": true,
+    "planned_route": {
+      "distance_km": 16.63,
+      "duration_min": 31.2,
+      "waypoints": [
+        {
+          "lat": 1.29935,
+          "lng": 103.8548
+        },
+        {
+          "lat": 1.36098,
+          "lng": 103.81247
+        },
+        {
+          "lat": 1.3333,
+          "lng": 103.743
+        }
+      ],
+      "erp_gantries": []
+    },
+    "upfront_estimate": {
+      "base_fare": 3.0,
+      "distance_km": 16.63,
+      "distance_charge": 10.81,
+      "duration_min": 31.2,
+      "time_charge": 6.86,
+      "surge_multiplier": 1.0,
+      "surge_amount": 0.0,
+      "erp_charges": 0.0,
+      "platform_fee": 0.6,
+      "promo_discount": 0.0,
+      "total": 21.27
+    },
+    "damage_claim": null
+  },
+  "cancellation_policy": null,
+  "fare_breakdown": {
+    "base_fare": 3.0,
+    "distance_km": 22.61,
+    "distance_charge": 14.7,
+    "duration_min": 42.4,
+    "time_charge": 9.33,
+    "surge_multiplier": 1.0,
+    "surge_amount": 0.0,
+    "erp_charges": 0.0,
+    "platform_fee": 0.6,
+    "promo_discount": 0.0,
+    "total": 27.63,
+    "promo_code": null,
+    "erp_gantries_passed": [],
+    "destination_change_fee": 0.0
+  },
+  "gps_telemetry": [
+    {
+      "timestamp": "2026-09-22T13:27:00+08:00",
+      "lat": 1.299374,
+      "lng": 103.854789,
+      "speed_kmh": 27,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:28:00+08:00",
+      "lat": 1.304015,
+      "lng": 103.853811,
+      "speed_kmh": 36,
+      "accuracy_m": 4.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:29:00+08:00",
+      "lat": 1.308735,
+      "lng": 103.852709,
+      "speed_kmh": 27,
+      "accuracy_m": 6.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:30:00+08:00",
+      "lat": 1.313397,
+      "lng": 103.851662,
+      "speed_kmh": 35,
+      "accuracy_m": 5.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:31:00+08:00",
+      "lat": 1.31806,
+      "lng": 103.850591,
+      "speed_kmh": 32,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:32:00+08:00",
+      "lat": 1.322789,
+      "lng": 103.849548,
+      "speed_kmh": 37,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:33:00+08:00",
+      "lat": 1.327441,
+      "lng": 103.848532,
+      "speed_kmh": 34,
+      "accuracy_m": 4.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:34:00+08:00",
+      "lat": 1.332109,
+      "lng": 103.847478,
+      "speed_kmh": 37,
+      "accuracy_m": 4.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:35:00+08:00",
+      "lat": 1.336783,
+      "lng": 103.846446,
+      "speed_kmh": 37,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:36:00+08:00",
+      "lat": 1.341483,
+      "lng": 103.845363,
+      "speed_kmh": 28,
+      "accuracy_m": 6.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:37:00+08:00",
+      "lat": 1.346233,
+      "lng": 103.844356,
+      "speed_kmh": 29,
+      "accuracy_m": 6.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:38:00+08:00",
+      "lat": 1.350777,
+      "lng": 103.84331,
+      "speed_kmh": 38,
+      "accuracy_m": 7.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:39:00+08:00",
+      "lat": 1.355542,
+      "lng": 103.842283,
+      "speed_kmh": 24,
+      "accuracy_m": 9.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:40:00+08:00",
+      "lat": 1.360198,
+      "lng": 103.841195,
+      "speed_kmh": 32,
+      "accuracy_m": 6.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:41:00+08:00",
+      "lat": 1.364894,
+      "lng": 103.840122,
+      "speed_kmh": 33,
+      "accuracy_m": 7.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:42:00+08:00",
+      "lat": 1.369557,
+      "lng": 103.839143,
+      "speed_kmh": 37,
+      "accuracy_m": 5.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:43:00+08:00",
+      "lat": 1.374234,
+      "lng": 103.838087,
+      "speed_kmh": 24,
+      "accuracy_m": 8.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:44:00+08:00",
+      "lat": 1.378953,
+      "lng": 103.837008,
+      "speed_kmh": 37,
+      "accuracy_m": 8.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:45:00+08:00",
+      "lat": 1.38366,
+      "lng": 103.836014,
+      "speed_kmh": 33,
+      "accuracy_m": 10.0,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:46:00+08:00",
+      "lat": 1.388342,
+      "lng": 103.834981,
+      "speed_kmh": 32,
+      "accuracy_m": 9.1,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:47:00+08:00",
+      "lat": 1.391498,
+      "lng": 103.833342,
+      "speed_kmh": 27,
+      "accuracy_m": 6.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:48:00+08:00",
+      "lat": 1.388909,
+      "lng": 103.82927,
+      "speed_kmh": 27,
+      "accuracy_m": 6.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:49:00+08:00",
+      "lat": 1.386323,
+      "lng": 103.825232,
+      "speed_kmh": 36,
+      "accuracy_m": 8.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:50:00+08:00",
+      "lat": 1.38371,
+      "lng": 103.821159,
+      "speed_kmh": 29,
+      "accuracy_m": 6.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:51:00+08:00",
+      "lat": 1.381113,
+      "lng": 103.817154,
+      "speed_kmh": 38,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:52:00+08:00",
+      "lat": 1.378463,
+      "lng": 103.813159,
+      "speed_kmh": 28,
+      "accuracy_m": 9.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:53:00+08:00",
+      "lat": 1.375917,
+      "lng": 103.809133,
+      "speed_kmh": 27,
+      "accuracy_m": 7.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:54:00+08:00",
+      "lat": 1.373342,
+      "lng": 103.805062,
+      "speed_kmh": 37,
+      "accuracy_m": 9.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:55:00+08:00",
+      "lat": 1.370718,
+      "lng": 103.801039,
+      "speed_kmh": 33,
+      "accuracy_m": 9.5,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:56:00+08:00",
+      "lat": 1.36812,
+      "lng": 103.79701,
+      "speed_kmh": 25,
+      "accuracy_m": 4.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:57:00+08:00",
+      "lat": 1.365521,
+      "lng": 103.792977,
+      "speed_kmh": 26,
+      "accuracy_m": 8.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:58:00+08:00",
+      "lat": 1.362878,
+      "lng": 103.788982,
+      "speed_kmh": 34,
+      "accuracy_m": 8.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T13:59:00+08:00",
+      "lat": 1.360309,
+      "lng": 103.784946,
+      "speed_kmh": 36,
+      "accuracy_m": 9.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:00:00+08:00",
+      "lat": 1.357729,
+      "lng": 103.780896,
+      "speed_kmh": 36,
+      "accuracy_m": 5.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:01:00+08:00",
+      "lat": 1.355116,
+      "lng": 103.776863,
+      "speed_kmh": 35,
+      "accuracy_m": 7.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:02:00+08:00",
+      "lat": 1.352585,
+      "lng": 103.772851,
+      "speed_kmh": 28,
+      "accuracy_m": 8.4,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:03:00+08:00",
+      "lat": 1.349938,
+      "lng": 103.768799,
+      "speed_kmh": 27,
+      "accuracy_m": 5.8,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:04:00+08:00",
+      "lat": 1.347356,
+      "lng": 103.764746,
+      "speed_kmh": 34,
+      "accuracy_m": 5.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:05:00+08:00",
+      "lat": 1.344716,
+      "lng": 103.760758,
+      "speed_kmh": 26,
+      "accuracy_m": 7.7,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:06:00+08:00",
+      "lat": 1.342112,
+      "lng": 103.756695,
+      "speed_kmh": 37,
+      "accuracy_m": 6.3,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:07:00+08:00",
+      "lat": 1.33953,
+      "lng": 103.752663,
+      "speed_kmh": 29,
+      "accuracy_m": 9.2,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:08:00+08:00",
+      "lat": 1.336924,
+      "lng": 103.748652,
+      "speed_kmh": 30,
+      "accuracy_m": 5.9,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:09:00+08:00",
+      "lat": 1.334331,
+      "lng": 103.744595,
+      "speed_kmh": 30,
+      "accuracy_m": 6.6,
+      "status": "on_trip",
+      "speed_limit_kmh": null
+    },
+    {
+      "timestamp": "2026-09-22T14:09:24+08:00",
+      "lat": 1.3333,
+      "lng": 103.743,
+      "speed_kmh": 0,
+      "accuracy_m": 9.5,
+      "status": "completed",
+      "speed_limit_kmh": null
+    }
+  ],
+  "rider_app_location": null,
+  "chat_logs": [
+    {
+      "timestamp": "2026-09-22T13:31:00+08:00",
+      "sender": "driver",
+      "type": "message",
+      "content": "Road closure ahead, have to go around."
+    }
+  ],
+  "app_events": [
+    {
+      "timestamp": "2026-09-22T13:20:00+08:00",
+      "event_type": "booking_confirmed",
+      "details": "Rider R-9103 booked trip TRIP-DISP-T-RD-23 from Bugis Junction (Victoria St taxi stand) to JEM, Jurong East. Upfront estimate $21.27 for planned route 16.6 km / 31 min. Surge x1.0."
+    },
+    {
+      "timestamp": "2026-09-22T13:20:15+08:00",
+      "event_type": "driver_assigned",
+      "details": "Driver D-8212 (Devendran Raj, Toyota Alphard (SGK 1205 G)) assigned."
+    },
+    {
+      "timestamp": "2026-09-22T13:26:00+08:00",
+      "event_type": "driver_arrived",
+      "details": "Driver GPS within 8 m of pickup point."
+    },
+    {
+      "timestamp": "2026-09-22T13:27:00+08:00",
+      "event_type": "trip_started",
+      "details": "Rider boarded. Trip meter started."
+    },
+    {
+      "timestamp": "2026-09-22T14:09:24+08:00",
+      "event_type": "trip_completed",
+      "details": "Trip completed at JEM, Jurong East. Meter distance 22.61 km, duration 42.4 min."
+    },
+    {
+      "timestamp": "2026-09-22T14:09:44+08:00",
+      "event_type": "payment_captured",
+      "details": "$27.63 charged to rider payment method (e-wallet)."
+    }
+  ],
+  "traffic_incidents": {
+    "source": "LTA traffic incident feed (mock)",
+    "query_window": [
+      "2026-09-22T13:27:00+08:00",
+      "2026-09-22T14:09:24+08:00"
+    ],
+    "incidents": []
+  },
+  "attachments": [],
+  "policy_ref": "ryde-policy-v0.4"
+}

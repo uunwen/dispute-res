@@ -1,0 +1,231 @@
+{
+  "case": {
+    "dispute_ticket": {
+      "dispute_id": "PREC-NS-11",
+      "trip_id": "TRIP-PREC-NS-11",
+      "filed_by": "rider",
+      "dispute_type": "no_show_charge",
+      "description": "Driver asked me to cancel, then I was charged for cancelling.",
+      "filed_at": "2026-09-04T11:51:00+08:00",
+      "status": "open"
+    },
+    "rider_profile": {
+      "rider_id": "R-5111",
+      "name": "Hui Min Ong",
+      "account_age_days": 420,
+      "total_trips": 77,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "payment_method": "e-wallet",
+      "age_years": 40,
+      "communication_preferences": {
+        "preferred_language": "Mandarin",
+        "accessibility_needs": null,
+        "channel": "email"
+      }
+    },
+    "driver_profile": {
+      "driver_id": "D-9109",
+      "name": "Azman Latif",
+      "account_age_days": 900,
+      "total_trips": 2900,
+      "avg_rating": 4.7,
+      "dispute_history": {
+        "total_disputes": 0,
+        "upheld_against": 0,
+        "rejected": 0
+      },
+      "fraud_flags": 0,
+      "fraud_flag_details": null,
+      "warnings_last_30_days": 0,
+      "vehicle": "Honda Fit (SGX 6402 L)",
+      "age_years": 48,
+      "communication_preferences": {
+        "preferred_language": "Malay",
+        "accessibility_needs": null,
+        "channel": "in_app"
+      }
+    },
+    "trip_data": {
+      "trip_id": "TRIP-PREC-NS-11",
+      "rider_id": "R-5111",
+      "driver_id": "D-9109",
+      "pickup_location": {
+        "name": "White Sands, Pasir Ris",
+        "lat": 1.3727,
+        "lng": 103.9493,
+        "multi_entrance_venue": false
+      },
+      "dropoff_location": {
+        "name": "Suntec City (Tower 3 taxi stand)",
+        "lat": 1.295,
+        "lng": 103.858,
+        "multi_entrance_venue": false
+      },
+      "trip_type": "on_demand",
+      "booked_at": "2026-09-04T07:30:00+08:00",
+      "matched_at": "2026-09-04T07:30:15+08:00",
+      "scheduled_time": "2026-09-04T07:37:00+08:00",
+      "eta_at_assignment_min": 7,
+      "driver_arrival_time": null,
+      "driver_wait_start": null,
+      "cancellation_time": "2026-09-04T07:36:00+08:00",
+      "cancelled_by": "rider",
+      "cancellation_reason": "rider_cancelled",
+      "cancellation_fee": 6.61,
+      "waiting_fee": 0.0,
+      "payment_status": "captured",
+      "trip_start": null,
+      "trip_end": null,
+      "trip_completed": false,
+      "planned_route": null,
+      "upfront_estimate": null,
+      "damage_claim": null
+    },
+    "cancellation_policy": {
+      "free_wait_time_min": 3,
+      "cancellation_fee_after_wait": 6.61,
+      "no_show_threshold_min": 3,
+      "fee_goes_to": "driver_compensation",
+      "driver_compensation": 4.5,
+      "waiting_fee": 5.0,
+      "driver_waiting_fee": 4.5,
+      "advance_free_before_min": 15
+    },
+    "fare_breakdown": null,
+    "gps_telemetry": [
+      {
+        "timestamp": "2026-09-04T07:30:30+08:00",
+        "lat": 1.359708,
+        "lng": 103.969785,
+        "speed_kmh": 36,
+        "accuracy_m": 5.8,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-04T07:32:00+08:00",
+        "lat": 1.362124,
+        "lng": 103.965991,
+        "speed_kmh": 30,
+        "accuracy_m": 4.5,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-04T07:33:30+08:00",
+        "lat": 1.36454,
+        "lng": 103.962198,
+        "speed_kmh": 33,
+        "accuracy_m": 10.6,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-04T07:35:00+08:00",
+        "lat": 1.366956,
+        "lng": 103.958404,
+        "speed_kmh": 30,
+        "accuracy_m": 7.1,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      },
+      {
+        "timestamp": "2026-09-04T07:35:48+08:00",
+        "lat": 1.368405,
+        "lng": 103.956128,
+        "speed_kmh": 28,
+        "accuracy_m": 7.3,
+        "status": "en_route",
+        "speed_limit_kmh": null
+      }
+    ],
+    "rider_app_location": {
+      "available": false,
+      "note": "Rider app location not shared during this trip.",
+      "pings": []
+    },
+    "chat_logs": [
+      {
+        "timestamp": "2026-09-04T07:32:00+08:00",
+        "sender": "driver",
+        "type": "message",
+        "content": "Sorry sir, I don't want to take this trip. Please cancel first."
+      },
+      {
+        "timestamp": "2026-09-04T07:32:30+08:00",
+        "sender": "rider",
+        "type": "message",
+        "content": "Ok, cancelling."
+      },
+      {
+        "timestamp": "2026-09-04T07:36:00+08:00",
+        "sender": "system",
+        "type": "system",
+        "content": "Trip cancelled by rider. Cancellation fee of $6.61 applied."
+      }
+    ],
+    "app_events": [
+      {
+        "timestamp": "2026-09-04T07:30:00+08:00",
+        "event_type": "booking_confirmed",
+        "details": "Rider R-5111 booked trip TRIP-PREC-NS-11 from White Sands, Pasir Ris to Suntec City (Tower 3 taxi stand). On-demand booking. Estimated pickup 07:37. Pickup pin set by rider."
+      },
+      {
+        "timestamp": "2026-09-04T07:30:15+08:00",
+        "event_type": "driver_assigned",
+        "details": "Driver D-9109 (Azman Latif, Honda Fit (SGX 6402 L)) matched. ETA 7 min."
+      },
+      {
+        "timestamp": "2026-09-04T07:30:20+08:00",
+        "event_type": "driver_en_route",
+        "details": "Driver started navigating to pickup location. Live tracking enabled."
+      },
+      {
+        "timestamp": "2026-09-04T07:36:00+08:00",
+        "event_type": "trip_cancelled_by_rider",
+        "details": "Rider cancelled the trip in-app 5.8 min after matching. $6.61 cancellation fee charged to rider payment method (e-wallet)."
+      },
+      {
+        "timestamp": "2026-09-04T07:36:05+08:00",
+        "event_type": "driver_released",
+        "details": "Driver D-9109 released from trip. Trip status: cancelled (rider_cancelled)."
+      }
+    ],
+    "traffic_incidents": null,
+    "attachments": [],
+    "policy_ref": "ryde-policy-v0.4"
+  },
+  "ruling": {
+    "id": "PREC-NS-11",
+    "outcome": "full_refund",
+    "refund_amount": 6.61,
+    "payer": "driver",
+    "rider_charge_amount": 0.0,
+    "driver_warning": true,
+    "rider_warning": false,
+    "driver_goodwill_paid_by_ryde": 0.0,
+    "escalate": false,
+    "provisional_outcome": null,
+    "safety_referral": false,
+    "security_flag": false,
+    "fraud_flag": false,
+    "confidence": 0.92,
+    "rules_cited": [
+      "NS-11",
+      "NS-14",
+      "G-6",
+      "G-7"
+    ],
+    "precedents_used": [],
+    "reasoning": "The driver wrote that they did not want the trip and asked the rider to cancel. The rider cancelled after the free window and was charged. A fee caused by the driver's request is refunded and charged to the driver with a warning (NS-11a, NS-14).",
+    "rider_explanation": null,
+    "driver_explanation": null
+  }
+}
