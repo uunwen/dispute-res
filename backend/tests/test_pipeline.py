@@ -73,7 +73,7 @@ async def test_pipeline_resolves_two_categories(seeded_session, ground_truth, mo
 
     assert route_ruling.id is not None
     assert no_show_ruling.id is not None
-    assert route_ruling.outcome.value == "partial_refund"
+    assert route_ruling.outcome.value == "full_refund"
     assert route_ruling.refund_amount > 0
     assert no_show_ruling.outcome.value == "full_refund"
     assert no_show_ruling.refund_amount > 0

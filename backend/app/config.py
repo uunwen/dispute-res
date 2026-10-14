@@ -35,12 +35,21 @@ class Settings(BaseSettings):
     embedding_similarity_cutoff: float = 0.25
 
     route_buffer_m: float = 100.0
-    route_min_extra_km: float = 2.0
+    # Policy v2.1 Section 1.3: deviation tolerance is 1 km.
+    route_min_extra_km: float = 1.0
     route_min_fraction_outside: float = 0.2
     route_traffic_speed_kmh: float = 15.0
+    # Policy v2.1 Section 6.2: escalate when deviation exceeds 2 km.
+    route_escalate_km: float = 2.0
     stop_duration_min: float = 2.0
     noshow_proximity_m: float = 100.0
+    # Policy v2.1 Section 2.1: free wait time is 5 minutes from scheduled pickup.
     noshow_min_wait_min: float = 5.0
+    # Policy v2.1 Section 2.2: no-show cancellation fee is $5.00.
+    noshow_cancellation_fee: float = 5.0
+    # Policy v2.1 Section 2.4: rider goodwill credit when the driver no-shows
+    # without any contact attempt.
+    noshow_goodwill_credit: float = 5.0
     abuse_risk_threshold: float = 0.6
     escalation_enabled: bool = True
     escalation_threshold: float = 0.65

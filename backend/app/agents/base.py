@@ -84,7 +84,7 @@ class Agent:
             policy = (
                 context.policy
                 if context.policy is not None
-                else await retrieve_policy(context.claim_text, category=context.category, k=4)
+                else await retrieve_policy(context.claim_text, category=context.category, k=3)
             )
             evidence, tool_calls = await self._gather_evidence(context, policy, rider_id, driver_id)
 

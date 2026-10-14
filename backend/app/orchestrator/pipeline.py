@@ -71,7 +71,7 @@ async def resolve_dispute(dispute_id: int, *, rebuttal: bool | None = None, tone
     evidence = await _gather_trip_evidence(dispute.trip_id)
     profiler.record("evidence_tools", time.perf_counter() - evidence_start, calls=6)
 
-    policy = await retrieve_policy(dispute.claim_text, category=dispute.category.value, k=4)
+    policy = await retrieve_policy(dispute.claim_text, category=dispute.category.value, k=3)
     rule_result = evaluate(dispute.category.value, evidence)
 
     all_evidence = [*evidence, rider_history_item, driver_history_item]

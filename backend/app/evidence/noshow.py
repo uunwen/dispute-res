@@ -102,6 +102,9 @@ async def analyze_noshow(trip_id: int, session=None) -> EvidenceItem:
                     "proximity_threshold_m": settings.noshow_proximity_m,
                     "min_wait_min": settings.noshow_min_wait_min,
                     "trip_completed": True,
+                    "driver_chat_attempts": 0,
+                    "driver_call_attempts": 0,
+                    "contact_obligation_met": True,
                     "fee": round(trip.cancellation_fee, 2),
                 },
             }
@@ -129,6 +132,22 @@ async def analyze_noshow(trip_id: int, session=None) -> EvidenceItem:
         ).scalars().all()
         rider_reachable = len(rider_msgs) > 0
 
+        driver_msgs = (
+            await s.execute(
+                select(models.ChatMessage.id)
+                .where(
+                    models.ChatMessage.trip_id == trip_id,
+                    models.ChatMessage.sender_id == trip.driver_id,
+                )
+            )
+        ).scalars().all()
+        driver_chat_attempts = len(driver_msgs)
+        # Call records are not modelled in the data schema yet; Policy v2.1
+        # Section 2.3 requires >=1 chat message AND >=1 call, so until call data
+        # is ingested the contact obligation is treated as unmet.
+        driver_call_attempts = 0
+        contact_obligation_met = driver_chat_attempts >= 1 and driver_call_attempts >= 1
+
         result = compute_noshow(
             pickup,
             pts,
@@ -137,6 +156,9 @@ async def analyze_noshow(trip_id: int, session=None) -> EvidenceItem:
             rider_reachable=rider_reachable,
         )
         result["data"]["fee"] = round(trip.cancellation_fee, 2)
+        result["data"]["driver_chat_attempts"] = driver_chat_attempts
+        result["data"]["driver_call_attempts"] = driver_call_attempts
+        result["data"]["contact_obligation_met"] = contact_obligation_met
         return result_to_evidence("noshow", trip_id, trip_id, result)
 
     if session is not None:

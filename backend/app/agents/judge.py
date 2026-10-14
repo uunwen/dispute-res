@@ -281,6 +281,12 @@ class Judge:
         reasons = []
         if context.category == "safety_incident":
             reasons.append("safety_incident")
+        if context.category == "route_deviation":
+            for e in context.evidence:
+                ek = e.data.get("extra_distance_km")
+                if ek is not None and ek > settings.route_escalate_km:
+                    reasons.append("route_deviation_over_2km")
+                    break
         if decision["disagreement"]:
             reasons.append("rule_llm_disagreement")
         if decision["confidence"] < settings.escalation_threshold:

@@ -15,9 +15,15 @@ _CATEGORY_TO_SOURCE = {
     "no_show": "no_show_fee",
     "fare_dispute": "fare_surge_promo",
     "safety_incident": "safety_incident",
+    "property_damage": "property_damage",
 }
 
-_MAX_K = 4
+# Precedents (Policy v2.1 Section 7) are ingested under this source tag.
+_PRECEDENT_SOURCE = "precedent"
+
+# Retrieval budget: up to 3 policy chunks and 2 precedents per dispute.
+_MAX_POLICY_K = 3
+_MAX_PRECEDENT_K = 2
 
 # Policy retrieval is deterministic (static chunks, same query + category) so its
 # results can be shared. Both advocates issue the same query for a dispute; this
@@ -41,13 +47,13 @@ def clear_retrieval_cache() -> None:
     _retrieval_cache.clear()
 
 
-async def retrieve_policy(query: str, category: str | None = None, k: int = 4, session=None) -> list[dict]:
-    """Return the ``k`` most similar policy chunks to ``query``.
+async def retrieve_policy(query: str, category: str | None = None, k: int = 3, session=None) -> list[dict]:
+    """Return the most similar policy chunks plus precedents for ``query``.
 
-    Uses pgvector cosine distance. When ``category`` is provided the search is
-    restricted to the corresponding policy source. Each result includes
-    ``source``, ``section``, ``text`` and ``similarity`` so agents can cite it.
-    Results below the configured minimum similarity cutoff are dropped.
+    Up to ``k`` (max 3) policy chunks for the dispute category and up to 2
+    precedent rulings are returned together. Each result includes ``source``,
+    ``section``, ``text`` and ``similarity`` so agents can cite it. Results below
+    the configured minimum similarity cutoff are dropped.
 
     Refuses to run if the query embedding's provider/model/dimension differs from
     what the stored chunks were ingested with, to never silently compare vectors
@@ -55,7 +61,7 @@ async def retrieve_policy(query: str, category: str | None = None, k: int = 4, s
     """
     start = time.perf_counter()
     try:
-        k = max(1, min(k, _MAX_K))
+        k = max(1, min(k, _MAX_POLICY_K))
         key = (category, _normalize_query(query), k, embeddings.active_provider, embeddings.active_model)
         cached = _retrieval_cache.get(key)
         if cached is not None:
@@ -67,6 +73,15 @@ async def retrieve_policy(query: str, category: str | None = None, k: int = 4, s
         return results
     finally:
         profiler.record("policy_retrieval", time.perf_counter() - start)
+
+
+def _to_result(row) -> dict:
+    return {
+        "source": row.source,
+        "section": row.section,
+        "text": row.text,
+        "similarity": round(1.0 - row.distance, 4),
+    }
 
 
 async def _retrieve(query: str, category: str | None, k: int, session) -> list[dict]:
@@ -100,28 +115,29 @@ async def _retrieve(query: str, category: str | None, k: int, session) -> list[d
             )
 
         distance = models.PolicyChunk.embedding.cosine_distance(qvec)
-        stmt = select(
+        base = select(
             models.PolicyChunk.id,
             models.PolicyChunk.source,
             models.PolicyChunk.section,
             models.PolicyChunk.text,
             distance.label("distance"),
         )
+
+        policy_stmt = base.where(models.PolicyChunk.source != _PRECEDENT_SOURCE)
         if category:
             source = _CATEGORY_TO_SOURCE.get(category, category)
-            stmt = stmt.where(models.PolicyChunk.source == source)
-        stmt = stmt.order_by(distance).limit(k)
+            policy_stmt = policy_stmt.where(models.PolicyChunk.source == source)
+        policy_stmt = policy_stmt.order_by(distance).limit(k)
+        policy_rows = (await s.execute(policy_stmt)).all()
 
-        rows = (await s.execute(stmt)).all()
-        return [
-            {
-                "source": r.source,
-                "section": r.section,
-                "text": r.text,
-                "similarity": round(1.0 - r.distance, 4),
-            }
-            for r in rows
-        ]
+        precedent_stmt = (
+            base.where(models.PolicyChunk.source == _PRECEDENT_SOURCE)
+            .order_by(distance)
+            .limit(_MAX_PRECEDENT_K)
+        )
+        precedent_rows = (await s.execute(precedent_stmt)).all()
+
+        return [_to_result(r) for r in policy_rows] + [_to_result(r) for r in precedent_rows]
 
     if session is not None:
         return await _run(session)

@@ -1,10 +1,12 @@
-# Deterministic dispute-resolution rules.
+# Deterministic dispute-resolution rules, aligned to the organizer's
+# "Ryde Dispute Resolution Policy v2.1" (see backend/policies/*.md).
 #
 # EXTENSION POINT: add new rules by appending entries to this list. Each rule
 # needs:
 #   id         - unique string identifier
-#   category   - the dispute category this rule applies to (e.g. route_deviation,
-#                no_show, fare_dispute)
+#   category   - the dispute category this rule applies to (route_deviation,
+#                no_show, fare_dispute, property_damage, safety_incident)
+#   citation   - the v2.1 policy section the rule implements (e.g. "2.3")
 #   conditions - a safe boolean expression over the evidence context (evaluated
 #                without eval(); only arithmetic, comparison, boolean operators
 #                and the functions min/max/abs/round are allowed)
@@ -14,32 +16,73 @@
 #
 # Rules are evaluated in order and the first matching rule wins.
 rules:
+  # --- Route deviation (Policy v2.1 Section 1) ---
+
+  # 1.3 "Driver reroutes without traffic justification, deviation > 1km" -> full
+  # refund of the excess distance fare. The amount is a marked PLACEHOLDER: v2.1
+  # refunds the excess distance fare (actual - recommended), which the evidence
+  # layer does not compute yet, so we keep the proportional proxy below.
   - id: route_deviation_major
     category: route_deviation
-    conditions: "extra_distance_km > 2 and not traffic_signal"
-    outcome: partial_refund
-    amount: "fare * min(1, extra_distance_km / total_km)"
+    citation: "1.3"
+    conditions: "extra_distance_km > 1 and not traffic_signal"
+    outcome: full_refund
+    amount: "fare * min(1, extra_distance_km / total_km)"  # PLACEHOLDER (excess distance fare)
 
+  # 1.3 "Driver reroutes for traffic, rider not informed, deviation > 1km" ->
+  # partial refund. The rider-notification split is not yet modelled, so a traffic
+  # detour over tolerance is treated as a partial refund.
+  - id: route_deviation_traffic
+    category: route_deviation
+    citation: "1.3"
+    conditions: "extra_distance_km > 1 and traffic_signal"
+    outcome: partial_refund
+    amount: "fare * min(1, extra_distance_km / total_km)"  # PLACEHOLDER (excess distance fare)
+
+  # 1.3 within tolerance (deviation <= 1km) -> no refund.
   - id: route_deviation_minor
     category: route_deviation
-    conditions: "extra_distance_km <= 0.5"
+    citation: "1.3"
+    conditions: "extra_distance_km <= 1"
     outcome: no_action
     amount: "0"
 
+  # --- No-show / cancellation fee (Policy v2.1 Section 2) ---
+
+  # 2.4 Driver failed to arrive (scheduled pickup + 5 min) -> refund the fee.
   - id: no_show_driver_never_arrived
     category: no_show
+    citation: "2.4"
     conditions: "not driver_arrived"
     outcome: full_refund
     amount: "fee"
 
+  # 2.3 Contact obligation: at least 1 chat message AND 1 call before cancelling,
+  # otherwise the fee is voided.
+  - id: no_show_contact_obligation_violated
+    category: no_show
+    citation: "2.3"
+    conditions: "driver_arrived and not contact_obligation_met"
+    outcome: full_refund
+    amount: "fee"
+
+  # 2.1/2.2 Driver waited the free 5 minutes and met the contact obligation ->
+  # the fee stands.
   - id: no_show_rider_waited
     category: no_show
-    conditions: "driver_arrived and wait_duration_min >= 5"
+    citation: "2.1"
+    conditions: "driver_arrived and contact_obligation_met and wait_duration_min >= 5"
     outcome: no_action
     amount: "0"
 
-  - id: fare_discrepancy_5pct
+  # --- Fare / surge (Policy v2.1 Section 3) ---
+
+  # 3.3 Surge increase without notification -> full refund of the surge
+  # differential (actual - quote). Rider-notification is not modelled yet, so a
+  # positive surge differential under a surge multiplier is treated as un-notified.
+  - id: surge_increase_not_notified
     category: fare_dispute
-    conditions: "abs(arithmetic_discrepancy) > 0.05 * recomputed_expected_fare"
-    outcome: partial_refund
-    amount: "abs(arithmetic_discrepancy)"
+    citation: "3.3"
+    conditions: "surge_multiplier > 1 and surge_differential > 0"
+    outcome: full_refund
+    amount: "surge_differential"

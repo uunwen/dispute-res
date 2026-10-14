@@ -15,6 +15,20 @@ def test_chunk_markdown_splits_sections():
     assert "body one" in chunks[0]["text"]
 
 
+def test_chunk_markdown_splits_numbered_h3():
+    doc = "# Policy\n\n### 2.3 Driver Contact Obligation\nbody a\n\n### 2.4 Driver No-Show\nbody b\n"
+    chunks = chunk_markdown(doc)
+    assert [c["section"] for c in chunks] == ["2.3", "2.4"]
+    assert chunks[0]["text"].startswith("### 2.3 Driver Contact Obligation")
+    assert "body a" in chunks[0]["text"]
+
+
+def test_chunk_markdown_precedent_section():
+    doc = "# Precedents\n\n### Precedent 7.1: Route Deviation Without Notification\nfacts one\n\n### Precedent 7.2: Surge\nfacts two\n"
+    chunks = chunk_markdown(doc)
+    assert [c["section"] for c in chunks] == ["7.1", "7.2"]
+
+
 async def test_retrieve_policy_raises_on_model_mismatch(seeded_session, monkeypatch):
     dim = emb_mod.settings.embedding_dim
 
@@ -57,8 +71,9 @@ async def test_retrieve_policy_returns_cited_chunks(seeded_session):
         "driver took a long detour", category="route_deviation", k=2, session=seeded_session
     )
     assert results
+    sources = {r["source"] for r in results}
+    assert "route_deviation" in sources
     for r in results:
-        assert r["source"] == "route_deviation"
         assert r["section"]
         assert "similarity" in r
         assert "text" in r

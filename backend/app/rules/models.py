@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field
 class Rule(BaseModel):
     id: str
     category: str
+    citation: str = ""
     conditions: str
     outcome: str
     amount: str = "0"

@@ -103,10 +103,10 @@ def test_load_rules_real_yaml():
     assert all(r.id and r.conditions for r in rules)
 
 
-async def test_scenario_A_rules_partial_refund(seeded_session, ground_truth):
+async def test_scenario_A_rules_full_refund(seeded_session, ground_truth):
     tid = trip_id_for(ground_truth, "route_deviation")
     evidence = await route_evidence.analyze_route_deviation(tid, session=seeded_session)
     result = evaluate("route_deviation", [evidence])
-    assert result.outcome == "partial_refund"
+    assert result.outcome == "full_refund"
     assert result.refund_amount > 0
     assert result.matched_rule_ids == ["route_deviation_major"]

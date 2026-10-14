@@ -1,64 +1,55 @@
-# General Principles
+# General Principles and Ruling Thresholds
 
-## 1. Purpose and Authority
+### 6.1 Monetary Thresholds
 
-This framework guides how the Rider Advocate Agent, Driver Advocate Agent and Judge Agent gather and assess evidence, apply documented rules, explain outcomes and escalate uncertain or sensitive cases.
-It is not an official Ryde policy.
-Policy hierarchy: (1) verified, currently applicable Ryde policy; (2) documented team-approved simulation rules; (3) unresolved questions.
-No team-proposed threshold may be represented as a Ryde rule. When an official rule conflicts with a simulation assumption, the official rule takes precedence once its applicability is confirmed.
+| Dispute Value | Ruling Path | Agent Confidence Requirement |
+|---|---|---|
+| Under $10 | AI agent ruling is **final** | Any confidence level |
+| $10 – $50 | AI agent ruling with **80%+ confidence** | If confidence < 80%, escalate to human review |
+| Above $50 | **Always human review** | N/A — AI agent prepares case file only |
 
-## 2. Global Principles
+### 6.2 Category Thresholds
 
-- Neutrality: both parties are assessed against the same policy and evidence standards.
-- Traceability: each conclusion cites a policy section as [source#section] and the evidence record ids that support it.
-- Observability: inter-agent messages, evidence retrieved and policy lookups are written to a communication log that can be shown in the demo.
-- No fabrication: missing GPS, messages, photos or receipts must not be inferred to exist.
-- Proportionality: remedies are tied to verified losses and applicable published limits.
-- Privacy: restrict access to trip records, messages and sensitive reports. Retain only necessary data.
-- Human oversight by exception: safety incidents, serious allegations, high-impact sanctions and material evidence conflicts are escalated.
-- Autonomy for standard cases: when the conditions in section 5 are met, the Judge Agent issues its ruling and recommended action without human review.
-- No automatic irreversible action: refunds and account sanctions remain proposed actions unless a separately authorised execution process exists.
+| Dispute Category | Ruling Path |
+|---|---|
+| Safety incident | **Always human review** (see Section 5) |
+| Fare dispute < $10 | AI agent ruling is final |
+| Fare dispute $10 – $50 | AI agent ruling if confidence ≥ 80%, else escalate |
+| Fare dispute > $50 | Always human review |
+| Route deviation | AI agent ruling if confidence ≥ 80% and deviation ≤ 2km, else escalate |
+| Property damage (cleaning ≤ $50) | AI agent ruling if photo evidence is verifiable |
+| Property damage (repair > $50) | Always human review |
+| No-show / cancellation | AI agent ruling is final (fee is fixed at $5.00) |
 
-## 3. Decision Outcomes
+### 6.3 Confidence Calibration
 
-- REFUND_FULL: propose a full refund of the eligible disputed charge.
-- REFUND_PARTIAL: propose a refund of the verified eligible portion and show the calculation.
-- COMPENSATION_PROPOSED: propose compensation up to the published cap for the verified claim type and show the calculation.
-- COMPENSATION_REVIEW: refer compensation for authorised approval when the claim exceeds the published cap or the rule's applicability is unclear.
-- NO_ADJUSTMENT: the evidence and applicable policy do not support an adjustment.
-- REQUEST_EVIDENCE: a defined missing item may resolve the case.
-- HUMAN_REVIEW: do not finalise automatically. Assign to an authorised reviewer.
-  Each ruling uses exactly one outcome. An amount is stated only when the evidence supports it.
+- Agent confidence is calculated based on: evidence completeness, policy clarity, precedent alignment, and party credibility scores.
+- If any party has a fraud flag ≥ 1, the confidence threshold is raised to 95% regardless of dispute value.
 
-## 4. Escalation Triggers
+---
 
-- G-001: required evidence is missing and the outcome would materially affect a party.
-- G-002: evidence sources contradict each other on a decisive fact.
-- G-003: a safety allegation or potential immediate harm.
-- G-004: possible forged evidence, abuse or fraud. Refer for review and do not label a person guilty.
-- G-005: policy applicability, version or interpretation is unclear.
-- G-006: model confidence is low or uncalibrated. Confidence alone never establishes liability.
-- G-007: a historical behaviour profile (dispute history, ratings, account age) is used. It may raise a fraud or bad-faith flag for review but never establishes liability or overrides case evidence.
+## Appendix A: Glossary
 
-## 5. Auto-Resolution Conditions
+| Term | Definition |
+|---|---|
+| **Upfront Quote** | The fare estimate shown to the rider at the time of booking, binding at the surge multiplier in effect at that moment |
+| **Actual Fare** | The final fare charged after trip completion, calculated using actual distance, actual time, and the surge multiplier in effect at trip start |
+| **Surge Differential** | The difference between the actual fare and the upfront quote, attributable solely to a change in surge multiplier |
+| **Surge-Exempt** | Fare components that are not multiplied by the surge multiplier (e.g., booking fee) |
+| **No-Show** | A cancellation initiated by the driver after the free wait period because the rider did not appear at the pickup location |
+| **AI Agent Ruling** | A dispute resolution decision issued by the RydeResolve AI system without human intervention |
+| **Human Review** | A dispute resolution decision requiring human reviewer involvement |
 
-The Judge Agent may finalise a ruling without human review only when all of these hold:
+---
 
-- Required evidence for the category is present (G-001 not triggered).
-- There is no decisive contradiction (G-002).
-- There is no safety allegation (G-003) and no fraud signal (G-004).
-- The applicable rule is verified and current (G-005).
-- Confidence meets the team-approved threshold (G-006). No threshold value or confidence method is set in this version.
-  Otherwise the case follows the escalation triggers in section 4.
+## Appendix B: Revision History
 
-## 6. Appeals and Human Override
+| Version | Date | Changes |
+|---|---|---|
+| 1.0 | 2025-06-01 | Initial policy |
+| 2.0 | 2025-11-15 | Added surge pricing notification requirements; introduced AI agent ruling thresholds |
+| 2.1 | 2026-01-01 | Added precedent rulings framework; expanded property damage evidence requirements; added interim safety measures |
 
-- Each party can submit new evidence or challenge a proposed ruling. An appeal is handled as a new-evidence resubmission.
-- Ryde's published mess-claim process gives a driver 24 hours from the outcome to appeal. Ryde's Driver-Partner Handbook says drivers can respond before final decisions, except in urgent or high-risk cases.
-- Human overrides are recorded with reviewer, reason, date and policy version.
+---
 
-## 7. Sources
-
-- Tencent Cloud AI Singapore Hackathon 2026 Handbook, Digital Native Track - Ryde, pp. 20-25.
-- Ryde Official Driver-Partner Handbook 2025 (last updated 11 April 2025), p. 13.
-- Ryde Help Centre, My Rider Made a Mess (read 10 October 2026).
+*This document is a reference for the RydeResolve multi-agent dispute resolution system. All AI agents must cite the applicable policy section in their ruling rationale.*
