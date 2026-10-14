@@ -86,6 +86,9 @@ class Trip(Base):
     estimated_distance_km: Mapped[float] = mapped_column(Float, nullable=False)
     estimated_duration_min: Mapped[float] = mapped_column(Float, nullable=False)
     optimal_route_polyline: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    # The full, original case object as ingested from the official sample files
+    # (e.g. data/official/DISP-001.json). Used by the case_facts evidence layer.
+    raw_case: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
 
 
 class GpsPoint(Base):
@@ -131,6 +134,9 @@ class Dispute(Base):
     claim_text: Mapped[str] = mapped_column(Text, nullable=False)
     status: Mapped[str] = mapped_column(String(50), nullable=False)
     priority: Mapped[str] = mapped_column(String(50), nullable=False)
+    # Stable external reference for cases ingested from the official sample
+    # files (e.g. "DISP-002"). Null for locally generated disputes.
+    external_id: Mapped[str | None] = mapped_column(String(64), unique=True, nullable=True)
     created_at: Mapped[datetime.datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, server_default=func.now()
     )

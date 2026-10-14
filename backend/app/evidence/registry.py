@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Any, Awaitable, Callable
 
-from app.evidence import chat, fare, history, noshow, route
+from app.evidence import chat, case_facts, fare, history, noshow, route
 
 
 @dataclass
@@ -58,6 +58,12 @@ TOOLS: dict[str, Tool] = {
         description="Extract threats, admissions and sentiment from the trip chat log.",
         parameters=_trip_parameters(),
         func=chat.analyze_chat,
+    ),
+    "analyze_case_facts": Tool(
+        name="analyze_case_facts",
+        description="Extract deterministic case facts (contact attempts, wait, surge notification, deviation notification) from the trip's raw case.",
+        parameters=_trip_parameters(),
+        func=case_facts.analyze_case_facts,
     ),
 }
 

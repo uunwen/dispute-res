@@ -104,9 +104,11 @@ def test_load_rules_real_yaml():
 
 
 async def test_scenario_A_rules_full_refund(seeded_session, ground_truth):
+    from app.evidence.case_facts import compute_case_facts
+
     tid = trip_id_for(ground_truth, "route_deviation")
     evidence = await route_evidence.analyze_route_deviation(tid, session=seeded_session)
-    result = evaluate("route_deviation", [evidence])
+    result = evaluate("route_deviation", [evidence, _item(compute_case_facts(None))])
     assert result.outcome == "full_refund"
     assert result.refund_amount > 0
     assert result.matched_rule_ids == ["route_deviation_major"]

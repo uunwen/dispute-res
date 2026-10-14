@@ -47,8 +47,6 @@ def compute_fare(trip):
         "surge_premium": round(surge_premium, 2),
         "promo_discount": round(promo, 2),
         "quote_discrepancy": round(quote_discrepancy, 2),
-        # Policy v2.1 Section 3.4: surge differential = actual fare - upfront quote.
-        "surge_differential": round(quote_discrepancy, 2),
         "likely_cause": cause,
     }
 

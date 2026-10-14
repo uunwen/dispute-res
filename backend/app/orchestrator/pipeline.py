@@ -14,6 +14,7 @@ from app.config import settings
 from app.db import models
 from app.db.session import async_session_factory
 from app.evidence import chat as chat_evidence
+from app.evidence import case_facts as case_facts_evidence
 from app.evidence import fare as fare_evidence
 from app.evidence import noshow as noshow_evidence
 from app.evidence import route as route_evidence
@@ -34,6 +35,7 @@ async def _gather_trip_evidence(trip_id: int) -> list:
         fare_evidence.validate_fare(trip_id),
         noshow_evidence.analyze_noshow(trip_id),
         chat_evidence.analyze_chat(trip_id),
+        case_facts_evidence.analyze_case_facts(trip_id),
         return_exceptions=True,
     )
     return [r for r in results if not isinstance(r, BaseException)]
