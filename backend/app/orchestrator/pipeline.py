@@ -29,6 +29,17 @@ from app.schemas.case_brief import CaseBrief
 logger = logging.getLogger(__name__)
 
 
+def _fraud_flag_count(trip: models.Trip) -> int:
+    """Total fraud flags across the rider and driver (Policy v2.1 Sec 6.3).
+
+    Read from the trip's raw_case profile; synthetic seed data carries none.
+    """
+    raw = trip.raw_case or {}
+    rider = int((raw.get("rider_profile") or {}).get("fraud_flags") or 0)
+    driver = int((raw.get("driver_profile") or {}).get("fraud_flags") or 0)
+    return rider + driver
+
+
 async def _gather_trip_evidence(trip_id: int) -> list:
     results = await asyncio.gather(
         route_evidence.analyze_route_deviation(trip_id),
@@ -121,6 +132,8 @@ async def resolve_dispute(dispute_id: int, *, rebuttal: bool | None = None, tone
         rule_result=rule_result,
         tone=tone,
         age_band=rider.age_band if rider else None,
+        dispute_amount=trip.actual_fare,
+        fraud_flags=_fraud_flag_count(trip),
     )
     ruling = await Judge().run(judge_ctx)
 

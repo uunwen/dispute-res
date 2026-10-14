@@ -52,7 +52,22 @@ class Settings(BaseSettings):
     noshow_goodwill_credit: float = 5.0
     abuse_risk_threshold: float = 0.6
     escalation_enabled: bool = True
-    escalation_threshold: float = 0.65
+    # Policy v2.1 Section 6.1 monetary thresholds (disputed amount = actual fare):
+    # below escalation_low_value -> final at any confidence; between low and high
+    # -> confidence threshold applies; above high -> always escalate.
+    escalation_low_value: float = 10.0
+    escalation_high_value: float = 50.0
+    # Policy v2.1 Section 6.1: confidence threshold for the $10-50 band.
+    escalation_threshold: float = 0.80
+    # Policy v2.1 Section 6.3: raised threshold when a party has a fraud flag.
+    escalation_fraud_threshold: float = 0.95
+    # Policy v2.1 Section 5.2: safety terms that force escalation regardless of
+    # the selected dispute category.
+    safety_keywords: list[str] = [
+        "threat", "threaten", "harass", "assault", "abuse", "dangerous",
+        "reckless", "unsafe", "sexual", "inappropriate", "emergency", "sos",
+        "weapon", "violence", "scared", "fear", "hurt", "attack",
+    ]
     fraud_dispute_frequency_days: int = 30
     fraud_dispute_frequency_threshold: int = 3
     fraud_win_rate_threshold: float = 0.4

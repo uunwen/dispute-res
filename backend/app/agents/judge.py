@@ -50,6 +50,10 @@ class JudgeContext:
     rule_result: RuleResult | None = None
     tone: str = "neutral"
     age_band: str | None = None
+    # The disputed monetary value (trip.actual_fare), used for Sec 6.1 thresholds.
+    dispute_amount: float = 0.0
+    # Total fraud flags across the rider and driver (Sec 6.3).
+    fraud_flags: int = 0
 
 
 def reconcile(rule_result: RuleResult, llm_ruling: LLMRuling) -> dict:
@@ -175,7 +179,16 @@ class Judge:
     async def run(self, context: JudgeContext) -> models.Ruling:
         decision = await self.decide(context)
         escalate, reason = self._should_escalate(context, decision)
-        summary = self._build_human_review_summary(context, decision, reason) if escalate else None
+        safety = self._is_safety(context)
+        if escalate and safety:
+            # Sec 5.2: safety incidents get a case file only — no automated
+            # outcome, no refund and no recommended resolution.
+            decision = self._neutralize_for_safety(decision)
+            summary = self._build_human_review_summary(context, decision, reason, safety=True)
+        elif escalate:
+            summary = self._build_human_review_summary(context, decision, reason, safety=False)
+        else:
+            summary = None
         return await self._persist(context, decision, escalate, summary)
 
     async def _call_llm(self, context: JudgeContext, rule_result: RuleResult) -> LLMRuling:
@@ -275,25 +288,67 @@ class Judge:
 
         return ruling
 
+    def _matches_safety_keywords(self, text: str) -> bool:
+        lowered = text.lower()
+        return any(kw in lowered for kw in settings.safety_keywords)
+
+    def _is_safety(self, context: JudgeContext) -> bool:
+        """Sec 5.2: a safety dispute is one filed under the safety category or one
+        whose text mentions a safety term, regardless of the selected category."""
+        return context.category == "safety_incident" or self._matches_safety_keywords(context.claim_text)
+
+    def _route_over_2km(self, context: JudgeContext) -> bool:
+        for e in context.evidence:
+            ek = e.data.get("deviation_km")
+            if ek is None:
+                ek = e.data.get("extra_distance_km")
+            if ek is not None and ek > settings.route_escalate_km:
+                return True
+        return False
+
+    def _confidence_threshold(self, context: JudgeContext) -> float | None:
+        """Sec 6.1/6.2/6.3: the confidence threshold, or None when no confidence check.
+
+        A fraud flag raises the threshold to 95% regardless of value (6.3), and a
+        route-deviation dispute always needs 80%+ confidence regardless of value
+        (6.2). Other categories follow the monetary bands (6.1): below $10 is
+        final at any confidence, above $50 is always escalated.
+        """
+        if context.fraud_flags >= 1:
+            return settings.escalation_fraud_threshold
+        if context.category == "route_deviation":
+            return settings.escalation_threshold
+        if context.dispute_amount < settings.escalation_low_value:
+            return None
+        if context.dispute_amount > settings.escalation_high_value:
+            return None
+        return settings.escalation_threshold
+
     def _should_escalate(self, context: JudgeContext, decision: dict) -> tuple[bool, str | None]:
         if not settings.escalation_enabled:
             return False, None
         reasons = []
-        if context.category == "safety_incident":
-            reasons.append("safety_incident")
-        if context.category == "route_deviation":
-            for e in context.evidence:
-                ek = e.data.get("extra_distance_km")
-                if ek is not None and ek > settings.route_escalate_km:
-                    reasons.append("route_deviation_over_2km")
-                    break
+        if self._is_safety(context):
+            reasons.append("safety")
+        if context.dispute_amount > settings.escalation_high_value:
+            reasons.append("amount_over_50")
+        if context.category == "route_deviation" and self._route_over_2km(context):
+            reasons.append("route_deviation_over_2km")
         if decision["disagreement"]:
             reasons.append("rule_llm_disagreement")
-        if decision["confidence"] < settings.escalation_threshold:
-            reasons.append("low_confidence")
+        threshold = self._confidence_threshold(context)
+        if threshold is not None and decision["confidence"] < threshold:
+            reasons.append(f"low_confidence(<{threshold:.2f})")
         if reasons:
             return True, ", ".join(reasons)
         return False, None
+
+    def _neutralize_for_safety(self, decision: dict) -> dict:
+        """Sec 5.2: strip the automated outcome and refund from a safety escalation."""
+        decision["outcome"] = "no_action"
+        decision["amount"] = 0.0
+        decision["reasoning"] = "Safety incident: no automated ruling issued (Sec 5.2)."
+        return decision
 
     def _fraud_penalty(self, outcome: str, signal: FraudSignal | None) -> float:
         """Reduce confidence when the favored side has a high fraud risk.
@@ -311,19 +366,25 @@ class Judge:
         return 0.0
 
     def _build_human_review_summary(
-        self, context: JudgeContext, decision: dict, reason: str | None
+        self, context: JudgeContext, decision: dict, reason: str | None, *, safety: bool = False
     ) -> HumanReviewSummary:
+        if safety:
+            ruling = "No automated ruling — safety incident escalated for human review."
+            recommended = ""  # Sec 5.2: AI must not recommend a resolution.
+        else:
+            ruling = (
+                f"{decision['outcome']} — refund {decision['amount']:.2f} "
+                f"(confidence {decision['confidence']:.2f})"
+            )
+            recommended = "Review the evidence and confirm or override the provisional ruling."
         return HumanReviewSummary(
             dispute=f"#{context.dispute_id} ({context.category}): {context.claim_text}",
             rider_brief=self._summarize_brief(context.rider_brief),
             driver_brief=self._summarize_brief(context.driver_brief),
             key_evidence_ids=decision["deciding_evidence_ids"],
-            ruling=(
-                f"{decision['outcome']} — refund {decision['amount']:.2f} "
-                f"(confidence {decision['confidence']:.2f})"
-            ),
+            ruling=ruling,
             escalation_reason=reason or "",
-            recommended_action="Review the evidence and confirm or override the provisional ruling.",
+            recommended_action=recommended,
         )
 
     @staticmethod
