@@ -16,7 +16,12 @@ interface ActiveDispute {
   status: string
 }
 
-export default function App() {
+/**
+ * Legacy live-debate view, kept so the multi-agent investigation flow still
+ * works end-to-end. The new shell (NewApp) is the default entry point;
+ * this component is retained for reference.
+ */
+export default function LegacyLiveDebate() {
   const [trips, setTrips] = useState<Trip[]>([])
   const [disputes, setDisputes] = useState<DisputeListItem[]>([])
   const [categories, setCategories] = useState<CategoryMeta[]>([])
@@ -40,14 +45,16 @@ export default function App() {
   useEffect(() => {
     api.listTrips().then(setTrips).catch((e) => setError(String(e)))
     api.listDisputes().then(setDisputes).catch((e) => setError(String(e)))
-    api.fetchCategories().then((cats) => {
-      setCategories(cats)
-      const first = cats.find((c) => c.supported) ?? cats[0]
-      if (first) {
-        setCategory(first.value)
-        setClaimText(first.example_claim)
-      }
-    }).catch((e) => setError(String(e)))
+    api.fetchCategories()
+      .then((cats) => {
+        setCategories(cats)
+        const first = cats.find((c) => c.supported) ?? cats[0]
+        if (first) {
+          setCategory(first.value)
+          setClaimText(first.example_claim)
+        }
+      })
+      .catch((e) => setError(String(e)))
     return () => esRef.current?.close()
   }, [])
 
@@ -255,3 +262,7 @@ export default function App() {
     </div>
   )
 }
+
+/* The new shell is exported as a named export so it can replace App() without
+ * touching this file again. */
+export { default as NewApp } from './NewApp'

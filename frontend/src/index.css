@@ -1,44 +1,19 @@
-:root {
-  --bg: #f4f5f7;
-  --panel: #ffffff;
-  --border: #e3e6ea;
-  --text: #1f2328;
-  --muted: #6b7280;
-  --accent: #2f80ed;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  font-size: 14px;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.muted {
-  color: var(--muted);
-}
-
-.small {
-  font-size: 12px;
-}
-
-.mono {
-  font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
-  font-size: 12px;
-}
+@import './styles/tokens.css';
+@import './styles/base.css';
+@import './components/Sidebar.css';
+@import './components/StatusBadge.css';
+@import './components/StepProgress.css';
+@import './components/Card.css';
+@import './components/TopBar.css';
+@import './components/Dashboard.css';
+@import './components/DisputeDetail.css';
+@import './components/Wizard.css';
+@import './components/Debate.css';
+@import './components/Evidence.css';
+@import './components/Arguments.css';
+@import './pages/Ruling.css';
+@import './pages/DisputesList.css';
+@import './pages/Analytics.css';
+@import './pages/Policies.css';
+@import './pages/AgentLogs.css';
+@import './pages/Settings.css';

@@ -1,0 +1,127 @@
+/* ============================================================
+ * Disputes list page
+ * ============================================================
+ * Reuses .rp-card, .rp-table, .rp-tabs, .rp-btn from base / dashboard.
+ * Only adds: category filter, sortable headers, and a 2-pane layout
+ * that hosts the analytics pane on the right.
+ */
+
+.rp-disputes-list {
+  /* narrower gap so the page fits 2 columns cleanly */
+  gap: 20px;
+}
+
+.rp-disputes-list__toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: end;
+  gap: 12px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--rp-border);
+  background: #FAFBFC;
+}
+.rp-disputes-list__toolbar .rp-tabs {
+  border-bottom: none;
+  flex-wrap: wrap;
+}
+.rp-disputes-list__search {
+  margin: 0;
+  min-width: 220px;
+  max-width: 280px;
+}
+.rp-disputes-list__search input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius-sm);
+  background: #fff;
+  outline: none;
+  font-size: 13px;
+}
+.rp-disputes-list__search input:focus {
+  border-color: var(--rp-pink);
+  box-shadow: 0 0 0 3px var(--rp-pink-tint);
+}
+
+.rp-disputes-list__category {
+  margin: 0;
+  min-width: 180px;
+}
+.rp-disputes-list__category select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius-sm);
+  background: #fff;
+  outline: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+.rp-disputes-list__category select:focus {
+  border-color: var(--rp-pink);
+  box-shadow: 0 0 0 3px var(--rp-pink-tint);
+}
+
+/* Sortable headers */
+.rp-table th.is-sortable {
+  cursor: pointer;
+  user-select: none;
+}
+.rp-table th.is-sortable:hover {
+  color: var(--rp-text);
+}
+.rp-table th.is-sortable[aria-sort="ascending"],
+.rp-table th.is-sortable[aria-sort="descending"] {
+  color: var(--rp-pink);
+}
+.rp-table__sort-indicator {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 10px;
+  color: var(--rp-pink);
+}
+
+/* Confidence value cell */
+.rp-table .confidence {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--rp-text);
+}
+.rp-table .confidence.is-empty {
+  color: var(--rp-text-subtle);
+  font-weight: 500;
+}
+
+/* New Dispute CTA aligns with the page header */
+.rp-disputes-list__cta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Two-pane layout (disputes + analytics) on wide screens */
+.rp-disputes-with-analytics {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 20px;
+  align-items: start;
+}
+.rp-disputes-with-analytics > .rp-disputes-list {
+  min-width: 0;
+}
+.rp-disputes-with-analytics > .rp-analytics-pane {
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+@media (max-width: 1200px) {
+  .rp-disputes-with-analytics {
+    grid-template-columns: 1fr;
+  }
+  .rp-disputes-with-analytics > .rp-analytics-pane {
+    position: static;
+    max-height: none;
+  }
+}

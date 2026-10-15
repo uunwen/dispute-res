@@ -1,0 +1,57 @@
+.rp-stepper {
+  display: grid;
+  grid-template-columns: repeat(var(--rp-stepper-count, 4), 1fr);
+  position: relative;
+  padding: 0 12px 28px;
+}
+.rp-stepper__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.rp-stepper__step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: calc(50% + 14px);
+  right: calc(-50% + 14px);
+  height: 2px;
+  background: var(--rp-border);
+  z-index: 0;
+}
+.rp-stepper__step.is-complete::before,
+.rp-stepper__step.is-current::before {
+  background: var(--rp-pink);
+}
+.rp-stepper__bubble {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--rp-border);
+  color: var(--rp-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  border: 3px solid #fff;
+  position: relative;
+  z-index: 1;
+}
+.rp-stepper__step.is-current .rp-stepper__bubble,
+.rp-stepper__step.is-complete .rp-stepper__bubble {
+  background: var(--rp-pink);
+  color: #fff;
+}
+.rp-stepper__label {
+  font-size: 11px;
+  color: var(--rp-text-muted);
+  margin-top: 8px;
+  text-align: center;
+}
+.rp-stepper__step.is-current .rp-stepper__label,
+.rp-stepper__step.is-complete .rp-stepper__label {
+  color: var(--rp-text);
+  font-weight: 600;
+}
