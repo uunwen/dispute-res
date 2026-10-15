@@ -13,7 +13,7 @@
 
 .rp-disputes-list__toolbar {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto auto auto;
   align-items: end;
   gap: 12px;
   padding: 12px 20px;
@@ -60,6 +60,39 @@
 .rp-disputes-list__category select:focus {
   border-color: var(--rp-pink);
   box-shadow: 0 0 0 3px var(--rp-pink-tint);
+}
+
+.rp-disputes-list__source {
+  margin: 0;
+  min-width: 140px;
+}
+.rp-disputes-list__source select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius-sm);
+  background: #fff;
+  outline: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+.rp-disputes-list__source select:focus {
+  border-color: var(--rp-pink);
+  box-shadow: 0 0 0 3px var(--rp-pink-tint);
+}
+
+.rp-disputes-list__synthetic {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #B45309;
+  background: #FEF3C7;
+  border-radius: 4px;
+  padding: 2px 6px;
+  vertical-align: middle;
 }
 
 /* Sortable headers */

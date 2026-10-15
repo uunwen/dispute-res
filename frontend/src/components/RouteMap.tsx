@@ -1,57 +1,94 @@
-import { CircleMarker, MapContainer, Polyline, TileLayer } from 'react-leaflet'
+import { useEffect, useMemo } from 'react'
+import { CircleMarker, MapContainer, Polyline, TileLayer, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import type { TripGps } from '../api'
 
 interface Props {
   gps: TripGps | null
+  className?: string
+  height?: number | string
 }
 
-export default function RouteMap({ gps }: Props) {
-  if (!gps || gps.points.length === 0) return null
+function FitBounds({ points }: { points: [number, number][] }) {
+  const map = useMap()
+  useEffect(() => {
+    if (points.length === 0) return
+    const lats = points.map((p) => p[0])
+    const lngs = points.map((p) => p[1])
+    const minLat = Math.min(...lats)
+    const maxLat = Math.max(...lats)
+    const minLng = Math.min(...lngs)
+    const maxLng = Math.max(...lngs)
+    if (minLat === maxLat && minLng === maxLng) {
+      map.setView([minLat, minLng], 16)
+      return
+    }
+    map.fitBounds(
+      [
+        [minLat, minLng],
+        [maxLat, maxLng],
+      ],
+      { padding: [40, 40] },
+    )
+  }, [map, points])
+  return null
+}
 
-  const route: [number, number][] = gps.optimal_route ?? []
-  const trace: [number, number][] = gps.points.map((p) => [p.lat, p.lng])
-  const pickup = route[0]
-  const dropoff = route[route.length - 1]
-  const center: [number, number] = pickup ?? trace[0] ?? [1.35, 103.82]
+export default function RouteMap({ gps, className, height = 360 }: Props) {
+  const route: [number, number][] = useMemo(
+    () => (gps?.optimal_route ?? []) as [number, number][],
+    [gps],
+  )
+  const trace: [number, number][] = useMemo(
+    () => (gps ? gps.points.map((p) => [p.lat, p.lng] as [number, number]) : []),
+    [gps],
+  )
+
+  if (!gps || trace.length === 0) return null
+
+  const pickup = route[0] ?? trace[0]
+  const dropoff = route[route.length - 1] ?? trace[trace.length - 1]
+  const center: [number, number] = pickup ?? [1.35, 103.82]
+  const bounds = [...route, ...trace]
 
   return (
-    <div className="card">
-      <h2>Route map</h2>
-      <div className="map-wrap">
-        <MapContainer center={center} zoom={13} style={{ height: '100%', width: '100%' }}>
-          <TileLayer
-            attribution='&copy; OpenStreetMap contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    <div
+      className={`rp-route-map ${className ?? ''}`}
+      style={{ height }}
+    >
+      <MapContainer center={center} zoom={14} style={{ height: '100%', width: '100%' }}>
+        <TileLayer
+          attribution='&copy; OpenStreetMap contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <FitBounds points={bounds} />
+        {route.length > 1 && (
+          <Polyline
+            positions={route}
+            pathOptions={{ color: '#1F64CC', weight: 3, dashArray: '6 6' }}
           />
-          {route.length > 1 && (
-            <Polyline positions={route} pathOptions={{ color: '#2f80ed', weight: 3, dashArray: '6 6' }} />
-          )}
-          {trace.length > 1 && (
-            <Polyline positions={trace} pathOptions={{ color: '#eb5757', weight: 3 }} />
-          )}
-          {pickup && (
-            <CircleMarker center={pickup} radius={6} pathOptions={{ color: '#27ae60', fillColor: '#27ae60', fillOpacity: 1 }} />
-          )}
-          {dropoff && (
-            <CircleMarker center={dropoff} radius={6} pathOptions={{ color: '#e67e22', fillColor: '#e67e22', fillOpacity: 1 }} />
-          )}
-        </MapContainer>
-      </div>
-      <div className="legend small muted">
-        <span>
-          <i className="legend-dot" style={{ background: '#eb5757' }} /> actual GPS
-        </span>
-        <span>
-          <i className="legend-dot" style={{ background: '#2f80ed' }} /> optimal route
-        </span>
-        <span>
-          <i className="legend-dot" style={{ background: '#27ae60' }} /> pickup
-        </span>
-        <span>
-          <i className="legend-dot" style={{ background: '#e67e22' }} /> dropoff
-        </span>
-      </div>
+        )}
+        {trace.length > 1 && (
+          <Polyline
+            positions={trace}
+            pathOptions={{ color: '#F0246E', weight: 3 }}
+          />
+        )}
+        {pickup && (
+          <CircleMarker
+            center={pickup}
+            radius={7}
+            pathOptions={{ color: '#27ae60', fillColor: '#27ae60', fillOpacity: 1 }}
+          />
+        )}
+        {dropoff && (
+          <CircleMarker
+            center={dropoff}
+            radius={7}
+            pathOptions={{ color: '#e67e22', fillColor: '#e67e22', fillOpacity: 1 }}
+          />
+        )}
+      </MapContainer>
     </div>
   )
 }

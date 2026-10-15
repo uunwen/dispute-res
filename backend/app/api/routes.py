@@ -12,17 +12,24 @@ from app.db.session import get_session
 from app.formulas import FORMULAS
 from app.messaging import dispute_channel
 from app.orchestrator.pipeline import _gather_trip_evidence, resolve_dispute
+from app.policies import load_policy_sections
 from app.queue.queue import enqueue_dispute, list_queue, remove_dispute
+from app.rules.engine import load_rules
 from app.schemas.api import (
     CategoryMeta,
     ChatMessageItem,
+    ConfigEntry,
     DisputeCreate,
     DisputeListItem,
     DisputeResponse,
     GpsPointItem,
     MessageResponse,
+    ModelAssignment,
+    PolicySection,
     QueueItem,
+    RuleItem,
     RulingResponse,
+    SettingsResponse,
     TripGpsResponse,
     TripListItem,
 )
@@ -283,9 +290,12 @@ async def list_disputes(session: AsyncSession = Depends(get_session)):
                 "priority": d.priority,
                 "claim_text": d.claim_text,
                 "created_at": d.created_at,
+                "external_id": d.external_id,
                 "outcome": r.outcome.value if r else None,
                 "refund_amount": r.refund_amount if r else None,
                 "llm_degraded": r.llm_degraded if r else None,
+                "confidence": r.confidence if r else None,
+                "ruling_created_at": r.created_at if r else None,
             }
         )
     return result
@@ -431,3 +441,86 @@ async def get_categories():
 )
 async def get_formulas():
     return [f.model_dump() for f in FORMULAS]
+
+
+@router.get(
+    "/meta/policies",
+    response_model=list[PolicySection],
+    tags=["Meta"],
+    summary="List policy sections",
+    description=(
+        "Return the sections parsed from backend/policies/*.md, each with its id, "
+        "title, body text and source file. Precedent rulings are tagged 'precedent'."
+    ),
+)
+async def get_policies():
+    return load_policy_sections()
+
+
+@router.get(
+    "/meta/rules",
+    response_model=list[RuleItem],
+    tags=["Meta"],
+    summary="List deterministic rules",
+    description=(
+        "Return the parsed rules/rules.yaml entries: id, category, policy section "
+        "citation, conditions expression, outcome and refund amount formula."
+    ),
+)
+async def get_rules():
+    return [r.model_dump() for r in load_rules()]
+
+
+def _fmt_money(value: float) -> str:
+    return f"${value:.2f}"
+
+
+@router.get(
+    "/meta/settings",
+    response_model=SettingsResponse,
+    tags=["Meta"],
+    summary="Effective non-secret configuration",
+    description=(
+        "Return the effective, non-secret runtime configuration: model per agent "
+        "role, the LLM mock flag, and the policy thresholds and escalation values. "
+        "API keys, base URLs and other credentials are never included."
+    ),
+)
+async def get_settings():
+    advocate = settings.llm_model_advocate or settings.llm_model
+    judge = settings.llm_model_judge or settings.llm_model
+    return {
+        "models": [
+            ModelAssignment(agent="RiderAdvocate", model=advocate, purpose="Presents the rider's case"),
+            ModelAssignment(agent="DriverAdvocate", model=advocate, purpose="Presents the driver's defense"),
+            ModelAssignment(agent="Judge", model=judge, purpose="Evaluates evidence and applies policy"),
+        ],
+        "llm_mock": settings.llm_mock,
+        "policy_version": settings.policy_version,
+        "policy_numbers": [
+            ConfigEntry(key="noshow_cancellation_fee", label="Cancellation fee", value=_fmt_money(settings.noshow_cancellation_fee), source="no_show_fee.md §2.2"),
+            ConfigEntry(key="noshow_goodwill_credit", label="Goodwill credit", value=_fmt_money(settings.noshow_goodwill_credit), source="no_show_fee.md §2.4"),
+            ConfigEntry(key="noshow_min_wait_min", label="Free wait time", value=f"{settings.noshow_min_wait_min:g} minutes", source="no_show_fee.md §2.1"),
+            ConfigEntry(key="noshow_proximity_m", label="Arrival radius", value=f"{settings.noshow_proximity_m:g} m", source="no_show_fee.md §2.1"),
+            ConfigEntry(key="route_buffer_m", label="Off-route buffer", value=f"{settings.route_buffer_m:g} m", source="route_deviation.md §1.3"),
+            ConfigEntry(key="route_escalate_km", label="Major detour threshold", value=f"{settings.route_escalate_km:g} km extra", source="route_deviation.md §1.3"),
+            ConfigEntry(key="fare_tolerance_pct", label="Fare tolerance", value=f"{settings.fare_tolerance_pct * 100:g}%", source="fare_surge_promo.md §3.3"),
+        ],
+        "thresholds": [
+            ConfigEntry(key="abuse_risk_threshold", label="Abuse-risk threshold", value=f"{settings.abuse_risk_threshold:g}", source="app/config.py"),
+            ConfigEntry(key="fraud_dispute_frequency_days", label="Fraud window", value=f"{settings.fraud_dispute_frequency_days} days", source="app/config.py"),
+            ConfigEntry(key="fraud_dispute_frequency_threshold", label="Fraud dispute threshold", value=f"{settings.fraud_dispute_frequency_threshold}", source="app/config.py"),
+            ConfigEntry(key="fraud_win_rate_threshold", label="Fraud win-rate threshold", value=f"{settings.fraud_win_rate_threshold:g}", source="app/config.py"),
+            ConfigEntry(key="fraud_repeat_deviation_threshold", label="Repeat-deviation threshold", value=f"{settings.fraud_repeat_deviation_threshold}", source="app/config.py"),
+            ConfigEntry(key="fraud_account_age_days", label="Young-account window", value=f"{settings.fraud_account_age_days} days", source="app/config.py"),
+            ConfigEntry(key="fraud_penalty_threshold", label="Fraud penalty threshold", value=f"{settings.fraud_penalty_threshold:g}", source="app/config.py"),
+            ConfigEntry(key="fraud_penalty_weight", label="Fraud penalty weight", value=f"{settings.fraud_penalty_weight:g}", source="app/config.py"),
+        ],
+        "escalation": [
+            ConfigEntry(key="escalation_enabled", label="Escalation enabled", value="true" if settings.escalation_enabled else "false", source="app/config.py"),
+            ConfigEntry(key="escalation_low_value", label="Low-value threshold", value=_fmt_money(settings.escalation_low_value), source="app/config.py"),
+            ConfigEntry(key="escalation_high_value", label="High-value threshold", value=_fmt_money(settings.escalation_high_value), source="app/config.py"),
+            ConfigEntry(key="escalation_threshold", label="Confidence threshold", value=f"{settings.escalation_threshold:g}", source="app/config.py"),
+            ConfigEntry(key="escalation_fraud_threshold", label="Fraud confidence threshold", value=f"{settings.escalation_fraud_threshold:g}", source="app/config.py"),
+        ],
+    }

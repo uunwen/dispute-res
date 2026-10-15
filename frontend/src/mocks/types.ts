@@ -94,6 +94,7 @@ export interface DisputeSpec {
   status: string
   priority: string
   created_at: string
+  external_id?: string | null
   outcome: string | null
   refund_amount: number | null
   llm_degraded: boolean | null

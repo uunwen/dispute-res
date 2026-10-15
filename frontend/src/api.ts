@@ -25,16 +25,15 @@ export interface DisputeListItem {
   priority: string
   claim_text: string
   created_at: string
+  /** Stable external reference (e.g. "DISP-002" or "VAR-R01"). Null for
+   * locally filed disputes. */
+  external_id?: string | null
   outcome: string | null
   refund_amount: number | null
   llm_degraded: boolean | null
-  /** Confidence is only exposed via the per-dispute ruling endpoint in
-   * real mode. In sample-data mode the mock layer fills this so the
-   * disputes list can show a Confidence column and the analytics
-   * pane can compute averages. */
+  /** Latest ruling confidence in [0, 1]. */
   confidence?: number | null
-  /** ISO timestamp of the latest ruling, if one exists. Mock-only;
-   * used to compute avg resolution time. */
+  /** ISO timestamp of the latest ruling, if one exists. */
   ruling_created_at?: string | null
 }
 
@@ -115,6 +114,70 @@ export interface TripGps {
   points: GpsPoint[]
 }
 
+export interface QueueItem {
+  dispute_id: number
+  category: string
+  amount: number
+  priority: number
+  wait_time_seconds: number
+  sla_seconds: number
+  breached: boolean
+}
+
+export interface FormulaVariable {
+  name: string
+  definition: string
+}
+
+export interface Formula {
+  id: string
+  name: string
+  category: string
+  formula: string
+  description: string
+  variables: FormulaVariable[]
+  source: string
+}
+
+export interface PolicySection {
+  id: string
+  title: string
+  text: string
+  source: string
+  tag: string | null
+}
+
+export interface RuleItem {
+  id: string
+  category: string
+  citation: string
+  conditions: string
+  outcome: string
+  amount: string
+}
+
+export interface ModelAssignment {
+  agent: string
+  model: string
+  purpose: string
+}
+
+export interface ConfigEntry {
+  key: string
+  label: string
+  value: string
+  source: string
+}
+
+export interface Settings {
+  models: ModelAssignment[]
+  llm_mock: boolean
+  policy_version: string
+  policy_numbers: ConfigEntry[]
+  thresholds: ConfigEntry[]
+  escalation: ConfigEntry[]
+}
+
 const BASE = '/api'
 
 /* When VITE_USE_MOCK is 'true', every API call returns sample data
@@ -150,6 +213,11 @@ type MockApi = {
   getEvidence: (tripId: number) => Promise<EvidenceItem[]>
   getGps: (tripId: number) => Promise<TripGps>
   getTripChat: (tripId: number) => Promise<ChatMessage[]>
+  getQueue: () => Promise<QueueItem[]>
+  getFormulas: () => Promise<Formula[]>
+  getPolicies: () => Promise<PolicySection[]>
+  getRules: () => Promise<RuleItem[]>
+  getSettings: () => Promise<Settings>
   streamUrl: (id: number) => string
 }
 
@@ -182,6 +250,11 @@ export const api = {
   getEvidence: (tripId: number) => (USE_MOCK ? getMock().then((m) => m.getEvidence(tripId)) : request<EvidenceItem[]>(`/trips/${tripId}/evidence`)),
   getGps: (tripId: number) => (USE_MOCK ? getMock().then((m) => m.getGps(tripId)) : request<TripGps>(`/trips/${tripId}/gps`)),
   getTripChat: (tripId: number) => (USE_MOCK ? getMock().then((m) => m.getTripChat(tripId)) : request<ChatMessage[]>(`/trips/${tripId}/chat`)),
+  getQueue: () => (USE_MOCK ? getMock().then((m) => m.getQueue()) : request<QueueItem[]>('/queue')),
+  getFormulas: () => (USE_MOCK ? getMock().then((m) => m.getFormulas()) : request<Formula[]>('/meta/formulas')),
+  getPolicies: () => (USE_MOCK ? getMock().then((m) => m.getPolicies()) : request<PolicySection[]>('/meta/policies')),
+  getRules: () => (USE_MOCK ? getMock().then((m) => m.getRules()) : request<RuleItem[]>('/meta/rules')),
+  getSettings: () => (USE_MOCK ? getMock().then((m) => m.getSettings()) : request<Settings>('/meta/settings')),
   streamUrl: (id: number) => `${BASE}/disputes/${id}/stream`,
 }
 

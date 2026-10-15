@@ -1,5 +1,6 @@
-import { useMemo } from 'react'
-import type { TripGps } from '../api'
+import { useMemo } from "react";
+import type { TripGps } from "../api";
+import "leaflet/dist/leaflet.css";
 
 /**
  * Offline, tile-less route map rendered as inline SVG. Projects the
@@ -18,137 +19,162 @@ import type { TripGps } from '../api'
  * single source of truth.
  */
 interface RouteSvgProps {
-  gps: TripGps | null
+  gps: TripGps | null;
   /** Extra padding (in viewBox units) around the route. Default 6. */
-  pad?: number
+  pad?: number;
   /** Optional className on the outer <svg>. */
-  className?: string
+  className?: string;
 }
 
 interface ViewBox {
-  minX: number
-  minY: number
-  width: number
-  height: number
+  minX: number;
+  minY: number;
+  width: number;
+  height: number;
 }
 
-const VIEW_W = 1000
-const VIEW_H = 480
+const VIEW_W = 1000;
+const VIEW_H = 480;
 
 function buildPolyline(
   pts: ReadonlyArray<[number, number]>,
-  project: (lat: number, lng: number) => [number, number]
+  project: (lat: number, lng: number) => [number, number],
 ): { points: string; projected: Array<[number, number]> } {
   if (pts.length === 0) {
-    return { points: '', projected: [] }
+    return { points: "", projected: [] };
   }
-  const projected = pts.map(([lat, lng]) => project(lat, lng))
-  const points = projected.map(([x, y]) => `${x.toFixed(2)},${y.toFixed(2)}`).join(' ')
-  return { points, projected }
+  const projected = pts.map(([lat, lng]) => project(lat, lng));
+  const points = projected
+    .map(([x, y]) => `${x.toFixed(2)},${y.toFixed(2)}`)
+    .join(" ");
+  return { points, projected };
 }
 
-function buildBounds(
-  routes: Array<Array<[number, number]>>
-): { minLat: number; maxLat: number; minLng: number; maxLng: number } {
-  let minLat = Infinity
-  let maxLat = -Infinity
-  let minLng = Infinity
-  let maxLng = -Infinity
+function buildBounds(routes: Array<Array<[number, number]>>): {
+  minLat: number;
+  maxLat: number;
+  minLng: number;
+  maxLng: number;
+} {
+  let minLat = Infinity;
+  let maxLat = -Infinity;
+  let minLng = Infinity;
+  let maxLng = -Infinity;
   for (const route of routes) {
     for (const [lat, lng] of route) {
-      if (lat < minLat) minLat = lat
-      if (lat > maxLat) maxLat = lat
-      if (lng < minLng) minLng = lng
-      if (lng > maxLng) maxLng = lng
+      if (lat < minLat) minLat = lat;
+      if (lat > maxLat) maxLat = lat;
+      if (lng < minLng) minLng = lng;
+      if (lng > maxLng) maxLng = lng;
     }
   }
   if (!isFinite(minLat) || !isFinite(minLng)) {
-    return { minLat: 0, maxLat: 1, minLng: 0, maxLng: 1 }
+    return { minLat: 0, maxLat: 1, minLng: 0, maxLng: 1 };
   }
   // Single point -> add a tiny delta so width/height don't collapse.
   if (minLat === maxLat) {
-    minLat -= 0.0005
-    maxLat += 0.0005
+    minLat -= 0.0005;
+    maxLat += 0.0005;
   }
   if (minLng === maxLng) {
-    minLng -= 0.0005
-    maxLng += 0.0005
+    minLng -= 0.0005;
+    maxLng += 0.0005;
   }
-  return { minLat, maxLat, minLng, maxLng }
+  return { minLat, maxLat, minLng, maxLng };
 }
 
 export default function RouteSvg({ gps, pad = 6, className }: RouteSvgProps) {
-  const { viewBox, optimalPath, actualPath, pickupXY, dropoffXY, traceEmpty } = useMemo(() => {
-    if (!gps) {
+  const { viewBox, optimalPath, actualPath, pickupXY, dropoffXY, traceEmpty } =
+    useMemo(() => {
+      if (!gps) {
+        return {
+          viewBox: {
+            minX: 0,
+            minY: 0,
+            width: VIEW_W,
+            height: VIEW_H,
+          } as ViewBox,
+          optimalPath: "",
+          actualPath: "",
+          pickupXY: null as [number, number] | null,
+          dropoffXY: null as [number, number] | null,
+          traceEmpty: true,
+        };
+      }
+
+      const optimal: Array<[number, number]> = (gps.optimal_route ??
+        []) as Array<[number, number]>;
+      const actual: Array<[number, number]> = gps.points.map((p) => [
+        p.lat,
+        p.lng,
+      ]);
+
+      const bounds = buildBounds([optimal, actual]);
+      const dataW = bounds.maxLng - bounds.minLng;
+      const dataH = bounds.maxLat - bounds.minLat;
+
+      // Maintain aspect ratio: compute scale so the data fits inside VIEW_W x VIEW_H
+      // after padding, then centre it.
+      const usableW = VIEW_W - pad * 2;
+      const usableH = VIEW_H - pad * 2;
+      const scale = Math.min(usableW / dataW, usableH / dataH);
+      const offsetX = (VIEW_W - dataW * scale) / 2;
+      const offsetY = (VIEW_H - dataH * scale) / 2;
+
+      // The Y axis is inverted (lat grows north, SVG Y grows down). We also
+      // flip X so east (larger lng) goes to the right.
+      const project = (lat: number, lng: number): [number, number] => {
+        const x = (lng - bounds.minLng) * scale + offsetX;
+        const y = (bounds.maxLat - lat) * scale + offsetY;
+        return [x, y];
+      };
+
+      const opt = buildPolyline(optimal, project);
+      const act = buildPolyline(actual, project);
+
+      const pickup =
+        optimal.length > 0 ? project(optimal[0][0], optimal[0][1]) : null;
+      const dropoff =
+        optimal.length > 0
+          ? project(
+              optimal[optimal.length - 1][0],
+              optimal[optimal.length - 1][1],
+            )
+          : null;
+
       return {
         viewBox: { minX: 0, minY: 0, width: VIEW_W, height: VIEW_H } as ViewBox,
-        optimalPath: '',
-        actualPath: '',
-        pickupXY: null as [number, number] | null,
-        dropoffXY: null as [number, number] | null,
-        traceEmpty: true,
-      }
-    }
-
-    const optimal: Array<[number, number]> = (gps.optimal_route ?? []) as Array<
-      [number, number]
-    >
-    const actual: Array<[number, number]> = gps.points.map((p) => [p.lat, p.lng])
-
-    const bounds = buildBounds([optimal, actual])
-    const dataW = bounds.maxLng - bounds.minLng
-    const dataH = bounds.maxLat - bounds.minLat
-
-    // Maintain aspect ratio: compute scale so the data fits inside VIEW_W x VIEW_H
-    // after padding, then centre it.
-    const usableW = VIEW_W - pad * 2
-    const usableH = VIEW_H - pad * 2
-    const scale = Math.min(usableW / dataW, usableH / dataH)
-    const offsetX = (VIEW_W - dataW * scale) / 2
-    const offsetY = (VIEW_H - dataH * scale) / 2
-
-    // The Y axis is inverted (lat grows north, SVG Y grows down). We also
-    // flip X so east (larger lng) goes to the right.
-    const project = (lat: number, lng: number): [number, number] => {
-      const x = (lng - bounds.minLng) * scale + offsetX
-      const y = (bounds.maxLat - lat) * scale + offsetY
-      return [x, y]
-    }
-
-    const opt = buildPolyline(optimal, project)
-    const act = buildPolyline(actual, project)
-
-    const pickup = optimal.length > 0 ? project(optimal[0][0], optimal[0][1]) : null
-    const dropoff =
-      optimal.length > 0
-        ? project(optimal[optimal.length - 1][0], optimal[optimal.length - 1][1])
-        : null
-
-    return {
-      viewBox: { minX: 0, minY: 0, width: VIEW_W, height: VIEW_H } as ViewBox,
-      optimalPath: opt.points,
-      actualPath: act.points,
-      pickupXY: pickup,
-      dropoffXY: dropoff,
-      traceEmpty: optimal.length === 0 && actual.length === 0,
-    }
-  }, [gps, pad])
+        optimalPath: opt.points,
+        actualPath: act.points,
+        pickupXY: pickup,
+        dropoffXY: dropoff,
+        traceEmpty: optimal.length === 0 && actual.length === 0,
+      };
+    }, [gps, pad]);
 
   return (
-    <div className={`rp-route-svg ${className ?? ''}`} aria-label="Route comparison">
+    <div
+      className={`rp-route-svg ${className ?? ""}`}
+      aria-label="Route comparison"
+    >
       <svg
         viewBox={`${viewBox.minX} ${viewBox.minY} ${viewBox.width} ${viewBox.height}`}
         preserveAspectRatio="xMidYMid meet"
         role="img"
         aria-label={
           traceEmpty
-            ? 'Route map is empty because no GPS data is available.'
-            : 'Map comparing the actual GPS trace and the optimal route.'
+            ? "Route map is empty because no GPS data is available."
+            : "Map comparing the actual GPS trace and the optimal route."
         }
       >
         {/* soft background grid for the empty state */}
         <defs>
-          <pattern id="rp-route-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <pattern
+            id="rp-route-grid"
+            width="40"
+            height="40"
+            patternUnits="userSpaceOnUse"
+          >
             <path
               d="M40 0H0V40"
               fill="none"
@@ -161,8 +187,20 @@ export default function RouteSvg({ gps, pad = 6, className }: RouteSvgProps) {
             <stop offset="100%" stopColor="#E9EEF6" />
           </linearGradient>
         </defs>
-        <rect x={0} y={0} width={VIEW_W} height={VIEW_H} fill="url(#rp-route-bg)" />
-        <rect x={0} y={0} width={VIEW_W} height={VIEW_H} fill="url(#rp-route-grid)" />
+        <rect
+          x={0}
+          y={0}
+          width={VIEW_W}
+          height={VIEW_H}
+          fill="url(#rp-route-bg)"
+        />
+        <rect
+          x={0}
+          y={0}
+          width={VIEW_W}
+          height={VIEW_H}
+          fill="url(#rp-route-grid)"
+        />
 
         {traceEmpty && (
           <text
@@ -256,5 +294,5 @@ export default function RouteSvg({ gps, pad = 6, className }: RouteSvgProps) {
         )}
       </svg>
     </div>
-  )
+  );
 }

@@ -23,6 +23,8 @@ interface DisputesListProps {
 
 type StatusFilter = 'all' | 'resolved' | 'escalated' | 'in_progress'
 
+type SourceFilter = 'all' | 'official' | 'synthetic'
+
 type SortKey = 'id' | 'category' | 'status' | 'submitted' | 'outcome' | 'confidence'
 type SortDir = 'asc' | 'desc'
 
@@ -58,6 +60,16 @@ function matchesFilter(d: DisputeListItem, f: StatusFilter): boolean {
   if (f === 'escalated') return v === 'escalated'
   if (f === 'in_progress') return v === 'in-progress'
   return true
+}
+
+function isSynthetic(d: DisputeListItem): boolean {
+  return typeof d.external_id === 'string' && d.external_id.startsWith('VAR-')
+}
+
+function matchesSource(d: DisputeListItem, f: SourceFilter): boolean {
+  if (f === 'all') return true
+  if (f === 'synthetic') return isSynthetic(d)
+  return !isSynthetic(d)
 }
 
 function compare(a: DisputeListItem, b: DisputeListItem, key: SortKey, dir: SortDir): number {
@@ -138,6 +150,7 @@ export default function DisputesList({
   onCategoryFilterChange,
 }: DisputesListProps) {
   const [filter, setFilter] = useState<StatusFilter>('all')
+  const [source, setSource] = useState<SourceFilter>('all')
   const [category, setCategory] = useState<string>(initialCategoryFilter ?? 'all')
   const [query, setQuery] = useState('')
   const [sortKey, setSortKey] = useState<SortKey>('submitted')
@@ -154,6 +167,7 @@ export default function DisputesList({
     const q = query.trim().toLowerCase()
     return disputes
       .filter((d) => matchesFilter(d, filter))
+      .filter((d) => matchesSource(d, source))
       .filter((d) => category === 'all' || d.category === category)
       .filter(
         (d) =>
@@ -163,7 +177,7 @@ export default function DisputesList({
           outcomeLabel(d.outcome).toLowerCase().includes(q),
       )
       .sort((a, b) => compare(a, b, sortKey, sortDir))
-  }, [disputes, filter, category, query, sortKey, sortDir])
+  }, [disputes, filter, source, category, query, sortKey, sortDir])
 
   function toggleSort(k: SortKey) {
     if (k === sortKey) {
@@ -226,6 +240,18 @@ export default function DisputesList({
                   {categoryLabel(c)}
                 </option>
               ))}
+            </select>
+          </div>
+          <div className="rp-field rp-disputes-list__source">
+            <span>Source</span>
+            <select
+              value={source}
+              onChange={(e) => setSource(e.target.value as SourceFilter)}
+              aria-label="Filter by source"
+            >
+              <option value="all">All sources</option>
+              <option value="official">Official</option>
+              <option value="synthetic">Synthetic</option>
             </select>
           </div>
           <div className="rp-field rp-disputes-list__search">
@@ -319,7 +345,12 @@ export default function DisputesList({
                       }
                     }}
                   >
-                    <td className="id">#{d.id}</td>
+                    <td className="id">
+                      #{d.id}
+                      {isSynthetic(d) && (
+                        <span className="rp-disputes-list__synthetic">synthetic</span>
+                      )}
+                    </td>
                     <td>{categoryLabel(d.category)}</td>
                     <td>
                       <StatusBadge variant={disputeStatusVariant(d)} />

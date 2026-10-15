@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { api, type ChatMessage, type Dispute, type EvidenceItem, type Ruling, type TripGps } from '../api'
 import StatusBadge from '../components/StatusBadge'
-import RouteSvg from '../components/RouteSvg'
+import RouteMap from '../components/RouteMap'
 import { ChatIcon, FileIcon, PhotoIcon, ReceiptIcon } from '../components/icons'
 import { categoryLabel, disputeStatusVariant } from '../lib/status'
 import { listRules, type RuleMeta } from '../lib/rules'
@@ -287,7 +287,7 @@ function TripEvidenceTab({
           </p>
         )}
 
-        {showRoute && <RouteSvg gps={gps} />}
+        {showRoute && <RouteMap gps={gps} />}
 
         {showRoute && (
           <div className="rp-evidence__legend" aria-label="Map legend">

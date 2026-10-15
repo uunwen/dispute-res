@@ -5,7 +5,12 @@ import type {
   Dispute,
   DisputeListItem,
   EvidenceItem,
+  Formula,
+  PolicySection,
+  QueueItem,
+  RuleItem,
   Ruling,
+  Settings,
   Trip,
   TripGps,
 } from '../api'
@@ -34,6 +39,191 @@ const CATEGORIES: CategoryMeta[] = [
   { value: 'safety_incident', label: 'Safety Incident', example_claim: 'I felt unsafe during the trip.', supported: true },
 ]
 
+/* -- Deterministic formulas (mirrors GET /meta/formulas) -- */
+const FORMULAS: Formula[] = [
+  {
+    id: 'confidence_score',
+    name: 'Judge confidence score',
+    category: 'Ruling',
+    formula: 'confidence = 0.35·agreement + 0.30·evidence_strength + 0.20·citation_validity + 0.15·history_risk',
+    description:
+      'Documented confidence formula (not LLM self-reported). All components are in [0, 1]. The result is clamped to [0, 1] and a fraud penalty is then subtracted.',
+    variables: [
+      { name: 'agreement', definition: '1.0 when the LLM and the rules engine agree on the outcome, otherwise 0.3.' },
+      { name: 'evidence_strength', definition: 'Mean strength of the cited deciding evidence items.' },
+      { name: 'citation_validity', definition: "Fraction of the LLM's cited evidence ids that actually exist." },
+      { name: 'history_risk', definition: 'Maximum abuse-risk score across the rider and driver.' },
+    ],
+    source: 'app/agents/judge.py:compute_confidence',
+  },
+  {
+    id: 'rule_llm_reconcile',
+    name: 'Rule / LLM refund reconciliation',
+    category: 'Ruling',
+    formula: 'final_amount = min(rule_amount, max(llm_amount, 0.0))',
+    description:
+      'The rules engine is the source of truth for the amount. The LLM may reduce the refund but never exceed the rule amount.',
+    variables: [
+      { name: 'rule_amount', definition: 'Refund amount from the deterministic rules engine.' },
+      { name: 'llm_amount', definition: 'Refund amount proposed by the Judge LLM.' },
+    ],
+    source: 'app/agents/judge.py:reconcile',
+  },
+  {
+    id: 'fraud_penalty',
+    name: 'Fraud confidence penalty',
+    category: 'Ruling',
+    formula: 'fraud_penalty = fraud_penalty_weight · risk  (only when favored side\'s risk ≥ threshold)',
+    description:
+      'When the side being favored has fraud risk at or above the threshold, confidence is reduced. The signal is advisory: it never changes the outcome. Defaults: weight = 0.2, threshold = 0.5.',
+    variables: [
+      { name: 'fraud_penalty_weight', definition: '0.2 (configurable via settings).' },
+      { name: 'fraud_penalty_threshold', definition: '0.5 (configurable via settings).' },
+    ],
+    source: 'app/agents/judge.py:_fraud_penalty',
+  },
+  {
+    id: 'history_abuse_risk',
+    name: 'Account abuse-risk profile',
+    category: 'Evidence',
+    formula: 'abuse_risk = 0.50·dispute_factor + 0.25·(1 - win_rate) + 0.25·rating_factor',
+    description: 'Weighted combination of dispute frequency, loss rate and rating.',
+    variables: [
+      { name: 'dispute_factor', definition: 'min(1, dispute_count / 8).' },
+      { name: 'win_rate', definition: 'won_count / resolved_count, or 0.5 when nothing is resolved.' },
+      { name: 'rating_factor', definition: 'max(0, 1 - rating / 5).' },
+    ],
+    source: 'app/evidence/history.py:compute_history_profile',
+  },
+  {
+    id: 'fare_recompute',
+    name: 'Fare recomputation',
+    category: 'Evidence',
+    formula:
+      'recomputed_base = base_fare + per_km_rate·distance + per_min_rate·duration\nrecomputed_expected = recomputed_base·surge_multiplier - promo_discount\narithmetic_discrepancy = actual_fare - recomputed_expected',
+    description:
+      'Pure arithmetic fare validation. A non-zero discrepancy beyond 0.011 flags a fare miscalculation; otherwise surge/promo are identified.',
+    variables: [
+      { name: 'surge_premium', definition: 'recomputed_base · (surge_multiplier - 1).' },
+      { name: 'quote_discrepancy', definition: 'actual_fare - estimated_fare.' },
+    ],
+    source: 'app/evidence/fare.py:compute_fare',
+  },
+  {
+    id: 'route_deviation',
+    name: 'Route deviation detection',
+    category: 'Evidence',
+    formula:
+      'fraction_outside = outside_buffer_points / total_points\nextra_distance = actual_distance - optimal_distance\nbad_faith = fraction_outside ≥ min_fraction AND extra_distance ≥ min_extra_km AND not traffic_signal',
+    description:
+      'GPS fixes are projected to EPSG:3414 (SVY21, metres) with pyproj and classified inside/outside a buffer around the optimal route.',
+    variables: [
+      { name: 'haversine_km', definition: 'Great-circle distance between two lat/lng points.' },
+      { name: 'traffic_signal', definition: 'avg speed on-route before deviation < traffic_speed_kmh (15 km/h).' },
+    ],
+    source: 'app/evidence/route.py:compute_route_deviation',
+  },
+  {
+    id: 'noshow_detection',
+    name: 'No-show classification',
+    category: 'Evidence',
+    formula: 'driver_arrived = min_distance_to_pickup ≤ proximity_m\ncancellation_fee_valid = driver_arrived AND wait_duration ≥ min_wait_min',
+    description:
+      'A no-show is classified from GPS distance to the pickup point and the duration the driver stayed within the proximity threshold.',
+    variables: [
+      { name: 'proximity_m', definition: '100 m (configurable).' },
+      { name: 'min_wait_min', definition: '5 min (configurable).' },
+    ],
+    source: 'app/evidence/noshow.py:compute_noshow',
+  },
+  {
+    id: 'fraud_risk',
+    name: 'Fraud risk scoring',
+    category: 'Fraud',
+    formula: 'risk = Σ fired_rule_weight, clamped to [0, 1]',
+    description: 'Rule-based (no LLM) advisory scoring. Fired rules add their weight to the relevant side\'s risk.',
+    variables: [
+      { name: 'dispute_frequency', definition: 'weight 0.3 — ≥ threshold disputes within N days.' },
+      { name: 'win_rate_anomaly', definition: 'weight 0.2 — win rate below threshold.' },
+      { name: 'repeat_deviation', definition: 'weight 0.4 — driver in ≥ threshold route-deviation disputes.' },
+      { name: 'young_account', definition: 'weight 0.2 — account age below N days.' },
+      { name: 'claim_evidence_contradiction', definition: 'weight 0.3 — claim contradicted by deterministic evidence.' },
+    ],
+    source: 'app/agents/fraud.py:_WEIGHTS',
+  },
+  {
+    id: 'queue_priority',
+    name: 'Queue priority (SLA & routing)',
+    category: 'Queue',
+    formula: 'priority = safety·1e15 + amount·1e8 + age_seconds·1.0',
+    description: 'Redis sorted-set score. Weights are chosen so safety > amount > age for realistic fares and ages.',
+    variables: [
+      { name: 'safety', definition: '1 if category is safety_incident, else 0.' },
+      { name: 'amount', definition: "The trip's disputed amount (actual fare)." },
+      { name: 'age_seconds', definition: 'Seconds since the dispute was filed.' },
+    ],
+    source: 'app/queue/queue.py:priority_score',
+  },
+  {
+    id: 'chat_sentiment',
+    name: 'Chat sentiment (VADER)',
+    category: 'Evidence',
+    formula: 'compound = mean(VADER compound score per message)',
+    description:
+      'Deterministic average of per-message VADER sentiment. Optional LLM extraction adds threats, admissions, agreements, disagreements and key claims with message-id citations.',
+    variables: [],
+    source: 'app/evidence/chat.py:vader_sentiment',
+  },
+]
+
+/* -- Policy sections (mirrors GET /meta/policies) -- */
+const POLICIES: PolicySection[] = [
+  { id: '1.1', title: 'General Principle', source: 'route_deviation.md', tag: null, text: 'Drivers are permitted to reroute from the GPS-recommended path in response to real-time traffic conditions, road closures, or congestion. However, the rider must be informed of any deviation.' },
+  { id: '2.2', title: 'Cancellation Fee', source: 'no_show_fee.md', tag: null, text: 'A no-show cancellation fee of $5.00 is charged to the rider when the driver cancels after the free wait period. The cancellation fee is transferred to the driver as compensation for time and fuel.' },
+  { id: '3.3', title: 'Refund Eligibility', source: 'fare_surge_promo.md', tag: null, text: 'If the surge multiplier increases between quote and trip start and the rider is not notified, the rider is eligible for a full refund of the surge differential.' },
+  { id: '7.1', title: 'Route Deviation Without Notification', source: 'precedent.md', tag: 'precedent', text: 'Case DISP-2026-0089: Driver rerouted without notifying the rider. Partial refund of excess distance fare.' },
+  { id: '7.3', title: 'No-Show Cancellation Without Contact Attempt', source: 'precedent.md', tag: 'precedent', text: 'Case DISP-2026-0211: Driver cancelled as no-show without any contact attempt. Cancellation fee voided and refunded.' },
+]
+
+/* -- Deterministic rules (mirrors GET /meta/rules) -- */
+const RULES: RuleItem[] = [
+  { id: 'route_deviation_minor', category: 'route_deviation', citation: '1.3', conditions: '(deviation_km if deviation_km else extra_distance_km) <= 1', outcome: 'no_action', amount: '0' },
+  { id: 'route_deviation_major', category: 'route_deviation', citation: '1.3', conditions: '(deviation_km if deviation_km else extra_distance_km) > 1 and not (traffic_justified if traffic_justified != None else traffic_signal)', outcome: 'full_refund', amount: 'excess_distance_fare if excess_distance_fare > 0 else fare * min(1, extra_distance_km / total_km)' },
+  { id: 'no_show_driver_never_arrived', category: 'no_show', citation: '2.4', conditions: 'not driver_arrived', outcome: 'full_refund', amount: 'fee' },
+  { id: 'no_show_contact_obligation_violated', category: 'no_show', citation: '2.3', conditions: 'driver_arrived and not contact_obligation_met', outcome: 'full_refund', amount: 'fee' },
+  { id: 'surge_increase_not_notified', category: 'fare_dispute', citation: '3.3', conditions: 'surge_increased and not rider_notified and surge_differential > 0', outcome: 'full_refund', amount: 'surge_differential' },
+]
+
+/* -- Effective settings (mirrors GET /meta/settings) -- */
+const SETTINGS: Settings = {
+  models: [
+    { agent: 'RiderAdvocate', model: 'ryde/llm-rider-advocate-v1', purpose: "Presents the rider's case" },
+    { agent: 'DriverAdvocate', model: 'ryde/llm-driver-advocate-v1', purpose: "Presents the driver's defense" },
+    { agent: 'Judge', model: 'ryde/llm-judge-v1', purpose: 'Evaluates evidence and applies policy' },
+  ],
+  llm_mock: false,
+  policy_version: 'v2.1',
+  policy_numbers: [
+    { key: 'noshow_cancellation_fee', label: 'Cancellation fee', value: '$5.00', source: 'no_show_fee.md §2.2' },
+    { key: 'noshow_min_wait_min', label: 'Free wait time', value: '5 minutes', source: 'no_show_fee.md §2.1' },
+    { key: 'route_buffer_m', label: 'Off-route buffer', value: '100 m', source: 'route_deviation.md §1.3' },
+    { key: 'route_escalate_km', label: 'Major detour threshold', value: '2 km extra', source: 'route_deviation.md §1.3' },
+    { key: 'fare_tolerance_pct', label: 'Fare tolerance', value: '5%', source: 'fare_surge_promo.md §3.3' },
+  ],
+  thresholds: [
+    { key: 'abuse_risk_threshold', label: 'Abuse-risk threshold', value: '0.6', source: 'app/config.py' },
+    { key: 'fraud_dispute_frequency_threshold', label: 'Fraud dispute threshold', value: '3', source: 'app/config.py' },
+    { key: 'fraud_penalty_threshold', label: 'Fraud penalty threshold', value: '0.5', source: 'app/config.py' },
+    { key: 'fraud_penalty_weight', label: 'Fraud penalty weight', value: '0.2', source: 'app/config.py' },
+  ],
+  escalation: [
+    { key: 'escalation_enabled', label: 'Escalation enabled', value: 'true', source: 'app/config.py' },
+    { key: 'escalation_low_value', label: 'Low-value threshold', value: '$10.00', source: 'app/config.py' },
+    { key: 'escalation_high_value', label: 'High-value threshold', value: '$50.00', source: 'app/config.py' },
+    { key: 'escalation_threshold', label: 'Confidence threshold', value: '0.8', source: 'app/config.py' },
+  ],
+}
+
 /* -- Build derived objects from specs -- */
 
 function specToDisputeListItem(spec: DisputeSpec): DisputeListItem {
@@ -45,12 +235,10 @@ function specToDisputeListItem(spec: DisputeSpec): DisputeListItem {
     priority: spec.priority,
     claim_text: spec.claim_text,
     created_at: spec.created_at,
+    external_id: spec.external_id ?? null,
     outcome: spec.outcome,
     refund_amount: spec.refund_amount,
     llm_degraded: spec.llm_degraded,
-    // In real mode these are not returned by GET /disputes. The mock
-    // layer fills them so the disputes list and analytics pane can
-    // show confidence and avg-resolution without extra round-trips.
     confidence: spec.ruling ? spec.ruling.confidence : null,
     ruling_created_at: spec.ruling ? spec.ruling.created_at : null,
   }
@@ -299,6 +487,34 @@ export const mockApi = {
     const chat = CHAT_FIXTURES[tripId] ?? []
     return delay<ChatMessage[]>(chat)
   },
+
+  getQueue: () => {
+    const now = Date.now()
+    const items: QueueItem[] = ALL_SPECS.map((s) => {
+      const age = Math.max(0, (now - new Date(s.created_at).getTime()) / 1000)
+      const safety = s.category === 'safety_incident'
+      const amount = s.refund_amount ?? 0
+      const sla = safety ? 3600 : 86400
+      return {
+        dispute_id: s.id,
+        category: s.category,
+        amount,
+        priority: (safety ? 1e15 : 0) + amount * 1e8 + age,
+        wait_time_seconds: Math.round(age),
+        sla_seconds: sla,
+        breached: age > sla,
+      }
+    })
+    return delay<QueueItem[]>(items)
+  },
+
+  getFormulas: () => delay<Formula[]>(FORMULAS),
+
+  getPolicies: () => delay<PolicySection[]>(POLICIES),
+
+  getRules: () => delay<RuleItem[]>(RULES),
+
+  getSettings: () => delay<Settings>(SETTINGS),
 
   streamUrl: (id: number) => `/api/disputes/${id}/stream`,
 }

@@ -69,6 +69,11 @@ class Settings(BaseSettings):
     escalation_threshold: float = 0.80
     # Policy v2.1 Section 6.3: raised threshold when a party has a fraud flag.
     escalation_fraud_threshold: float = 0.95
+    # Policy version the agents reason against (backend/policies/*.md).
+    policy_version: str = "2.1"
+    # Fare discrepancy tolerance used when validating a fare against the quoted
+    # basis (Policy v2.1 Section 3.3 / RD-002).
+    fare_tolerance_pct: float = 0.05
     # Policy v2.1 Section 5.2: safety terms that force escalation regardless of
     # the selected dispute category.
     safety_keywords: list[str] = [

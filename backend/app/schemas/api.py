@@ -73,9 +73,12 @@ class DisputeListItem(BaseModel):
     priority: str
     claim_text: str
     created_at: datetime
+    external_id: str | None = None
     outcome: str | None = None
     refund_amount: float | None = None
     llm_degraded: bool | None = None
+    confidence: float | None = None
+    ruling_created_at: datetime | None = None
 
 
 class TripListItem(BaseModel):
@@ -124,3 +127,42 @@ class CategoryMeta(BaseModel):
     label: str
     example_claim: str
     supported: bool
+
+
+class PolicySection(BaseModel):
+    id: str
+    title: str
+    text: str
+    source: str
+    tag: str | None = None
+
+
+class RuleItem(BaseModel):
+    id: str
+    category: str
+    citation: str
+    conditions: str
+    outcome: str
+    amount: str
+
+
+class ModelAssignment(BaseModel):
+    agent: str
+    model: str
+    purpose: str
+
+
+class ConfigEntry(BaseModel):
+    key: str
+    label: str
+    value: str
+    source: str
+
+
+class SettingsResponse(BaseModel):
+    models: list[ModelAssignment]
+    llm_mock: bool
+    policy_version: str
+    policy_numbers: list[ConfigEntry]
+    thresholds: list[ConfigEntry]
+    escalation: list[ConfigEntry]
