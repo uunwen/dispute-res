@@ -1,0 +1,163 @@
+[
+  {
+    "external_id": "DISP-001",
+    "section": "1",
+    "outcome": "partial_refund",
+    "refund_amount": 3.44,
+    "escalate": true
+  },
+  {
+    "external_id": "DISP-002",
+    "section": "2",
+    "outcome": "no_refund",
+    "refund_amount": 0.0,
+    "escalate": true
+  },
+  {
+    "external_id": "DISP-003",
+    "section": "3",
+    "outcome": "full_refund",
+    "refund_amount": 4.5,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-R01",
+    "section": "1",
+    "outcome": "no_refund",
+    "refund_amount": 0.0,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-R02",
+    "section": "1",
+    "outcome": "full_refund",
+    "refund_amount": 1.2,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-R03",
+    "section": "1",
+    "outcome": "partial_refund",
+    "refund_amount": 1.2,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-R04",
+    "section": "1",
+    "outcome": "no_refund",
+    "refund_amount": 0.0,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-R05",
+    "section": "1",
+    "outcome": "partial_refund",
+    "refund_amount": 2.0,
+    "escalate": true
+  },
+  {
+    "external_id": "VAR-R06",
+    "section": "1",
+    "outcome": "full_refund",
+    "refund_amount": 1.2,
+    "escalate": true
+  },
+  {
+    "external_id": "VAR-R07",
+    "section": "1",
+    "outcome": "partial_refund",
+    "refund_amount": 1.2,
+    "escalate": true
+  },
+  {
+    "external_id": "VAR-R08",
+    "section": "1",
+    "outcome": "full_refund",
+    "refund_amount": 1.2,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-N01",
+    "section": "2",
+    "outcome": "no_refund",
+    "refund_amount": 0.0,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-N02",
+    "section": "2",
+    "outcome": "full_refund",
+    "refund_amount": 5.0,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-N03",
+    "section": "2",
+    "outcome": "full_refund",
+    "refund_amount": 5.0,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-N04",
+    "section": "2",
+    "outcome": "full_refund",
+    "refund_amount": 5.0,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-N05",
+    "section": "2",
+    "outcome": "no_refund",
+    "refund_amount": 0.0,
+    "escalate": true
+  },
+  {
+    "external_id": "VAR-N06",
+    "section": "2",
+    "outcome": "full_refund",
+    "refund_amount": 5.0,
+    "escalate": true
+  },
+  {
+    "external_id": "VAR-S01",
+    "section": "3",
+    "outcome": "full_refund",
+    "refund_amount": 4.5,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-S02",
+    "section": "3",
+    "outcome": "no_refund",
+    "refund_amount": 0.0,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-S03",
+    "section": "3",
+    "outcome": "full_refund",
+    "refund_amount": 4.5,
+    "escalate": true
+  },
+  {
+    "external_id": "VAR-S04",
+    "section": "3",
+    "outcome": "full_refund",
+    "refund_amount": 48.0,
+    "escalate": true
+  },
+  {
+    "external_id": "VAR-S05",
+    "section": "3",
+    "outcome": "no_refund",
+    "refund_amount": 0.0,
+    "escalate": false
+  },
+  {
+    "external_id": "VAR-S06",
+    "section": "3",
+    "outcome": "full_refund",
+    "refund_amount": 0.5,
+    "escalate": false
+  }
+]

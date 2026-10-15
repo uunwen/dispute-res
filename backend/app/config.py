@@ -34,6 +34,14 @@ class Settings(BaseSettings):
     # be returned; lower-similarity chunks are dropped from retrieval results.
     embedding_similarity_cutoff: float = 0.25
 
+    # Fare basis used when recomputing/validating a fare (fare.py and the case
+    # importer). The per-km rate is derived from the official v2.1 sample cases
+    # (DISP-001: excess distance fare $3.44 / 4.3 km = $0.80/km; the eval
+    # variants agree). The booking fee is surge-exempt (Policy v2.1 Section 3.5).
+    fare_base: float = 3.0
+    fare_per_km: float = 0.80
+    fare_per_min: float = 0.22
+
     route_buffer_m: float = 100.0
     # Policy v2.1 Section 1.3: deviation tolerance is 1 km.
     route_min_extra_km: float = 1.0

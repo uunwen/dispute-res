@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from sqlalchemy import select
 
+from app.config import settings
 from app.db import models
 from app.db.enums import AccountRole, DisputeCategory
 from app.db.session import async_session_factory
@@ -21,11 +22,6 @@ CATEGORY_MAP = {
     "no_show_charge": DisputeCategory.no_show,
     "fare_dispute": DisputeCategory.fare_dispute,
 }
-
-# Policy v2.1 fare basis (booking fee is surge-exempt; see Section 3.5).
-BASE_FARE = 3.0
-PER_KM_RATE = 0.65
-PER_MIN_RATE = 0.22
 
 
 def stable_id(s: str) -> int:
@@ -206,9 +202,9 @@ async def _import_case(session, case: dict) -> bool:
         surge_multiplier=fields["surge_multiplier"],
         promo_code=None,
         promo_discount=0.0,
-        base_fare=BASE_FARE,
-        per_km_rate=PER_KM_RATE,
-        per_min_rate=PER_MIN_RATE,
+        base_fare=settings.fare_base,
+        per_km_rate=settings.fare_per_km,
+        per_min_rate=settings.fare_per_min,
         cancellation_fee=fields["cancellation_fee"],
         status=fields["status"],
         estimated_distance_km=fields["estimated_distance_km"],

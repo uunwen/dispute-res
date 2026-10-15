@@ -37,3 +37,4 @@ Thumbs.db
 # -----------------------------
 data/*
 !data/official/
+!data/ryde-Dispute-Resolution-Policy-v2.1/
