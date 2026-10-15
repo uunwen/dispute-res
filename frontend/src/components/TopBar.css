@@ -1,0 +1,108 @@
+.rp-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--rp-border);
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.rp-topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rp-topbar__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.rp-topbar__mark .logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--rp-pink);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+.rp-topbar__mark .name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.rp-topbar__mark .name strong {
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+.rp-topbar__mark .name span {
+  font-size: 11px;
+  color: var(--rp-text-muted);
+}
+.rp-topbar__divider {
+  width: 1px;
+  height: 32px;
+  background: var(--rp-border);
+}
+.rp-topbar__tagline {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.rp-topbar__tagline strong {
+  font-size: 15px;
+  color: var(--rp-text);
+}
+.rp-topbar__tagline span {
+  font-size: 12px;
+  color: var(--rp-text-muted);
+}
+
+.rp-topbar__values {
+  display: flex;
+  gap: 24px;
+}
+.rp-topbar__value {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 170px;
+}
+.rp-topbar__value .icon {
+  color: var(--rp-pink);
+  font-size: 18px;
+  line-height: 1;
+}
+.rp-topbar__value .text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.rp-topbar__value .text strong {
+  font-size: 12px;
+}
+.rp-topbar__value .text span {
+  font-size: 11px;
+  color: var(--rp-text-muted);
+}
+
+/* Hide the tagline on narrow screens to prevent overflow. */
+@media (max-width: 1280px) {
+  .rp-topbar__divider,
+  .rp-topbar__tagline {
+    display: none;
+  }
+}
+
+/* Hide the values row on narrow screens. */
+@media (max-width: 1024px) {
+  .rp-topbar {
+    padding: 10px 20px;
+  }
+  .rp-topbar__values {
+    display: none;
+  }
+}

@@ -1,0 +1,212 @@
+/* RumblePaws base styles, built on tokens.css */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--rp-text);
+  background: var(--rp-bg);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* Layout shell */
+.rp-app {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  min-height: 100vh;
+  background: var(--rp-bg);
+}
+
+.rp-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Below 1100px the sidebar collapses to icons-only. */
+@media (max-width: 1099px) {
+  .rp-app {
+    grid-template-columns: 64px 1fr;
+  }
+}
+
+.rp-page {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Card primitive */
+.rp-card {
+  background: var(--rp-card);
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius);
+  box-shadow: var(--rp-shadow);
+}
+
+.rp-card--padded {
+  padding: 20px;
+}
+
+/* Generic helpers */
+.rp-muted {
+  color: var(--rp-text-muted);
+}
+.rp-subtle {
+  color: var(--rp-text-subtle);
+}
+.rp-small {
+  font-size: 12px;
+}
+.rp-mono {
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+  font-size: 12px;
+}
+
+/* Pill button (primary) */
+.rp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.rp-btn--primary {
+  background: var(--rp-pink);
+  color: #fff;
+}
+.rp-btn--primary:hover:not(:disabled) {
+  background: var(--rp-pink-hover);
+}
+.rp-btn--primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.rp-btn--ghost {
+  background: #fff;
+  color: var(--rp-text);
+  border-color: var(--rp-border);
+}
+.rp-btn--ghost:hover {
+  border-color: var(--rp-pink);
+  color: var(--rp-pink);
+}
+.rp-btn--text {
+  background: transparent;
+  color: var(--rp-pink);
+  padding: 6px 10px;
+}
+.rp-btn--text:hover {
+  background: var(--rp-pink-tint);
+}
+
+/* Form fields */
+.rp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.rp-field > span {
+  font-size: 12px;
+  color: var(--rp-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.rp-field input,
+.rp-field select,
+.rp-field textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius-sm);
+  background: #fff;
+  outline: none;
+}
+.rp-field input:focus,
+.rp-field select:focus,
+.rp-field textarea:focus {
+  border-color: var(--rp-pink);
+  box-shadow: 0 0 0 3px var(--rp-pink-tint);
+}
+
+/* Tab bar */
+.rp-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--rp-border);
+}
+.rp-tabs > button {
+  border: none;
+  background: transparent;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--rp-text-muted);
+  border-bottom: 2px solid transparent;
+  font-weight: 600;
+}
+.rp-tabs > button.active {
+  color: var(--rp-pink);
+  border-bottom-color: var(--rp-pink);
+}
+.rp-tabs > button:hover:not(.active) {
+  color: var(--rp-text);
+}
+
+/* Page header */
+.rp-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.rp-page-header h1 {
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+.rp-page-header p {
+  margin: 0;
+  color: var(--rp-text-muted);
+  font-size: 14px;
+}
+
+/* Sample-data banner */
+.rp-mock-banner {
+  background: #f0f0f0;
+  color: #555;
+  font-size: 12px;
+  text-align: center;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--rp-border);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}

@@ -1,0 +1,283 @@
+/* Dashboard-specific styles. The base .rp-page, .rp-card, .rp-btn, etc. come
+ * from base.css. Tokens come from tokens.css. */
+
+.rp-dashboard {
+  gap: 20px;
+}
+
+/* ---------- Welcome card (pink gradient) ---------- */
+.rp-welcome {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 32px;
+  border-radius: var(--rp-radius);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  background:
+    radial-gradient(120% 100% at 100% 0%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(135deg, #F0246E 0%, #C9145A 60%, #93104A 100%);
+  box-shadow: 0 8px 24px rgba(240, 36, 110, 0.18);
+  overflow: hidden;
+}
+.rp-welcome::after {
+  /* soft paw-print decoration in the corner */
+  content: '';
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+.rp-welcome__copy h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+.rp-welcome__copy p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.88);
+}
+.rp-welcome__cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+/* On-pink outline button */
+.rp-btn--on-pink {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.rp-btn--on-pink:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #fff;
+}
+.rp-btn--on-pink:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.rp-welcome__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.rp-welcome__art svg {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.18));
+}
+
+/* ---------- Stat grid ---------- */
+.rp-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.rp-stat-card {
+  background: var(--rp-card);
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius);
+  padding: 16px 18px 14px;
+  box-shadow: var(--rp-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 116px;
+}
+.rp-stat-card__label {
+  font-size: 12px;
+  color: var(--rp-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.rp-stat-card__value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--rp-text);
+  line-height: 1.1;
+  margin-top: 2px;
+}
+.rp-stat-card__chart {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  margin-top: 4px;
+}
+.rp-stat-card__chart-spacer {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-top: 1px dashed var(--rp-border);
+}
+.rp-stat-card__delta {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+.rp-stat-card__delta.is-up {
+  color: var(--rp-resolved-fg);
+}
+.rp-stat-card__delta.is-down {
+  color: var(--rp-escalated-fg);
+}
+.rp-stat-card__delta.is-empty {
+  visibility: hidden;
+}
+.rp-stat-card__delta-period {
+  font-weight: 500;
+  color: var(--rp-text-muted);
+  margin-left: 4px;
+}
+
+/* ---------- Recent disputes table ---------- */
+.rp-recent {
+  background: var(--rp-card);
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius);
+  box-shadow: var(--rp-shadow);
+  overflow: hidden;
+}
+.rp-recent__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--rp-border);
+}
+.rp-recent__head h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.rp-recent__state {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--rp-text-muted);
+}
+.rp-recent__state strong {
+  display: block;
+  color: var(--rp-text);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.rp-recent__state p {
+  margin: 0;
+  font-size: 13px;
+}
+.rp-recent__state--error {
+  color: var(--rp-live-fg);
+}
+.rp-recent__state--error strong {
+  color: var(--rp-live-fg);
+}
+.rp-recent__state--error p {
+  color: var(--rp-text-muted);
+}
+
+.rp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.rp-table th,
+.rp-table td {
+  text-align: left;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--rp-border);
+}
+.rp-table th {
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--rp-text-muted);
+  background: #FAFBFC;
+}
+.rp-table tr:last-child td {
+  border-bottom: none;
+}
+.rp-table .id {
+  font-family: ui-monospace, Consolas, monospace;
+  font-weight: 700;
+  color: var(--rp-text);
+}
+.rp-table .chev {
+  text-align: right;
+  color: var(--rp-text-subtle);
+  font-size: 18px;
+  width: 32px;
+}
+.rp-recent__row {
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+.rp-recent__row:hover {
+  background: var(--rp-pink-tint);
+}
+.rp-recent__row:focus-visible {
+  outline: 2px solid var(--rp-pink);
+  outline-offset: -2px;
+}
+
+/* ---------- Disputes list toolbar ---------- */
+.rp-disputes-list__toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--rp-border);
+  flex-wrap: wrap;
+}
+.rp-disputes-list__search {
+  margin: 0;
+  min-width: 260px;
+}
+.rp-disputes-list__search input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius-sm);
+  background: #fff;
+  outline: none;
+  font-size: 13px;
+}
+.rp-disputes-list__search input:focus {
+  border-color: var(--rp-pink);
+  box-shadow: 0 0 0 3px var(--rp-pink-tint);
+}
+
+/* Tablet & phone */
+@media (max-width: 1100px) {
+  .rp-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rp-welcome {
+    grid-template-columns: 1fr 120px;
+  }
+  .rp-welcome__art svg {
+    width: 110px;
+    height: 110px;
+  }
+}
+@media (max-width: 640px) {
+  .rp-stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .rp-welcome {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .rp-welcome__art {
+    display: none;
+  }
+}

@@ -1,0 +1,39 @@
+.rp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.rp-badge--resolved {
+  background: var(--rp-resolved-bg);
+  color: var(--rp-resolved-fg);
+}
+.rp-badge--escalated {
+  background: var(--rp-escalated-bg);
+  color: var(--rp-escalated-fg);
+}
+.rp-badge--in-progress {
+  background: var(--rp-inprogress-bg);
+  color: var(--rp-inprogress-fg);
+}
+.rp-badge--live {
+  background: var(--rp-live-bg);
+  color: var(--rp-live-fg);
+}
+.rp-badge--pending {
+  background: var(--rp-pending-bg);
+  color: var(--rp-pending-fg);
+}
+
+.rp-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}

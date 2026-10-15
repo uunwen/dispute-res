@@ -28,6 +28,14 @@ export interface DisputeListItem {
   outcome: string | null
   refund_amount: number | null
   llm_degraded: boolean | null
+  /** Confidence is only exposed via the per-dispute ruling endpoint in
+   * real mode. In sample-data mode the mock layer fills this so the
+   * disputes list can show a Confidence column and the analytics
+   * pane can compute averages. */
+  confidence?: number | null
+  /** ISO timestamp of the latest ruling, if one exists. Mock-only;
+   * used to compute avg resolution time. */
+  ruling_created_at?: string | null
 }
 
 export interface Dispute {
@@ -109,6 +117,10 @@ export interface TripGps {
 
 const BASE = '/api'
 
+/* When VITE_USE_MOCK is 'true', every API call returns sample data
+ * from the mocks module instead of hitting the backend. */
+const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const resp = await fetch(`${BASE}${path}`, init)
   if (!resp.ok) {
@@ -124,24 +136,54 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return (await resp.json()) as T
 }
 
+/* Lazily import the mock layer so the real build doesn't pull
+ * sample data into the bundle when mock mode is off. */
+type MockApi = {
+  listTrips: () => Promise<Trip[]>
+  listDisputes: () => Promise<DisputeListItem[]>
+  fetchCategories: () => Promise<CategoryMeta[]>
+  getDispute: (id: number) => Promise<Dispute>
+  createDispute: (body: { trip_id: number; category: string; claim_text: string; filed_by: number }) => Promise<Dispute>
+  resolveDispute: (id: number, force?: boolean) => Promise<{ dispute_id: number; status: string }>
+  getMessages: (id: number) => Promise<AgentMessage[]>
+  getRuling: (id: number) => Promise<Ruling>
+  getEvidence: (tripId: number) => Promise<EvidenceItem[]>
+  getGps: (tripId: number) => Promise<TripGps>
+  getTripChat: (tripId: number) => Promise<ChatMessage[]>
+  streamUrl: (id: number) => string
+}
+
+async function getMock(): Promise<MockApi> {
+  const mod = await import('./mocks/index')
+  return mod.mockApi
+}
+
 export const api = {
-  listTrips: () => request<Trip[]>('/trips'),
-  listDisputes: () => request<DisputeListItem[]>('/disputes'),
-  fetchCategories: () => request<CategoryMeta[]>('/meta/categories'),
-  getDispute: (id: number) => request<Dispute>(`/disputes/${id}`),
+  listTrips: () => (USE_MOCK ? getMock().then((m) => m.listTrips()) : request<Trip[]>('/trips')),
+  listDisputes: () => (USE_MOCK ? getMock().then((m) => m.listDisputes()) : request<DisputeListItem[]>('/disputes')),
+  fetchCategories: () => (USE_MOCK ? getMock().then((m) => m.fetchCategories()) : request<CategoryMeta[]>('/meta/categories')),
+  getDispute: (id: number) => (USE_MOCK ? getMock().then((m) => m.getDispute(id)) : request<Dispute>(`/disputes/${id}`)),
   createDispute: (body: { trip_id: number; category: string; claim_text: string; filed_by: number }) =>
-    request<Dispute>('/disputes', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    }),
+    USE_MOCK
+      ? getMock().then((m) => m.createDispute(body))
+      : request<Dispute>('/disputes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        }),
   resolveDispute: (id: number, force = false) =>
-    request<{ dispute_id: number; status: string }>(`/disputes/${id}/resolve${force ? '?force=true' : ''}`, {
-      method: 'POST',
-    }),
-  getMessages: (id: number) => request<AgentMessage[]>(`/disputes/${id}/messages`),
-  getRuling: (id: number) => request<Ruling>(`/disputes/${id}/ruling`),
-  getEvidence: (tripId: number) => request<EvidenceItem[]>(`/trips/${tripId}/evidence`),
-  getGps: (tripId: number) => request<TripGps>(`/trips/${tripId}/gps`),
+    USE_MOCK
+      ? getMock().then((m) => m.resolveDispute(id, force))
+      : request<{ dispute_id: number; status: string }>(`/disputes/${id}/resolve${force ? '?force=true' : ''}`, {
+          method: 'POST',
+        }),
+  getMessages: (id: number) => (USE_MOCK ? getMock().then((m) => m.getMessages(id)) : request<AgentMessage[]>(`/disputes/${id}/messages`)),
+  getRuling: (id: number) => (USE_MOCK ? getMock().then((m) => m.getRuling(id)) : request<Ruling>(`/disputes/${id}/ruling`)),
+  getEvidence: (tripId: number) => (USE_MOCK ? getMock().then((m) => m.getEvidence(tripId)) : request<EvidenceItem[]>(`/trips/${tripId}/evidence`)),
+  getGps: (tripId: number) => (USE_MOCK ? getMock().then((m) => m.getGps(tripId)) : request<TripGps>(`/trips/${tripId}/gps`)),
+  getTripChat: (tripId: number) => (USE_MOCK ? getMock().then((m) => m.getTripChat(tripId)) : request<ChatMessage[]>(`/trips/${tripId}/chat`)),
   streamUrl: (id: number) => `${BASE}/disputes/${id}/stream`,
 }
+
+/* Exported so the UI can show the grey banner. */
+export const isMockMode = USE_MOCK

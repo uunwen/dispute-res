@@ -1,0 +1,10 @@
+.rp-empty {
+  text-align: center;
+  color: var(--rp-text-muted);
+  padding: 32px 16px;
+}
+.rp-empty strong {
+  display: block;
+  color: var(--rp-text);
+  margin-bottom: 6px;
+}

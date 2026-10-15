@@ -1,0 +1,43 @@
+/* RumblePaws design tokens — single source of truth */
+:root {
+  /* Brand */
+  --rp-pink: #F0246E;
+  --rp-pink-hover: #D81C61;
+  --rp-pink-tint: #FCE5EE; /* background for selected/hovered states */
+
+  /* Sidebar */
+  --rp-sidebar-bg: #1C1C24;
+  --rp-sidebar-text: #FFFFFF;
+  --rp-sidebar-muted: #B4B4C2;
+  --rp-sidebar-border: #2A2A33;
+  --rp-sidebar-active-bg: var(--rp-pink);
+  --rp-sidebar-active-text: #FFFFFF;
+
+  /* Surfaces */
+  --rp-bg: #F6F7F9;
+  --rp-card: #FFFFFF;
+  --rp-border: #ECEDF1;
+  --rp-radius: 12px;
+  --rp-radius-sm: 8px;
+  --rp-shadow: 0 2px 8px rgba(20, 22, 38, 0.04), 0 1px 2px rgba(20, 22, 38, 0.03);
+
+  /* Text */
+  --rp-text: #1B1D24;
+  --rp-text-muted: #6B7080;
+  --rp-text-subtle: #9398A3;
+
+  /* Status badges */
+  --rp-resolved-bg: #E0F4E8;
+  --rp-resolved-fg: #178F4B;
+  --rp-escalated-bg: #FFEDD5;
+  --rp-escalated-fg: #C2510A;
+  --rp-inprogress-bg: #DBEAFF;
+  --rp-inprogress-fg: #1F64CC;
+  --rp-live-bg: #FFE1E7;
+  --rp-live-fg: #D81C45;
+
+  /* Other */
+  --rp-pending-bg: #F0F2F5;
+  --rp-pending-fg: #6B7080;
+  --rp-pink-text: var(--rp-pink);
+}

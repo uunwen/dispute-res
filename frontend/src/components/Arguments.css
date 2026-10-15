@@ -1,0 +1,313 @@
+/* ============================================================
+ * Screen 7 — Agent Arguments
+ * Two side-by-side advocate columns, each with its own
+ * pink (rider) or blue (driver) tinted header and tabs.
+ * ============================================================ */
+
+.rp-arguments {
+  gap: 20px;
+}
+
+/* ---------- Header ---------- */
+.rp-arguments__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.rp-arguments__title h1 {
+  margin: 0;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.rp-arguments__title p {
+  margin: 4px 0 0;
+  color: var(--rp-text-muted);
+  font-size: 13px;
+  max-width: 720px;
+}
+
+/* ---------- Two-column layout ---------- */
+.rp-arguments__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .rp-arguments__columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rp-arguments__column {
+  background: var(--rp-card);
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius);
+  box-shadow: var(--rp-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Pink-tinted header for the rider column */
+.rp-arguments__column--rider .rp-arguments__column-head {
+  background: linear-gradient(135deg, #fce5ee 0%, #fff 100%);
+  border-bottom: 1px solid #f7c8d8;
+}
+/* Blue-tinted header for the driver column */
+.rp-arguments__column--driver .rp-arguments__column-head {
+  background: linear-gradient(135deg, #e0ecff 0%, #fff 100%);
+  border-bottom: 1px solid #c8d8f3;
+}
+
+.rp-arguments__column-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+}
+.rp-arguments__column-head-text h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.rp-arguments__column-head-text p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--rp-text-muted);
+}
+.rp-arguments__column-head-mascot {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+}
+
+/* ---------- Tabs ---------- */
+.rp-arguments__tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--rp-border);
+  background: #fafbfc;
+}
+.rp-arguments__tab {
+  border: 0;
+  background: transparent;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rp-text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.rp-arguments__tab:hover {
+  color: var(--rp-text);
+}
+.rp-arguments__tab.is-active {
+  color: var(--rp-text);
+  border-bottom-color: currentColor;
+}
+.rp-arguments__column--rider .rp-arguments__tab.is-active {
+  color: var(--rp-pink);
+  border-bottom-color: var(--rp-pink);
+}
+.rp-arguments__column--driver .rp-arguments__tab.is-active {
+  color: #1f64cc;
+  border-bottom-color: #1f64cc;
+}
+.rp-arguments__tab-count {
+  font-weight: 500;
+  color: var(--rp-text-subtle);
+  margin-left: 2px;
+}
+
+/* ---------- List + empty state ---------- */
+.rp-arguments__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 18px 20px;
+}
+.rp-arguments__empty {
+  padding: 20px 18px;
+  color: var(--rp-text-muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ============================================================
+ * Argument card
+ * ============================================================ */
+.rp-argument-card {
+  border: 1px solid var(--rp-border);
+  border-radius: var(--rp-radius);
+  background: #fff;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rp-argument-card--rider {
+  border-left: 3px solid var(--rp-pink);
+}
+.rp-argument-card--driver {
+  border-left: 3px solid #1f64cc;
+}
+
+.rp-argument-card__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rp-argument-card__round {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.rp-argument-card__round--rider {
+  background: var(--rp-pink);
+}
+.rp-argument-card__round--driver {
+  background: #1f64cc;
+}
+.rp-argument-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rp-text);
+}
+
+.rp-argument-card__body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--rp-text);
+}
+.rp-argument-card__body p {
+  margin: 0;
+  /* collapse to 5 lines by default; expand on toggle */
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.rp-argument-card__body.is-expanded p {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
+}
+.rp-argument-card__placeholder {
+  color: var(--rp-text-muted);
+  font-style: italic;
+}
+
+.rp-argument-card__toggle {
+  align-self: flex-start;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rp-pink);
+  cursor: pointer;
+}
+.rp-argument-card--driver .rp-argument-card__toggle {
+  color: #1f64cc;
+}
+.rp-argument-card__toggle:hover {
+  text-decoration: underline;
+}
+
+/* Rule chips */
+.rp-argument-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+.rp-argument-card__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: #f4f5f8;
+  color: var(--rp-text-muted);
+  border: 1px solid var(--rp-border);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rp-argument-card__chip--rider {
+  background: #fce5ee;
+  color: #b31554;
+  border-color: #f3c0d2;
+}
+.rp-argument-card__chip--driver {
+  background: #e0ecff;
+  color: #1a4ea0;
+  border-color: #c2d3f2;
+}
+
+/* ============================================================
+ * Evidence tab list
+ * ============================================================ */
+.rp-arguments__evidence-list {
+  list-style: none;
+  margin: 0;
+  padding: 14px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rp-arguments__evidence-item {
+  border: 1px solid var(--rp-border);
+  background: #fff;
+  border-radius: var(--rp-radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.rp-arguments__column--rider .rp-arguments__evidence-item {
+  border-left: 3px solid var(--rp-pink);
+}
+.rp-arguments__column--driver .rp-arguments__evidence-item {
+  border-left: 3px solid #1f64cc;
+}
+.rp-arguments__evidence-id {
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+  font-size: 12px;
+  color: var(--rp-text);
+}
+
+/* Reduced motion: avoid transitions on the tab underline / chips */
+@media (prefers-reduced-motion: reduce) {
+  .rp-arguments__tab,
+  .rp-argument-card__toggle {
+    transition: none;
+  }
+}
