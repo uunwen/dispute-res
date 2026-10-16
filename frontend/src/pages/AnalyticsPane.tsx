@@ -4,34 +4,46 @@ import { categoryLabel, outcomeLabel } from '../lib/status'
 import { getCategoryMeta } from '../lib/categoryMeta'
 
 /* ============================================================
- * AnalyticsPane — the small analytics summary used on the right
- * rail of /disputes AND on the standalone /analytics page. The
- * pane is intentionally data-only: it takes a list of disputes
- * and computes every number from them, so it works in both
- * sample-data mode and real mode.
- *
- * In real mode, the backend's `DisputeListItem` does not include
- * `confidence` or `resolved_at`. Those values fall back to `null`
- * and the UI renders "—" rather than faking a number.
+ * AnalyticsPane — the analytics summary used on the standalone
+ * /analytics page AND on the right rail of /disputes. It is
+ * intentionally data-only: it takes a list of disputes and
+ * computes every number from them.
  * ============================================================ */
 
 interface Props {
   disputes: DisputeListItem[]
   /** When provided, clicking a category bar calls this. */
   onSelectCategory?: (category: string) => void
-  /** When true, renders a slightly larger header (used on the standalone page). */
+  /** When true, renders a slightly larger header (standalone page). */
   standalone?: boolean
-  /** Default time window. Standalone page shows the selector; side pane pins to 30. */
+  /** Show the time-window selector. */
   showRangeSelector?: boolean
+  /** Loading / error state (standalone page fetches its own data). */
+  loading?: boolean
+  error?: string | null
+  /** Whether synthetic data is included in `disputes`. */
+  includeSynthetic?: boolean
+  /** Count of synthetic variants (VAR-*) in `disputes`, for the note. */
+  syntheticCount?: number
+  /** Called to toggle synthetic data (only on the standalone page). */
+  onIncludeSyntheticChange?: (include: boolean) => void
 }
 
-type RangeKey = 7 | 30 | 90
+type RangeKey = 'all' | 7 | 30 | 90
 
 const RANGES: { key: RangeKey; label: string }[] = [
+  { key: 'all', label: 'All time' },
   { key: 7, label: '7d' },
   { key: 30, label: '30d' },
   { key: 90, label: '90d' },
 ]
+
+function rangeLabel(key: RangeKey): string {
+  if (key === 'all') return 'All time'
+  if (key === 7) return 'Last 7 days'
+  if (key === 30) return 'Last 30 days'
+  return 'Last 90 days'
+}
 
 interface CategoryStat {
   category: string
@@ -57,10 +69,7 @@ function inRange(iso: string, days: number): boolean {
 }
 
 function resolutionMinutes(d: DisputeListItem): number | null {
-  // Only available in sample-data mode. The mock Ruling is created
-  // after the Dispute, so we can read ruling.created_at off the
-  // spec through the confidence field's sibling `ruling_created_at`.
-  const raw = (d as DisputeListItem & { ruling_created_at?: string | null }).ruling_created_at
+  const raw = d.ruling_created_at
   if (typeof raw !== 'string' || raw === '') return null
   const filed = new Date(d.created_at).getTime()
   const resolved = new Date(raw).getTime()
@@ -68,43 +77,62 @@ function resolutionMinutes(d: DisputeListItem): number | null {
   return Math.round((resolved - filed) / 60000)
 }
 
+function confidenceValue(d: DisputeListItem): number | null {
+  const c = d.confidence
+  return typeof c === 'number' && Number.isFinite(c) ? c : null
+}
+
 export default function AnalyticsPane({
   disputes,
   onSelectCategory,
   standalone = false,
   showRangeSelector = true,
+  loading = false,
+  error = null,
+  includeSynthetic = false,
+  syntheticCount,
+  onIncludeSyntheticChange,
 }: Props) {
-  const [range, setRange] = useState<RangeKey>(30)
+  const [range, setRange] = useState<RangeKey>('all')
 
   // ---- Filter to the selected window ----
-  const windowDisputes = useMemo(
-    () => disputes.filter((d) => inRange(d.created_at, range)),
-    [disputes, range],
-  )
+  const windowDisputes = useMemo(() => {
+    if (range === 'all') return disputes
+    return disputes.filter((d) => inRange(d.created_at, range))
+  }, [disputes, range])
 
   // ---- Top-line stats ----
   const stats = useMemo(() => {
     const total = windowDisputes.length
-    // Auto-resolved = status is resolved AND not escalated.
-    const autoResolved = windowDisputes.filter(
-      (d) => d.status === 'resolved' && !d.outcome?.includes('escalate'),
-    )
-    // Escalated: status needs_human_review, OR outcome indicates escalation
-    // (no outcome string for that, but the backend uses status='needs_human_review').
+    const resolved = windowDisputes.filter((d) => d.outcome != null)
+    const autoResolved = windowDisputes.filter((d) => d.status === 'resolved')
     const escalated = windowDisputes.filter((d) => d.status === 'needs_human_review')
-    const resolutionMins = windowDisputes
+
+    const resolutionMins = resolved
       .map((d) => resolutionMinutes(d))
       .filter((n): n is number => n !== null)
-    const avg =
+    const avgResolutionMin =
       resolutionMins.length === 0
         ? null
         : Math.round(resolutionMins.reduce((a, b) => a + b, 0) / resolutionMins.length)
+
+    const confidences = resolved
+      .map((d) => confidenceValue(d))
+      .filter((n): n is number => n !== null)
+    const avgConfidence =
+      confidences.length === 0
+        ? null
+        : Math.round((confidences.reduce((a, b) => a + b, 0) / confidences.length) * 100)
+
     return {
       total,
+      resolvedCount: resolved.length,
+      autoResolvedCount: autoResolved.length,
       autoResolvedPct: total === 0 ? null : Math.round((autoResolved.length / total) * 100),
-      avgResolutionMin: avg,
-      escalatedPct: total === 0 ? null : Math.round((escalated.length / total) * 100),
+      avgResolutionMin,
+      avgConfidence,
       escalatedCount: escalated.length,
+      escalatedPct: total === 0 ? null : Math.round((escalated.length / total) * 100),
     }
   }, [windowDisputes])
 
@@ -150,6 +178,8 @@ export default function AnalyticsPane({
     return stats.sort((a, b) => b.count - a.count)
   }, [windowDisputes])
 
+  const empty = !loading && !error && windowDisputes.length === 0
+
   return (
     <div className={standalone ? 'rp-analytics' : 'rp-analytics rp-analytics--pane'}>
       {/* Header */}
@@ -158,124 +188,169 @@ export default function AnalyticsPane({
           <h2>{standalone ? 'Case History & Analytics' : 'Analytics'}</h2>
           {standalone && <p className="rp-muted">Track performance and impact</p>}
         </div>
-        {showRangeSelector && (
-          <div className="rp-analytics__range" role="tablist" aria-label="Time window">
-            {RANGES.map((r) => (
-              <button
-                key={r.key}
-                type="button"
-                role="tab"
-                aria-selected={r.key === range}
-                className={r.key === range ? 'active' : ''}
-                onClick={() => setRange(r.key)}
-              >
-                {r.label === '7d' ? 'Last 7 days' : r.label === '30d' ? 'Last 30 days' : 'Last 90 days'}
+        <div className="rp-analytics__controls">
+          {onIncludeSyntheticChange && (
+            <label className="rp-analytics__synthetic-toggle">
+              <input
+                type="checkbox"
+                checked={includeSynthetic}
+                onChange={(e) => onIncludeSyntheticChange(e.target.checked)}
+              />
+              <span>Include synthetic data</span>
+            </label>
+          )}
+          {showRangeSelector && (
+            <div className="rp-analytics__range" role="tablist" aria-label="Time window">
+              {RANGES.map((r) => (
+                <button
+                  key={r.key}
+                  type="button"
+                  role="tab"
+                  aria-selected={r.key === range}
+                  className={r.key === range ? 'active' : ''}
+                  onClick={() => setRange(r.key)}
+                >
+                  {rangeLabel(r.key)}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {includeSynthetic && (syntheticCount ?? 0) > 0 && (
+        <div className="rp-analytics__synthetic-note" role="status">
+          Includes {syntheticCount} synthetic variants of organizer samples
+        </div>
+      )}
+
+      {loading ? (
+        <div className="rp-card rp-card--padded">Loading analytics…</div>
+      ) : error ? (
+        <div className="rp-card rp-card--padded">
+          <strong>Couldn't load disputes.</strong>
+          <p className="rp-muted">{error}</p>
+        </div>
+      ) : empty ? (
+        <div className="rp-analytics__empty">
+          <p>No disputes in this range</p>
+          <div className="rp-analytics__empty-actions">
+            {range !== 'all' && (
+              <button type="button" className="rp-btn rp-btn--primary" onClick={() => setRange('all')}>
+                Show all time
               </button>
-            ))}
+            )}
+            {onIncludeSyntheticChange && !includeSynthetic && (
+              <button
+                type="button"
+                className="rp-btn rp-btn--ghost"
+                onClick={() => onIncludeSyntheticChange(true)}
+              >
+                Include synthetic data
+              </button>
+            )}
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <>
+          {/* Stat tiles */}
+          <div className="rp-stat-grid rp-analytics__tiles">
+            <Tile
+              label="Total Disputes"
+              value={stats.total === 0 ? '—' : String(stats.total)}
+              accent="#F0246E"
+            />
+            <Tile
+              label="Auto-Resolved"
+              value={stats.autoResolvedPct === null ? '—' : `${stats.autoResolvedPct}%`}
+              accent="#178F4B"
+              sub={stats.autoResolvedPct === null ? null : `${stats.autoResolvedCount} of ${stats.total}`}
+            />
+            <Tile
+              label="Avg. Resolution"
+              value={stats.avgResolutionMin === null ? '—' : `${stats.avgResolutionMin} min`}
+              accent="#1F64CC"
+              sub={stats.resolvedCount === 0 ? null : `${stats.resolvedCount} resolved`}
+            />
+            <Tile
+              label="Avg. Confidence"
+              value={stats.avgConfidence === null ? '—' : `${stats.avgConfidence}%`}
+              accent="#A855F7"
+              sub={stats.resolvedCount === 0 ? null : `${stats.resolvedCount} resolved`}
+            />
+            <Tile
+              label="Escalated"
+              value={stats.escalatedPct === null ? '—' : `${stats.escalatedPct}%`}
+              accent="#C2510A"
+              sub={stats.escalatedPct === null ? null : `${stats.escalatedCount} of ${stats.total}`}
+            />
+          </div>
 
-      {/* Stat tiles */}
-      <div className="rp-stat-grid rp-analytics__tiles">
-        <Tile
-          label="Total Disputes"
-          value={stats.total === 0 ? '—' : String(stats.total)}
-          accent="#F0246E"
-        />
-        <Tile
-          label="Auto-Resolved"
-          value={stats.autoResolvedPct === null ? '—' : `${stats.autoResolvedPct}%`}
-          accent="#178F4B"
-        />
-        <Tile
-          label="Avg. Resolution"
-          value={stats.avgResolutionMin === null ? '—' : `${stats.avgResolutionMin} min`}
-          accent="#1F64CC"
-        />
-        <Tile
-          label="Escalated"
-          value={stats.escalatedPct === null ? '—' : `${stats.escalatedPct}%`}
-          accent="#C2510A"
-          sub={stats.escalatedCount > 0 ? `${stats.escalatedCount} dispute${stats.escalatedCount === 1 ? '' : 's'}` : null}
-        />
-      </div>
-
-      <div className="rp-analytics__grid">
-        {/* By category */}
-        <section className="rp-card rp-card--padded">
-          <header className="rp-analytics__card-head">
-            <h3>Disputes by Category</h3>
-            <span className="rp-muted rp-small">
-              {windowDisputes.length === 0 ? 'no data' : `${windowDisputes.length} in window`}
-            </span>
-          </header>
-          {byCategory.length === 0 ? (
-            <p className="rp-muted rp-small">No disputes in this window.</p>
-          ) : (
-            <ul className="rp-analytics__bars" aria-label="Disputes by category">
-              {byCategory.map((c) => (
-                <li key={c.category}>
-                  <button
-                    type="button"
-                    className="rp-analytics__bar"
-                    onClick={() => onSelectCategory?.(c.category)}
-                    disabled={!onSelectCategory}
-                    title={
-                      onSelectCategory
-                        ? `View ${c.label} disputes`
-                        : `${c.count} ${c.label} (${c.percent}%)`
-                    }
-                  >
-                    <div className="rp-analytics__bar-label">
-                      <span>{c.label}</span>
-                      <span className="rp-analytics__bar-value">
-                        {c.count} · {c.percent}%
-                      </span>
-                    </div>
-                    <div
-                      className="rp-analytics__bar-track"
-                      role="progressbar"
-                      aria-valuenow={c.percent}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
+          <div className="rp-analytics__grid">
+            {/* By category */}
+            <section className="rp-card rp-card--padded">
+              <header className="rp-analytics__card-head">
+                <h3>Disputes by Category</h3>
+                <span className="rp-muted rp-small">{windowDisputes.length} in range</span>
+              </header>
+              <ul className="rp-analytics__bars" aria-label="Disputes by category">
+                {byCategory.map((c) => (
+                  <li key={c.category}>
+                    <button
+                      type="button"
+                      className="rp-analytics__bar"
+                      onClick={() => onSelectCategory?.(c.category)}
+                      disabled={!onSelectCategory}
+                      title={
+                        onSelectCategory
+                          ? `View ${c.label} disputes`
+                          : `${c.count} ${c.label} (${c.percent}%)`
+                      }
                     >
+                      <div className="rp-analytics__bar-label">
+                        <span>{c.label}</span>
+                        <span className="rp-analytics__bar-value">
+                          {c.count} · {c.percent}%
+                        </span>
+                      </div>
                       <div
-                        className="rp-analytics__bar-fill"
-                        style={{ width: `${c.percent}%`, background: c.color }}
-                      />
-                    </div>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
+                        className="rp-analytics__bar-track"
+                        role="progressbar"
+                        aria-valuenow={c.percent}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                      >
+                        <div
+                          className="rp-analytics__bar-fill"
+                          style={{ width: `${c.percent}%`, background: c.color }}
+                        />
+                      </div>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-        {/* Outcomes */}
-        <section className="rp-card rp-card--padded">
-          <header className="rp-analytics__card-head">
-            <h3>Outcomes</h3>
-            <span className="rp-muted rp-small">
-              {windowDisputes.length === 0 ? 'no data' : `${windowDisputes.length} in window`}
-            </span>
-          </header>
-          {byOutcome.length === 0 ? (
-            <p className="rp-muted rp-small">No disputes in this window.</p>
-          ) : (
-            <ul className="rp-analytics__outcomes">
-              {byOutcome.map((o) => (
-                <li key={o.key} className="rp-analytics__outcome">
-                  <span className="rp-analytics__outcome-dot" style={{ background: o.color }} />
-                  <span className="rp-analytics__outcome-label">{o.label}</span>
-                  <span className="rp-analytics__outcome-count">{o.count}</span>
-                  <span className="rp-analytics__outcome-pct">{o.percent}%</span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-      </div>
+            {/* Outcomes */}
+            <section className="rp-card rp-card--padded">
+              <header className="rp-analytics__card-head">
+                <h3>Outcomes</h3>
+                <span className="rp-muted rp-small">{windowDisputes.length} in range</span>
+              </header>
+              <ul className="rp-analytics__outcomes">
+                {byOutcome.map((o) => (
+                  <li key={o.key} className="rp-analytics__outcome">
+                    <span className="rp-analytics__outcome-dot" style={{ background: o.color }} />
+                    <span className="rp-analytics__outcome-label">{o.label}</span>
+                    <span className="rp-analytics__outcome-count">{o.count}</span>
+                    <span className="rp-analytics__outcome-pct">{o.percent}%</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+        </>
+      )}
     </div>
   )
 }

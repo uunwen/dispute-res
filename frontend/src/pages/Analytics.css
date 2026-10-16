@@ -61,9 +61,53 @@
   color: #fff;
 }
 
+.rp-analytics__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.rp-analytics__synthetic-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rp-text);
+  cursor: pointer;
+}
+.rp-analytics__synthetic-toggle input {
+  accent-color: var(--rp-pink);
+}
+.rp-analytics__synthetic-note {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rp-escalated-fg);
+  background: var(--rp-escalated-bg);
+  border-radius: var(--rp-radius-sm);
+  padding: 6px 10px;
+}
+.rp-analytics__empty {
+  text-align: center;
+  padding: 32px 16px;
+  background: var(--rp-card);
+  border: 1px dashed var(--rp-border);
+  border-radius: var(--rp-radius);
+}
+.rp-analytics__empty p {
+  margin: 0 0 12px;
+  color: var(--rp-text-muted);
+}
+.rp-analytics__empty-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 /* ---------- Tiles (reuse rp-stat-grid from dashboard) ---------- */
 .rp-analytics__tiles {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 .rp-analytics--pane .rp-analytics__tiles {
   /* 2×2 on the side pane, since the pane is narrower */

@@ -80,9 +80,8 @@ export default function NewApp() {
 
   useEffect(() => {
     let cancelled = false
-    setLoading(true)
     api
-      .listDisputes({ account_id: accountId })
+      .listDisputes({ account_id: accountId, include_synthetic: persona === 'ops' })
       .then((items) => {
         if (cancelled) return
         setDisputes(items)
@@ -98,7 +97,12 @@ export default function NewApp() {
     return () => {
       cancelled = true
     }
-  }, [accountId])
+  }, [accountId, persona])
+
+  function handlePersonaChange(next: Persona) {
+    setLoading(true)
+    setPersona(next)
+  }
 
   /** Row click — go to the ruling for resolved/escalated disputes,
    * otherwise the debate screen. Mirrors the design's "click to
@@ -129,7 +133,7 @@ export default function NewApp() {
     setScreen('debate')
     // Refresh the disputes list so the new one shows up everywhere else.
     api
-      .listDisputes({ account_id: accountId })
+      .listDisputes({ account_id: accountId, include_synthetic: persona === 'ops' })
       .then(setDisputes)
       .catch(() => undefined)
   }
@@ -169,7 +173,7 @@ export default function NewApp() {
       <div className="rp-main">
         <TopBar
           persona={persona}
-          onPersonaChange={setPersona}
+          onPersonaChange={handlePersonaChange}
           personaLabel={personaLabel}
         />
         {isMockMode && (
@@ -273,7 +277,7 @@ export default function NewApp() {
         )}
         {screen === 'analytics' && (
           <Analytics
-            disputes={disputes}
+            accountId={accountId}
             onSelectCategory={pickCategory}
           />
         )}
