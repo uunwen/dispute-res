@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -13,7 +13,14 @@ class DisputeCreate(BaseModel):
         description="Dispute category. Aliases `cancellation_fee`, `surge_pricing` and `fare` are accepted.",
     )
     claim_text: str = Field(..., description="The claimant's natural-language claim.")
-    filed_by: int = Field(..., description="Account ID of the party filing the dispute.")
+    filed_by: int | None = Field(
+        None,
+        description="Account ID of the party filing the dispute. If omitted, derived from ``filed_by_role``.",
+    )
+    filed_by_role: Literal["rider", "driver"] = Field(
+        "rider",
+        description="Which trip party files the dispute when ``filed_by`` is omitted.",
+    )
 
     @field_validator("category", mode="before")
     @classmethod
@@ -79,6 +86,28 @@ class DisputeListItem(BaseModel):
     llm_degraded: bool | None = None
     confidence: float | None = None
     ruling_created_at: datetime | None = None
+
+
+class DisputeReviewCreate(BaseModel):
+    action: Literal["confirm", "appeal", "assign"] = Field(
+        ..., description="Review action to record."
+    )
+    note: str | None = Field(None, description="Optional free-text note.")
+
+
+class DisputeReviewResponse(BaseModel):
+    id: int
+    dispute_id: int
+    action: str
+    note: str | None
+    actor: str
+    created_at: datetime
+
+
+class AccountItem(BaseModel):
+    id: int
+    name: str
+    role: str
 
 
 class TripListItem(BaseModel):

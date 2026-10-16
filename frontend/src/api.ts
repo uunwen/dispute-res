@@ -48,6 +48,26 @@ export interface Dispute {
   created_at: string
 }
 
+export interface DisputeReview {
+  id: number
+  dispute_id: number
+  action: string
+  note: string | null
+  actor: string
+  created_at: string
+}
+
+export interface AccountItem {
+  id: number
+  name: string
+  role: string
+}
+
+export interface ListDisputesParams {
+  account_id?: number | null
+  include_synthetic?: boolean
+}
+
 export interface AgentMessage {
   id: number
   dispute_id: number
@@ -203,10 +223,10 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
  * sample data into the bundle when mock mode is off. */
 type MockApi = {
   listTrips: () => Promise<Trip[]>
-  listDisputes: () => Promise<DisputeListItem[]>
+  listDisputes: (params?: ListDisputesParams) => Promise<DisputeListItem[]>
   fetchCategories: () => Promise<CategoryMeta[]>
   getDispute: (id: number) => Promise<Dispute>
-  createDispute: (body: { trip_id: number; category: string; claim_text: string; filed_by: number }) => Promise<Dispute>
+  createDispute: (body: { trip_id: number; category: string; claim_text: string; filed_by_role?: 'rider' | 'driver' }) => Promise<Dispute>
   resolveDispute: (id: number, force?: boolean) => Promise<{ dispute_id: number; status: string }>
   getMessages: (id: number) => Promise<AgentMessage[]>
   getRuling: (id: number) => Promise<Ruling>
@@ -218,6 +238,9 @@ type MockApi = {
   getPolicies: () => Promise<PolicySection[]>
   getRules: () => Promise<RuleItem[]>
   getSettings: () => Promise<Settings>
+  listAccounts: () => Promise<AccountItem[]>
+  listReviews: (id: number) => Promise<DisputeReview[]>
+  reviewDispute: (id: number, action: 'confirm' | 'appeal' | 'assign', note?: string) => Promise<DisputeReview>
   streamUrl: (id: number) => string
 }
 
@@ -228,10 +251,17 @@ async function getMock(): Promise<MockApi> {
 
 export const api = {
   listTrips: () => (USE_MOCK ? getMock().then((m) => m.listTrips()) : request<Trip[]>('/trips')),
-  listDisputes: () => (USE_MOCK ? getMock().then((m) => m.listDisputes()) : request<DisputeListItem[]>('/disputes')),
+  listDisputes: (params?: ListDisputesParams) => {
+    if (USE_MOCK) return getMock().then((m) => m.listDisputes(params))
+    const qs = new URLSearchParams()
+    if (params?.account_id != null) qs.set('account_id', String(params.account_id))
+    if (params?.include_synthetic != null) qs.set('include_synthetic', String(params.include_synthetic))
+    const q = qs.toString()
+    return request<DisputeListItem[]>(`/disputes${q ? `?${q}` : ''}`)
+  },
   fetchCategories: () => (USE_MOCK ? getMock().then((m) => m.fetchCategories()) : request<CategoryMeta[]>('/meta/categories')),
   getDispute: (id: number) => (USE_MOCK ? getMock().then((m) => m.getDispute(id)) : request<Dispute>(`/disputes/${id}`)),
-  createDispute: (body: { trip_id: number; category: string; claim_text: string; filed_by: number }) =>
+  createDispute: (body: { trip_id: number; category: string; claim_text: string; filed_by_role?: 'rider' | 'driver' }) =>
     USE_MOCK
       ? getMock().then((m) => m.createDispute(body))
       : request<Dispute>('/disputes', {
@@ -255,6 +285,17 @@ export const api = {
   getPolicies: () => (USE_MOCK ? getMock().then((m) => m.getPolicies()) : request<PolicySection[]>('/meta/policies')),
   getRules: () => (USE_MOCK ? getMock().then((m) => m.getRules()) : request<RuleItem[]>('/meta/rules')),
   getSettings: () => (USE_MOCK ? getMock().then((m) => m.getSettings()) : request<Settings>('/meta/settings')),
+  listAccounts: () => (USE_MOCK ? getMock().then((m) => m.listAccounts()) : request<AccountItem[]>('/accounts')),
+  listReviews: (id: number) =>
+    USE_MOCK ? getMock().then((m) => m.listReviews(id)) : request<DisputeReview[]>(`/disputes/${id}/reviews`),
+  reviewDispute: (id: number, action: 'confirm' | 'appeal' | 'assign', note?: string) =>
+    USE_MOCK
+      ? getMock().then((m) => m.reviewDispute(id, action, note))
+      : request<DisputeReview>(`/disputes/${id}/review`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action, note: note ?? null }),
+        }),
   streamUrl: (id: number) => `${BASE}/disputes/${id}/stream`,
 }
 

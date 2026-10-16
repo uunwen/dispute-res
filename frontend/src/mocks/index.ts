@@ -1,11 +1,14 @@
 import type {
+  AccountItem,
   AgentMessage,
   CategoryMeta,
   ChatMessage,
   Dispute,
   DisputeListItem,
+  DisputeReview,
   EvidenceItem,
   Formula,
+  ListDisputesParams,
   PolicySection,
   QueueItem,
   RuleItem,
@@ -338,7 +341,17 @@ function delay<T>(value: T, ms = 50): Promise<T> {
 export const mockApi = {
   listTrips: () => delay<Trip[]>(TRIPS),
 
-  listDisputes: () => delay<DisputeListItem[]>(ALL_SPECS.map(specToDisputeListItem)),
+  listDisputes: (params?: ListDisputesParams) => {
+    let specs = ALL_SPECS
+    if (params?.account_id != null) {
+      const id = params.account_id
+      specs = specs.filter((s) => {
+        const trip = TRIPS.find((t) => t.id === s.trip_id)
+        return s.filed_by === id || trip?.rider_id === id || trip?.driver_id === id
+      })
+    }
+    return delay<DisputeListItem[]>(specs.map(specToDisputeListItem))
+  },
 
   fetchCategories: () => delay<CategoryMeta[]>(CATEGORIES),
 
@@ -348,12 +361,15 @@ export const mockApi = {
     return delay<Dispute>(specToDispute(spec))
   },
 
-  createDispute: (body: { trip_id: number; category: string; claim_text: string; filed_by: number }) => {
+  createDispute: (body: { trip_id: number; category: string; claim_text: string; filed_by_role?: 'rider' | 'driver' }) => {
     // In mock mode, creating a dispute persists a new DisputeSpec so
     // the debate page, ruling page, disputes list and dashboard all
     // see it. We generate sample agent messages and a ruling so the
     // full flow works end-to-end: file → debate (plays sample agent
     // output) → ruling.
+    const trip = TRIPS.find((t) => t.id === body.trip_id)
+    const filedBy =
+      body.filed_by_role === 'driver' ? trip?.driver_id ?? 0 : trip?.rider_id ?? 0
     const newId = ALL_SPECS.length + 1
     const now = new Date()
     const created = now.toISOString()
@@ -362,7 +378,7 @@ export const mockApi = {
     const spec: DisputeSpec = {
       id: newId,
       trip_id: body.trip_id,
-      filed_by: body.filed_by,
+      filed_by: filedBy,
       category: body.category,
       claim_text: body.claim_text,
       status: 'resolved',
@@ -515,6 +531,40 @@ export const mockApi = {
   getRules: () => delay<RuleItem[]>(RULES),
 
   getSettings: () => delay<Settings>(SETTINGS),
+
+  listAccounts: () => {
+    const accounts: AccountItem[] = []
+    const seen = new Set<number>()
+    for (const t of TRIPS) {
+      if (!seen.has(t.rider_id)) {
+        seen.add(t.rider_id)
+        accounts.push({ id: t.rider_id, name: t.rider, role: 'rider' })
+      }
+      if (!seen.has(t.driver_id)) {
+        seen.add(t.driver_id)
+        accounts.push({ id: t.driver_id, name: t.driver, role: 'driver' })
+      }
+    }
+    return delay<AccountItem[]>(accounts)
+  },
+
+  listReviews: () => delay<DisputeReview[]>([]),
+
+  reviewDispute: (id: number, action: 'confirm' | 'appeal' | 'assign', note?: string) => {
+    const spec = ALL_SPECS.find((s) => s.id === id)
+    if (spec) {
+      spec.status = action === 'confirm' ? 'resolved' : 'needs_human_review'
+    }
+    const review: DisputeReview = {
+      id: Math.floor(Math.random() * 1_000_000),
+      dispute_id: id,
+      action,
+      note: note ?? null,
+      actor: 'ops',
+      created_at: new Date().toISOString(),
+    }
+    return delay<DisputeReview>(review)
+  },
 
   streamUrl: (id: number) => `/api/disputes/${id}/stream`,
 }

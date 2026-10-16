@@ -211,17 +211,17 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
     setSubmitting(true)
     setSubmitError(null)
     try {
-      // MOCK: no backend file-upload endpoint. We send only the structured
-      // case JSON the backend expects: { trip_id, category, claim_text,
-      // filed_by }. The file list is shown to the user (Review step) but
-      // is not sent; the dispute card surfaces the
-      // "Evidence images are listed, not analysed, in this version." note
-      // so users don't expect the LLM to have looked at the files.
+      // No backend file-upload endpoint: we send only the structured case JSON
+      // the backend expects ({ trip_id, category, claim_text, filed_by_role }).
+      // The file list is shown to the user (Review step) but is not sent; the
+      // dispute card surfaces the "Evidence images are listed, not analysed"
+      // note so users don't expect the LLM to have looked at the files.
+      // filed_by is derived from the trip (rider by default).
       const created = await api.createDispute({
         trip_id: tripId,
         category,
         claim_text: claim.trim(),
-        filed_by: 1, // MOCK: hard-coded claimant; auth not wired in this MVP
+        filed_by_role: 'rider',
       })
       onSubmitted(created.id)
     } catch (err: unknown) {

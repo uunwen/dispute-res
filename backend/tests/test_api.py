@@ -18,7 +18,7 @@ async def test_cors_allows_localhost_5173():
 
 async def test_list_disputes_newest_first(seeded_session):
     async with _client() as client:
-        resp = await client.get("/disputes")
+        resp = await client.get("/disputes", params={"include_synthetic": "true"})
     assert resp.status_code == 200
     data = resp.json()
     assert len(data) >= 2
@@ -26,6 +26,63 @@ async def test_list_disputes_newest_first(seeded_session):
         assert {"id", "trip_id", "category", "status", "created_at"} <= d.keys()
     created = [d["created_at"] for d in data]
     assert created == sorted(created, reverse=True)
+
+
+async def test_list_disputes_default_hides_legacy_seeded(seeded_session):
+    # Legacy seeded disputes have a null external_id, so the default
+    # (include_synthetic=false) view must not return them.
+    async with _client() as client:
+        resp = await client.get("/disputes")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert all(d["external_id"] is not None for d in data)
+
+
+async def test_create_dispute_derives_filed_by_from_trip(seeded_session, ground_truth):
+    from sqlalchemy import delete
+
+    from app.db import models
+    from app.db.session import async_session_factory
+    from app.queue.queue import remove_dispute
+
+    entry = next(e for e in ground_truth if e["label"] == "route_deviation")
+    dispute_id = None
+    try:
+        async with _client() as client:
+            resp = await client.post(
+                "/disputes",
+                json={
+                    "trip_id": entry["trip_id"],
+                    "category": "route_deviation",
+                    "claim_text": "test derived filed_by",
+                },
+            )
+            assert resp.status_code == 201, resp.text
+            body = resp.json()
+            dispute_id = body["id"]
+            assert body["filed_by"] == entry["rider_id"]
+    finally:
+        if dispute_id is not None:
+            await remove_dispute(dispute_id)
+            async with async_session_factory() as session:
+                await session.execute(delete(models.Dispute).where(models.Dispute.id == dispute_id))
+                await session.commit()
+
+
+async def test_create_dispute_rejects_foreign_filed_by(seeded_session, ground_truth):
+    entry = next(e for e in ground_truth if e["label"] == "route_deviation")
+    # 999 is not a party on the trip.
+    async with _client() as client:
+        resp = await client.post(
+            "/disputes",
+            json={
+                "trip_id": entry["trip_id"],
+                "category": "route_deviation",
+                "claim_text": "test foreign filed_by",
+                "filed_by": 999,
+            },
+        )
+    assert resp.status_code == 400
 
 
 async def test_list_trips(seeded_session):

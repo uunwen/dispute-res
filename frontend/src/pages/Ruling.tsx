@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { api, type Dispute, type Ruling } from '../api'
+import { api, type Dispute, type DisputeReview, type Ruling } from '../api'
 import StatusBadge from '../components/StatusBadge'
 import Modal from '../components/Modal'
 import Toast from '../components/Toast'
@@ -45,6 +45,7 @@ export default function RulingScreen({ disputeId, onBack, onSeeEvidence }: Rulin
   const [assignedReviewer, setAssignedReviewer] = useState<string | null>(null)
   const [appealSubmitted, setAppealSubmitted] = useState(false)
   const [refundProcessed, setRefundProcessed] = useState(false)
+  const [reviews, setReviews] = useState<DisputeReview[]>([])
 
   useEffect(() => {
     let cancelled = false
@@ -62,6 +63,20 @@ export default function RulingScreen({ disputeId, onBack, onSeeEvidence }: Rulin
         if (cancelled) return
         setLoading(false)
       })
+    return () => {
+      cancelled = true
+    }
+  }, [disputeId])
+
+  useEffect(() => {
+    let cancelled = false
+    api
+      .listReviews(disputeId)
+      .then((items) => {
+        if (cancelled) return
+        setReviews(items)
+      })
+      .catch(() => undefined)
     return () => {
       cancelled = true
     }
@@ -124,23 +139,50 @@ export default function RulingScreen({ disputeId, onBack, onSeeEvidence }: Rulin
     }, 3000)
   }
 
-  function processRefund() {
-    setModal({ kind: 'none' })
-    setRefundProcessed(true)
-    showToast('Refund request recorded')
+  async function refreshReviews() {
+    try {
+      setReviews(await api.listReviews(disputeId))
+    } catch {
+      /* the audit list is best-effort */
+    }
   }
 
-  function submitAppeal(name: string) {
+  async function processRefund() {
     setModal({ kind: 'none' })
-    setAppealSubmitted(true)
-    const who = name.trim() || 'The rider'
-    showToast(`${who}'s appeal has been submitted for review`)
+    try {
+      await api.reviewDispute(disputeId, 'confirm', 'Refund processed by ops')
+      setRefundProcessed(true)
+      await refreshReviews()
+      showToast('Refund confirmed and recorded')
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : 'Failed to record action', 'error')
+    }
   }
 
-  function assignReviewer(name: string) {
+  async function submitAppeal(name: string, reason: string) {
     setModal({ kind: 'none' })
-    setAssignedReviewer(name.trim() || 'Human reviewer')
-    showToast(`Assigned to ${name.trim() || 'Human reviewer'}`, 'info')
+    try {
+      const who = name.trim() || 'The rider'
+      await api.reviewDispute(disputeId, 'appeal', reason.trim() ? `${who}: ${reason.trim()}` : who)
+      setAppealSubmitted(true)
+      await refreshReviews()
+      showToast(`${who}'s appeal has been submitted for review`)
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : 'Failed to submit appeal', 'error')
+    }
+  }
+
+  async function assignReviewer(name: string) {
+    setModal({ kind: 'none' })
+    try {
+      const who = name.trim() || 'Human reviewer'
+      await api.reviewDispute(disputeId, 'assign', `Assigned to ${who}`)
+      setAssignedReviewer(who)
+      await refreshReviews()
+      showToast(`Assigned to ${who}`, 'info')
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : 'Failed to assign reviewer', 'error')
+    }
   }
 
   /* ---------- rendering ---------- */
@@ -250,6 +292,32 @@ export default function RulingScreen({ disputeId, onBack, onSeeEvidence }: Rulin
           onViewReport={() => setModal({ kind: 'viewReport' })}
           onShowMessage={(who) => setModal({ kind: 'message', who })}
         />
+      )}
+
+      {reviews.length > 0 && (
+        <section className="rp-ruling__section">
+          <h3>Review actions</h3>
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+            {reviews.map((r) => (
+              <li
+                key={r.id}
+                style={{
+                  display: 'flex',
+                  gap: 8,
+                  alignItems: 'baseline',
+                  padding: '6px 0',
+                  borderBottom: '1px solid var(--rp-border)',
+                }}
+              >
+                <span style={{ textTransform: 'capitalize', fontWeight: 600 }}>{r.action}</span>
+                {r.note && <span className="rp-muted">{r.note}</span>}
+                <span className="rp-muted rp-small" style={{ marginLeft: 'auto' }}>
+                  {formatDate(r.created_at)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       {/* Modals */}

@@ -184,6 +184,27 @@ class Ruling(Base):
     )
 
 
+class DisputeReview(Base):
+    """A human review action on a dispute (confirm / appeal / assign).
+
+    Serves as the audit log for ruling-page actions. Each row records the action
+    taken, an optional free-text note, and the actor who took it.
+    """
+
+    __tablename__ = "dispute_reviews"
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    dispute_id: Mapped[int] = mapped_column(
+        BigInteger, ForeignKey("disputes.id"), nullable=False, index=True
+    )
+    action: Mapped[str] = mapped_column(String(50), nullable=False)
+    note: Mapped[str | None] = mapped_column(Text, nullable=True)
+    actor: Mapped[str] = mapped_column(String(50), nullable=False, server_default=text("'ops'"))
+    created_at: Mapped[datetime.datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, server_default=func.now()
+    )
+
+
 class PolicyChunk(Base):
     __tablename__ = "policy_chunks"
 

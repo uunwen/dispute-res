@@ -4,11 +4,19 @@ interface ValueProp {
   icon: string
 }
 
+export type Persona = 'rider' | 'driver' | 'ops'
+
 const VALUES: ValueProp[] = [
   { label: 'Fair & Balanced', blurb: 'Both sides heard', icon: '⚖' },
   { label: 'Policy-Grounded', blurb: 'Transparent and consistent', icon: '📜' },
   { label: 'Fast Resolution', blurb: 'From days to minutes', icon: '⚡' },
   { label: 'Human Oversight', blurb: 'When it matters', icon: '👥' },
+]
+
+const PERSONAS: { key: Persona; label: string }[] = [
+  { key: 'rider', label: 'Rider' },
+  { key: 'driver', label: 'Driver' },
+  { key: 'ops', label: 'Ops' },
 ]
 
 function Paw({ size = 20 }: { size?: number }) {
@@ -23,7 +31,14 @@ function Paw({ size = 20 }: { size?: number }) {
   )
 }
 
-export default function TopBar() {
+interface TopBarProps {
+  persona: Persona
+  onPersonaChange: (persona: Persona) => void
+  /** Display name for the selected rider/driver account, when known. */
+  personaLabel?: string | null
+}
+
+export default function TopBar({ persona, onPersonaChange, personaLabel }: TopBarProps) {
   return (
     <div className="rp-topbar">
       <div className="rp-topbar__brand">
@@ -55,6 +70,26 @@ export default function TopBar() {
           </div>
         ))}
       </div>
+      <div className="rp-topbar__persona" aria-label="View as">
+        <span className="rp-topbar__persona-label">
+          Viewing as{personaLabel ? ` ${personaLabel}` : ''}
+        </span>
+        <div className="rp-persona-switch" role="tablist">
+          {PERSONAS.map((p) => (
+            <button
+              key={p.key}
+              type="button"
+              role="tab"
+              aria-selected={p.key === persona}
+              className={p.key === persona ? 'active' : ''}
+              onClick={() => onPersonaChange(p.key)}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
+

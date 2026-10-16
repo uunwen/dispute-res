@@ -89,6 +89,40 @@
   color: var(--rp-text-muted);
 }
 
+.rp-topbar__persona {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.rp-topbar__persona-label {
+  font-size: 11px;
+  color: var(--rp-text-muted);
+}
+.rp-persona-switch {
+  display: inline-flex;
+  border: 1px solid var(--rp-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.rp-persona-switch button {
+  border: 0;
+  background: #fff;
+  color: var(--rp-text);
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-left: 1px solid var(--rp-border);
+}
+.rp-persona-switch button:first-child {
+  border-left: 0;
+}
+.rp-persona-switch button.active {
+  background: var(--rp-pink);
+  color: #fff;
+}
+
 /* Hide the tagline on narrow screens to prevent overflow. */
 @media (max-width: 1280px) {
   .rp-topbar__divider,

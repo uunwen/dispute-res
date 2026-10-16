@@ -3,7 +3,7 @@ import json
 import redis.asyncio as aioredis
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
 from fastapi.responses import StreamingResponse
-from sqlalchemy import delete, select
+from sqlalchemy import delete, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import settings
@@ -16,12 +16,15 @@ from app.policies import load_policy_sections
 from app.queue.queue import enqueue_dispute, list_queue, remove_dispute
 from app.rules.engine import load_rules
 from app.schemas.api import (
+    AccountItem,
     CategoryMeta,
     ChatMessageItem,
     ConfigEntry,
     DisputeCreate,
     DisputeListItem,
     DisputeResponse,
+    DisputeReviewCreate,
+    DisputeReviewResponse,
     GpsPointItem,
     MessageResponse,
     ModelAssignment,
@@ -114,6 +117,17 @@ def _ruling_dict(r: models.Ruling) -> dict:
     }
 
 
+def _review_dict(r: models.DisputeReview) -> dict:
+    return {
+        "id": r.id,
+        "dispute_id": r.dispute_id,
+        "action": r.action,
+        "note": r.note,
+        "actor": r.actor,
+        "created_at": r.created_at,
+    }
+
+
 @router.post(
     "/disputes",
     response_model=DisputeResponse,
@@ -123,9 +137,23 @@ def _ruling_dict(r: models.Ruling) -> dict:
     description="Create a dispute against a trip and enqueue it for autonomous resolution.",
 )
 async def create_dispute(payload: DisputeCreate, session: AsyncSession = Depends(get_session)):
+    trip = await session.get(models.Trip, payload.trip_id)
+    if trip is None:
+        raise HTTPException(status_code=404, detail="trip not found")
+
+    if payload.filed_by is not None:
+        if payload.filed_by not in (trip.rider_id, trip.driver_id):
+            raise HTTPException(
+                status_code=400,
+                detail="filed_by account does not belong to this trip",
+            )
+        filed_by = payload.filed_by
+    else:
+        filed_by = trip.rider_id if payload.filed_by_role == "rider" else trip.driver_id
+
     dispute = models.Dispute(
         trip_id=payload.trip_id,
-        filed_by=payload.filed_by,
+        filed_by=filed_by,
         category=payload.category,
         claim_text=payload.claim_text,
         status="open",
@@ -218,6 +246,77 @@ async def get_ruling(dispute_id: int, session: AsyncSession = Depends(get_sessio
     return _ruling_dict(ruling)
 
 
+@router.post(
+    "/disputes/{dispute_id}/review",
+    response_model=DisputeReviewResponse,
+    status_code=201,
+    tags=["Disputes"],
+    summary="Record a review action",
+    description=(
+        "Record a human review action (confirm, appeal or assign) against a dispute. "
+        "The action is written to the dispute audit log and updates the dispute status."
+    ),
+)
+async def review_dispute(
+    dispute_id: int,
+    payload: DisputeReviewCreate,
+    session: AsyncSession = Depends(get_session),
+):
+    dispute = await session.get(models.Dispute, dispute_id)
+    if dispute is None:
+        raise HTTPException(status_code=404, detail="dispute not found")
+
+    if payload.action == "confirm":
+        dispute.status = "resolved"
+    elif payload.action == "appeal":
+        dispute.status = "needs_human_review"
+    elif payload.action == "assign":
+        dispute.status = "needs_human_review"
+
+    review = models.DisputeReview(
+        dispute_id=dispute_id,
+        action=payload.action,
+        note=payload.note,
+        actor="ops",
+    )
+    session.add(review)
+    await session.commit()
+    await session.refresh(review)
+    return _review_dict(review)
+
+
+@router.get(
+    "/disputes/{dispute_id}/reviews",
+    response_model=list[DisputeReviewResponse],
+    tags=["Disputes"],
+    summary="List review actions",
+    description="Return the audit log of human review actions for a dispute.",
+)
+async def list_reviews(dispute_id: int, session: AsyncSession = Depends(get_session)):
+    rows = (
+        await session.execute(
+            select(models.DisputeReview)
+            .where(models.DisputeReview.dispute_id == dispute_id)
+            .order_by(models.DisputeReview.created_at)
+        )
+    ).scalars().all()
+    return [_review_dict(r) for r in rows]
+
+
+@router.get(
+    "/accounts",
+    response_model=list[AccountItem],
+    tags=["Trips"],
+    summary="List accounts",
+    description="Return the rider and driver accounts (id, name, role) available in the system.",
+)
+async def list_accounts(session: AsyncSession = Depends(get_session)):
+    rows = (
+        await session.execute(select(models.Account).order_by(models.Account.id))
+    ).scalars().all()
+    return [{"id": a.id, "name": a.name, "role": a.role.value} for a in rows]
+
+
 @router.get(
     "/disputes/{dispute_id}/stream",
     tags=["Disputes"],
@@ -259,10 +358,32 @@ async def get_trip_evidence(trip_id: int):
     summary="List disputes",
     description="Return all disputes with their latest ruling outcome and refund amount.",
 )
-async def list_disputes(session: AsyncSession = Depends(get_session)):
-    disputes = (
-        await session.execute(select(models.Dispute).order_by(models.Dispute.created_at.desc()))
-    ).scalars().all()
+async def list_disputes(
+    account_id: int | None = None,
+    include_synthetic: bool = False,
+    session: AsyncSession = Depends(get_session),
+):
+    stmt = select(models.Dispute).order_by(models.Dispute.created_at.desc())
+
+    if account_id is not None:
+        stmt = (
+            stmt.join(models.Trip, models.Trip.id == models.Dispute.trip_id)
+            .where(
+                or_(
+                    models.Dispute.filed_by == account_id,
+                    models.Trip.rider_id == account_id,
+                    models.Trip.driver_id == account_id,
+                )
+            )
+        )
+
+    if not include_synthetic:
+        stmt = stmt.where(
+            models.Dispute.external_id.is_not(None),
+            ~models.Dispute.external_id.like("VAR-%"),
+        )
+
+    disputes = (await session.execute(stmt)).scalars().all()
     if not disputes:
         return []
 

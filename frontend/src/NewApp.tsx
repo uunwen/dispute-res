@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { api, isMockMode, type DisputeListItem } from './api'
+import { useEffect, useMemo, useState } from 'react'
+import { api, isMockMode, type AccountItem, type DisputeListItem } from './api'
 import Sidebar from './components/Sidebar'
-import TopBar from './components/TopBar'
+import TopBar, { type Persona } from './components/TopBar'
 import Dashboard from './pages/Dashboard'
 import DisputesList from './pages/DisputesList'
 import DisputeDetail from './pages/DisputeDetail'
@@ -50,15 +50,39 @@ export default function NewApp() {
   const [evidenceId, setEvidenceId] = useState<number | null>(null)
   const [argumentsId, setArgumentsId] = useState<number | null>(null)
 
+  // Persona switcher: rider/driver filter the dispute list by the account
+  // they belong to; ops sees the full (non-synthetic) list.
+  const [persona, setPersona] = useState<Persona>('ops')
+  const [accounts, setAccounts] = useState<AccountItem[]>([])
+
+  const accountId = useMemo<number | null>(() => {
+    if (persona === 'rider') return accounts.find((a) => a.role === 'rider')?.id ?? null
+    if (persona === 'driver') return accounts.find((a) => a.role === 'driver')?.id ?? null
+    return null
+  }, [persona, accounts])
+
+  const personaLabel = useMemo<string | null>(() => {
+    if (persona === 'ops') return null
+    return accounts.find((a) => a.role === persona)?.name ?? null
+  }, [persona, accounts])
+
   // Category filter shared between the analytics "Disputes by Category"
   // click and the DisputesList page. When the user clicks a category
   // bar, we set this and switch to the disputes screen.
   const [categoryFilter, setCategoryFilter] = useState<string>('all')
 
   useEffect(() => {
-    let cancelled = false
     api
-      .listDisputes()
+      .listAccounts()
+      .then(setAccounts)
+      .catch(() => undefined)
+  }, [])
+
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    api
+      .listDisputes({ account_id: accountId })
       .then((items) => {
         if (cancelled) return
         setDisputes(items)
@@ -74,7 +98,7 @@ export default function NewApp() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [accountId])
 
   /** Row click — go to the ruling for resolved/escalated disputes,
    * otherwise the debate screen. Mirrors the design's "click to
@@ -105,7 +129,7 @@ export default function NewApp() {
     setScreen('debate')
     // Refresh the disputes list so the new one shows up everywhere else.
     api
-      .listDisputes()
+      .listDisputes({ account_id: accountId })
       .then(setDisputes)
       .catch(() => undefined)
   }
@@ -143,7 +167,11 @@ export default function NewApp() {
         profile={{ name: 'Alex Tan', role: 'Support Agent' }}
       />
       <div className="rp-main">
-        <TopBar />
+        <TopBar
+          persona={persona}
+          onPersonaChange={setPersona}
+          personaLabel={personaLabel}
+        />
         {isMockMode && (
           <div className="rp-mock-banner" role="status" aria-label="Sample data mode">
             Sample data mode — showing representative disputes and evidence. No backend connection required.
