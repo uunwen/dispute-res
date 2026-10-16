@@ -1,5 +1,5 @@
 import { type ReactElement, useEffect, useMemo, useRef, useState } from 'react'
-import { api, type CategoryMeta, type Trip } from '../api'
+import { api, type AttachmentKind, type CategoryMeta, type Trip } from '../api'
 import StepProgress from '../components/StepProgress'
 import {
   ChatIcon,
@@ -61,32 +61,40 @@ const CATEGORY_ICONS: Record<string, (p: { size?: number }) => ReactElement> = {
 }
 
 const CLAIM_MAX = 500
-const FILE_MAX_BYTES = 10 * 1024 * 1024
+const FILE_MAX_BYTES = 5 * 1024 * 1024
 const FILE_TYPES: Record<string, string[]> = {
-  photos_videos: ['image/jpeg', 'image/png', 'image/webp', 'video/mp4'],
-  chat_logs: ['image/jpeg', 'image/png', 'image/webp', 'text/plain', 'application/json'],
+  photos: ['image/jpeg', 'image/png', 'image/webp'],
   receipts: ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'],
-  other_files: [], // accept anything not caught by the others
+  chat_logs: ['text/plain', 'application/json'],
 }
 
 type ChipKey = keyof typeof FILE_TYPES
 
+const CHIP_KIND: Record<ChipKey, AttachmentKind> = {
+  photos: 'photo',
+  receipts: 'receipt',
+  chat_logs: 'chat_log',
+}
+
 const CHIPS: { key: ChipKey; label: string; icon: (p: { size?: number }) => ReactElement }[] = [
-  { key: 'photos_videos', label: 'Photos/Videos', icon: (p) => <PhotoIcon size={p.size} /> },
-  { key: 'chat_logs', label: 'Chat Logs', icon: (p) => <ChatIcon size={p.size} /> },
+  { key: 'photos', label: 'Photos', icon: (p) => <PhotoIcon size={p.size} /> },
   { key: 'receipts', label: 'Receipts', icon: (p) => <ReceiptIcon size={p.size} /> },
-  { key: 'other_files', label: 'Other Files', icon: (p) => <FileIcon size={p.size} /> },
+  { key: 'chat_logs', label: 'Chat Logs', icon: (p) => <ChatIcon size={p.size} /> },
 ]
+
+type UploadStatus = 'pending' | 'uploading' | 'uploaded' | 'error'
 
 interface FileEntry {
   id: string
   name: string
   size: number
   type: string
+  file: File
   /** A small data: URL for in-browser preview (images only). */
   previewUrl: string | null
   chip: ChipKey
   error?: string
+  uploadStatus: UploadStatus
 }
 
 interface FileDisputeProps {
@@ -109,7 +117,7 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
   const [claim, setClaim] = useState('')
 
   const [files, setFiles] = useState<FileEntry[]>([])
-  const [activeChip, setActiveChip] = useState<ChipKey>('photos_videos')
+  const [activeChip, setActiveChip] = useState<ChipKey>('photos')
   const [confirmed, setConfirmed] = useState(false)
 
   const [submitting, setSubmitting] = useState(false)
@@ -171,7 +179,6 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
     const accepted = Array.from(list)
     if (accepted.length === 0) return
     const allowList = FILE_TYPES[activeChip]
-    const acceptAnything = allowList.length === 0
     const next: FileEntry[] = []
     for (const f of accepted) {
       const isImage = f.type.startsWith('image/')
@@ -181,12 +188,14 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
         name: f.name,
         size: f.size,
         type: f.type || 'application/octet-stream',
+        file: f,
         previewUrl,
         chip: activeChip,
+        uploadStatus: 'pending',
       }
       if (f.size > FILE_MAX_BYTES) {
-        entry.error = `File is larger than 10MB.`
-      } else if (!acceptAnything && !allowList.includes(f.type)) {
+        entry.error = `File is larger than 5MB.`
+      } else if (!allowList.includes(f.type)) {
         entry.error = `Type not allowed for this section.`
       }
       next.push(entry)
@@ -211,18 +220,40 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
     setSubmitting(true)
     setSubmitError(null)
     try {
-      // No backend file-upload endpoint: we send only the structured case JSON
-      // the backend expects ({ trip_id, category, claim_text, filed_by_role }).
-      // The file list is shown to the user (Review step) but is not sent; the
-      // dispute card surfaces the "Evidence images are listed, not analysed"
-      // note so users don't expect the LLM to have looked at the files.
-      // filed_by is derived from the trip (rider by default).
       const created = await api.createDispute({
         trip_id: tripId,
         category,
         claim_text: claim.trim(),
         filed_by_role: 'rider',
       })
+
+      // Upload each valid file before kicking off resolution.
+      const validFiles = files.filter((f) => !f.error)
+      for (const f of validFiles) {
+        setFiles((prev) =>
+          prev.map((x) => (x.id === f.id ? { ...x, uploadStatus: 'uploading' } : x)),
+        )
+        try {
+          await api.uploadAttachment(created.id, f.file, CHIP_KIND[f.chip])
+          setFiles((prev) =>
+            prev.map((x) => (x.id === f.id ? { ...x, uploadStatus: 'uploaded' } : x)),
+          )
+        } catch (err: unknown) {
+          setFiles((prev) =>
+            prev.map((x) =>
+              x.id === f.id
+                ? {
+                    ...x,
+                    uploadStatus: 'error',
+                    error: err instanceof Error ? err.message : 'Upload failed',
+                  }
+                : x,
+            ),
+          )
+        }
+      }
+
+      await api.resolveDispute(created.id)
       onSubmitted(created.id)
     } catch (err: unknown) {
       setSubmitError(err instanceof Error ? err.message : 'Failed to submit dispute.')
@@ -595,6 +626,15 @@ function EvidenceStep({
                   {f.name}
                 </span>
                 <span className="rp-thumb__size">{formatBytes(f.size)}</span>
+                {f.uploadStatus !== 'pending' && (
+                  <span className={`rp-thumb__status is-${f.uploadStatus}`}>
+                    {f.uploadStatus === 'uploading'
+                      ? 'Uploading…'
+                      : f.uploadStatus === 'uploaded'
+                        ? 'Uploaded'
+                        : 'Upload failed'}
+                  </span>
+                )}
                 {f.error && <span className="rp-thumb__error">{f.error}</span>}
               </div>
             </div>

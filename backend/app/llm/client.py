@@ -174,6 +174,44 @@ class LLMClient:
                 )
         raise LLMError("unreachable")
 
+    async def structured_parts(
+        self, system: str, parts: list[dict], schema: type[T], *, role: str = "advocate", retries: int = 1
+    ) -> T | None:
+        """Like ``structured`` but the user message is a list of content parts.
+
+        ``parts`` uses the OpenAI-compatible content-part shape (e.g. ``{"type":
+        "text", "text": ...}`` or ``{"type": "image_url", "image_url": {"url":
+        "data:image/jpeg;base64,..."}}``) so callers can pass inline images/PDFs.
+        """
+        if self.mock:
+            return _mock_instance(schema)
+        if not self.api_key:
+            self._mark_degraded("ConfigurationError")
+            return None
+
+        messages = [
+            {"role": "system", "content": self._with_schema(system, schema)},
+            {"role": "user", "content": parts},
+        ]
+        for attempt in range(retries + 1):
+            content = await self._complete_content(messages, json_mode=True, role=role)
+            try:
+                return schema.model_validate_json(content)
+            except (ValidationError, json.JSONDecodeError) as exc:
+                if attempt >= retries:
+                    raise LLMError(
+                        f"structured output failed validation after {retries} retry(s): {exc}"
+                    ) from exc
+                messages.append({"role": "assistant", "content": content})
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": f"Your previous response was invalid JSON: {exc}. "
+                        "Respond again with only a JSON object matching the schema.",
+                    }
+                )
+        raise LLMError("unreachable")
+
     async def chat(
         self,
         messages: list[dict],

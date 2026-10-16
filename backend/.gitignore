@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# User-uploaded evidence (stored at runtime)
+uploads/

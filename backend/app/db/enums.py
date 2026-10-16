@@ -20,3 +20,10 @@ class RulingOutcome(str, enum.Enum):
     no_refund = "no_refund"
     favor_rider = "favor_rider"
     favor_driver = "favor_driver"
+
+
+class AttachmentKind(str, enum.Enum):
+    photo = "photo"
+    receipt = "receipt"
+    chat_log = "chat_log"
+    other = "other"

@@ -19,7 +19,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from app.config import settings
 from app.db.base import Base
-from app.db.enums import AccountRole, DisputeCategory, RulingOutcome
+from app.db.enums import AccountRole, AttachmentKind, DisputeCategory, RulingOutcome
 
 ACCOUNT_ROLE_ENUM = Enum(
     AccountRole,
@@ -36,6 +36,12 @@ DISPUTE_CATEGORY_ENUM = Enum(
 RULING_OUTCOME_ENUM = Enum(
     RulingOutcome,
     name="ruling_outcome",
+    native_enum=True,
+    values_callable=lambda e: [m.value for m in e],
+)
+ATTACHMENT_KIND_ENUM = Enum(
+    AttachmentKind,
+    name="attachment_kind",
     native_enum=True,
     values_callable=lambda e: [m.value for m in e],
 )
@@ -205,9 +211,34 @@ class DisputeReview(Base):
     )
 
 
+class Attachment(Base):
+    """A user-uploaded evidence file attached to a dispute.
+
+    The file is stored on disk (``storage_path``) and a lightweight, advisory
+    analysis may be attached in ``analysis`` (JSONB). Attachments never change
+    the ruling: they are surfaced as neutral, capped-strength evidence.
+    """
+
+    __tablename__ = "attachments"
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    dispute_id: Mapped[int] = mapped_column(
+        BigInteger, ForeignKey("disputes.id"), nullable=False, index=True
+    )
+    filename: Mapped[str] = mapped_column(String(255), nullable=False)
+    mime: Mapped[str] = mapped_column(String(100), nullable=False)
+    size_bytes: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    kind: Mapped[AttachmentKind] = mapped_column(ATTACHMENT_KIND_ENUM, nullable=False)
+    storage_path: Mapped[str] = mapped_column(Text, nullable=False)
+    sha256: Mapped[str] = mapped_column(String(64), nullable=False)
+    created_at: Mapped[datetime.datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, server_default=func.now()
+    )
+    analysis: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+
+
 class PolicyChunk(Base):
     __tablename__ = "policy_chunks"
-
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     source: Mapped[str] = mapped_column(String(255), nullable=False)
     section: Mapped[str] = mapped_column(String(255), nullable=False)

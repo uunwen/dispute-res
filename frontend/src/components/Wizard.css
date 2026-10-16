@@ -467,6 +467,17 @@
   color: var(--rp-live-fg);
   font-weight: 600;
 }
+.rp-thumb__status {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--rp-text-muted);
+}
+.rp-thumb__status.is-uploaded {
+  color: #138a4b;
+}
+.rp-thumb__status.is-error {
+  color: var(--rp-live-fg);
+}
 .rp-thumb--add {
   border: 1.5px dashed var(--rp-border);
   background: #fafbfc;

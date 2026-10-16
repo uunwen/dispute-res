@@ -68,6 +68,20 @@ export interface ListDisputesParams {
   include_synthetic?: boolean
 }
 
+export type AttachmentKind = 'photo' | 'receipt' | 'chat_log' | 'other'
+
+export interface Attachment {
+  id: number
+  dispute_id: number
+  filename: string
+  mime: string
+  size_bytes: number
+  kind: string
+  sha256: string
+  created_at: string
+  analysis: Record<string, unknown> | null
+}
+
 export interface AgentMessage {
   id: number
   dispute_id: number
@@ -241,6 +255,8 @@ type MockApi = {
   listAccounts: () => Promise<AccountItem[]>
   listReviews: (id: number) => Promise<DisputeReview[]>
   reviewDispute: (id: number, action: 'confirm' | 'appeal' | 'assign', note?: string) => Promise<DisputeReview>
+  listAttachments: (id: number) => Promise<Attachment[]>
+  uploadAttachment: (id: number, file: File, kind: AttachmentKind) => Promise<Attachment>
   streamUrl: (id: number) => string
 }
 
@@ -296,6 +312,18 @@ export const api = {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ action, note: note ?? null }),
         }),
+  listAttachments: (id: number) =>
+    USE_MOCK ? getMock().then((m) => m.listAttachments(id)) : request<Attachment[]>(`/disputes/${id}/attachments`),
+  uploadAttachment: (id: number, file: File, kind: AttachmentKind) => {
+    if (USE_MOCK) return getMock().then((m) => m.uploadAttachment(id, file, kind))
+    const form = new FormData()
+    form.append('file', file)
+    form.append('kind', kind)
+    return request<Attachment>(`/disputes/${id}/attachments`, {
+      method: 'POST',
+      body: form,
+    })
+  },
   streamUrl: (id: number) => `${BASE}/disputes/${id}/stream`,
 }
 

@@ -1,13 +1,17 @@
+import hashlib
 import json
+import re
+from pathlib import Path
 
 import redis.asyncio as aioredis
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
+from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPException, UploadFile
 from fastapi.responses import StreamingResponse
-from sqlalchemy import delete, or_, select
+from sqlalchemy import delete, func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import settings
 from app.db import models
+from app.db.enums import AttachmentKind
 from app.db.session import get_session
 from app.formulas import FORMULAS
 from app.messaging import dispute_channel
@@ -17,6 +21,7 @@ from app.queue.queue import enqueue_dispute, list_queue, remove_dispute
 from app.rules.engine import load_rules
 from app.schemas.api import (
     AccountItem,
+    AttachmentResponse,
     CategoryMeta,
     ChatMessageItem,
     ConfigEntry,
@@ -126,6 +131,46 @@ def _review_dict(r: models.DisputeReview) -> dict:
         "actor": r.actor,
         "created_at": r.created_at,
     }
+
+
+def _attachment_dict(a: models.Attachment) -> dict:
+    return {
+        "id": a.id,
+        "dispute_id": a.dispute_id,
+        "filename": a.filename,
+        "mime": a.mime,
+        "size_bytes": a.size_bytes,
+        "kind": a.kind.value,
+        "sha256": a.sha256,
+        "created_at": a.created_at,
+        "analysis": a.analysis,
+    }
+
+
+_ALLOWED_ATTACHMENT_MIME = {
+    "image/jpeg",
+    "image/png",
+    "image/webp",
+    "application/pdf",
+    "text/plain",
+    "application/json",
+}
+
+_ATTACHMENT_KINDS = {"photo", "receipt", "chat_log", "other"}
+
+
+def _sanitize_filename(name: str | None) -> str:
+    base = Path(name or "attachment").name
+    base = re.sub(r"[^\w.\- ]", "_", base)
+    base = base.strip(" .")[:200]
+    return base or "attachment"
+
+
+def _uploads_root() -> Path:
+    root = Path(settings.attachments_dir)
+    if not root.is_absolute():
+        root = Path(__file__).resolve().parents[2] / settings.attachments_dir
+    return root
 
 
 @router.post(
@@ -315,6 +360,100 @@ async def list_accounts(session: AsyncSession = Depends(get_session)):
         await session.execute(select(models.Account).order_by(models.Account.id))
     ).scalars().all()
     return [{"id": a.id, "name": a.name, "role": a.role.value} for a in rows]
+
+
+@router.post(
+    "/disputes/{dispute_id}/attachments",
+    response_model=AttachmentResponse,
+    status_code=201,
+    tags=["Disputes"],
+    summary="Upload an evidence attachment",
+    description=(
+        "Upload a user-supplied evidence file for a dispute. Accepted mime types: "
+        "image/jpeg, image/png, image/webp, application/pdf, text/plain, "
+        "application/json. Max 5 MB per file and 5 files per dispute."
+    ),
+)
+async def upload_attachment(
+    dispute_id: int,
+    file: UploadFile = File(...),
+    kind: str = Form("other"),
+    session: AsyncSession = Depends(get_session),
+):
+    dispute = await session.get(models.Dispute, dispute_id)
+    if dispute is None:
+        raise HTTPException(status_code=404, detail="dispute not found")
+
+    if kind not in _ATTACHMENT_KINDS:
+        raise HTTPException(status_code=400, detail=f"invalid kind {kind!r}")
+
+    mime = (file.content_type or "").split(";")[0].strip().lower()
+    if mime not in _ALLOWED_ATTACHMENT_MIME:
+        raise HTTPException(status_code=415, detail=f"unsupported media type {mime or '(none)'}")
+
+    content = await file.read()
+    if len(content) > settings.attachment_max_size_bytes:
+        raise HTTPException(status_code=413, detail="file exceeds 5 MB limit")
+
+    existing_count = (
+        await session.execute(
+            select(func.count()).select_from(models.Attachment).where(
+                models.Attachment.dispute_id == dispute_id
+            )
+        )
+    ).scalar_one()
+    if existing_count >= settings.attachment_max_files:
+        raise HTTPException(status_code=400, detail="attachment limit reached (5 per dispute)")
+
+    sha256 = hashlib.sha256(content).hexdigest()
+    duplicate = (
+        await session.execute(
+            select(models.Attachment.id).where(
+                models.Attachment.dispute_id == dispute_id,
+                models.Attachment.sha256 == sha256,
+            )
+        )
+    ).scalar_one_or_none()
+    if duplicate is not None:
+        raise HTTPException(status_code=409, detail="duplicate attachment (same file already uploaded)")
+
+    filename = _sanitize_filename(file.filename)
+    uploads_dir = _uploads_root() / str(dispute_id)
+    uploads_dir.mkdir(parents=True, exist_ok=True)
+    storage_path = uploads_dir / f"{sha256[:16]}_{filename}"
+    storage_path.write_bytes(content)
+
+    attachment = models.Attachment(
+        dispute_id=dispute_id,
+        filename=filename,
+        mime=mime,
+        size_bytes=len(content),
+        kind=AttachmentKind(kind),
+        storage_path=str(storage_path),
+        sha256=sha256,
+    )
+    session.add(attachment)
+    await session.commit()
+    await session.refresh(attachment)
+    return _attachment_dict(attachment)
+
+
+@router.get(
+    "/disputes/{dispute_id}/attachments",
+    response_model=list[AttachmentResponse],
+    tags=["Disputes"],
+    summary="List evidence attachments",
+    description="Return the user-supplied evidence files attached to a dispute.",
+)
+async def list_attachments(dispute_id: int, session: AsyncSession = Depends(get_session)):
+    rows = (
+        await session.execute(
+            select(models.Attachment)
+            .where(models.Attachment.dispute_id == dispute_id)
+            .order_by(models.Attachment.created_at)
+        )
+    ).scalars().all()
+    return [_attachment_dict(a) for a in rows]
 
 
 @router.get(

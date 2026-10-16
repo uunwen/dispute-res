@@ -1,6 +1,8 @@
 import type {
   AccountItem,
   AgentMessage,
+  Attachment,
+  AttachmentKind,
   CategoryMeta,
   ChatMessage,
   Dispute,
@@ -549,6 +551,23 @@ export const mockApi = {
   },
 
   listReviews: () => delay<DisputeReview[]>([]),
+
+  listAttachments: () => delay<Attachment[]>([]),
+
+  uploadAttachment: (id: number, file: File, kind: AttachmentKind) => {
+    const attachment: Attachment = {
+      id: Math.floor(Math.random() * 1_000_000),
+      dispute_id: id,
+      filename: file.name,
+      mime: file.type || 'application/octet-stream',
+      size_bytes: file.size,
+      kind,
+      sha256: 'mock-sha256',
+      created_at: new Date().toISOString(),
+      analysis: null,
+    }
+    return delay<Attachment>(attachment)
+  },
 
   reviewDispute: (id: number, action: 'confirm' | 'appeal' | 'assign', note?: string) => {
     const spec = ALL_SPECS.find((s) => s.id === id)

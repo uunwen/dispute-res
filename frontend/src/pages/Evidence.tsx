@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { api, type ChatMessage, type Dispute, type EvidenceItem, type Ruling, type TripGps } from '../api'
+import { api, type Attachment, type ChatMessage, type Dispute, type EvidenceItem, type Ruling, type TripGps } from '../api'
 import StatusBadge from '../components/StatusBadge'
 import RouteMap from '../components/RouteMap'
 import { ChatIcon, FileIcon, PhotoIcon, ReceiptIcon } from '../components/icons'
@@ -43,6 +43,7 @@ export default function EvidencePage({ disputeId, onBack, onSeeRuling }: Evidenc
   const [evidence, setEvidence] = useState<EvidenceItem[] | null>(null)
   const [gps, setGps] = useState<TripGps | null>(null)
   const [chat, setChat] = useState<ChatMessage[] | null>(null)
+  const [attachments, setAttachments] = useState<Attachment[]>([])
 
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -78,6 +79,13 @@ export default function EvidencePage({ disputeId, onBack, onSeeRuling }: Evidenc
         if (cancelled) return
         setLoading(false)
       })
+
+    api
+      .listAttachments(disputeId)
+      .then((items) => {
+        if (!cancelled) setAttachments(items)
+      })
+      .catch(() => undefined)
 
     return () => {
       cancelled = true
@@ -212,6 +220,7 @@ export default function EvidencePage({ disputeId, onBack, onSeeRuling }: Evidenc
             noshowEvidence={noshowEvidence}
             chatEvidence={chatEvidence}
             chat={chat ?? []}
+            attachments={attachments}
             showRoute={showRoute}
             showNoShow={showNoShow}
             showChat={showChat}
@@ -247,6 +256,7 @@ interface TripEvidenceTabProps {
   noshowEvidence: EvidenceItem | null
   chatEvidence: EvidenceItem | null
   chat: ChatMessage[]
+  attachments: Attachment[]
   showRoute: boolean
   showNoShow: boolean
   showChat: boolean
@@ -260,6 +270,7 @@ function TripEvidenceTab({
   noshowEvidence,
   chatEvidence,
   chat,
+  attachments,
   showRoute,
   showNoShow,
   showChat,
@@ -320,6 +331,9 @@ function TripEvidenceTab({
         chatEvidence={chatEvidence}
         showChat={showChat}
       />
+
+      {/* User-supplied evidence (advisory, unverified) */}
+      {attachments.length > 0 && <AttachmentsCard attachments={attachments} />}
     </div>
   )
 }
@@ -679,6 +693,41 @@ function iconRender(name: 'photo' | 'chat' | 'receipt' | 'file') {
   if (name === 'chat') return <ChatIcon size={16} />
   if (name === 'receipt') return <ReceiptIcon size={16} />
   return <FileIcon size={16} />
+}
+
+/* ---------- User-supplied attachments card ---------- */
+function AttachmentsCard({ attachments }: { attachments: Attachment[] }) {
+  return (
+    <section className="rp-evidence__card rp-evidence__card--wide">
+      <h2>User Evidence</h2>
+      <p className="rp-evidence__lede">
+        Files supplied by the user. These are advisory only — they are described by the
+        analysis agent but are never treated as verified.
+      </p>
+      <ul className="rp-evidence__files">
+        {attachments.map((a) => {
+          const analysis = (a.analysis ?? {}) as Record<string, unknown>
+          const description = typeof analysis.description === 'string' ? analysis.description : null
+          return (
+            <li key={a.id} className="rp-evidence__file">
+              <span className="file-icon" aria-hidden>
+                {a.kind === 'receipt' ? <ReceiptIcon size={16} /> : a.kind === 'chat_log' ? <ChatIcon size={16} /> : <PhotoIcon size={16} />}
+              </span>
+              <span className="file-text">
+                <span className="file-name">
+                  {a.filename}
+                  <span className="rp-evidence__unverified">unverified</span>
+                </span>
+                <span className="file-sub">
+                  {description ?? 'Analysis unavailable — this file was not interpreted.'}
+                </span>
+              </span>
+            </li>
+          )
+        })}
+      </ul>
+    </section>
+  )
 }
 
 /* ============================================================

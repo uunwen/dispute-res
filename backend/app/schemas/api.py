@@ -110,6 +110,18 @@ class AccountItem(BaseModel):
     role: str
 
 
+class AttachmentResponse(BaseModel):
+    id: int
+    dispute_id: int
+    filename: str
+    mime: str
+    size_bytes: int
+    kind: str
+    sha256: str
+    created_at: datetime
+    analysis: dict[str, Any] | None = None
+
+
 class TripListItem(BaseModel):
     id: int
     rider_id: int

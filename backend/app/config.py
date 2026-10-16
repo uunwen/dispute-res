@@ -92,6 +92,11 @@ class Settings(BaseSettings):
     sla_default_seconds: int = 86400
     # Max concurrent dispute resolutions when running the evaluation harness.
     eval_concurrency: int = 3
+    # Advisory, user-uploaded evidence handling.
+    attachments_enabled: bool = True
+    attachments_dir: str = "uploads"
+    attachment_max_size_bytes: int = 5 * 1024 * 1024
+    attachment_max_files: int = 5
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 

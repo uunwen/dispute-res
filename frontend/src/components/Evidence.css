@@ -292,6 +292,18 @@
 .rp-evidence__file .file-chevron {
   color: var(--rp-text-subtle);
 }
+.rp-evidence__unverified {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #8a6d1a;
+  background: #fdf3d7;
+}
 
 /* ---------- No-show timeline ---------- */
 .rp-evidence__timeline {

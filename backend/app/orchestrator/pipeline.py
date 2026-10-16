@@ -18,6 +18,7 @@ from app.evidence import case_facts as case_facts_evidence
 from app.evidence import fare as fare_evidence
 from app.evidence import noshow as noshow_evidence
 from app.evidence import route as route_evidence
+from app.evidence.attachments import gather_attachment_evidence
 from app.evidence.history import compute_history_profile_db
 from app.llm.client import client as llm_client
 from app.messaging import publish_dispute_event
@@ -73,6 +74,11 @@ async def resolve_dispute(dispute_id: int, *, rebuttal: bool | None = None, tone
         ).scalar_one_or_none()
         rider_id = trip.rider_id
         driver_id = trip.driver_id
+        attachments = (
+            await session.execute(
+                select(models.Attachment).where(models.Attachment.dispute_id == dispute_id)
+            )
+        ).scalars().all()
 
     await publish_dispute_event(dispute_id, "resolving", {"status": dispute.status})
 
@@ -87,7 +93,17 @@ async def resolve_dispute(dispute_id: int, *, rebuttal: bool | None = None, tone
     policy = await retrieve_policy(dispute.claim_text, category=dispute.category.value, k=3)
     rule_result = evaluate(dispute.category.value, evidence)
 
-    all_evidence = [*evidence, rider_history_item, driver_history_item]
+    attachment_evidence = []
+    if settings.attachments_enabled and attachments:
+        attachment_evidence = await gather_attachment_evidence(
+            attachments,
+            claim_text=dispute.claim_text,
+            category=dispute.category.value,
+            charged_fare=trip.actual_fare,
+            trip_id=dispute.trip_id,
+        )
+
+    all_evidence = [*evidence, rider_history_item, driver_history_item, *attachment_evidence]
     ctx = AgentContext(
         dispute_id=dispute_id,
         trip_id=dispute.trip_id,
@@ -124,7 +140,7 @@ async def resolve_dispute(dispute_id: int, *, rebuttal: bool | None = None, tone
         claim_text=dispute.claim_text,
         rider_brief=rider_brief,
         driver_brief=driver_brief,
-        evidence=evidence,
+        evidence=[*evidence, *attachment_evidence],
         policy=policy,
         rider_history=rider_history,
         driver_history=driver_history,
