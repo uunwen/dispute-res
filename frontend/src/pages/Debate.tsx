@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { type Dispute } from '../api'
+import { api, type AgentMessage, type Dispute } from '../api'
 import StatusBadge from '../components/StatusBadge'
 import { DriverMascot, JudgeMascot, RiderMascot } from '../components/DebateMascots'
 import PlaybackBar from '../components/PlaybackBar'
 import SpeechBubble from '../components/SpeechBubble'
 import { useDisputeStream } from '../hooks/useDisputeStream'
+import { useReducedMotion } from '../hooks/useReducedMotion'
 import { buildRounds, type DebateRound, type Speaker } from '../lib/rounds'
 import { categoryLabel, disputeStatusVariant } from '../lib/status'
-import { CloseIcon } from '../components/icons'
+import { CheckIcon, CloseIcon } from '../components/icons'
 
 interface DebateProps {
   disputeId: number
@@ -19,8 +20,202 @@ interface DebateProps {
 
 const STEP_BASE_MS = 7000 // base time per round at 1x; scaled by speed
 
+type DebateStageKey = 'evidence' | 'opening' | 'fraud' | 'rebuttal' | 'judge' | 'verdict'
+
+interface DebateStep {
+  key: DebateStageKey
+  label: string
+}
+
+type StepState = 'done' | 'active' | 'future'
+
+function messageRound(m: AgentMessage): string {
+  const c = (m.content ?? {}) as Record<string, unknown>
+  return typeof c.round === 'string' ? c.round : 'opening'
+}
+
+/** Derive the fixed pipeline stages from the streamed messages + finish state. */
+function computeDebateProgress(messages: AgentMessage[], finished: boolean, rebuttalEnabled: boolean) {
+  const opening = (sender: 'RiderAdvocate' | 'DriverAdvocate') =>
+    messages.some((m) => m.sender === sender && m.message_type === 'case_brief' && messageRound(m) === 'opening')
+  const rebuttal = (sender: 'RiderAdvocate' | 'DriverAdvocate') =>
+    messages.some((m) => m.sender === sender && m.message_type === 'case_brief' && messageRound(m) === 'rebuttal')
+
+  const hasOpeningRider = opening('RiderAdvocate')
+  const hasOpeningDriver = opening('DriverAdvocate')
+  const hasFraud = messages.some((m) => m.message_type === 'fraud_signal')
+  const hasRebuttalRider = rebuttal('RiderAdvocate')
+  const hasRebuttalDriver = rebuttal('DriverAdvocate')
+
+  const steps: DebateStep[] = [
+    { key: 'evidence', label: 'Evidence gathering' },
+    { key: 'opening', label: 'Opening arguments' },
+    { key: 'fraud', label: 'Fraud check' },
+  ]
+  if (rebuttalEnabled) steps.push({ key: 'rebuttal', label: 'Rebuttal round' })
+  steps.push({ key: 'judge', label: 'Judge deliberation' })
+  steps.push({ key: 'verdict', label: 'Final verdict' })
+
+  const done: Record<DebateStageKey, boolean> = {
+    evidence: hasOpeningRider || hasOpeningDriver,
+    opening: hasOpeningRider && hasOpeningDriver,
+    fraud: hasFraud,
+    rebuttal: hasRebuttalRider && hasRebuttalDriver,
+    judge: finished,
+    verdict: finished,
+  }
+
+  let states: StepState[]
+  if (finished) {
+    states = steps.map(() => 'done' as StepState)
+  } else {
+    const firstUndone = steps.findIndex((s) => !done[s.key])
+    states = steps.map((_, i): StepState => {
+      if (firstUndone === -1 || i < firstUndone) return 'done'
+      if (i === firstUndone) return 'active'
+      return 'future'
+    })
+  }
+
+  return { steps, states }
+}
+
+function formatSeconds(total: number): string {
+  const m = Math.floor(total / 60)
+  const s = total % 60
+  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+}
+
+interface DebateProgressProps {
+  steps: DebateStep[]
+  states: StepState[]
+  finished: boolean
+  degraded: boolean
+  slow: boolean
+  elapsed: number
+  reducedMotion: boolean
+  onViewVerdict?: () => void
+}
+
+function DebateProgress({
+  steps,
+  states,
+  finished,
+  degraded,
+  slow,
+  elapsed,
+  reducedMotion,
+  onViewVerdict,
+}: DebateProgressProps) {
+  const statusText = finished
+    ? 'Verdict ready'
+    : slow
+      ? 'Still working, the LLM is slow'
+      : 'Agents are still debating, the verdict appears when the Judge finishes'
+
+  return (
+    <div className="rp-debate-progress" aria-label="Debate progress">
+      <div className="rp-debate-progress__row">
+        <ol className="rp-debate-steps">
+          {steps.map((s, i) => {
+            const state = states[i] ?? 'future'
+            return (
+              <li
+                key={s.key}
+                className={`rp-debate-step is-${state} ${reducedMotion ? 'is-no-anim' : ''}`}
+              >
+                <span className="rp-debate-step__dot" aria-hidden>
+                  {state === 'done' ? <CheckIcon size={12} strokeWidth={3} /> : null}
+                </span>
+                <span className="rp-debate-step__label">
+                  {s.label}
+                  {state === 'active' && <span className="rp-debate-step__working">working…</span>}
+                </span>
+              </li>
+            )
+          })}
+        </ol>
+        <div className="rp-debate-progress__meta">
+          <span className="rp-debate-progress__timer">{formatSeconds(elapsed)}</span>
+          <span className="rp-debate-progress__status">{statusText}</span>
+        </div>
+      </div>
+
+      {degraded && (
+        <div className="rp-debate-progress__warning" role="status">
+          Finished with deterministic fallback
+        </div>
+      )}
+
+      {finished && onViewVerdict && (
+        <div className="rp-debate-progress__verdict">
+          <button type="button" className="rp-btn rp-btn--primary" onClick={onViewVerdict}>
+            View verdict →
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function Debate({ disputeId, onBack, onSeeRuling, onSeeEvidence, onSeeArguments }: DebateProps) {
-  const { dispute, messages, live, loading, error } = useDisputeStream(disputeId)
+  const { dispute, messages, events, live, loading, error } = useDisputeStream(disputeId)
+
+  const reducedMotion = useReducedMotion()
+
+  const [rebuttalEnabled, setRebuttalEnabled] = useState(true)
+  const [rulingDegraded, setRulingDegraded] = useState<boolean | null>(null)
+  const [elapsed, setElapsed] = useState(0)
+  const [slow, setSlow] = useState(false)
+
+  const finished =
+    (dispute !== null && dispute.status !== 'open') || events.some((e) => e.type === 'ruling_ready')
+
+  const progress = useMemo(
+    () => computeDebateProgress(messages, finished, rebuttalEnabled),
+    [messages, finished, rebuttalEnabled],
+  )
+
+  useEffect(() => {
+    api
+      .getSettings()
+      .then((s) => setRebuttalEnabled(s.rebuttal_enabled !== false))
+      .catch(() => undefined)
+  }, [])
+
+  useEffect(() => {
+    if (!finished) return
+    let cancelled = false
+    api
+      .getRuling(disputeId)
+      .then((r) => {
+        if (!cancelled) setRulingDegraded(r.llm_degraded)
+      })
+      .catch(() => {
+        if (!cancelled) setRulingDegraded(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [finished, disputeId])
+
+  const lastMessageRef = useRef<number>(0)
+  useEffect(() => {
+    lastMessageRef.current = Date.now()
+  }, [messages.length])
+
+  useEffect(() => {
+    if (!live || finished) return
+    lastMessageRef.current = Date.now()
+    const start = Date.now()
+    const id = window.setInterval(() => {
+      setElapsed(Math.floor((Date.now() - start) / 1000))
+      setSlow(Date.now() - lastMessageRef.current > 90_000)
+    }, 1000)
+    return () => window.clearInterval(id)
+  }, [live, finished])
+
+  const degraded = error !== null || (finished && rulingDegraded === true)
 
   // Build the round list strictly from the messages we have. Re-derives
   // automatically as the SSE stream appends new messages.
@@ -194,6 +389,17 @@ export default function Debate({ disputeId, onBack, onSeeRuling, onSeeEvidence, 
           </button>
         </div>
       </div>
+
+      <DebateProgress
+        steps={progress.steps}
+        states={progress.states}
+        finished={finished}
+        degraded={degraded}
+        slow={slow}
+        elapsed={elapsed}
+        reducedMotion={reducedMotion}
+        onViewVerdict={onSeeRuling ? () => onSeeRuling(disputeId) : undefined}
+      />
 
       {/* Main grid */}
       <div className="rp-debate__grid">

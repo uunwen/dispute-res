@@ -210,6 +210,8 @@ export interface Settings {
   policy_numbers: ConfigEntry[]
   thresholds: ConfigEntry[]
   escalation: ConfigEntry[]
+  /** Whether the advocates run a rebuttal round (from REBUTTAL_ENABLED). */
+  rebuttal_enabled?: boolean
 }
 
 const BASE = '/api'

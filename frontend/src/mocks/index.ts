@@ -208,6 +208,7 @@ const SETTINGS: Settings = {
   ],
   llm_mock: false,
   policy_version: 'v2.1',
+  rebuttal_enabled: true,
   policy_numbers: [
     { key: 'noshow_cancellation_fee', label: 'Cancellation fee', value: '$5.00', source: 'no_show_fee.md §2.2' },
     { key: 'noshow_min_wait_min', label: 'Free wait time', value: '5 minutes', source: 'no_show_fee.md §2.1' },

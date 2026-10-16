@@ -1,6 +1,7 @@
 import { type ReactElement, useEffect, useMemo, useRef, useState } from 'react'
 import { api, type AttachmentKind, type CategoryMeta, type Trip } from '../api'
 import StepProgress from '../components/StepProgress'
+import Toast from '../components/Toast'
 import {
   ChatIcon,
   CheckIcon,
@@ -62,11 +63,34 @@ const CATEGORY_ICONS: Record<string, (p: { size?: number }) => ReactElement> = {
 
 const CLAIM_MAX = 500
 const FILE_MAX_BYTES = 5 * 1024 * 1024
+const FILE_MAX_COUNT = 5
+
+const PHOTO_MIME = ['image/jpeg', 'image/png', 'image/webp']
+const RECEIPT_MIME = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf']
+const CHAT_LOG_MIME = ['text/plain', 'application/json']
+
 const FILE_TYPES: Record<string, string[]> = {
-  photos: ['image/jpeg', 'image/png', 'image/webp'],
-  receipts: ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'],
-  chat_logs: ['text/plain', 'application/json'],
+  photos: PHOTO_MIME,
+  receipts: RECEIPT_MIME,
+  chat_logs: CHAT_LOG_MIME,
 }
+
+const ALLOWED_MIME = [...new Set([...PHOTO_MIME, ...RECEIPT_MIME, ...CHAT_LOG_MIME])]
+
+const FILE_MAX_MB = Math.round(FILE_MAX_BYTES / (1024 * 1024))
+
+const MIME_LABELS: Record<string, string> = {
+  'image/jpeg': 'JPG',
+  'image/png': 'PNG',
+  'image/webp': 'WebP',
+  'application/pdf': 'PDF',
+  'text/plain': 'TXT',
+  'application/json': 'JSON',
+}
+
+// Helper text derived from the same constants used for validation, so the two
+// can never drift apart.
+const DROPZONE_HINT = `${ALLOWED_MIME.map((m) => MIME_LABELS[m] ?? m).join(', ')}, max ${FILE_MAX_MB} MB each, up to ${FILE_MAX_COUNT} files`
 
 type ChipKey = keyof typeof FILE_TYPES
 
@@ -122,6 +146,14 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
 
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
+  const [toast, setToast] = useState<string | null>(null)
+
+  function showToast(message: string) {
+    setToast(message)
+    window.setTimeout(() => {
+      setToast((t) => (t === message ? null : t))
+    }, 3000)
+  }
 
   /* ---------- load trip + category lists once ---------- */
   useEffect(() => {
@@ -180,7 +212,18 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
     if (accepted.length === 0) return
     const allowList = FILE_TYPES[activeChip]
     const next: FileEntry[] = []
+    let hitLimit = false
     for (const f of accepted) {
+      const isDuplicate =
+        files.some((x) => x.name === f.name && x.size === f.size) ||
+        next.some((x) => x.name === f.name && x.size === f.size)
+      if (isDuplicate) continue
+
+      if (files.length + next.length >= FILE_MAX_COUNT) {
+        hitLimit = true
+        break
+      }
+
       const isImage = f.type.startsWith('image/')
       const previewUrl = isImage ? URL.createObjectURL(f) : null
       const entry: FileEntry = {
@@ -194,13 +237,14 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
         uploadStatus: 'pending',
       }
       if (f.size > FILE_MAX_BYTES) {
-        entry.error = `File is larger than 5MB.`
+        entry.error = `File is larger than ${FILE_MAX_MB} MB.`
       } else if (!allowList.includes(f.type)) {
         entry.error = `Type not allowed for this section.`
       }
       next.push(entry)
     }
-    setFiles((prev) => [...prev, ...next])
+    if (next.length > 0) setFiles((prev) => [...prev, ...next])
+    if (hitLimit) showToast(`Max ${FILE_MAX_COUNT} files per dispute`)
   }
 
   function removeFile(id: string) {
@@ -342,6 +386,7 @@ export default function FileDispute({ onCancel, onSubmitted }: FileDisputeProps)
         trip={drawerTripId ? trips.find((t) => t.id === drawerTripId) ?? null : null}
         onClose={() => setDrawerTripId(null)}
       />
+      <Toast message={toast} onClose={() => setToast(null)} />
     </div>
   )
 }
@@ -583,7 +628,7 @@ function EvidenceStep({
         </span>
         <div className="rp-dropzone__text">
           <strong>Drag and drop files here or click to upload</strong>
-          <span>Supports: JPG, PNG, MP4 (max 10MB each)</span>
+          <span>{DROPZONE_HINT}</span>
         </div>
         <input
           ref={inputRef}
